@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
-<!-- begin Convert Experiments code--><script type="text/javascript">var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p0mv.cloudfront.net" : "http://cdn-1.convertexperiments.com");document.write(decodeURIComponent("%3Cscript src='" + _conv_host + "/js/10013947-10013329.js' type='text/javascript'%3E%3C/script%3E"));</script><!-- end Convert Experiments code -->
+<!-- begin Convert Experiments code--><!--<script type="text/javascript">var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p0mv.cloudfront.net" : "http://cdn-1.convertexperiments.com");document.write(decodeURIComponent("%3Cscript src='" + _conv_host + "/js/10013947-10013329.js' type='text/javascript'%3E%3C/script%3E"));</script> --> <!-- end Convert Experiments code -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -1522,7 +1522,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span></code></pre>
 
-<p>一个模块中对外可见的方法应该有明确的返回值:</p>
+<p>一个方法如果是public的，应该有明确的返回值:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">fun</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span></code></pre>
 
@@ -1542,7 +1542,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <h2 id="section-3">定义局部变量<a href="#section-3" class="anchor"></a></h2>
 
-<p>不可变(只读)局部变量:</p>
+<p>不可变(只读)变量:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
 <span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// `Int` type is inferred</span>
@@ -1556,7 +1556,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>查看 <a href="properties.html">Properties And Fields</a>.</p>
 
-<h2 id="string">使用String模板<a href="#string" class="anchor"></a></h2>
+<h2 id="array">使用泛型Array<a href="#array" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span>
@@ -1583,9 +1583,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <h2 id="nullable-null-keyword-">使用可空类型（nullable）变量来判断 <em class="keyword">null</em><a href="#nullable-null-keyword-" class="anchor"></a></h2>
 
-<p>A reference must be explicitly marked as nullable when <em class="keyword">null</em> value is possible.</p>
+<p>一个引用必须被显示标记为nullable，当它可能为空的时候。</p>
 
-<p>Return <em class="keyword">null</em> if <code>str</code> does not hold an integer:</p>
+<p>返回 <em class="keyword">null</em> 如果 <code>str</code> 不是整数的话。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">parseInt</span><span class="p">(</span><span class="n">str</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Int</span><span class="p">?</span> <span class="p">{</span>
   <span class="c1">// ...</span>

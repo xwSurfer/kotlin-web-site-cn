@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
-<!-- begin Convert Experiments code--><script type="text/javascript">var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p0mv.cloudfront.net" : "http://cdn-1.convertexperiments.com");document.write(decodeURIComponent("%3Cscript src='" + _conv_host + "/js/10013947-10013329.js' type='text/javascript'%3E%3C/script%3E"));</script><!-- end Convert Experiments code -->
+<!-- begin Convert Experiments code--><!--<script type="text/javascript">var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p0mv.cloudfront.net" : "http://cdn-1.convertexperiments.com");document.write(decodeURIComponent("%3Cscript src='" + _conv_host + "/js/10013947-10013329.js' type='text/javascript'%3E%3C/script%3E"));</script> --> <!-- end Convert Experiments code -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -1513,11 +1513,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <li><code>component1()</code>, <code>component2()</code>, …, 对于所有属性 (查看 <a href="data-classes.html">Data classes</a>)</li>
 </ul>
 
-<h3 id="fianl">定义一个fianl本地变量<a href="#fianl" class="anchor"></a></h3>
+<h3 id="section-1">定义常量<a href="#section-1" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">foo</span><span class="p">()</span></code></pre>
 
-<h3 id="section-1">函数参数带有默认值<a href="#section-1" class="anchor"></a></h3>
+<h3 id="section-2">函数参数带有默认值<a href="#section-2" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
 
@@ -1529,11 +1529,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">positives</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">}</span></code></pre>
 
-<h3 id="section-2">字符串插入值<a href="#section-2" class="anchor"></a></h3>
+<h3 id="section-3">字符串插入值<a href="#section-3" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="s">&quot;Name $name&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="section-3">检查实例<a href="#section-3" class="anchor"></a></h3>
+<h3 id="section-4">检查实例<a href="#section-4" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">is</span> <span class="n">Foo</span> <span class="p">-&gt;</span> <span class="p">...</span>
@@ -1541,7 +1541,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">else</span>   <span class="p">-&gt;</span> <span class="p">...</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="section-4">成对打印<a href="#section-4" class="anchor"></a></h3>
+<h3 id="map">遍历map<a href="#map" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">in</span> <span class="n">map</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;$k -&gt; $v&quot;</span><span class="p">)</span>
@@ -1558,11 +1558,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">list</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="map">只读map<a href="#map" class="anchor"></a></h3>
+<h3 id="map-1">只读map<a href="#map-1" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">map</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span> <span class="n">to</span> <span class="m">1</span><span class="p">,</span> <span class="s">&quot;b&quot;</span> <span class="n">to</span> <span class="m">2</span><span class="p">,</span> <span class="s">&quot;c&quot;</span> <span class="n">to</span> <span class="m">3</span><span class="p">)</span></code></pre>
 
-<h3 id="map-1">访问map<a href="#map-1" class="anchor"></a></h3>
+<h3 id="map-2">访问map<a href="#map-2" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">])</span>
 <span class="n">map</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="n">value</span></code></pre>
@@ -1597,7 +1597,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <span class="n">println</span><span class="p">(</span><span class="n">files</span><span class="o">?.</span><span class="n">size</span> <span class="o">?:</span> <span class="s">&quot;empty&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="if-null">if null执行一个声明<a href="#if-null" class="anchor"></a></h3>
+<h3 id="if-null">if null执行后面语句<a href="#if-null" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="p">...</span>
 <span class="k">val</span> <span class="py">email</span> <span class="p">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;email&quot;</span><span class="p">]</span> <span class="o">?:</span> <span class="k">throw</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Email is missing!&quot;</span><span class="p">)</span></code></pre>
@@ -1610,7 +1610,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="p">...</span> <span class="c1">// execute this block if not null</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="section-8">执行声明时返回<a href="#section-8" class="anchor"></a></h3>
+<h3 id="when">使用when声明返回<a href="#when" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">transform</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">when</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
@@ -1645,7 +1645,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="section-9">单表达式方法<a href="#section-9" class="anchor"></a></h3>
+<h3 id="section-8">单表达式方法（单语句函数）<a href="#section-8" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">theAnswer</span><span class="p">()</span> <span class="p">=</span> <span class="m">42</span></code></pre>
 
