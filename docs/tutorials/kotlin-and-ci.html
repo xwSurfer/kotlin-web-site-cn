@@ -706,7 +706,7 @@ is the internal build system that IntelliJ IDEA uses, which is also supported on
 we’d simply define the required parameters such as the Step Name and Gradle tasks that need executing for the Runner Type.</p>
 
 <p><br />
-<img src="/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-gradle.png" alt="Gradle Build Step" />
+<img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-gradle.png" alt="Gradle Build Step" />
 <br /></p>
 
 <p>Since all the dependencies required for Kotlin are defined in the Gradle file, nothing else needs to be configured specifically for Kotlin to run correctly.</p>
@@ -726,7 +726,7 @@ write plugins</p>
 from the TeamCity user interface</p>
 
 <p><br />
-<img src="/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-metarunner.png" alt="Meta-runner" />
+<img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-metarunner.png" alt="Meta-runner" />
 <br /></p>
 
 <p>If using a previous version, refer to the <a href="https://confluence.jetbrains.com/display/TCD9/Working+with+Meta-Runner">documentation on how to add meta-runners</a>.</p>
@@ -735,7 +735,7 @@ from the TeamCity user interface</p>
 <p>Basically this step is limited to defining the Step Name and the version of Kotlin we need. Tags can be used.</p>
 
 <p><br />
-<img src="/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-setupkotlin.png" alt="Setup Kotlin Compiler" />
+<img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-setupkotlin.png" alt="Setup Kotlin Compiler" />
 <br /></p>
 
 <p>The runner will set the value for the property system.path.macro.KOTLIN.BUNDLED to the correct one based on the path settings from the IntelliJ IDEA project. However
@@ -745,7 +745,7 @@ this value needs to be defined in TeamCity (and can be set to any value). Theref
 <p>The final step is to define the actual compilation of the project, which uses the standard IntelliJ IDEA Runner Type</p>
 
 <p><br />
-<img src="/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-idearunner.png" alt="IntelliJ IDEA Runner" />
+<img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/kotlin-and-ci/teamcity-idearunner.png" alt="IntelliJ IDEA Runner" />
 <br /></p>
 
 <p>With that, our project should now build and produce the corresponding artifacts.</p>
