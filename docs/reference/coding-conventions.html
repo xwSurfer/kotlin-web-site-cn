@@ -621,7 +621,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Coding Conventions</div>
+                    <div class="text">编码习惯</div>
                 </div>
             
             </div>
@@ -1514,16 +1514,16 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 如果你希望一个属性能像field一样使用, 使用 $前缀: <code>$foo</code>指的是后面属性<code>foo</code>;
 永远不要建立像这样的<code>_foo</code> 私有属性。</p>
 
-<h2 id="colon">Colon<a href="#colon" class="anchor"></a></h2>
+<h2 id="section-2">冒号<a href="#section-2" class="anchor"></a></h2>
 
-<p>There is a space before colon where colon separates type and supertype and there’s no space where colon separates instance and type:</p>
+<p>在分隔子父类或接口的时候，或在分隔实例和类型的时候应该有一个空格:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Foo</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Any</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">Bar</span> <span class="p">{</span>
     <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">T</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="unit">Unit<a href="#unit" class="anchor"></a></h2>
-<p>如果一个方法返回 Unit,返回类型可以被省略:</p>
+<p>如果一个方法返回 Unit（感觉就是空）,返回类型可以被省略:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// &quot;: Unit&quot; is omitted here</span>
 
