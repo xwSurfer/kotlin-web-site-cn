@@ -633,11 +633,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _opened"
-         data-id="Basics">
+         data-id="基础">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">Basics</div>
+            <div class="text">基础</div>
         </div>
 
         
@@ -654,7 +654,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Basic Types</div>
+                    <div class="text">基本类型</div>
                 </div>
             
             </div>
@@ -672,7 +672,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/packages.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Packages</span></a>
+                   ><span class="marker"></span><span class="text">包</span></a>
             
             </div>
         
@@ -689,7 +689,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/control-flow.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Control Flow</span></a>
+                   ><span class="marker"></span><span class="text">控制流</span></a>
             
             </div>
         
@@ -706,7 +706,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/returns.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Returns and Jumps</span></a>
+                   ><span class="marker"></span><span class="text">返回和跳转</span></a>
             
             </div>
         
@@ -1500,7 +1500,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <h2 id="numbers">Numbers<a href="#numbers" class="anchor"></a></h2>
 
-<p>Kotlin处理numbers和Java很接近,但是并不完全相同. 例如, 对于numbers没有隐式扩大转换,在一些情况下文字的使用有所不同.</p>
+<p>Kotlin处理numbers和Java很接近,但是并不完全相同. 例如, 对于numbers没有隐式扩大转换(如java中int可以隐式变为long),在一些情况下文字的使用有所不同.</p>
 
 <p>对于numbers Kotlin提供了如下的内置类型 (与Java很相近):</p>
 
@@ -1539,9 +1539,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   </tbody>
 </table>
 
-<p>注意 characters 不是 numbers 在Kotlin中。</p>
+<p>注意在kotlin中 characters 不是 numbers</p>
 
-<h3 id="literal-constants">Literal Constants<a href="#literal-constants" class="anchor"></a></h3>
+<h3 id="section-1">字面量<a href="#section-1" class="anchor"></a></h3>
 
 <p>下面是一些常量的写法:</p>
 
@@ -1560,11 +1560,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <p>Kotlin 同样支持浮点数的常规表示方法:</p>
 
 <ul>
-  <li>Doubles by default: <code>123.5</code>, <code>123.5e10</code></li>
+  <li>Doubles  <code>123.5</code>, <code>123.5e10</code></li>
   <li>Floats用 <code>f</code> 或者 <code>F</code> 标记: <code>123.5f</code></li>
 </ul>
 
-<h3 id="section-1">表示<a href="#section-1" class="anchor"></a></h3>
+<h3 id="section-2">存储方式<a href="#section-2" class="anchor"></a></h3>
 
 <p>在Java平台数字是物理存储为JVM的原始类型,除非我们需要一个可空的引用（例如int？）或泛型. 后者情况下数字被装箱（指的是赋值的时候把实例复制了一下，不是相同实例）。</p>
 
@@ -1583,10 +1583,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="k">val</span> <span class="py">anotherBoxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
 <span class="n">print</span><span class="p">(</span><span class="n">boxedA</span> <span class="p">==</span> <span class="n">anotherBoxedA</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span></code></pre>
 
-<h3 id="section-2">显示转换<a href="#section-2" class="anchor"></a></h3>
+<h3 id="section-3">显示转换<a href="#section-3" class="anchor"></a></h3>
 
-<p>由于不同的表示小的类型并不是大类型的子类型。
-如果它们是的话，在下面的排序中就会有麻烦：</p>
+<p>由于不同的存储方式小的类型并不是大类型的子类型。
+如果它们是的话，就会出现下述问题（下面的代码不能通过编译）：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Hypothetical code, does not actually compile:</span>
 <span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// A boxed Int (java.lang.Integer)</span>
@@ -1617,16 +1617,17 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <li><code>toChar(): Char</code></li>
 </ul>
 
-<p>隐式转换是很少被注意的，因为我们使用的类型是从上下文推断的和算数运算符重载的转化，如：</p>
+<p>失去隐式类型转换，其实并没有带来多少困扰，因为使用字面量的时候是没有代价的，因为字面量的类型是推导出来的；
+另一方面，算数运算操作都针对不同类型的参数做好了重载，比如：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="m">1.</span><span class="n">toLong</span><span class="p">()</span> <span class="p">+</span> <span class="m">3</span> <span class="c1">// Long + Int =&gt; Long</span></code></pre>
 
-<h3 id="section-3">运算符<a href="#section-3" class="anchor"></a></h3>
+<h3 id="section-4">运算符<a href="#section-4" class="anchor"></a></h3>
 
 <p>Kotlin支持标准的算数操作符，并在相应的类上定义为成员函数（但编译器会针对运算进行优化，将函数调用优化成直接的算数操作）。
 查看 <a href="operator-overloading.html">Operator overloading</a>.</p>
 
-<p>As of bitwise operations, there’re no special characters for them, but just named functions that can be called in infix form, for example:</p>
+<p>对于按位操作(bitwise operation)，没有特别的符号来表示，而是直接使用命名函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">x</span> <span class="p">=</span> <span class="p">(</span><span class="m">1</span> <span class="n">shl</span> <span class="m">2</span><span class="p">)</span> <span class="n">and</span> <span class="m">0</span><span class="n">x000FF000</span></code></pre>
 
@@ -1653,7 +1654,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="p">}</span></code></pre>
 
 <p>用单引号表示一个Character，例如: <code>'1'</code>, <code>'\n'</code>, <code>'\uFF00'</code>.
-我们可以显示的把Character转换为<code>Int</code></p>
+我们可以调用显示转换把Character转换为<code>Int</code></p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">decimalDigitValue</span><span class="p">(</span><span class="n">c</span><span class="p">:</span> <span class="n">Char</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="p">!</span><span class="k">in</span> <span class="sc">&#39;0&#39;</span><span class="p">..</span><span class="sc">&#39;9&#39;</span><span class="p">)</span>
@@ -1676,9 +1677,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <li><code>&amp;&amp;</code> – 短路与</li>
 </ul>
 
-<h2 id="section-4">数组<a href="#section-4" class="anchor"></a></h2>
+<h2 id="section-5">数组<a href="#section-5" class="anchor"></a></h2>
 
-<p>Arrays in Kotlin are represented by the <code>Array</code> class, that has <code>get</code> and <code>set</code> functions (that turn into <code>[]</code> by operator overloading conventions), and <code>size</code>, along with a few other useful member functions:</p>
+<p>数组在Kotlin中使用 <code>Array</code>类来表示, <code>Array</code>类定义了set和get函数(使用时可以用<code>[]</code>，通过符号重载的约定转换), 和<code>size</code>等等一些有用的成员函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">private</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">size</span><span class="p">():</span> <span class="n">Int</span>
@@ -1689,64 +1690,62 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>To create an array, we can use a library function <code>array()</code> and pass the item values to it, so that <code>array(1, 2, 3)</code> creates an array [1, 2, 3].
-Alternatively, the <code>arrayOfNulls()</code> library function can be used to create an array of a given size filled with null elements.</p>
-
-<p>Another option is to use a factory function that takes the array size and the function that can return the initial value
-of each array element given its index:</p>
+<p>我们可以使用库函数<code>array()</code>来创建一个包含数值的数组, <code>array(1, 2, 3)</code> 创建了 array [1, 2, 3].
+或者, <code>arrayOfNulls()</code>可以创建一个指定大小，元素都为空的数组。<br />
+或者使用函数来创建一个数组:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Creates an Array&lt;String&gt; with values [&quot;0&quot;, &quot;1&quot;, &quot;4&quot;, &quot;9&quot;, &quot;16&quot;]</span>
 <span class="k">val</span> <span class="py">asc</span> <span class="p">=</span> <span class="n">Array</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">i</span> <span class="p">*</span> <span class="n">i</span><span class="p">).</span><span class="n">toString</span><span class="p">()})</span></code></pre>
 
-<p>As we said above, the <code>[]</code> operation stands for calls to member functions <code>get()</code> and <code>set()</code>.</p>
+<p>综上, <code>[]</code>操作符代表了成员函数<code>get()</code>和<code>set()</code>.</p>
 
-<p>Note: unlike Java, arrays in Kotlin are invariant. This means that Kotlin does not let us assign an <code>Array&lt;String&gt;</code>
-to an <code>Array&lt;Any&gt;</code>, which prevents a possible runtime failure (but you can use <code>Array&lt;out Any&gt;</code>, 
-see <a href="generics.html#type-projections">Type Projections</a>).</p>
+<p>注意: 与Java不同的是, Kotlin中数组不可变. 这意味着我们不能声明 <code>Array&lt;String&gt;</code>到<code>Array&lt;Any&gt;</code>, 否则可能会产生一个运行时错误(但是你可以使用 <code>Array&lt;out Any&gt;</code>, 查看 <a href="generics.html#type-projections">Type Projections</a>).</p>
 
-<p>Kotlin also has specialized classes to represent arrays of primitive types without boxing overhead: ByteArray,
-ShortArray, IntArray and so on. These classes have no inheritance relation to the <code>Array</code> class, but they
-have the same set of methods and properties. Each of them also has a corresponding factory function:</p>
+<p>Kotlin有专门的类来表示原始类型的数组，避免了装箱开销: ByteArray,
+ShortArray, IntArray 等等. 这些类和<code>Array</code>并没有继承关系,但是它们有同样的方法属性集. 它们也都有相应的工厂方法:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">IntArray</span> <span class="p">=</span> <span class="n">intArray</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="n">x</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">+</span> <span class="n">x</span><span class="p">[</span><span class="m">2</span><span class="p">]</span></code></pre>
 
-<h2 id="strings">Strings<a href="#strings" class="anchor"></a></h2>
+<h2 id="section-6">字符串<a href="#section-6" class="anchor"></a></h2>
 
-<p>Strings are represented by the type <code>String</code>. Strings are immutable.
-Elements of a string are characters that can be accessed by the indexing operation: <code>s[i]</code>.
-A string can be iterated over with a <em class="keyword">for</em>-loop:</p>
+<p>字符串用<code>String</code>表示。字符串是不可变的。<br />
+字符串的原始字符可以使用操作符访问: <code>s[i]</code>.
+字符串可以使用<em class="keyword">for</em>循环遍历:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="k">in</span> <span class="n">str</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">println</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="string-literals">String Literals<a href="#string-literals" class="anchor"></a></h3>
-
-<p>Kotlin has two types of string literals: escaped strings that may have escaped characters in them and raw strings that can contain newlines and arbitrary text. An escaped string is very much like a Java string:</p>
+<h3 id="section-7">字符串字面量<a href="#section-7" class="anchor"></a></h3>
+<p>Kotlin有两种类型的字符串: 转义字符串可能由转义字符、原生字符串、换行和任意文本.转义字符串很像java的String:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">s</span> <span class="p">=</span> <span class="s">&quot;Hello, world!\n&quot;</span></code></pre>
 
-<p>Escaping is done in the conventional way, with a backslash.</p>
+<p>转义方式采用传统的反斜杠.</p>
 
-<p>A raw string is delimited by a triple quote (<code>"""</code>), contains no escaping and can contain newlines and any other characters:</p>
+<p><em>原生字符串</em>使用三个引号(“”“)包括，内部没有转义，可以包含换行和任何其他文本:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">text</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
   <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="k">in</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span>
     <span class="n">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="s">&quot;&quot;&quot;</span></code></pre>
 
-<h3 id="templates">Templates<a href="#templates" class="anchor"></a></h3>
+<h3 id="section-8">模板<a href="#section-8" class="anchor"></a></h3>
 
-<p>Strings may contain template expressions, i.e. pieces of code that are evaluated and whose results are concatenated into the string. A template expression starts with a dollar sign ($) and consists of either a simple name:</p>
+<p>字符串可以包含<em>模板表达式</em>，即一些小段代码，会求值并把结果合并到字符串中。模板表达式以<code>$</code>符号开始，包含一个简单的名称:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">i</span> <span class="p">=</span> <span class="m">10</span>
 <span class="k">val</span> <span class="py">s</span> <span class="p">=</span> <span class="s">&quot;i = $i&quot;</span> <span class="c1">// evaluates to &quot;i = 10&quot;</span></code></pre>
 
-<p>or an arbitrary expression in curly braces:</p>
+<p>或者用花括号扩起来，内部可以是任意表达式:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">s</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span>
 <span class="k">val</span> <span class="py">str</span> <span class="p">=</span> <span class="s">&quot;$s.length is ${s.length}&quot;</span> <span class="c1">// evaluates to &quot;abc.length is 3&quot;</span></code></pre>
+
+<hr />
+
+<p>校对BY 空白</p>
 
 
     </article>

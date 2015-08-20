@@ -633,11 +633,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _opened"
-         data-id="Basics">
+         data-id="基础">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">Basics</div>
+            <div class="text">基础</div>
         </div>
 
         
@@ -654,7 +654,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/basic-types.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Basic Types</span></a>
+                   ><span class="marker"></span><span class="text">基本类型</span></a>
             
             </div>
         
@@ -671,7 +671,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Packages</div>
+                    <div class="text">包</div>
                 </div>
             
             </div>
@@ -689,7 +689,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/control-flow.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Control Flow</span></a>
+                   ><span class="marker"></span><span class="text">控制流</span></a>
             
             </div>
         
@@ -706,7 +706,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/returns.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Returns and Jumps</span></a>
+                   ><span class="marker"></span><span class="text">返回和跳转</span></a>
             
             </div>
         
@@ -1494,9 +1494,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="packages">Packages<a href="#packages" class="anchor"></a></h1>
+        <h1 id="section">包<a href="#section" class="anchor"></a></h1>
 
-<p>A source file may start with a package declaration:</p>
+<p>源文件通常以包声明开头:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">package</span> <span class="nn">foo.bar</span>
 
@@ -1506,37 +1506,35 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <span class="c1">// ...</span></code></pre>
 
-<p>All the contents (such as classes and functions) of the source file are contained by the package declared.
-So, in the example above, the full name of <code>baz()</code> is <code>foo.bar.baz</code>, and the full name of <code>Goo</code> is <code>foo.bar.Goo</code>.</p>
+<p>源文件所有的(无论是类或者函数)被包声明覆盖.
+所以<code>baz()</code>的全名是<code>foo.bar.baz</code>, <code>Goo</code>的全名是<code>foo.bar.Goo</code>.</p>
 
-<p>If the package is not specified, the contents of such a file belong to “default” package that has no name.</p>
+<p>如果没有明确声明文件属于”default”且包没有名称.</p>
 
-<h2 id="imports">Imports<a href="#imports" class="anchor"></a></h2>
+<h2 id="section-1">导入<a href="#section-1" class="anchor"></a></h2>
 
-<p>Apart from the default imports declared by the module, each file may contain its own import directives.
-Syntax for imports is described in the <a href="grammar.html#imports">grammar</a>.</p>
+<p>除了模块定义的默认导入之外，每个源文件也可以声明自己的导入。
+导入语句的语法定义描述在<a href="grammar.html#imports">grammar</a>.</p>
 
-<p>We can import either a single name, e.g.</p>
+<p>可以导入一个单独的名称，如.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">foo.Bar</span> <span class="c1">// Bar is now accessible without qualification</span></code></pre>
 
-<p>or all the accessible contents of a scope (package, class, object etc):</p>
+<p>也可以导入一个作用域下的所有内容（包、类、对象等）:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">foo.*</span> <span class="c1">// everything in &#39;foo&#39; becomes accessible</span></code></pre>
 
-<p>If there is a name clash, we can disambiguate by using <em class="keyword">as</em> keyword to locally rename the clashing entity:</p>
+<p>如果出现名称冲突，可以使用 <em class="keyword">as</em> <code>as</code>关键字来重命名导入的名称：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">foo.Bar</span> <span class="c1">// Bar is accessible</span>
 <span class="k">import</span> <span class="nn">bar.Bar</span> <span class="k">as</span> <span class="n">bBar</span> <span class="c1">// bBar stands for &#39;bar.Bar&#39;</span></code></pre>
 
-<h2 id="visibility-and-package-nesting">Visibility and Package Nesting<a href="#visibility-and-package-nesting" class="anchor"></a></h2>
+<h2 id="section-2">可见性和包嵌套<a href="#section-2" class="anchor"></a></h2>
 
-<p>If a top-level declaration is marked <em class="keyword">private</em>, it is private to the package it’s declared in (see <a href="visibility-modifiers.html">Visibility Modifiers</a>).
-Since packages really nest in Kotlin, i.e. package <code>foo.bar</code> is considered a member of <code>foo</code>, if something is <em class="keyword">private</em> in a package, 
-it is visible to all its subpackages.</p>
+<p>如果顶层声明是<em class="keyword">private</em>, 它将是私有的(查看 <a href="visibility-modifiers.html">Visibility Modifiers</a>).
+尽管Kotlin中可以包嵌套, 如 包<code>foo.bar</code> 是<code>foo</code>的一个成员,但是一些<em class="keyword">private</em> 仅仅可以被它的子包所见.</p>
 
-<p>Note that members of outer packages are <strong>not</strong> imported by default, i.e. in a file in package <code>foo.bar</code> we can’t access
-members of <code>foo</code> without importing them.</p>
+<p>注意外部包成员<strong>不是</strong>默认引入的,例如，在<code>foo.bar</code>包的文件中我们不能在不引入的情况下访问<code>foo</code>.</p>
 
     </article>
 </div>
