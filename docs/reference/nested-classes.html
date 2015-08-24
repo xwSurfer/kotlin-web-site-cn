@@ -717,11 +717,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _opened"
-         data-id="Classes and Objects">
+         data-id="类和对象">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">Classes and Objects</div>
+            <div class="text">类和对象</div>
         </div>
 
         
@@ -738,7 +738,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Classes and Inheritance</span></a>
+                   ><span class="marker"></span><span class="text">类和继承</span></a>
             
             </div>
         
@@ -789,7 +789,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/visibility-modifiers.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Visibility Modifiers</span></a>
+                   ><span class="marker"></span><span class="text">可见性修饰符</span></a>
             
             </div>
         
@@ -823,7 +823,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/data-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Data Classes</span></a>
+                   ><span class="marker"></span><span class="text">数据类</span></a>
             
             </div>
         
@@ -857,7 +857,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Nested Classes</div>
+                    <div class="text">嵌套类</div>
                 </div>
             
             </div>
@@ -1494,9 +1494,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="nested-classes">Nested Classes<a href="#nested-classes" class="anchor"></a></h1>
+        <h1 id="section">嵌套类<a href="#section" class="anchor"></a></h1>
 
-<p>Classes can be nested in other classes</p>
+<p>在类的内部可以嵌套其他的类</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
   <span class="k">private</span> <span class="k">val</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
@@ -1506,10 +1506,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="p">}</span>
 
 <span class="k">val</span> <span class="py">demo</span> <span class="p">=</span> <span class="n">Outer</span><span class="p">.</span><span class="n">Nested</span><span class="p">().</span><span class="n">foo</span><span class="p">()</span> <span class="c1">// == 2</span></code></pre>
+<p>## 内部类</p>
 
-<h2 id="inner-classes">Inner classes<a href="#inner-classes" class="anchor"></a></h2>
-
-<p>A class may be marked as <em class="keyword">inner</em> to be able to access members of outer class. Inner classes carry a reference to an object of an outer class:</p>
+<p>为了能被外部类访问一个类可以被标记为内部类（“inner” 关键词）。
+内部类会带有一个来自外部类的对象的引用：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
   <span class="k">private</span> <span class="k">val</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
@@ -1520,8 +1520,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <span class="k">val</span> <span class="py">demo</span> <span class="p">=</span> <span class="n">Outer</span><span class="p">().</span><span class="n">Inner</span><span class="p">().</span><span class="n">foo</span><span class="p">()</span> <span class="c1">// == 1</span></code></pre>
 
-<p>See <a href="this-expressions.html">Qualified <em class="keyword">this</em> expressions</a> to learn about disambiguation of <em class="keyword">this</em> in inner classes.</p>
+<p>参阅(this-expressions.html)中“this”关键词用法来学习在内部类中如何消除“this”关键词的歧义。</p>
 
+<hr />
+
+<p>翻译By 走一生</p>
 
     </article>
 </div>

@@ -717,11 +717,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _opened"
-         data-id="Classes and Objects">
+         data-id="类和对象">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">Classes and Objects</div>
+            <div class="text">类和对象</div>
         </div>
 
         
@@ -738,7 +738,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Classes and Inheritance</span></a>
+                   ><span class="marker"></span><span class="text">类和继承</span></a>
             
             </div>
         
@@ -789,7 +789,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Visibility Modifiers</div>
+                    <div class="text">可见性修饰符</div>
                 </div>
             
             </div>
@@ -824,7 +824,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/data-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Data Classes</span></a>
+                   ><span class="marker"></span><span class="text">数据类</span></a>
             
             </div>
         
@@ -858,7 +858,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/nested-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Nested Classes</span></a>
+                   ><span class="marker"></span><span class="text">嵌套类</span></a>
             
             </div>
         
@@ -1494,32 +1494,39 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="visibility-modifiers">Visibility Modifiers<a href="#visibility-modifiers" class="anchor"></a></h1>
+        <h1 id="section">可见性修饰符<a href="#section" class="anchor"></a></h1>
 
-<p>Classes, objects, interfaces, constructors, functions, properties and their setters can have <em>visibility modifiers</em>.
-(Getters always have the same visibility as the property.) 
-There are four visibility modifiers in Kotlin:</p>
+<p>类，对象，接口，构造，功能，特性及其制定者都可以用_visibility modifiers_来做修饰。(getter一直与属性有着相同的可见性.)</p>
+
+<p>以下有四个在Kotlin可见性修饰符:</p>
 
 <ul>
-  <li><code>private</code> — visible only in the declaring scope and its subscopes (inside the same module);</li>
-  <li><code>protected</code> — (applicable only to class/interface members) like <code>private</code>, but also visible in subclasses;</li>
-  <li><code>internal</code> — (used by default) visible everywhere within the same module (if the owner of declaring scope is visible);</li>
-  <li><code>public</code> — visible everywhere (if the owner of declaring scope is visible).</li>
+  <li>
+    <p><code>private</code> — 只有在声明的范围及其方法可见(在同一模块);</p>
+  </li>
+  <li>
+    <p><code>protected</code> — (只适用于类/接口成员)和”private”一样,但也在子类可见;</p>
+  </li>
+  <li>
+    <p><code>internal</code> — (在默认情况下使用)在同一个模块中随处可见(如果声明范围的所有者是可见的);</p>
+  </li>
+  <li>
+    <p><code>public</code> — 随处可见(如果声明范围的所有者是可见的).</p>
+  </li>
 </ul>
 
-<p><strong>NOTE</strong>: Functions <em>with expression bodies</em> and all properties declared <code>public</code> must always specify return types explicitly. 
-This is required so that we do not accidentally change a type that is a part of a public API by merely
-altering the implementation.</p>
+<p><strong>注意</strong>: 函数 <em>with expression bodies</em> 所有的属性声明<code>public</code>必须始终显式指定返回类型。
+这是必需的，这样我们就不会随意改变一个类型,仅通过改变实现公共API的一部分。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">val</span> <span class="py">foo</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">5</span>    <span class="c1">// explicit return type required</span>
 <span class="k">public</span> <span class="k">fun</span> <span class="nf">bar</span><span class="p">():</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">5</span>  <span class="c1">// explicit return type required</span>
 <span class="k">public</span> <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{}</span>        <span class="c1">// block body: return type is Unit and can&#39;t be changed accidentally, so not required</span></code></pre>
 
-<p>Below please find explanations of these for different type of declaring scopes.</p>
+<p>下面请找出这些解释不同类型的声明范围的。</p>
 
-<h2 id="packages">Packages<a href="#packages" class="anchor"></a></h2>
+<h2 id="section-1">包名<a href="#section-1" class="anchor"></a></h2>
 
-<p>Functions, properties and classes, objects and interfaces can be declared on the “top-level”, i.e. directly inside a package:</p>
+<p>函数，属性和类，对象和接口可以在顶层声明，即直接在包内：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// file name: example.kt</span>
 <span class="k">package</span> <span class="nn">foo</span>
@@ -1528,15 +1535,21 @@ altering the implementation.</p>
 <span class="k">class</span> <span class="nc">Bar</span> <span class="p">{}</span></code></pre>
 
 <ul>
-  <li>If you do not specify any visibility modifier, <code>internal</code> is used by default, which means that your declarations will be 
-visible everywhere within the same module;</li>
-  <li>If you mark a declaration <code>private</code>, it will only be visible inside this package and its subpackages, and only within 
-the same module;</li>
-  <li>If you mark it <code>public</code>, it is visible everywhere;</li>
-  <li><code>protected</code> is not available for top-level declarations.</li>
+  <li>
+    <p>如果你不指定任何可见性修饰符，那么默认情况下使用<code>internal</code>修饰，这意味着你们将声明在同一个模块中随处可见;</p>
+  </li>
+  <li>
+    <p>如果你声明<code>private</code>，只会是这个包及其子包内可见的，并且只在相同的模块;</p>
+  </li>
+  <li>
+    <p>如果你声明<code>public</code>,随处可见。</p>
+  </li>
+  <li>
+    <p><code>protected</code>不适用于顶层声明。</p>
+  </li>
 </ul>
 
-<p>Examples:</p>
+<p>例子:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// file name: example.kt</span>
 <span class="k">package</span> <span class="nn">foo</span>
@@ -1548,20 +1561,28 @@ the same module;</li>
     
 <span class="k">internal</span> <span class="k">val</span> <span class="py">baz</span> <span class="p">=</span> <span class="m">6</span>    <span class="c1">// visible inside the same module, the modifier can be omitted    </span></code></pre>
 
-<h2 id="classes-and-interfaces">Classes and Interfaces<a href="#classes-and-interfaces" class="anchor"></a></h2>
+<h2 id="section-2">类和接口<a href="#section-2" class="anchor"></a></h2>
 
-<p>When declared inside a class:</p>
+<p>当一个类中声明：</p>
 
 <ul>
-  <li><code>private</code> means visible inside this class only (including all its members);</li>
-  <li><code>protected</code> — same as <code>private</code> + visible in subclasses too;</li>
-  <li><code>internal</code> — any client <em>inside this module</em> who sees the declaring class sees its <code>internal</code> members;</li>
-  <li><code>public</code> — any client who sees the declaring class sees its <code>public</code> members.</li>
+  <li>
+    <p><code>private</code> 意味着这个类只在内部可见(包含所有成员).</p>
+  </li>
+  <li>
+    <p><code>protected</code>— 和<code>private</code>一样+在子类可见。</p>
+  </li>
+  <li>
+    <p><code>internal</code> — 任何客户端 <em>inside this module</em> 谁看到声明类，其<code>internal</code>成员在里面;</p>
+  </li>
+  <li>
+    <p><code>public</code> —  任何客户端看到声明类看到其<code>public</code>成员。</p>
+  </li>
 </ul>
 
-<p><em>NOTE</em> for Java users: outer class does not see private members of its inner classes in Kotlin.</p>
+<p><em>注意</em> 对于Java用户:外部类没有看到Kotlin内部类的私有成员。</p>
 
-<p>Examples:</p>
+<p>例子:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">open</span> <span class="k">class</span> <span class="nc">Outer</span> <span class="p">{</span>
     <span class="k">private</span> <span class="k">val</span> <span class="py">a</span> <span class="p">=</span> <span class="m">1</span>
@@ -1586,20 +1607,21 @@ the same module;</li>
     <span class="c1">// Outer.Nested is not visible, and Nested::e is not visible either </span>
 <span class="p">}</span></code></pre>
 
-<h3 id="constructors">Constructors<a href="#constructors" class="anchor"></a></h3>
+<h3 id="section-3">构造函数<a href="#section-3" class="anchor"></a></h3>
 
-<p>To specify a visibility of the primary constructor of a class, use the following syntax (note that you need to add an
-explicit <em class="keyword">constructor</em> keyword):</p>
+<p>指定一个类的可见性的主构造函数,使用以下语法(注意你需要添加一个显示构造函数{:.keyword} keyword)：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">C</span> <span class="k">private</span> <span class="n">constructor</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
 
-<p>Here the constructor is private. Unlike other declarations, by default, all constructors are <code>public</code>, which effectively
-amounts to them being visible everywhere where the class is visible (i.e. a constructor of an <code>internal</code> class is only 
-visible within the same module).</p>
+<p>这里的构造函数是私有的。不像其他的声明，在默认情况下，所有构造函数是<code>public</code>，这实际上等于他们是随处可见，其中的类是可见(即内部类的构造函数是唯一可见在同一模块内).</p>
 
-<h3 id="local-declarations">Local declarations<a href="#local-declarations" class="anchor"></a></h3>
+<p>###局部声明</p>
 
-<p>Local variables, functions and classes can not have visibility modifiers.</p>
+<p>局部变量，函数和类不能有可见性修饰符。</p>
+
+<hr />
+
+<p>翻译By Jacky Xu</p>
 
     </article>
 </div>
