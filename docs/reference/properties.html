@@ -1494,12 +1494,12 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="properties-and-fields">Properties and Fields<a href="#properties-and-fields" class="anchor"></a></h1>
+        <h1 id="section">属性和字段<a href="#section" class="anchor"></a></h1>
 
-<h2 id="declaring-properties">Declaring Properties<a href="#declaring-properties" class="anchor"></a></h2>
+<h2 id="section-1">声明属性<a href="#section-1" class="anchor"></a></h2>
 
-<p>Classes in Kotlin can have properties.
-These can be declared as mutable, using the <em class="keyword">var</em> keyword or read-only using the <em class="keyword">val</em> keyword.</p>
+<p>Kotlin的属性.
+这些声明是可变的,用关键字<em class="keyword">var</em>或者使用只读关键字<em class="keyword">val</em>.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">class</span> <span class="nc">Address</span> <span class="p">{</span> 
   <span class="k">public</span> <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="p">...</span>
@@ -1509,7 +1509,7 @@ These can be declared as mutable, using the <em class="keyword">var</em> keyword
   <span class="k">public</span> <span class="k">var</span> <span class="py">zip</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="p">...</span>
 <span class="p">}</span></code></pre>
 
-<p>To use a property, we simply refer to it by name, as if it were a field in Java:</p>
+<p>要使用一个属性，只需要使用名称引用即可，就相当于Java中的公共字段：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">copyAddress</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="n">Address</span><span class="p">):</span> <span class="n">Address</span> <span class="p">{</span>
   <span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">Address</span><span class="p">()</span> <span class="c1">// there&#39;s no &#39;new&#39; keyword in Kotlin</span>
@@ -1519,48 +1519,48 @@ These can be declared as mutable, using the <em class="keyword">var</em> keyword
   <span class="k">return</span> <span class="n">result</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="getters-and-setters">Getters and Setters<a href="#getters-and-setters" class="anchor"></a></h2>
+<h2 id="getterssetters">getters和setters<a href="#getterssetters" class="anchor"></a></h2>
 
-<p>The full syntax for declaring a property is</p>
+<p>声明一个属性的完整语法</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="err">&lt;</span><span class="py">propertyName</span><span class="p">&gt;:</span> <span class="p">&lt;</span><span class="n">PropertyType</span><span class="p">&gt;</span> <span class="p">[=</span> <span class="p">&lt;</span><span class="n">property_initializer</span><span class="p">&gt;]</span>
   <span class="p">&lt;</span><span class="n">getter</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="n">setter</span><span class="p">&gt;</span></code></pre>
 
-<p>The initializer, getter and setter are optional. Property type is optional if it can be inferred from the initializer or from the base class member being overridden.</p>
+<p>上面的定义中，初始器(initializer)、getter和setter都是可选的。
+属性类型(PropertyType)如果可以从初始器或者父类中推导出来，也可以省略。</p>
 
-<p>Examples:</p>
+<p>例如:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">allByDefault</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="c1">// error: explicit initializer required, default getter and setter implied</span>
 <span class="k">var</span> <span class="py">initialized</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// has type Int, default getter and setter</span></code></pre>
 
-<p>Note that types are not inferred for properties exposed as parts of the public API, i.e. public and protected,
-because changing the initializer may cause an unintentional change in the public API then. For example:</p>
+<p>注意公有的API(即<strong>public</strong>和<strong>protected</strong>)的属性，类型是不做推导的。
+这么设计是为了防止改变初始化器时不小心改变了公有API。比如：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">val</span> <span class="py">example</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// error: a public property must have a type specified explicitly</span></code></pre>
 
-<p>The full syntax of a read-only property declaration differs from a mutable one in two ways: it starts with val instead of var and does not allow a setter:</p>
+<p>一个只读属性的语法和一个可变的语法有两方面的不同：1·只读属性的用val开始代替var 2·只读属性不许setter</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">simple</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="c1">// has type Int, default getter, must be initialized in constructor</span>
 <span class="k">val</span> <span class="py">inferredType</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// has type Int and a default getter</span></code></pre>
 
-<p>We can write custom accessors, very much like ordinary functions, right inside a property declaration. Here’s an example of a custom getter:</p>
+<p>我们可以编写自定义的访问器,非常像普通函数,对内部属性声明。这里有一个定义的getter的例子:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">isEmpty</span><span class="p">:</span> <span class="n">Boolean</span>
   <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">size</span> <span class="p">==</span> <span class="m">0</span></code></pre>
 
-<p>A custom setter looks like this:</p>
+<p>一个定义setter的例子:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">stringRepresentation</span><span class="p">:</span> <span class="n">String</span>
   <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span>
   <span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">setDataFromString</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="c1">// parses the string and assigns values to other properties</span>
   <span class="p">}</span></code></pre>
+<p>按照惯例,setter参数的名称是“value”,但是如果你喜欢你可以选择一个不同的名称。</p>
 
-<p>By convention, the name of the setter parameter is <code>value</code>, but you can choose a different name if you prefer.</p>
-
-<p>If you need to change the visibility of an accessor or to annotate it, but don’t need to change the default implementation,
-you can define the accessor without defining its body:</p>
+<p>如果你需要改变一个访问器或注释的可见性,但是不需要改变默认的实现,
+您可以定义访问器而不定义它的实例:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">setterVisibility</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span> <span class="c1">// Initializer required, not a nullable type</span>
   <span class="k">private</span> <span class="k">set</span> <span class="c1">// the setter is private and has the default implementation</span>
@@ -1568,10 +1568,10 @@ you can define the accessor without defining its body:</p>
 <span class="k">var</span> <span class="py">setterWithAnnotation</span><span class="p">:</span> <span class="n">Any</span><span class="p">?</span>
   <span class="n">@Inject</span> <span class="k">set</span> <span class="c1">// annotate the setter with Inject</span></code></pre>
 
-<h3 id="backing-fields">Backing Fields<a href="#backing-fields" class="anchor"></a></h3>
+<h3 id="section-2">实际字段<a href="#section-2" class="anchor"></a></h3>
 
-<p>Classes in Kotlin cannot have fields. However, sometimes it is necessary to have a backing field when using custom accessors. For these purposes, Kotlin provides
-an automatic backing field which can be accessed using the <em>$</em> symbol followed by the property name.</p>
+<p>在Kotlin不能有字段。然而,有时有必要有使用一个字段在使用定制的访问器的时候。对于这些目的,Kotlin提供
+自动支持,在属性名后面使用* $ *符号。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">counter</span> <span class="p">=</span> <span class="m">0</span> <span class="c1">// the initializer value is written directly to the backing field</span>
   <span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
@@ -1579,18 +1579,18 @@ an automatic backing field which can be accessed using the <em>$</em> symbol fol
       <span class="err">$</span><span class="n">counter</span> <span class="p">=</span> <span class="n">value</span>
   <span class="p">}</span></code></pre>
 
-<p>The <code>$counter</code> field can be accessed only from inside the class where the counter property is defined.</p>
+<p>上面的<code>$counter</code>字段就可以在counter属性的访问器实现里读和写。并且只能在构造函数里赋值。在其他地方，都不能使用或访问<code>$counter</code></p>
 
-<p>The compiler looks at the accessors’ bodies, and if they use the backing field (or the accessor implementation is left by default), a backing field is generated, otherwise it is not.</p>
+<p>编译器会查看访问器的内部， 如果他们使用了实际字段（或者访问器使用默认实现），那么将会生成一个实际字段，否则不会生成。</p>
 
-<p>For example, in the following case there will be no backing field:</p>
+<p>例如，下面的情况下， 就没有实际字段：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">isEmpty</span><span class="p">:</span> <span class="n">Boolean</span>
   <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">size</span> <span class="p">==</span> <span class="m">0</span></code></pre>
 
-<h3 id="backing-properties">Backing Properties<a href="#backing-properties" class="anchor"></a></h3>
+<h3 id="section-3">支持属性<a href="#section-3" class="anchor"></a></h3>
 
-<p>If you want to do something that does not fit into this “implicit backing field” scheme, you can always fall back to having a <em>backing property</em>:</p>
+<p>如果你的需求不符合这套“隐式的实际字段“方案，那么总可以使用“后背支持属性”(backing property)的方法：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">private</span> <span class="k">var</span> <span class="py">_table</span><span class="p">:</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Int</span><span class="p">&gt;?</span> <span class="p">=</span> <span class="k">null</span>
 <span class="k">public</span> <span class="k">val</span> <span class="py">table</span><span class="p">:</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Int</span><span class="p">&gt;</span>
@@ -1599,22 +1599,24 @@ an automatic backing field which can be accessed using the <em>$</em> symbol fol
       <span class="n">_table</span> <span class="p">=</span> <span class="n">HashMap</span><span class="p">()</span> <span class="c1">// Type parameters are inferred</span>
     <span class="k">return</span> <span class="n">_table</span> <span class="o">?:</span> <span class="k">throw</span> <span class="n">AssertionError</span><span class="p">(</span><span class="s">&quot;Set to null by another thread&quot;</span><span class="p">)</span>
   <span class="p">}</span></code></pre>
+<p>从各种角度看，这和在Java中定义Bean属性的方式一样。因为访问私有的属性的getter和setter函数，会被编译器优化成直接反问其实际字段。</p>
 
-<p>In all respects, this is just the same as in Java since access to private properties with default getters and setters is optimized so that no function call overhead is introduced.</p>
+<p>##重写属性</p>
 
-<h2 id="overriding-properties">Overriding Properties<a href="#overriding-properties" class="anchor"></a></h2>
+<p>查看 <a href="classes.html#overriding-members">Overriding Members</a></p>
 
-<p>See <a href="classes.html#overriding-members">Overriding Members</a></p>
+<p>##委托属性</p>
 
-<h2 id="delegated-properties">Delegated Properties<a href="#delegated-properties" class="anchor"></a></h2>
+<p>从支持域最常见类型的属性只读(写入)。
+另一方面,使用自定义getter和setter属性可以实现任何方法行为。
+介于两者之间,有一些常见的模式属性是如何工作的。一个例子:lazy values,从映射读取关键字,访问一个数据库,访问通知侦听器,等等。</p>
 
-<p>The most common kind of properties simply reads from (and maybe writes to) a backing field. 
-On the other hand, with custom getters and setters one can implement any behaviour of a property.
-Somewhere in between, there are certain common patterns of how a property may work. A few examples: lazy values,
-reading from a map by a given key, accessing a database, notifying listener on access, etc.</p>
+<p>像常见的行为可以从函数库调用像delegated properties。
+更多信息在<a href="delegated-properties.html">这里</a>。</p>
 
-<p>Such common behaviours can be implemented as libraries using <em>delegated properties</em>.
-For more information, look <a href="delegated-properties.html">here</a>.</p>
+<hr />
+
+<p>翻译BY 空白</p>
 
 
     </article>

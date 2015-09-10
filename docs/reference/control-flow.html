@@ -1531,9 +1531,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>See the <a href="grammar.html#if">grammar for <em class="keyword">if</em></a>.</p>
 
-<h2 id="when-expression">When Expression<a href="#when-expression" class="anchor"></a></h2>
+<h2 id="when">When表达式<a href="#when" class="anchor"></a></h2>
 
-<p><em class="keyword">when</em> replaces the switch operator of C-like languages. In the simplest form it looks like this</p>
+<p><em class="keyword">when</em> 替代了c语言风格的switch操作符. 最简单的形式如下：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="m">1</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x == 1&quot;</span><span class="p">)</span>
@@ -1543,31 +1543,26 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p><em class="keyword">when</em> matches its argument against all branches consequently until some branch condition is satisfied.
-<em class="keyword">when</em> can be used either as an expression or as a statement. If it is used as an expression, the value
-of the satisfied branch becomes the value of the overall expression. If it is used as a statement, the values of
-individual branches are ignored. (Just like with <em class="keyword">if</em>, each branch can be a block, and its value
-is the value of the last expression in the block.)</p>
+<p><em class="keyword">when</em> 将它的参数和所有的分支条件进行比较，直到某个分支满足条件。
+<em class="keyword">when</em>既可以被当做表达式使用也可以被当做语句使用。 如果它被当做表达式, 符合条件的分支的值就是整个表达式的值，如果当做语句使用，则忽略单个分支的值。(就像<em class="keyword">if</em>,每一个分支可以是一个代码块,它的值是最后的表达式的值.)</p>
 
-<p>The <em class="keyword">else</em> branch is evaluated if none of the other branch conditions are satisfied.
-If <em class="keyword">when</em> is used as an expression, the <em class="keyword">else</em> branch is mandatory,
-unless the compiler can prove that all possible cases are covered with branch conditions.</p>
+<p><em class="keyword">else</em> 分支将被执行如果其他分支都不满足条件。
+如果 <em class="keyword">when</em> 作为一个表达式被使用,<em class="keyword">else</em> 分支是必须的，除非编译器能够检测出所有的可能情况都已经覆盖了。</p>
 
-<p>If many cases should be handled in the same way, the branch conditions may be combined with a comma:</p>
+<p>如果很多分支需要用相同的方式处理，则可以把多个分支条件放在一起, 用<code>,</code>逗号分隔:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="m">0</span><span class="p">,</span> <span class="m">1</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x == 0 or x == 1&quot;</span><span class="p">)</span>
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;otherwise&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
-
-<p>We can use arbitrary expressions (not only constants) as branch conditions</p>
+<p>我们可以在判断分支条件的地方使用任何表达式，而不仅仅是常量(和switch不同)：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">parseInt</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;s encodes x&quot;</span><span class="p">)</span>
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;s does not encode x&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>We can also check a value for being <em class="keyword">in</em> or <em class="keyword">!in</em> a <a href="ranges.html">range</a> or a collection:</p>
+<p>我们也可以检查一个值 <em class="keyword">in</em> 或者 <em class="keyword">!in</em> 一个 <a href="ranges.html">范围</a> 或者集合:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">10</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x is in the range&quot;</span><span class="p">)</span>
@@ -1576,17 +1571,15 @@ unless the compiler can prove that all possible cases are covered with branch co
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;none of the above&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>Another possibility is to check that a value <em class="keyword">is</em> or <em class="keyword">!is</em> of a particular type. Note that,
-due to <a href="typecasts.html#smart-casts">smart casts</a>, you can access the methods and properties of the type without
-any extra checks.</p>
+<p>另一种用法是可以检查一个值<em class="keyword">is</em>或者<em class="keyword">!is</em>某种特定类型.注意,由于<a href="typecasts.html#smart-casts">smart casts</a>, 你可以访问该类型的方法和属性而不用额外的检查。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">hasPrefix</span> <span class="p">=</span> <span class="k">when</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">is</span> <span class="n">String</span> <span class="p">-&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;prefix&quot;</span><span class="p">)</span>
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="k">false</span>
 <span class="p">}</span></code></pre>
 
-<p><em class="keyword">when</em> can also be used as a replacement for an <em class="keyword">if</em>-<em class="keyword">else</em> <em class="keyword">if</em> chain.
-If no argument is supplied, the branch conditions are simply boolean expressions, and a branch is executed when its condition is true:</p>
+<p><em class="keyword">when</em> 也可以用来替代<em class="keyword">if</em>-<em class="keyword">else</em> <em class="keyword">if</em>链.
+如果不提供参数，所有的分支条件都是简单的布尔值，而当一个分支的条件返回true时，则调用该分支：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">{</span>
   <span class="n">x</span><span class="p">.</span><span class="n">isOdd</span><span class="p">()</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x is odd&quot;</span><span class="p">)</span>
@@ -1594,44 +1587,43 @@ If no argument is supplied, the branch conditions are simply boolean expressions
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x is funny&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>See the <a href="grammar.html#when">grammar for <em class="keyword">when</em></a>.</p>
+<p>查看 <a href="grammar.html#when">grammar for <em class="keyword">when</em></a>.</p>
 
-<h2 id="for-loops">For Loops<a href="#for-loops" class="anchor"></a></h2>
+<h2 id="for">For循环<a href="#for" class="anchor"></a></h2>
 
-<p><em class="keyword">for</em> loop iterates through anything that provides an iterator. The syntax is as follows:</p>
+<p><em class="keyword">for</em> 循环可以对任何提供迭代器(iterator)的集合进行遍历，语法如下:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">collection</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span></code></pre>
 
-<p>The body can be a block.</p>
+<p>循环体可以是一个代码块.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Int</span> <span class="k">in</span> <span class="n">ints</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>As mentioned before, <em class="keyword">for</em> iterates through anything that provides an iterator, i.e.</p>
+<p>像上面提到的一样, <em class="keyword">for</em>可以循环遍历任何提供了迭代器的集合。例如：</p>
 
 <ul>
-  <li>has an instance- or extension-function <code>iterator()</code>, whose return type
+  <li>有一个成员函数或者扩展函数<code>iterator()</code>,它返回一个类型
     <ul>
-      <li>has an instance- or extension-function <code>next()</code>, and</li>
-      <li>has an instance- or extension-function <code>hasNext()</code> that returns <code>Boolean</code>.</li>
+      <li>有一个成员函数或者扩展函数<code>next()</code>,并且</li>
+      <li>有一个成员函数或者扩展函数<code>hasNext()</code>返回 <code>Boolean</code>.</li>
     </ul>
   </li>
 </ul>
 
-<p>If you want to iterate through an array or a list with an index, you can do it this way:</p>
+<p>如果你想要遍历一个数组或者一个list，你可以这么做:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">array</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></code></pre>
-
-<p>Note that this “iteration through a range” is compiled down to optimal implementation with no extra objects created.</p>
+<p>注意这种“遍历一个范围”的函数会被编译器优化，不会产生额外的对象。</p>
 
 <p>See the <a href="grammar.html#for">grammar for <em class="keyword">for</em></a>.</p>
 
-<h2 id="while-loops">While Loops<a href="#while-loops" class="anchor"></a></h2>
+<h2 id="while">While循环<a href="#while" class="anchor"></a></h2>
 
-<p><em class="keyword">while</em> and <em class="keyword">do</em>..<em class="keyword">while</em> work as usual</p>
+<p><em class="keyword">while</em> 和 <em class="keyword">do</em>..<em class="keyword">while</em> 的使用方法和其他语言一致</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">x</span><span class="p">--</span>
@@ -1641,11 +1633,11 @@ If no argument is supplied, the branch conditions are simply boolean expressions
   <span class="k">val</span> <span class="py">y</span> <span class="p">=</span> <span class="n">retrieveData</span><span class="p">()</span>
 <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="c1">// y is visible here!</span></code></pre>
 
-<p>See the <a href="grammar.html#while">grammar for <em class="keyword">while</em></a>.</p>
+<p>查看 <a href="grammar.html#while">grammar for <em class="keyword">while</em></a>.</p>
 
-<h2 id="break-and-continue-in-loops">Break and continue in loops<a href="#break-and-continue-in-loops" class="anchor"></a></h2>
+<h2 id="breakcontinue">Break和continue在循环中的使用<a href="#breakcontinue" class="anchor"></a></h2>
 
-<p>Kotlin supports traditional <em class="keyword">break</em> and <em class="keyword">continue</em> operators in loops. See <a href="returns.html">Returns and jumps</a>.</p>
+<p>在循环中Kotlin支持传统的<em class="keyword">break</em>和<em class="keyword">continue</em>操作符.查看<a href="returns.html">Returns and jumps</a>.</p>
 
 
     </article>
