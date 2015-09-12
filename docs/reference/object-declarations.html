@@ -755,7 +755,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/properties.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Properties and Fields</span></a>
+                   ><span class="marker"></span><span class="text">属性和字段</span></a>
             
             </div>
         
@@ -874,7 +874,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/enum-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Enum Classes</span></a>
+                   ><span class="marker"></span><span class="text">枚举类</span></a>
             
             </div>
         
@@ -1494,15 +1494,21 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="object-expressions-and-declarations">Object Expressions and Declarations<a href="#object-expressions-and-declarations" class="anchor"></a></h1>
+        <h1 id="object-expressions-and-declarations-">Object Expressions and Declarations 对象表达和对象声明<a href="#object-expressions-and-declarations-" class="anchor"></a></h1>
 
-<p>Sometimes we need to create an object of a slight modification of some class, without explicitly declaring a new subclass for it.
-Java handles this case with <em>anonymous inner classes</em>.
+<p>Sometimes we need to create an object of a slight modification of some class, without explicitly declaring a new subclass for it.</p>
+
+<p>有些时候我们需要创造一个对象对某些类做稍微改变，而不用为了它明确定义一个新的子类。</p>
+
+<p>Java handles this case with <em>anonymous inner classes</em>.
 Kotlin slightly generalizes this concept with <em>object expressions</em> and <em>object declarations</em>.</p>
 
-<h2 id="object-expressions">Object expressions<a href="#object-expressions" class="anchor"></a></h2>
+<p>Java把这处理为<em>匿名内部类</em>。在Kotlin稍微归纳为<em>对象表达</em>和<em>对象声明</em>。
+## Object expressions 对象表达</p>
 
 <p>To create an object of an anonymous class that inherits from some type (or types), we write:</p>
+
+<p>创建一个继承自一些类型的内部类的对象，我们可以这么写：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">window</span><span class="p">.</span><span class="n">addMouseListener</span><span class="p">(</span><span class="k">object</span> <span class="err">: </span><span class="nc">MouseAdapter</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">mouseClicked</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">MouseEvent</span><span class="p">)</span> <span class="p">{</span>
@@ -1517,6 +1523,8 @@ Kotlin slightly generalizes this concept with <em>object expressions</em> and <e
 <p>If a supertype has a constructor, appropriate constructor parameters must be passed to it.
 Many supertypes may be specified as a comma-separated list after the colon:</p>
 
+<p>如果父类型有一个构造函数，合适的构造函数参数必须被传递下去。多父类型需要在冒号后被逗号隔开提出：</p>
+
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">open</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">public</span> <span class="k">open</span> <span class="k">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">x</span>
 <span class="p">}</span>
@@ -1529,14 +1537,21 @@ Many supertypes may be specified as a comma-separated list after the colon:</p>
 
 <p>If, by any chance, we need “just an object”, with no nontrivial supertypes, we can simply say:</p>
 
+<p>或许如果我们需要“仅仅是一个对象”,它没有非平凡的父类，我们可以简单这么写：</p>
+
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">adHoc</span> <span class="p">=</span> <span class="k">object</span> <span class="err">{</span>
   <span class="k">var</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
   <span class="k">var</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
 <span class="p">}</span>
 <span class="n">print</span><span class="p">(</span><span class="n">adHoc</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="n">adHoc</span><span class="p">.</span><span class="n">y</span><span class="p">)</span></code></pre>
 
-<p>Just like Java’s anonymous inner classes, code in object expressions can access variables from the enclosing scope.
-(Unlike Java, this is not restricted to final variables.)</p>
+<p>Just like Java’s anonymous inner classes, code in object expressions can access variables from the enclosing scope.</p>
+
+<p>就像Jave的匿名内部类，在对象表达里代码可以使变量与作用域联系起来</p>
+
+<p>(Unlike Java, this is not restricted to final variables.)</p>
+
+<p>（与Java不同的是，这不是受final变量限制的。）</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">countClicks</span><span class="p">(</span><span class="n">window</span><span class="p">:</span> <span class="n">JComponent</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">clickCount</span> <span class="p">=</span> <span class="m">0</span>
@@ -1554,9 +1569,11 @@ Many supertypes may be specified as a comma-separated list after the colon:</p>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="object-declarations">Object declarations<a href="#object-declarations" class="anchor"></a></h2>
+<h2 id="object-declarations-">Object declarations 对象声明<a href="#object-declarations-" class="anchor"></a></h2>
 
 <p><a href="http://en.wikipedia.org/wiki/Singleton_pattern">Singleton</a> is a very useful pattern, and Kotlin (after Scala) makes it easy to declare singletons:</p>
+
+<p>[单例模式]是一种非常有用的模式，而在Kotilin（在Scala之后）中使得单例模式很容易声明。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">DataProviderManager</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">registerDataProvider</span><span class="p">(</span><span class="n">provider</span><span class="p">:</span> <span class="n">DataProvider</span><span class="p">)</span> <span class="p">{</span>
@@ -1570,6 +1587,8 @@ Many supertypes may be specified as a comma-separated list after the colon:</p>
 <p>This is called an <em>object declaration</em>. If there’s a name following the <em class="keyword">object</em> keyword, we are not talking about an <em>expression</em> anymore.
 We cannot assign such a thing to a variable, but we can refer to it by its name. Such objects can have supertypes:</p>
 
+<p>这被称为<em>对象声明</em>。如果有一个<em class="keyword">object</em>关键字在名字前面，这不能再被称为_表达_。我们不能把它归于变量，但我们可以通过它的名字来指定它。这些对象可以有父类型：</p>
+
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">DefaultListener</span> <span class="p">:</span> <span class="n">MouseAdapter</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">mouseClicked</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">MouseEvent</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -1582,9 +1601,13 @@ We cannot assign such a thing to a variable, but we can refer to it by its name.
 
 <p><strong>NOTE</strong>: object declarations can’t be local (i.e. be nested in directly inside a function), but they can be nested into other object declarations or non-inner classes.</p>
 
-<h3 id="companion-objects">Companion Objects<a href="#companion-objects" class="anchor"></a></h3>
+<p><strong>NOTE</strong>: 对象声明不能是本地的（例如：直接嵌套在函数里面），但它们可以被嵌套进另外的对象声明或者非内部类里。</p>
+
+<h3 id="companion-objects-">Companion Objects 伴生对象<a href="#companion-objects-" class="anchor"></a></h3>
 
 <p>An object declaration inside a class can be marked with the <em class="keyword">companion</em> keyword:</p>
+
+<p>一个对象声明在一个类里可以标志上<em class="keyword">companion</em>这个关键字：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
   <span class="n">companion</span> <span class="k">object</span> <span class="nc">Factory</span> <span class="p">{</span>
@@ -1594,9 +1617,13 @@ We cannot assign such a thing to a variable, but we can refer to it by its name.
 
 <p>Members of the companion object can be called by using simply the class name as the qualifier:</p>
 
+<p>伴生对象的成员可以被称为使用简单的类名称作为限定符：</p>
+
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">instance</span> <span class="p">=</span> <span class="n">MyClass</span><span class="p">.</span><span class="n">create</span><span class="p">()</span></code></pre>
 
 <p>The name of the companion object can be omitted, in which case the name <code>Companion</code> will be used:</p>
+
+<p>伴生对象的名字可以被省略，这种情况下<code>Companion</code>会被使用到：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
   <span class="n">companion</span> <span class="k">object</span> <span class="err">{</span>
@@ -1607,6 +1634,8 @@ We cannot assign such a thing to a variable, but we can refer to it by its name.
 
 <p>Note that, even though the members of companion objects look like static members in other languages, at runtime those
 are still instance members of real objects, and can, for example, implement interfaces:</p>
+
+<p>记住，虽然伴生对象的成员在其他语言中看起来像静态成员，但在日常使用中它们仍然是实体的实例成员，而且比如说能继承接口：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Factory</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">create</span><span class="p">():</span> <span class="n">T</span>
@@ -1623,13 +1652,19 @@ are still instance members of real objects, and can, for example, implement inte
 the <code>@platformStatic</code> annotation. See the <a href="java-interop.html#static-methods-and-fields">Java interoperability</a> section
 for more details.</p>
 
-<h3 id="semantical-difference-between-object-expressions-and-declarations">Semantical difference between object expressions and declarations<a href="#semantical-difference-between-object-expressions-and-declarations" class="anchor"></a></h3>
+<p>然而，在JVM中你可以有些产生自真正的静态方法和域的伴生对象的成员，如果你使用<code>@platformStatic</code>注释。可以从<a href="java-interop.html#static-methods-and-fields">Java interoperability</a> 这里查看详情。</p>
+
+<h3 id="semantical-difference-between-object-expressions-and-declarations-">Semantical difference between object expressions and declarations 对象表达与对象声明语义上的不同<a href="#semantical-difference-between-object-expressions-and-declarations-" class="anchor"></a></h3>
 
 <p>There is one important semantical difference between object expressions and object declarations:</p>
 
+<p>这是一个重要的的不同在对象表达与对象声明语义上</p>
+
 <ul>
   <li>object declarations are initialized <strong>lazily</strong>, when accessed for the first time</li>
+  <li>对象声明被<strong>懒散地</strong>初始化，当被第一次访问的时候</li>
   <li>object expressions are executed (and initialized) <strong>immediately</strong>, where they are used</li>
+  <li>对对象表达被<strong>立即</strong>执行（被初始化），当它被用到的时候</li>
 </ul>
 
 

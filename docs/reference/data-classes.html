@@ -755,7 +755,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/properties.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Properties and Fields</span></a>
+                   ><span class="marker"></span><span class="text">属性和字段</span></a>
             
             </div>
         
@@ -875,7 +875,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/enum-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Enum Classes</span></a>
+                   ><span class="marker"></span><span class="text">枚举类</span></a>
             
             </div>
         
@@ -1496,75 +1496,55 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">数据类<a href="#section" class="anchor"></a></h1>
 
-<p>We frequently create classes that do nothing but hold data. In such classes some functionality is often mechanically
-derivable from the data they hold. In Kotlin a class can be annotated as <code>data</code>:</p>
-
 <p>我们经常创建一些只是处理数据的类。在这些类里的功能经常是衍生自他们所持有的数据。在Kotlin中，这样的类可以被称为<code>data</code>：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span></code></pre>
 
-<p>This is called a <em>data class</em>. The compiler automatically derives the following members from all properties <em>declared in 
-the primary constructor</em>:</p>
-
 <p>这被叫做一个 <em>数据类</em>。编译器自动从在主构造函数定义的全部特性中得到以下成员：</p>
 
 <ul>
-  <li><code>equals()</code>/<code>hashCode()</code> pair,</li>
-  <li><code>toString()</code> of the form <code>"User(name=John, age=42)"</code>,</li>
-  <li><a href="multi-declarations.html"><code>componentN()</code> functions</a> corresponding to the properties in their order or declaration,</li>
-  <li><code>copy()</code> function (see below).</li>
+  <li><code>equals()</code>/<code>hashCode()</code>,</li>
+  <li><code>toString()</code> 格式是 <code>"User(name=John, age=42)"</code>,</li>
+  <li><a href="multi-declarations.html"><code>componentN()</code> functions</a> 对应按声明顺序出现的所有属性,</li>
+  <li><code>copy()</code> 方法 .</li>
 </ul>
 
-<p>If any of these functions is explicitly defined in the class body or inherited from the base types, it will not be generated.</p>
-
-<p>如果有任一一个函数被明确地定义在类里或者被继承自基本类型，这将不会被生成。</p>
-
-<p><em>NOTE</em> that if a constructor parameter does not have a <code>val</code> or <code>var</code> in front of it, it will not be included in computation
-of all these functions; nor will be properties declared in the class body or inherited from the superclass.</p>
+<p>如果有某个函数被明确地定义在类里或者被继承，编译器就不会生成这个函数。</p>
 
 <p><em>NOTE</em>如果一个构造参数没有<code>val</code>或者<code>var</code>在前面，它将不会被包括进这些成员里;也不会在类里声明成属性或者继承自父类</p>
 
 <blockquote>
-  <p>On the JVM, if the generated class needs to have a parameterless constructor, default values for all properties have to be specified
-(see <a href="classes.html#constructors">Constructors</a>).</p>
-
-  <p>在JVM中，如果生成的类需要含有一个无参的构造函数，则默认所有的属性已经被初始化了。</p>
+  <p>在JVM中，如果生成的类需要含有一个无参的构造函数，则所有的属性必须有默认值。</p>
 
   <pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">)</span></code></pre>
 </blockquote>
 
-<h2 id="copying">Copying复制<a href="#copying" class="anchor"></a></h2>
+<h2 id="section-1">复制<a href="#section-1" class="anchor"></a></h2>
 
-<p>It’s often the case that we need to copy an object altering <em>some</em> of its properties, but keeping the rest unchanged. 
-This is what <code>copy()</code> function is generated for. For the <code>User</code> class above, its implementation would be as follows:</p>
-
-<p>在很多情况下，我们需要复制一个可以改变它里面_一些_属性但又保持剩下的属性不变的对象。这就是<code>copy()</code>这个方法的来源。对于上文的<code>User</code>类，应该是这么实现这个方法的</p>
+<p>在很多情况下，我们我们需要对一些属性做修改而其他的不变。这就是<code>copy()</code>这个方法的来源。对于上文的<code>User</code>类，应该是这么实现这个方法的</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">copy</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">age</span><span class="p">)</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span></code></pre>
-
-<p>This allows us to write</p>
 
 <p>也可以这么写</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">jack</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;Jack&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="p">=</span> <span class="m">1</span><span class="p">)</span>
 <span class="k">val</span> <span class="py">olderJack</span> <span class="p">=</span> <span class="n">jack</span><span class="p">.</span><span class="n">copy</span><span class="p">(</span><span class="n">age</span> <span class="p">=</span> <span class="m">2</span><span class="p">)</span></code></pre>
 
-<h2 id="data-classes-and-multi-declarations">Data Classes and Multi-Declarations数据类和多声明<a href="#data-classes-and-multi-declarations" class="anchor"></a></h2>
+<h2 id="section-2">数据类和多重声明<a href="#section-2" class="anchor"></a></h2>
 
-<p><em>Component functions</em> generated for data classes enable their use in <a href="multi-declarations.html">multi-declarations</a>:</p>
-
-<p>_成员方法_用于使数据类可以[多声明]：</p>
+<p>_成员方法_用于使数据类可以<a href="multi-declarations.html">多声明</a>：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">jane</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="s">&quot;Jane&quot;</span><span class="p">,</span> <span class="m">35</span><span class="p">)</span> 
 <span class="k">val</span> <span class="err">(</span><span class="py">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="p">=</span> <span class="n">jane</span>
 <span class="n">println</span><span class="p">(</span><span class="s">&quot;$name, $age years of age&quot;</span><span class="p">)</span> <span class="c1">// prints &quot;Jane, 35 years of age&quot;</span></code></pre>
 
-<h2 id="standard-data-classes">Standard Data Classes标准数据类<a href="#standard-data-classes" class="anchor"></a></h2>
+<h2 id="section-3">标准数据类<a href="#section-3" class="anchor"></a></h2>
 
-<p>The standard library provides <code>Pair</code> and <code>Triple</code>. In most cases, though, named data classes are a better design choice, 
-because they make the code more readable by providing meaningful names for properties.</p>
+<p>在标准库提供了<code>Pair</code>和<code>Triple</code>。在很多情况下，即使命名数据类是一个更好的设计选择，因为这能让代码可读性更强。</p>
 
-<p>在标准库提供了<code>Pair</code>和<code>Triple</code>。在很多情况下，即使命名数据类是一个更好的设计选择，因为这能让代码可读性更强</p>
+<hr />
+
+<p>翻译By Wahchi</p>
 
     </article>
 </div>

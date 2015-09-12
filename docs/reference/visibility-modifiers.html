@@ -755,7 +755,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/properties.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Properties and Fields</span></a>
+                   ><span class="marker"></span><span class="text">属性和字段</span></a>
             
             </div>
         
@@ -875,7 +875,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/enum-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Enum Classes</span></a>
+                   ><span class="marker"></span><span class="text">枚举类</span></a>
             
             </div>
         
@@ -1496,9 +1496,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">可见性修饰符<a href="#section" class="anchor"></a></h1>
 
-<p>类，对象，接口，构造，功能，特性及其制定者都可以用_visibility modifiers_来做修饰。(getter一直与属性有着相同的可见性.)</p>
+<p>类，对象，接口，构造方法，和它们的setter方法都可以用_visibility modifiers_来做修饰。(getter一直与属性有着相同的可见性.)</p>
 
-<p>以下有四个在Kotlin可见性修饰符:</p>
+<p>在Kotlin中有以下四个可见性修饰符:</p>
 
 <ul>
   <li>
@@ -1508,7 +1508,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <p><code>protected</code> — (只适用于类/接口成员)和”private”一样,但也在子类可见;</p>
   </li>
   <li>
-    <p><code>internal</code> — (在默认情况下使用)在同一个模块中随处可见(如果声明范围的所有者是可见的);</p>
+    <p><code>internal</code> — (在默认情况下使用)在同一个模块中可见(如果声明范围的所有者是可见的);</p>
   </li>
   <li>
     <p><code>public</code> — 随处可见(如果声明范围的所有者是可见的).</p>
@@ -1522,7 +1522,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="k">public</span> <span class="k">fun</span> <span class="nf">bar</span><span class="p">():</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">5</span>  <span class="c1">// explicit return type required</span>
 <span class="k">public</span> <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{}</span>        <span class="c1">// block body: return type is Unit and can&#39;t be changed accidentally, so not required</span></code></pre>
 
-<p>下面请找出这些解释不同类型的声明范围的。</p>
+<p>下面将解释不同类型的声明范围。</p>
 
 <h2 id="section-1">包名<a href="#section-1" class="anchor"></a></h2>
 
@@ -1536,7 +1536,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <ul>
   <li>
-    <p>如果你不指定任何可见性修饰符，那么默认情况下使用<code>internal</code>修饰，这意味着你们将声明在同一个模块中随处可见;</p>
+    <p>如果你不指定任何可见性修饰符，那么默认情况下使用<code>internal</code>修饰，这意味着你们将声明在同一个模块中可见;</p>
   </li>
   <li>
     <p>如果你声明<code>private</code>，只会是这个包及其子包内可见的，并且只在相同的模块;</p>
@@ -1580,7 +1580,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   </li>
 </ul>
 
-<p><em>注意</em> 对于Java用户:外部类没有看到Kotlin内部类的私有成员。</p>
+<p><em>注意</em> 对于Java用户:外部类不能访问Kotlin内部类的private成员。</p>
 
 <p>例子:</p>
 
@@ -1615,7 +1615,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>这里的构造函数是私有的。不像其他的声明，在默认情况下，所有构造函数是<code>public</code>，这实际上等于他们是随处可见，其中的类是可见(即内部类的构造函数是唯一可见在同一模块内).</p>
 
-<p>###局部声明</p>
+<h3 id="section-4">局部声明<a href="#section-4" class="anchor"></a></h3>
 
 <p>局部变量，函数和类不能有可见性修饰符。</p>
 
