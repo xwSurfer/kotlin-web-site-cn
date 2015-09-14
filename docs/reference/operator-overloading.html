@@ -1494,23 +1494,21 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="operator-overloading">Operator overloading<a href="#operator-overloading" class="anchor"></a></h1>
+        <h1 id="section">运算符重载<a href="#section" class="anchor"></a></h1>
 
-<p>Kotlin allows us to provide implementations for a predefined set of operators on our types. These operators have fixed symbolic representation
-(like <code>+</code> or <code>*</code>) and fixed <a href="grammar.html#precedence">precedence</a>. To implement an operator, we provide a <a href="functions.html#member-functions">member function</a>
-or an <a href="extensions.html">extension function</a> with a fixed name, for the corresponding type, i.e. left-hand side type for binary operations and argument type for unary ones.</p>
+<p>Kotlin允许我们实现一些我们自定义类型的运算符实现。这些运算符有固定的表示(像 <code>+</code> 或者 <code>*</code>) ，和固定的<a href="grammar.html#precedence">优先级</a>。为实现这样的运算符，我们提供了固定名字的<a href="functions.html#member-functions">成员函数</a>和<a href="extensions.html">扩展函数</a>，比如二元运算符的左值和一元运算符的参数类型。</p>
 
-<h2 id="conventions">Conventions<a href="#conventions" class="anchor"></a></h2>
+<h2 id="section-1">转换<a href="#section-1" class="anchor"></a></h2>
 
-<p>Here we describe the conventions that regulate operator overloading for different operators.</p>
+<p>这里我们描述了一些常用运算符的重载。</p>
 
-<h3 id="unary-operations">Unary operations<a href="#unary-operations" class="anchor"></a></h3>
+<h3 id="section-2">一元运算符<a href="#section-2" class="anchor"></a></h3>
 
 <table>
   <thead>
     <tr>
-      <th>Expression</th>
-      <th>Translated to</th>
+      <th>表达式</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1529,22 +1527,22 @@ or an <a href="extensions.html">extension function</a> with a fixed name, for th
   </tbody>
 </table>
 
-<p>This table says that when the compiler processes, for example, an expression <code>+a</code>, it performs the following steps:</p>
+<p>这张表解释了当编译器运行时，比如，表达式 <code>+a</code> ，是这样运行的：</p>
 
 <ul>
-  <li>Determines the type of <code>a</code>, let it be <code>T</code>.</li>
-  <li>Looks up a function <code>plus()</code> with no parameters for the receiver <code>T</code>, i.e. a member function or an extension function.</li>
-  <li>If the function is absent or ambiguous, it is a compilation error.</li>
-  <li>If the function is present and its return type is <code>R</code>, the expression <code>+a</code> has type <code>R</code>.</li>
+  <li>决定<code>a</code>的类型, 假设为<code>T</code>。</li>
+  <li>寻找接收者是<code>T</code>的无参函数<code>plus()</code>,例如一个成员方法或者扩展方法。</li>
+  <li>如果找不到或者不明确就返回一个错误。</li>
+  <li>如果函数是当前函数或返回类型是<code>R</code>则表达式<code>+a</code>是<code>R</code>类型。</li>
 </ul>
 
-<p><em>Note</em> that these operations, as well as all the others, are optimized for <a href="basic-types.html">Basic types</a> and do not introduce overhead of function calls for them.</p>
+<p><em>注意</em> 这些操作符和其它的一样, 都被优化为<a href="basic-types.html">基本类型</a>并且不会产生多余的开销。</p>
 
 <table>
   <thead>
     <tr>
-      <th>Expression</th>
-      <th>Translated to</th>
+      <th>表达式</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1559,22 +1557,22 @@ or an <a href="extensions.html">extension function</a> with a fixed name, for th
   </tbody>
 </table>
 
-<p>These operations are supposed to change their receiver and (optionally) return a value.</p>
+<p>这些操作符允许修改接收者和返回类型。</p>
 
 <blockquote class="note">
   <p><strong><code>inc()/dec()</code> shouldn’t mutate the receiver object</strong>.<br />
 By “changing the receiver” we mean <em>the receiver-variable</em>, not the receiver object.</p>
 </blockquote>
 
-<p>The compiler performs the following steps for resolution of an operator in the <em>postfix</em> form, e.g. <code>a++</code>:</p>
+<p>编译器是这样解决有<em>后缀</em>的操作符的比如<code>a++</code>:</p>
 
 <ul>
-  <li>Determines the type of <code>a</code>, let it be <code>T</code>.</li>
+  <li>决定<code>a</code>的类型, 假设为<code>T</code>。</li>
   <li>Looks up a function <code>inc()</code> with no parameters, applicable to the receiver of type <code>T</code>.</li>
   <li>If the function returns a type <code>R</code>, then it must be a subtype of <code>T</code>.</li>
 </ul>
 
-<p>The effect of computing the expression is:</p>
+<p>计算表达式的效果是：</p>
 
 <ul>
   <li>Store the initial value of <code>a</code> to a temporary storage <code>a0</code>,</li>
@@ -1582,22 +1580,22 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   <li>Return <code>a0</code> as a result of the expression.</li>
 </ul>
 
-<p>For <code>a--</code> the steps are completely analogous.</p>
+<p>a– 的运算步骤也是一样的。</p>
 
-<p>For the <em>prefix</em> forms <code>++a</code> and <code>--a</code> resolution works the same way, and the effect is:</p>
+<p>对于前缀运算符<code>++a</code>和<code>--a</code>的解决方式也是一样的, 效果是:</p>
 
 <ul>
   <li>Assign the result of <code>a.inc()</code> to <code>a</code>,</li>
   <li>Return the new value of <code>a</code> as a result of the expression.</li>
 </ul>
 
-<h3 id="binary-operations">Binary operations<a href="#binary-operations" class="anchor"></a></h3>
+<h3 id="section-3">二元操作符<a href="#section-3" class="anchor"></a></h3>
 
 <table>
   <thead>
     <tr>
-      <th>Expression</th>
-      <th>Translated to</th>
+      <th>表达式</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1628,7 +1626,7 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p>For the operations in this table, the compiler just resolves the expression in the <em>Translated to</em> column.</p>
+<p>编译器只是解决了该表中翻译为列的表达式。</p>
 
 <table>
   <thead>
@@ -1649,13 +1647,13 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p id="in">For <code>in</code> and <code>!in</code> the procedure is the same, but the order of arguments is reversed.</p>
+<p id="in">in 和 !in 的产生步骤是一样的，但参数顺序是相反的。</p>
 
 <table>
   <thead>
     <tr>
-      <th>Symbol</th>
-      <th>Translated to</th>
+      <th>标志</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1686,13 +1684,13 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p>Square brackets are translated to calls to <code>get</code> and <code>set</code> with appropriate numbers of arguments.</p>
+<p>方括号被转换为 get set 函数。</p>
 
 <table>
   <thead>
     <tr>
-      <th>Symbol</th>
-      <th>Translated to</th>
+      <th>标志</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1711,13 +1709,13 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p>Parentheses are translated to calls to invoke with appropriate number of arguments.</p>
+<p>括号被转换为带有正确参数的 invoke 函数。</p>
 
 <table id="assignments">
   <thead>
     <tr>
-      <th>Expression</th>
-      <th>Translated to</th>
+      <th>表达式</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1744,7 +1742,7 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p>For the assignment operations, e.g. <code>a += b</code>, the compiler performs the following steps:</p>
+<p>在分配 a+= b时编译器是下面这样实现的:</p>
 
 <ul>
   <li>If the function from the right column is available
@@ -1757,13 +1755,13 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   <li>Otherwise, try to generate code for <code>a = a + b</code> (this includes a type check: the type of <code>a + b</code> must be a subtype of <code>a</code>).</li>
 </ul>
 
-<p id="Equals"><em>Note</em>: assignments are <em>NOT</em> expressions in Kotlin.</p>
+<p id="Equals"><em>注意</em>: assignments在Kotlin中不是表达式.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Expression</th>
-      <th>Translated to</th>
+      <th>表达式</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1778,24 +1776,24 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p><em>Note</em>: <code>===</code> and <code>!==</code> (identity checks) are not overloadable, so no conventions exist for them</p>
+<p><em>注意</em>: <code>===</code> 和 <code>!==</code> (实例检查)不能重载, 所以没有转换方式。</p>
 
-<p>The <code>==</code> operation is special in two ways:</p>
+<p><code>==</code>运算符有两点不同:</p>
 
 <ul>
-  <li>It is translated to a complex expression that screens for <code>null</code>’s, and <code>null == null</code> is <code>true</code>.</li>
-  <li>It looks up a function with a specific <em>signature</em>, not just a specific <em>name</em>. The function must be declared as</li>
+  <li>它被翻译成一个复杂的表达式，用于筛选空值，而且 <code>null == null</code> 是真.</li>
+  <li>它需要带有特定签名的函数，而不仅仅是特定名称的函数，像下面这样：</li>
 </ul>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">equals</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">Any</span><span class="p">?):</span> <span class="n">Boolean</span></code></pre>
 
-<p>Or an extension function with the same parameter list and return type.</p>
+<p>或者用相同的参数列表和返回类型的扩展函数.</p>
 
 <table>
   <thead>
     <tr>
-      <th>Symbol</th>
-      <th>Translated to</th>
+      <th>标志</th>
+      <th>翻译为</th>
     </tr>
   </thead>
   <tbody>
@@ -1818,11 +1816,12 @@ By “changing the receiver” we mean <em>the receiver-variable</em>, not the r
   </tbody>
 </table>
 
-<p>All comparisons are translated into calls to <code>compareTo</code>, that is required to return <code>Int</code>.</p>
+<p>所有的比较都转换为<code>compareTo</code>的调用，这个函数需要返回<code>Int</code>值</p>
 
-<h2 id="infix-calls-for-named-functions">Infix calls for named functions<a href="#infix-calls-for-named-functions" class="anchor"></a></h2>
+<h2 id="section-4">命名函数的中缀调用<a href="#section-4" class="anchor"></a></h2>
 
-<p>We can simulate custom infix operations by using <a href="functions.html#infix-notation">infix function calls</a>.</p>
+<p>我们可以通过<a href="functions.html#infix-notation">中缀函数的调用</a>.
+来模拟自定义中缀操作符。</p>
 
     </article>
 </div>

@@ -1494,23 +1494,22 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="this-expression">This Expression<a href="#this-expression" class="anchor"></a></h1>
+        <h1 id="this">This表达式<a href="#this" class="anchor"></a></h1>
 
-<p>To denote the current <em>receiver</em>, we use <em class="keyword">this</em> expressions:</p>
+<p>为了记录下当前的接受者我们使用<em class="keyword">this</em>表达式:</p>
 
 <ul>
-  <li>In a member of a <a href="classes.html#inheritance">class</a>, <em class="keyword">this</em> refers to the current object of that class</li>
-  <li>In an <a href="extensions.html">extension function</a> or an <a href="lambdas.html#function-literals">extension function literal</a>,
-<em class="keyword">this</em> denotes the <em>receiver</em> parameter that is passed on the left-hand side of a dot.</li>
+  <li>在一个<a href="classes.html#inheritance">类</a>成员中, <em class="keyword">this</em>指的是当前类对象。</li>
+  <li>在一个<a href="extensions.html">扩展函数</a>或者<a href="lambdas.html#function-literals">扩展字面函数</a>,
+<em class="keyword">this</em>表示左边的接受者.</li>
 </ul>
 
-<p>If <em class="keyword">this</em> has no qualifiers, it refers to the <em>innermost enclosing scope</em>. To refer to <em class="keyword">this</em> in other scopes, <em>label qualifiers</em> are used:</p>
+<p>如果 <em class="keyword">this</em> 没有应用者，则指向的是最内层的闭合范围。为了在其它范围中返回 this ，需要使用标签：</p>
 
-<h2 id="qualified">Qualified <em class="keyword">this</em><a href="#qualified" class="anchor"></a></h2>
+<h2 id="qualified"><em class="keyword">this</em>使用范围<a href="#qualified" class="anchor"></a></h2>
 
-<p>To access <em class="keyword">this</em> from an outer scope (a <a href="classes.html">class</a>, or <a href="extensions.html">extension function</a>,
-or labeled <a href="lambdas.html#function-literals">extension function literal</a> we write <code>this@label</code> where <code>@label</code> is a <a href="returns.html">label</a>
-on the scope <em class="keyword">this</em> is meant to be from:</p>
+<p>为了在范围外部访问<em class="keyword">this</em>(一个<a href="classes.html">类</a>, 或者<a href="extensions.html">扩展函数</a>,
+或者带标签的<a href="lambdas.html#function-literals">扩展字面函数</a> 我们使用<code>this@label</code>作为<a href="returns.html">label</a>：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">A</span> <span class="p">{</span> <span class="c1">// implicit label @A</span>
   <span class="k">inner</span> <span class="k">class</span> <span class="nc">B</span> <span class="p">{</span> <span class="c1">// implicit label @B</span>

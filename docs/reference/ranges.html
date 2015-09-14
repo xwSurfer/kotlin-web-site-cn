@@ -1494,10 +1494,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="ranges">Ranges<a href="#ranges" class="anchor"></a></h1>
+        <h1 id="section">范围<a href="#section" class="anchor"></a></h1>
 
-<p>Range expressions are formed with <code>rangeTo</code> functions that have the operator form of <code>..</code> which are complemented by <em class="keyword">in</em> and <em class="keyword">!in</em>.
-Range is defined for any comparable type, but for number primitives it is optimized. Here are examples of using ranges</p>
+<p>范围表达式是由“rangeTo”函数组成的，操作符的形式是<code>..</code>由<em class="keyword">in</em>和<em class="keyword">!in</em>补充。
+范围被定义为任何可比类型,但是最好用于数字的比较。下面是使用范围的例子</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// equivalent of 1 &lt;= i &amp;&amp; i &lt;= 10</span>
   <span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -1507,8 +1507,8 @@ Range is defined for any comparable type, but for number primitives it is optimi
 
 <span class="k">if</span> <span class="p">(</span><span class="n">str</span> <span class="k">in</span> <span class="s">&quot;island&quot;</span><span class="p">..</span><span class="s">&quot;isle&quot;</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">str</span><span class="p">)</span></code></pre>
 
-<p>Numerical ranges have an extra feature: they can be iterated over.
-Compiler takes care about converting this in simple analogue of Java’s indexed <em class="keyword">for</em>-loop, without extra overhead. Examples</p>
+<p>数值范围有一个额外的功能:他们可以遍历。
+编译者需要关心的转换是简单模拟Java的索引<em class="keyword">for</em>循环,不用担心越界。例如：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">4</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1">// prints &quot;1234&quot;</span>
 
@@ -1516,11 +1516,11 @@ Compiler takes care about converting this in simple analogue of Java’s indexed
 
 <span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.0</span><span class="p">..</span><span class="m">2.0</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;$x &quot;</span><span class="p">)</span> <span class="c1">// prints &quot;1.0 2.0 &quot;</span></code></pre>
 
-<p>What if you want to iterate over numbers in reversed order? It’s simple. You can use <code>downTo()</code> function defined in standard library</p>
+<p>你想要遍历数字颠倒顺序吗?这很简单。您可以使用标准库里面的<code>downTo()</code>函数</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">4</span> <span class="n">downTo</span> <span class="m">1</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1">// prints &quot;4321&quot;</span></code></pre>
 
-<p>Is it possible to iterate over numbers with arbitrary step, not equal to 1? Sure, <code>step()</code> function will help you</p>
+<p>是否可以任意进行数量的迭代,而不必每次的变化都是1呢?当然, <code>step()</code>函数可以实现</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">4</span> <span class="n">step</span> <span class="m">2</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1">// prints &quot;13&quot;</span>
 
@@ -1528,19 +1528,19 @@ Compiler takes care about converting this in simple analogue of Java’s indexed
 
 <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.0</span><span class="p">..</span><span class="m">2.0</span> <span class="n">step</span> <span class="m">0.3</span><span class="p">)</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;$i &quot;</span><span class="p">)</span> <span class="c1">// prints &quot;1.0 1.3 1.6 1.9 &quot;</span></code></pre>
 
-<h2 id="how-it-works">How it works<a href="#how-it-works" class="anchor"></a></h2>
+<h2 id="section-1">它是如何工作的<a href="#section-1" class="anchor"></a></h2>
 
-<p>There are two interfaces in the library: <code>Range&lt;T&gt;</code> and <code>Progression&lt;N&gt;</code>.</p>
+<p>在库里有两个接口:<code>Range&lt;T&gt;</code>和<code>Progression&lt;N&gt;</code>。</p>
 
-<p><code>Range&lt;T&gt;</code> denotes an interval in the mathematical sense, defined for comparable types.
-It has two endpoints: <code>start</code> and <code>end</code>, which are included in the range.
-The main operation is <code>contains</code>, usually used in the form of <em class="keyword">in</em>/<em class="keyword">!in</em> operators.</p>
+<p><code>Range&lt;T&gt;</code> 在数学意义上表示一个间隔,是对比较类型的定义。
+它有两个端点:‘开始’和‘结束’,这是包含在范围内。
+主要的操作是<code>contains</code>,通常用<em class="keyword">in</em> /<em>!in</em> {: .keyword }操作符内。</p>
 
-<p><code>Progression&lt;N&gt;</code> denotes an arithmetic progression, defined for number types.
-It has <code>start</code>, <code>end</code> and a non-zero <code>increment</code>.
-<code>Progression&lt;N&gt;</code> is a subtype of <code>Iterable&lt;N&gt;</code>, so it can be used in <em class="keyword">for</em>-loops and functions like <code>map</code>, <code>filter</code>, etc.
-First element is <code>start</code>, every next element equals previous plus <code>increment</code>.
-Iteration over <code>Progression</code> is equivalent to an indexed <em class="keyword">for</em>-loop in Java/JavaScript:</p>
+<p><code>Progression&lt;N&gt;</code> 表示一个等差数列,是数字类型定义。
+它有“开始”,“结束”和一个非零的“增量”。
+<code>Progression&lt;N&gt;</code> 是一Iterable &lt; N &gt;的子类,所以它可以用在<em>for</em> {: .keyword }循环中或者<code>map</code>, <code>filter</code>等函数中。
+第一个元素是<code>start</code>,下一个元素等于前面加上<code>increment</code>。
+迭代<code>Progression</code>与Java/JavaScript的<em class="keyword">for</em>循环相同:</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// if increment &gt; 0</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">increment</span><span class="o">)</span> <span class="o">{</span>
@@ -1552,12 +1552,12 @@ Iteration over <code>Progression</code> is equivalent to an indexed <em class="k
   <span class="c1">// ...</span>
 <span class="o">}</span></code></pre>
 
-<p>For numbers, the <code>..</code> operator creates an object which is both <code>Range</code> and <code>Progression</code>.
-Result of <code>downTo()</code> and <code>step()</code> functions is always a <code>Progression</code>.</p>
+<p>对于数字, <code>..</code>操作符创建一个对象既包含<code>Range</code>也包含<code>Progression</code>。
+由于 <code>downTo()</code>和 <code>step()</code>函数所以一直是<code>Progression</code>。</p>
 
-<h2 id="range-specifications">Range Specifications<a href="#range-specifications" class="anchor"></a></h2>
+<h2 id="section-2">范围指标<a href="#section-2" class="anchor"></a></h2>
 
-<h3 id="use-cases">Use Cases<a href="#use-cases" class="anchor"></a></h3>
+<h3 id="section-3">使用范例<a href="#section-3" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Checking if value of comparable is in range. Optimized for number primitives.</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">10</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -1589,15 +1589,15 @@ Result of <code>downTo()</code> and <code>step()</code> functions is always a <c
 
 <span class="k">for</span> <span class="p">(</span><span class="n">str</span> <span class="k">in</span> <span class="s">&quot;island&quot;</span><span class="p">..</span><span class="s">&quot;isle&quot;</span><span class="p">)</span> <span class="n">println</span><span class="p">(</span><span class="n">str</span><span class="p">)</span> <span class="c1">// error: string range cannot be iterated over</span></code></pre>
 
-<h3 id="common-interfaces-definition">Common Interfaces Definition<a href="#common-interfaces-definition" class="anchor"></a></h3>
+<p>###常见的接口定义</p>
 
-<p>There are two base interfaces: <code>Range</code> and <code>Progression</code>.</p>
+<p>有两种基本接口:<code>Range</code>和<code>Progression</code>。</p>
 
-<p><code>Range</code> interface defines a range, or an interval in a mathematical sense.
-It has two endpoints, <code>start</code> and <code>end</code>, and also <code>contains()</code> function which checks if the range contains a given number
-(it also can be used as <em class="keyword">in</em>/<em class="keyword">!in</em> operator, which is neater).
-<code>start</code> and <code>end</code> are included in the range. If <code>start</code> == <code>end</code>, the range contains exactly one element.
-If <code>start</code> &gt; <code>end</code>, the range is empty.</p>
+<p><code>Range</code> 接口定义了一个范围或一个数学意义上的区间。
+它有两个端点,<code>start</code> 和<code>end</code>,并且<code>contains()</code>函数检查是否包含一个给定的数字范围
+(也可以作为<em class="keyword">in</em> /<em class="keyword">!in</em>操作符)。
+“开始”和“结束”是包含在范围内。如果<code>start</code>= =<code>end</code>,范围包含一个确定的元素。
+如果 <code>start</code> &gt; <code>end</code>,范围是空的.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Range</span><span class="p">&lt;</span><span class="n">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;</span> <span class="p">{</span>
   <span class="k">val</span> <span class="py">start</span><span class="p">:</span> <span class="n">T</span>
@@ -1605,12 +1605,11 @@ If <code>start</code> &gt; <code>end</code>, the range is empty.</p>
   <span class="k">fun</span> <span class="nf">contains</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Boolean</span>
 <span class="p">}</span></code></pre>
 
-<p><code>Progression</code> defines a kind of arithmetical progression.
-It has <code>start</code> (the first element of progression), <code>end</code> (the last element which can be included)
-and <code>increment</code> (difference between each progression element and previous, non-zero).
-But the main feature of it is that the progression can be iterated over, so it is a subtype of <code>Iterable</code>.
-<code>end</code> is not necessary the last element of progression.
-Also, progression can be empty if <code>start &lt; end &amp;&amp; increment &lt; 0</code> or <code>start &gt; end &amp;&amp; increment &gt; 0</code>.</p>
+<p><code>Progression</code>定义了一种等差算法。
+它有 <code>start</code>(进程中的第一个元素), <code>end</code>(被包含的最后一个元素)
+和<code>increment</code> (每个进程元素和以前的区别,非零)。
+但它的主要特征是,可以遍历过程,所以这是<code>Iterable</code>的子类。
+<code>end</code>最后一个元素不是必须的，如 <code>start &lt; end &amp;&amp; increment &lt; 0</code> or <code>start &gt; end &amp;&amp; increment &gt; 0</code>.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Progression</span><span class="p">&lt;</span><span class="n">N</span> <span class="p">:</span> <span class="n">Number</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">Iterable</span><span class="p">&lt;</span><span class="n">N</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">val</span> <span class="py">start</span><span class="p">:</span> <span class="n">N</span>
@@ -1619,7 +1618,7 @@ Also, progression can be empty if <code>start &lt; end &amp;&amp; increment &lt;
   <span class="c1">// fun iterator(): Iterator&lt;N&gt; is defined in Iterable interface</span>
 <span class="p">}</span></code></pre>
 
-<p>Iteration over <code>Progression</code> is equivalent to an indexed <em class="keyword">for</em>-loop in Java:</p>
+<p>迭代’Progression’相当于一个索引<em>for</em> {:.Java关键字}循环:</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// if increment &gt; 0</span>
 <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="o">;</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">increment</span><span class="o">)</span> <span class="o">{</span>
@@ -1631,21 +1630,20 @@ Also, progression can be empty if <code>start &lt; end &amp;&amp; increment &lt;
   <span class="c1">// ...</span>
 <span class="o">}</span></code></pre>
 
-<h3 id="implementation-classes">Implementation Classes<a href="#implementation-classes" class="anchor"></a></h3>
+<h3 id="section-4">类的实现<a href="#section-4" class="anchor"></a></h3>
 
-<p>To avoid unnecessary repetition, let’s consider only one number type, <code>Int</code>.
-For other number types implementation is the same.
-Note that instances can be created using constructors of these classes,
-while it’s more handy to use <code>rangeTo()</code> (by this name, or as <code>..</code> operator), <code>downTo()</code>, <code>reversed()</code> and <code>step()</code> utility functions, which are introduced later.</p>
+<p>为了避免不必要的重复,让我们只考虑一个数字类型,<code>Int</code>。
+对于其他类型的数量实现是一样的。
+注意,可以使用这些类的构造函数创建实例,
+而更方便使用的<code>rangeTo()</code>(这个名字,或作为<code>..</code>操作符), <code>downTo()</code>, <code>reversed()</code>和<code>step()</code>等实用的函数,以后介绍。</p>
 
-<p><code>IntProgression</code> class is pretty straightforward and simple:</p>
+<p><code>IntProgression</code> 类很简单快捷:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">IntProgression</span><span class="p">(</span><span class="k">override</span> <span class="k">val</span> <span class="py">start</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">override</span> <span class="k">val</span> <span class="py">end</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">override</span> <span class="k">val</span> <span class="py">increment</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Progression</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">iterator</span><span class="p">():</span> <span class="n">Iterator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">IntProgressionIteratorImpl</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">increment</span><span class="p">)</span> <span class="c1">// implementation of iterator is obvious</span>
 <span class="p">}</span></code></pre>
 
-<p><code>IntRange</code> is a bit tricky: it implements <code>Progression&lt;Int&gt;</code> along with <code>Range&lt;Int&gt;</code>,
-because it’s natural to iterate over a range (default increment value is 1 for both integer and floating-point types):</p>
+<p><code>IntRange</code> IntRange是有点复杂:它的实现类是 <code>Progression&lt;Int&gt;</code>和<code>Range&lt;Int&gt;</code>,因为它是自然的遍历的(默认增量值为1整数和浮点类型):</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">IntRange</span><span class="p">(</span><span class="k">override</span> <span class="k">val</span> <span class="py">start</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">override</span> <span class="k">val</span> <span class="py">end</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Range</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;,</span> <span class="n">Progression</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">val</span> <span class="py">increment</span><span class="p">:</span> <span class="n">Int</span>
@@ -1654,17 +1652,17 @@ because it’s natural to iterate over a range (default increment value is 1 for
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">iterator</span><span class="p">():</span> <span class="n">Iterator</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">IntProgressionIteratorImpl</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">increment</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p><code>ComparableRange</code> is also simple (remember that comparisons are translated into invocation of <code>compareTo()</code>):</p>
+<p><code>ComparableRange</code> 也很简单(请记住,比较转换是<code>compareTo()</code>):</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">ComparableRange</span><span class="p">&lt;</span><span class="n">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;(</span><span class="k">override</span> <span class="k">val</span> <span class="py">start</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="k">override</span> <span class="k">val</span> <span class="py">end</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Range</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">contains</span><span class="p">(</span><span class="n">element</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Boolean</span> <span class="p">=</span> <span class="n">start</span> <span class="p">&lt;=</span> <span class="n">element</span> <span class="p">&amp;&amp;</span> <span class="n">element</span> <span class="p">&lt;=</span> <span class="n">end</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="utility-functions">Utility functions<a href="#utility-functions" class="anchor"></a></h2>
+<h2 id="section-5">一些实用函数<a href="#section-5" class="anchor"></a></h2>
 
 <h3 id="rangeto"><code>rangeTo()</code><a href="#rangeto" class="anchor"></a></h3>
 
-<p>Set of <code>rangeTo()</code> functions in number types simply call constructors of <code>*Range</code> classes, e.g.:</p>
+<p>定义<code>rangeTo()</code>函数,只要简单地调用构造函数<code>*Range</code>类,例如:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Int</span> <span class="p">{</span>
   <span class="c1">//...</span>
@@ -1676,7 +1674,7 @@ because it’s natural to iterate over a range (default increment value is 1 for
 
 <h3 id="downto"><code>downTo()</code><a href="#downto" class="anchor"></a></h3>
 
-<p><code>downTo()</code> extension function is defined for any pair of number types, here are two examples:</p>
+<p><code>downTo()</code>的扩展函数可以为任何数字类型定义,这里有两个例子:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">Long</span><span class="p">.</span><span class="n">downTo</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">Double</span><span class="p">):</span> <span class="n">DoubleProgression</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">DoubleProgression</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="p">-</span><span class="m">1.0</span><span class="p">)</span>
@@ -1688,7 +1686,7 @@ because it’s natural to iterate over a range (default increment value is 1 for
 
 <h3 id="reversed"><code>reversed()</code><a href="#reversed" class="anchor"></a></h3>
 
-<p>Set of <code>reversed()</code> extension functions are defined for each <code>*Range</code> and <code>*Progression</code> classes, and all of them return reversed progressions.</p>
+<p>定义<code>reversed()</code>扩展函数是为了每个 <code>*Range</code>和 <code>*Progression</code>类定义的,它们返回反向的级数。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">IntProgression</span><span class="p">.</span><span class="n">reversed</span><span class="p">():</span> <span class="n">IntProgression</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">IntProgression</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="p">-</span><span class="n">increment</span><span class="p">)</span>
@@ -1700,9 +1698,9 @@ because it’s natural to iterate over a range (default increment value is 1 for
 
 <h3 id="step"><code>step()</code><a href="#step" class="anchor"></a></h3>
 
-<p><code>step()</code> extension functions are defined for each <code>*Range</code> and <code>*Progression</code> classes,
-all of them return progressions with modified <code>step</code> value (function parameter).
-Note that the step value is always positive, therefore this function never changes the direction of iteration.</p>
+<p><code>step()</code>扩展函数是为每个<code>*Range</code> 和 <code>*Progression</code>类定义的,
+他们返回级数与都修改了<code>step</code>值(函数参数)。
+注意,step值总是正的,因此这个函数从不改变的迭代方向。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">IntProgression</span><span class="p">.</span><span class="n">step</span><span class="p">(</span><span class="n">step</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">IntProgression</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">step</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="k">throw</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Step must be positive, was: $step&quot;</span><span class="p">)</span>
@@ -1713,6 +1711,10 @@ Note that the step value is always positive, therefore this function never chang
   <span class="k">if</span> <span class="p">(</span><span class="n">step</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="k">throw</span> <span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">&quot;Step must be positive, was: $step&quot;</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">IntProgression</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
+
+<hr />
+
+<p>翻译By 空白</p>
 
     </article>
 </div>

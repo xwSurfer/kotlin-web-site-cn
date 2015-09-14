@@ -755,7 +755,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/properties.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Properties and Fields</span></a>
+                   ><span class="marker"></span><span class="text">属性和字段</span></a>
             
             </div>
         
@@ -874,7 +874,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/enum-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Enum Classes</span></a>
+                   ><span class="marker"></span><span class="text">枚举类</span></a>
             
             </div>
         
@@ -1494,27 +1494,26 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="delegated-properties">Delegated Properties<a href="#delegated-properties" class="anchor"></a></h1>
+        <h1 id="section">委托属性<a href="#section" class="anchor"></a></h1>
 
-<p>There are certain common kinds of properties, that, though we can implement them manually every time we need them, 
-would be very nice to implement once and for all, and put into a library. Examples include</p>
+<p>有一些种类的属性，虽然我们可以在每次需要的时候手动实现它们，但是如果能够把他们之实现一次并放入一个库同时又能够一直使用它们那会更好。例如：</p>
 
 <ul>
-  <li>lazy properties: the value gets computed only upon first access,</li>
-  <li>observable properties: listeners get notified about changes to this property,</li>
-  <li>storing properties in a map, not in separate field each.</li>
+  <li>延迟属性（lazy properties）: 数值只在第一次被访问的时候计算。</li>
+  <li>可控性（observable properties）: 监听器得到关于这个特性变化的通知，</li>
+  <li>把所有特性储存在一个图型结构中，而不是分开每一条。</li>
 </ul>
 
-<p>To cover these (and other) cases, Kotlin supports <em>delegated properties</em>:</p>
+<p>为了支持这些(或者其他)例子，Kotlin 采用 <em>委托属性</em>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Example</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">p</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">Delegate</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>The syntax is: <code>val/var &lt;property name&gt;: &lt;Type&gt; by &lt;expression&gt;</code>. The expression after <em class="keyword">by</em> is the <em>delegate</em>, 
-because <code>get()</code> (and <code>set()</code>) corresponding to the property will be delegated to it.<br />
-Property delegates don’t have to implement any interface, but they have to provide a <code>get()</code> function (and <code>set()</code> — for <em class="keyword">var</em>’s). 
-For example:</p>
+<p>语法是: <code>val/var &lt;property name&gt;: &lt;Type&gt; by &lt;expression&gt;</code>.在<em class="keyword">by</em>后面的表达式是 <em>委托</em>, 
+因为 <code>get()</code> (和 <code>set()</code>) 协同的属性会被委托给它。
+特性委托不必实现任何的接口，但是需要提供一个 <code>get()</code>方法(和 <code>set()</code> — 对于 <em class="keyword">var</em>’s). 
+例如:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Delegate</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">prop</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
@@ -1526,57 +1525,57 @@ For example:</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>When we read from <code>p</code> that delegates to an instance of <code>Delegate</code>, the <code>get()</code> function from <code>Delegate</code> is called, 
-so that its first parameter is the object we read <code>p</code> from and the second parameter holds a description of <code>p</code> itself 
-(e.g. you can take its name). For example:</p>
+<p>当我们读取一个<code>Delegate</code>的委托实例 <code>p</code> , <code>Delegate</code>中的<code>get()</code>就被调用, 
+所以它第一变量就是我们从 <code>p</code> 读取的实例,第二个变量代表 <code>p</code> 自身的描述。 
+(例如你可以用它的名字). 下面是例子:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">e</span> <span class="p">=</span> <span class="n">Example</span><span class="p">()</span>
 <span class="n">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">p</span><span class="p">)</span></code></pre>
 
-<p>This prints</p>
+<p>打印结果：</p>
 
 <pre>Example@33a17727, thank you for delegating ‘p’ to me!
 </pre>
 
-<p>Similarly, when we assign to <code>p</code>, the <code>set()</code> function is called. The first two parameters are the same, and the third holds the value being assigned:</p>
+<p>相同的，当我们给 <code>p</code> 赋值, <code>set()</code> 方法就被调用. 前两个参数是一样的，第三个参数代表被赋予的值:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">e</span><span class="p">.</span><span class="n">p</span> <span class="p">=</span> <span class="s">&quot;NEW&quot;</span></code></pre>
 
-<p>This prints</p>
+<p>打印结果：</p>
 
 <pre>NEW has been assigned to ‘p’ in Example@33a17727.
 </pre>
 
-<h2 id="property-delegate-requirements">Property Delegate Requirements<a href="#property-delegate-requirements" class="anchor"></a></h2>
+<h2 id="section-1">属性委托要求<a href="#section-1" class="anchor"></a></h2>
 
-<p>Here we summarize requirements to delegate objects.</p>
+<p>下面见到介绍委托对象的要求。</p>
 
-<p>For a <strong>read-only</strong> property (i.e. a <em class="keyword">val</em>), a delegate has to provide a function named <code>get</code> that takes the following parameters:</p>
-
-<ul>
-  <li>receiver — must be the same or a supertype of the <em>property owner</em> (for extension properties — the type being extended),</li>
-  <li>metadata — must be of type <code>PropertyMetadata</code> or its supertype,</li>
-</ul>
-
-<p>this function must return the same type as property (or its subtype).</p>
-
-<p>For a <strong>mutable</strong> property (a <em class="keyword">var</em>), a delegate has to <em>additionally</em> provide a function named <code>set</code> that takes the following parameters:</p>
+<p>对于一个 <strong>只读</strong> 属性 (如 <em class="keyword">val</em>), 一个委托一定会提供一个 <code>get</code>函数来处理下面的参数:</p>
 
 <ul>
-  <li>receiver — same as for <code>get()</code>,</li>
-  <li>metadata — same as for <code>get()</code>,</li>
-  <li>new value — must be of the same type as a property or its subtype.</li>
+  <li>接收者 — 必须与_属性所有者_类型相同或者是其父类(对于扩展属性，类型范围允许扩大),</li>
+  <li>包含数据 — 一定要是 <code>属性包含数据</code> 的类型或它的父类型,</li>
 </ul>
 
-<h2 id="standard-delegates">Standard Delegates<a href="#standard-delegates" class="anchor"></a></h2>
+<p>这个函数必须返回同样的类型作为属性（或者子类型）</p>
 
-<p>The <code>kotlin.properties.Delegates</code> object from the standard library provides factory methods for several useful kinds of delegates.</p>
+<p>对于一个 <strong>可变</strong> 属性 (如 <em class="keyword">var</em>), 一个委托需要提供_额外_的函数 <code>set</code> 来获取下面的参数:</p>
 
-<h3 id="lazy">Lazy<a href="#lazy" class="anchor"></a></h3>
+<ul>
+  <li>接收者 — 同 <code>get()</code>,</li>
+  <li>包含数据 — 同 <code>get()</code>,</li>
+  <li>新的值 — 必须和属性同类型或者是他的子类型。</li>
+</ul>
 
-<p><code>Delegates.lazy()</code> is a function that takes a lambda and returns a delegate that implements a lazy property: 
-the first call to <code>get()</code> executes the lambda passed to <code>lazy()</code> and remembers the result, 
-subsequent calls to <code>get()</code> simply return the remembered result.</p>
+<h2 id="section-2">标准委托<a href="#section-2" class="anchor"></a></h2>
+
+<p>标准库中<code>kotlin.properties.Delegates</code> 对象对于一些有用的委托提供了工厂（factory）方法。</p>
+
+<h3 id="lazy">延迟属性 Lazy<a href="#lazy" class="anchor"></a></h3>
+
+<p>函数 <code>Delegates.lazy()</code> 会在接受一个变量而后返回一个执行延迟属性的委托: 
+第一个调用 <code>get()</code> 执行变量传递到 <code>lazy()</code> 并记录结果, 
+后来的 <code>get()</code> 调用只会返回记录的结果。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.properties.Delegates</span>
  
@@ -1590,14 +1589,12 @@ subsequent calls to <code>get()</code> simply return the remembered result.</p>
     <span class="n">println</span><span class="p">(</span><span class="n">lazy</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>If you want <strong>thread safety</strong>, use <code>blockingLazy()</code>: it works the same way, but guarantees that the values will be 
-computed only in one thread, and that all threads will see the same value.</p>
+<p>如果你需要 <strong>线程安全</strong>, 使用 <code>blockingLazy()</code>: 它会进行同样的操作，但是能够保证数值将会只在一个线程中计算，同时所有线程会看到同样的数值。</p>
 
-<h3 id="observable">Observable<a href="#observable" class="anchor"></a></h3>
+<h3 id="observable">观察者 Observable<a href="#observable" class="anchor"></a></h3>
 
-<p><code>Delegates.observable()</code> takes two arguments: initial value and a handler for modifications. 
-The handler gets called every time we assign to the property (before the assignment is performed). It has three
-parameters: a property being assigned to, the old value and the new one:</p>
+<p><code>Delegates.observable()</code> 需要两个参数：初始值和修改后的处理(handler)。
+这个 handler 会在每次赋值的时候被属性调用 (在工作完成前). 它有三个变量:一个被赋值的属性，旧的值和新的值：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">observable</span><span class="p">(</span><span class="s">&quot;&lt;no name&gt;&quot;</span><span class="p">)</span> <span class="p">{</span>
@@ -1612,56 +1609,60 @@ parameters: a property being assigned to, the old value and the new one:</p>
     <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;second&quot;</span>
 <span class="p">}</span></code></pre>
 
-<p>This example prints</p>
+<p>结果：</p>
 
 <pre>&lt;no name&gt; -&gt; first
 first -&gt; second
 </pre>
+<p>如果你想截取它的分配并取消它，就使用 <code>vetoable()</code> 取代 <code>observable()</code>.</p>
 
-<p>If you want to be able to intercept an assignment and “veto” it, use <code>vetoable()</code> instead of <code>observable()</code>.</p>
+<h3 id="not-null">非空 Not-Null<a href="#not-null" class="anchor"></a></h3>
 
-<h3 id="not-null">Not-Null<a href="#not-null" class="anchor"></a></h3>
-
-<p>Sometimes we have a non-null <em class="keyword">var</em>, but we don’t have an appropriate value to assign to it in the constructor, 
-i.e. it must be assigned later. The problem is that you can’t have an uninitialized non-abstract property in Kotlin:</p>
+<p>有时候我们有一个非空的值<em class="keyword">var</em>, 但是我们却没有合适的值去给构造器去初始化。
+例如，它必须被之后初始化。问题是在Kotlin中你不能有一个没有被初始化的非抽象属性：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Bar</span> <span class="c1">// ERROR: must be initialized</span>
 <span class="p">}</span></code></pre>
 
-<p>We could initialize it with <em class="keyword">null</em>, but then we’d have to check every time we access it.</p>
+<p>我们可以用<em class="keyword">null</em>去初始化它,但是我们不得不在每次使用前检查一下。</p>
 
-<p><code>Delegates.notNull()</code> can solve this problem:</p>
+<p><code>Delegates.notNull()</code> 可以解决这个问题:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Bar</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">notNull</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>If this property is read before being written to for the first time, it throws an exception, after the first assignment it works as expected.</p>
+<p>如果这个属性在首次写入前进行读取，它就会抛出一个异常，写入后就正常了。</p>
 
-<h3 id="storing-properties-in-a-map">Storing Properties in a Map<a href="#storing-properties-in-a-map" class="anchor"></a></h3>
+<h3 id="map">把属性储存在map中<a href="#map" class="anchor"></a></h3>
 
-<p><code>Delegates.mapVal()</code> takes a map instance and returns a delegate that reads property values from this map, using property name as a key.
-There are many use cases of this kind in applications like parsing JSON or doing other “dynamic” things:</p>
+<p><code>Delegates.mapVal()</code> 用到一个map的实例，同时返回一个从map中以把属性名作为关键字读取属性的委托。
+这有很多在程序中应用的例子，例如解析JASON数据或者做其他动态的事情：
+<code>kotlin
+class User(val map: Map&lt;String, Any?&gt;) {
+    val name: String by Delegates.mapVal(map)
+    val age: Int     by Delegates.mapVal(map)
+}
+</code></p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="k">val</span> <span class="py">map</span><span class="p">:</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Any</span><span class="p">?&gt;)</span> <span class="p">{</span>
-    <span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">mapVal</span><span class="p">(</span><span class="n">map</span><span class="p">)</span>
-    <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span>     <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">mapVal</span><span class="p">(</span><span class="n">map</span><span class="p">)</span>
-<span class="p">}</span></code></pre>
-
-<p>In this example, the constructor takes a map:</p>
+<p>在这个例子中，构造函数持有一个map：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">user</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="n">mapOf</span><span class="p">(</span>
     <span class="s">&quot;name&quot;</span> <span class="n">to</span> <span class="s">&quot;John Doe&quot;</span><span class="p">,</span>
     <span class="s">&quot;age&quot;</span>  <span class="n">to</span> <span class="m">25</span>
 <span class="p">))</span></code></pre>
 
-<p>Delegates take values from this map (by the string keys – names of properties):</p>
+<p>委托会从这个图中取值 (通过属性的名字，也就是string关键字):</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="c1">// Prints &quot;John Doe&quot;</span>
 <span class="n">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>  <span class="c1">// Prints 25</span></code></pre>
 
-<p>For <em class="keyword">var</em>’s we can use <code>mapVar()</code> (note that it takes a <code>MutableMap</code> instead of read-only <code>Map</code>).</p>
+<p>对于 <em>var</em>’s 我们可以使用 <code>mapVar()</code> (注意这里需要一个 <code>MutableMap</code> 而不是只读的 <code>Map</code>).</p>
+
+<hr />
+
+<p>翻译By EasonZhou</p>
 
     </article>
 </div>

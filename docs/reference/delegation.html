@@ -755,7 +755,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/properties.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Properties and Fields</span></a>
+                   ><span class="marker"></span><span class="text">属性和字段</span></a>
             
             </div>
         
@@ -874,7 +874,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/enum-classes.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Enum Classes</span></a>
+                   ><span class="marker"></span><span class="text">枚举类</span></a>
             
             </div>
         
@@ -1494,31 +1494,54 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="delegation">Delegation<a href="#delegation" class="anchor"></a></h1>
+        <h1 id="section">委托<a href="#section" class="anchor"></a></h1>
 
-<h2 id="class-delegation">Class Delegation<a href="#class-delegation" class="anchor"></a></h2>
+<h2 id="section-1">委托类<a href="#section-1" class="anchor"></a></h2>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Delegation_pattern">Delegation pattern</a> has proven to be a good alternative to implementation inheritance,
-and Kotlin supports it natively requiring zero boilerplate code.
-A class <code>Derived</code> can inherit from an interface <code>Base</code> and delegate all of its public methods to a specified object:</p>
+<p><a href="https://en.wikipedia.org/wiki/Delegation_pattern">委托模式</a>是实现继承的一个有效方式.</p>
+
+<p>Kotlin原生支持它。</p>
+
+<p>一个类 <code>Derived</code> 可以从一个接口 <code>Base</code>继承并且委托所有的共有方法为具体对象。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Base</span> <span class="p">{</span>
+
   <span class="k">fun</span> <span class="nf">print</span><span class="p">()</span>
+
 <span class="p">}</span>
 
+
+
+
 <span class="k">class</span> <span class="nc">BaseImpl</span><span class="p">(</span><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Base</span> <span class="p">{</span>
+
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">}</span>
+
 <span class="p">}</span>
+
+
+
 
 <span class="k">class</span> <span class="nc">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">:</span> <span class="n">Base</span><span class="p">)</span> <span class="p">:</span> <span class="n">Base</span> <span class="k">by</span> <span class="n">b</span>
 
+
+
+
 <span class="k">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
   <span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="n">BaseImpl</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
+
   <span class="n">Derived</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="n">print</span><span class="p">()</span> <span class="c1">// prints 10</span>
+
 <span class="p">}</span></code></pre>
 
-<p>The <em class="keyword">by</em>-clause in the supertype list for <code>Derived</code> indicates that <code>b</code> will be stored internally in objects of <code>Derived</code>
-and the compiler will generate all the methods of <code>Base</code> that forward to <code>b</code>.</p>
+<p>在父类<code>Derived</code>中的 <em class="keyword">by</em>-语句表示 <code>b</code> 将会被 储存在 <code>Derived</code> 的内部对象中</p>
+
+<p>并且编译器会把所有 <code>Base</code> 的方法生成给最终的 <code>b</code>.</p>
+
+<hr />
+
+<p>翻译By EasonZhou</p>
 
 
     </article>

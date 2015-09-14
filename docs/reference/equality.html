@@ -1494,38 +1494,34 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="equality">Equality<a href="#equality" class="anchor"></a></h1>
+        <h1 id="section">等式<a href="#section" class="anchor"></a></h1>
 
-<p>In Kotlin there are two types of equality:</p>
+<p>Kotlin中有两种类型的等于:</p>
 
 <ul>
-  <li>Referential equality (two references point to the same object)</li>
-  <li>Structural equality (a check for <code>equals()</code>)</li>
+  <li>引用相等(两个引用指向相同的对象)</li>
+  <li>结构相等 (<code>equals()</code>)</li>
 </ul>
 
-<h2 id="referential-equality">Referential equality<a href="#referential-equality" class="anchor"></a></h2>
+<h2 id="section-1">引用相等<a href="#section-1" class="anchor"></a></h2>
 
-<p>Referential equality is checked by the <code>===</code> operation (and its negated counterpart <code>!==</code>). <code>a === b</code> evaluates to
-true if and only if <code>a</code> and <code>b</code> point to the same object.</p>
-
-<p>Alternatively, you can check for reference equality using a built-in inline function <code>identityEquals()</code>
-that can be called in the following way</p>
+<p>引用相等使用<code>===</code>操作符判断(它的否定是<code>!==</code>). <code>a === b</code> 只有当<code>a</code>和<code>b</code>指向同一个对象才返回true。
+另外，你可以使用内联函数 identityEquals() 判断引用相等：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">a</span><span class="p">.</span><span class="n">identityEquals</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="c1">// or</span>
 <span class="n">a</span> <span class="n">identityEquals</span> <span class="n">b</span> <span class="c1">// infix call</span></code></pre>
+<p>当且仅当<code>a</code>和<code>b</code>指向同一个对象返回true。</p>
 
-<p>This also returns true if and only if <code>a</code> and <code>b</code> point to the same object.</p>
+<h2 id="section-2">结构相等<a href="#section-2" class="anchor"></a></h2>
 
-<h2 id="structural-equality">Structural equality<a href="#structural-equality" class="anchor"></a></h2>
-
-<p>Structural equality is checked by the <code>==</code> operation (and its negated counterpart <code>!=</code>). By convention, an expression like <code>a == b</code> is translated to</p>
+<p>结构相等使用<code>==</code>操作符判断(它的否定是<code>!=</code>). 通常,<code>a == b</code>表达式被翻译为：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">a</span><span class="o">?.</span><span class="n">equals</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">?:</span> <span class="n">b</span> <span class="p">===</span> <span class="k">null</span></code></pre>
 
-<p>I.e. if <code>a</code> is not <code>null</code>, it calls the <code>equals(Any?)</code> function, otherwise (i.e. <code>a</code> is <code>null</code>) it checks that <code>b</code> is referentially equal to <code>null</code>.</p>
+<p>如果 a 不是 null 则调用 equals(Any?) 函数，否则检查 b 是否等于 null。</p>
 
-<p>Note that there’s no point in optimizing your code when comparing to <code>null</code> explicitly: <code>a == null</code> will be automatically translated to <code>a === null</code>.</p>
+<p>注意完全没有必要为优化你的代码而将 a == null 写成 a === null 编译器会自动帮你做的。</p>
 
 
     </article>
