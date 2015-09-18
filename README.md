@@ -5,3 +5,7 @@
 欢迎加入Kotlin翻译小组(DEV kotlin translator group)   QQ群：419484222  
 
 欢迎关注我的微信公众号：晓晨Android组 微信号：xiaochenAndroid
+
+## 说明
+
+如果你发现了翻译错误请提PR到Master分支，作者时不时会看看Kotlin网站文档有没有更新，单毕竟精力有限，希望可以同大家共同维护。
