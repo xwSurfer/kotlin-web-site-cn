@@ -975,7 +975,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/lambdas.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Lambdas</span></a>
+                   ><span class="marker"></span><span class="text">Lambdas表达式</span></a>
             
             </div>
         
@@ -1059,7 +1059,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/typecasts.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Type Checks and Casts</span></a>
+                   ><span class="marker"></span><span class="text">类型检查与转换</span></a>
             
             </div>
         
@@ -1127,7 +1127,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/null-safety.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Null Safety</span></a>
+                   ><span class="marker"></span><span class="text">Null 安全性</span></a>
             
             </div>
         
@@ -1178,7 +1178,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Reflection</div>
+                    <div class="text">反射</div>
                 </div>
             
             </div>
@@ -1196,7 +1196,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/type-safe-builders.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Type-Safe Builders</span></a>
+                   ><span class="marker"></span><span class="text">类型安全的构建器</span></a>
             
             </div>
         
@@ -1213,7 +1213,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/dynamic-type.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Dynamic Type</span></a>
+                   ><span class="marker"></span><span class="text">动态类型</span></a>
             
             </div>
         
@@ -1275,11 +1275,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="Interop">
+         data-id="互操作">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">Interop</div>
+            <div class="text">互操作</div>
         </div>
 
         
@@ -1296,7 +1296,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java Interop</span></a>
+                   ><span class="marker"></span><span class="text">Java互操作</span></a>
             
             </div>
         
@@ -1308,11 +1308,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="Tools">
+         data-id="工具">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">Tools</div>
+            <div class="text">工具</div>
         </div>
 
         
@@ -1409,11 +1409,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="FAQ">
+         data-id="常见问题">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">FAQ</div>
+            <div class="text">常见问题</div>
         </div>
 
         
@@ -1430,7 +1430,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/faq.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">FAQ</span></a>
+                   ><span class="marker"></span><span class="text">常见问题</span></a>
             
             </div>
         
@@ -1494,64 +1494,55 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="reflection">Reflection<a href="#reflection" class="anchor"></a></h1>
+        <h1 id="section">反射<a href="#section" class="anchor"></a></h1>
 
-<p>Reflection is a set of language and library features that allows for introspecting the structure of you own program at runtime.
-Kotlin makes functions and properties first-class citizens in the language, and introspecting them (i.e. learning a name or 
-a type of a property or function at runtime) is closely intertwined with simply using functional or reactive style.</p>
+<p>反射是一系列语言和库的特性，允许在运行时获取你代码结构。把函数和属性作为语言的一等公民，反射它们（如获名称或者属性类型或者方法）和使用函数式编程或反应是编程风格很像。</p>
 
 <blockquote class="note">
-  <p>On the Java platform, the runtime component required for using the reflection features is distributed as a separate
-JAR file (<code>kotlin-reflect.jar</code>). This is done to reduce the required size of the runtime library for applications
-that do not use reflection features. If you do use reflection, please make sure that the .jar file is added to the
-classpath of your project.</p>
+  <p>在Java平台，使用反射特性所需的运行时组件作为一个单独的Jar文件(<code>kotlin-reflect.jar</code>).这样做减小了不使用反射的应用程序库的大小.如果你确实要使用反射,请确保该文件被添加到了项目路径.</p>
 </blockquote>
 
-<h2 id="class-references">Class References<a href="#class-references" class="anchor"></a></h2>
+<h2 id="section-1">类引用<a href="#section-1" class="anchor"></a></h2>
 
-<p>The most basic reflection feature is getting the runtime reference to a Kotlin class. To obtain the reference to a
-statically known Kotlin class, you can use the <em>class literal</em> syntax:</p>
+<p>最基本的反射特性就是得到运行时的类引用。要获取引用并使之成为静态类可以使用字面类语法:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">c</span> <span class="p">=</span> <span class="n">MyClass</span><span class="o">::</span><span class="k">class</span></code></pre>
 
-<p>The reference is a value of type <a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>. You can use <code>KClass.properties</code>
-and <code>KClass.extensionProperties</code> to get the list of <a href="#property-references">property references</a> for all properties
-defined in this class and its superclasses.</p>
+<p>引用是<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>类型.你可以使用<code>KClass.properties</code>
+和<code>KClass.extensionProperties</code>来获得类和父类所有<a href="#property-references">属性引用</a>的列表。</p>
 
-<p>Note that a Kotlin class reference is not the same as a Java class reference. See the <a href="java-interop.html#object-methods">Java interop section</a>
-for information on obtaining a Java class reference corresponding to a Kotlin class.</p>
+<p>注意Kotlin类引用不完全与Java类引用一致.查看<a href="java-interop.html#object-methods">Java interop section</a>
+详细信息。</p>
 
-<h2 id="function-references">Function References<a href="#function-references" class="anchor"></a></h2>
+<h2 id="section-2">函数引用<a href="#section-2" class="anchor"></a></h2>
 
-<p>When we have a named function declared like this:</p>
+<p>我们有一个像下面这样的函数声明:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">isOdd</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">x</span> <span class="p">%</span> <span class="m">2</span> <span class="p">!=</span> <span class="m">0</span></code></pre>
 
-<p>We can easily call it directly (<code>isOdd(5)</code>), but we can also pass it as a value, e.g. to another function. 
-To do this, we use the <code>::</code> operator:</p>
+<p>我们可以直接调用(<code>isOdd(5)</code>), 也可以把它作为一个值传给其他函数. 
+我们使用<code>::</code>操作符实现:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">numbers</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">numbers</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">::</span><span class="n">isOdd</span><span class="p">))</span> <span class="c1">// prints [1, 3]</span></code></pre>
 
-<p>Here <code>::isOdd</code> is a value of function type <code>(Int) -&gt; Boolean</code>.</p>
+<p>这里 <code>::isOdd</code>是一个函数类型的值 <code>(Int) -&gt; Boolean</code>.</p>
 
-<p>Note that right now the <code>::</code> operator cannot be used for overloaded functions. In the future, we plan to
-provide a syntax for specifying parameter types so that a specific overload of a function could be selected.</p>
+<p>注意现在<code>::</code>不能被使用来重载函数. 将来, 我们计划提供一个语法明确参数类型这样就可以使用明确的重载函数了。</p>
 
-<p>If we need to use a member of a class, or an extension function, it needs to be qualified, 
-and the result will be of type “extension function”,
-e.g. <code>String::toCharArray</code> gives us an extension function for type <code>String</code>: <code>String.() -&gt; CharArray</code>.</p>
+<p>如果我们需要使用类成员或者一个扩展方法，它必须是有权访问的, 
+它的返回类型是“extension function”,
+例如<code>String::toCharArray</code>带着一个<code>String</code>: <code>String.() -&gt; CharArray</code>类型扩展函数.</p>
 
-<h3 id="example-function-composition">Example: Function Composition<a href="#example-function-composition" class="anchor"></a></h3>
+<h3 id="section-3">例子: 函数组合<a href="#section-3" class="anchor"></a></h3>
 
-<p>Consider the following function:</p>
+<p>考量以下方法：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">compose</span><span class="p">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">&gt;(</span><span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">C</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">B</span><span class="p">):</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">C</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">x</span> <span class="p">-&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">))}</span>
 <span class="p">}</span></code></pre>
 
-<p>It returns a composition of two functions passed to it: <code>compose(f, g) = f(g(*))</code>. 
-Now, you can apply it to callable references:</p>
+<p>它返回一个由俩个传递进去的函数的组合。现在你可以把它用在可调用的引用上了：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">length</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span>
  
@@ -1560,9 +1551,9 @@ Now, you can apply it to callable references:</p>
 
 <span class="n">println</span><span class="p">(</span><span class="n">strings</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">oddLength</span><span class="p">))</span> <span class="c1">// Prints &quot;[a, abc]&quot;</span></code></pre>
 
-<h2 id="property-references">Property References<a href="#property-references" class="anchor"></a></h2>
+<h2 id="section-4">属性引用<a href="#section-4" class="anchor"></a></h2>
 
-<p>To access properties as first-class objects in Kotlin, we can also use the <code>::</code> operator:</p>
+<p>我们同样可以用<code>::</code>操作符来访问Kotlin中的顶级类的属性：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">1</span>
  
@@ -1572,14 +1563,12 @@ Now, you can apply it to callable references:</p>
     <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1">// prints &quot;2&quot;</span>
 <span class="p">}</span></code></pre>
 
-<p>The expression <code>::x</code> evaluates to a property object of type <code>KProperty&lt;Int&gt;</code>, which allows us to read its
-value using <code>get()</code> or retrieve the property name using the <code>name</code> property. For more information, please refer to
-the <a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-property.html">docs on the <code>KProperty</code> class</a>.</p>
+<p>表达式<code>::x</code>推断为<code>KProperty&lt;Int&gt;</code>类型的属性对象,它允许我们使用<code>get()</code>函数来读它的值或者使用<code>name</code>属性来得到它的值。更多请查看<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-property.html">docs on the <code>KProperty</code> class</a>.</p>
 
-<p>For a mutable property, e.g. <code>var y = 1</code>, <code>::y</code> returns a value of type <a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property.html"><code>KMutableProperty&lt;Int&gt;</code></a>,
-which has a <code>set()</code> method.</p>
+<p>对于可变属性,例如<code>var y = 1</code>, <code>::y</code>返回值类型是<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property.html"><code>KMutableProperty&lt;Int&gt;</code></a>,
+它有一个<code>set()</code>方法.</p>
 
-<p>To access a property that is a member of a class, we qualify it:</p>
+<p>访问一个类的属性成员，我们这样修饰：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="k">val</span> <span class="py">p</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
  
@@ -1588,7 +1577,7 @@ which has a <code>set()</code> method.</p>
     <span class="n">println</span><span class="p">(</span><span class="n">prop</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="m">1</span><span class="p">)))</span> <span class="c1">// prints &quot;1&quot;</span>
 <span class="p">}</span></code></pre>
 
-<p>For an extension property:</p>
+<p>对于扩展属性:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">String</span><span class="p">.</span><span class="n">lastChar</span><span class="p">:</span> <span class="n">Char</span>
   <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">size</span> <span class="p">-</span> <span class="m">1</span><span class="p">]</span>
@@ -1597,11 +1586,9 @@ which has a <code>set()</code> method.</p>
   <span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="n">lastChar</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">))</span> <span class="c1">// prints &quot;c&quot;</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="interoperability-with-java-reflection">Interoperability With Java Reflection<a href="#interoperability-with-java-reflection" class="anchor"></a></h3>
+<h3 id="java">与Java反射调用<a href="#java" class="anchor"></a></h3>
 
-<p>On the Java platform, standard library contains extensions for reflection classes that provide a mapping to and from Java
-  reflection objects (see package <code>kotlin.reflect.jvm</code>).
-For example, to find a backing field or a Java method that serves as a getter for a Kotlin property, you can say something like this:</p>
+<p>在 java 平台上，标准库包括反射类的扩展，提供了到 java 反射对象的映射(参看 <code>kotlin.reflect.jvm</code>包)。比如，想找到一个备用字段或者 java getter 方法，你可以这样写：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.reflect.jvm.*</span>
  
@@ -1612,12 +1599,10 @@ For example, to find a backing field or a Java method that serves as a getter fo
     <span class="n">println</span><span class="p">(</span><span class="n">A</span><span class="o">::</span><span class="n">p</span><span class="p">.</span><span class="n">javaField</span><span class="p">)</span>  <span class="c1">// prints &quot;private final int A.p&quot;</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="constructor-references">Constructor References<a href="#constructor-references" class="anchor"></a></h2>
+<h2 id="section-5">构造函数引用<a href="#section-5" class="anchor"></a></h2>
 
-<p>Constructors can be referenced just like methods and properties. They can be used wherever an object of function type 
-is expected that takes the same parameters as the constructor and returns an object of the appropriate type. 
-Constructors are referenced by using the <code>::</code> operator and adding the class name. Consider the following function 
-that expects a function parameter with no parameters and return type <code>Foo</code>:</p>
+<p>构造函数可以像属性和方法那样引用. 它们可以使用在任何一个函数类型的对象的地方，期望得到相同参数的构造函数，并返回一个适当类型的对象. 
+构造函数使用<code>::</code>操作符加类名引用.考虑如下函数，需要一个无参数函数返回类型是<code>Foo</code>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span>
 
@@ -1625,7 +1610,7 @@ that expects a function parameter with no parameters and return type <code>Foo</
     <span class="k">val</span> <span class="py">x</span> <span class="p">:</span> <span class="n">Foo</span> <span class="p">=</span> <span class="n">factory</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>Using <code>::Foo</code>, the zero-argument constructor of the class Foo, we can simply call it like this:</p>
+<p>我们可以简单的这样使用:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">function</span><span class="p">(</span><span class="o">::</span><span class="n">Foo</span><span class="p">)</span></code></pre>
 
