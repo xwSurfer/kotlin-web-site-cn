@@ -806,7 +806,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/extensions.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Extensions</span></a>
+                   ><span class="marker"></span><span class="text">扩展</span></a>
             
             </div>
         
@@ -840,7 +840,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/generics.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Generics</span></a>
+                   ><span class="marker"></span><span class="text">泛型</span></a>
             
             </div>
         
@@ -992,7 +992,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Inline Functions</div>
+                    <div class="text">内联函数</div>
                 </div>
             
             </div>
@@ -1026,7 +1026,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Multi-Declarations</span></a>
+                   ><span class="marker"></span><span class="text">多重声明</span></a>
             
             </div>
         
@@ -1162,7 +1162,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/annotations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Annotations</span></a>
+                   ><span class="marker"></span><span class="text">注解</span></a>
             
             </div>
         
@@ -1494,19 +1494,16 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="inline-functions">Inline Functions<a href="#inline-functions" class="anchor"></a></h1>
+        <h1 id="inline">内联函数 inline<a href="#inline" class="anchor"></a></h1>
 
-<p>Using <a href="lambdas.html">higher-order functions</a> imposes certain runtime penalties: each function is an object, and it captures a closure,
-i.e. those variables that are accessed in the body of the function.
-Memory allocations (both for function objects and classes) and virtual calls introduce runtime overhead.</p>
-
-<p>But it appears that in many cases this kind of overhead can be eliminated by inlining the function literals.
-The functions shown above are good examples of this situation. I.e., the <code>lock()</code> function could be easily inlined at call-sites.
-Consider the following case:</p>
+<p>使用<a href="lambdas.html">高阶函数</a>会带来一些运行时间效率的损失：每一个函数都是一个对象，并且都会捕获一个闭包。
+例如：一些在函数体内会被访问的变量。
+内存分配(对于函数对象和类)和虚拟调用引入运行时间开销。
+但是在许多情况下通过内联化匿名函数可以降低这类的开销。
+我们通过下面的示例函数来分析上面这些内容。如，<code>lock()</code> 函数可以被很容易的在申明调用时被内联化。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">lock</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span><span class="n">foo</span><span class="p">()}</span></code></pre>
-
-<p>Instead of creating a function object for the parameter and generating a call, the compiler could emit the following code</p>
+<p>编译器没有为参数创建一个函数对象和产生一个调用点。取而代之，编译器产生了下面的代码：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">lock</span><span class="p">.</span><span class="n">lock</span><span class="p">()</span>
 <span class="k">try</span> <span class="p">{</span>
@@ -1516,49 +1513,40 @@ Consider the following case:</p>
   <span class="n">lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>Isn’t it what we wanted from the very beginning?</p>
-
-<p>To make the compiler do this, we need to annotate the <code>lock()</code> function with the <code>inline</code> annotation:</p>
+<p>这个不是我们在一开始时候想要的么？
+为了让编译器做这个，我们需要在<code>lock()</code>函数前面加上<code>inline</code>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">lock</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">lock</span><span class="p">:</span> <span class="n">Lock</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">T</span><span class="p">):</span> <span class="n">T</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>The <code>inline</code> annotation affects both the function itself and the lambdas passed to it: all of those will be inlined
-into the call site.</p>
+<p><code>inline</code>关键字注释会影响函数体本身以及传递过来的lambdas: 这些所都会被内联到调用点。</p>
 
-<p>Inlining may cause the generated code to grow, but if we do it in a reasonable way (do not inline big functions)
-it will pay off in performance, especially at “megamorphic” call-sites inside loops.</p>
+<p>内联本身有时会引起生成的代码数量增加，但是如果我们使用得当(不要内联大的函数)。它将在性能上有所提升，尤其是在极其巨大的调用循环中。</p>
 
-<h2 id="noinline">@noinline<a href="#noinline" class="anchor"></a></h2>
+<h2 id="noinline">禁止内联@noinline<a href="#noinline" class="anchor"></a></h2>
 
-<p>In case you want only some of the lambdas passed to an inline function to be inlined, you can mark some of your function
-parameters with <code>@noinline</code> annotation:</p>
+<p>为了预防有时候你只希望一部分的lambdas传递到一个内联函数后背内联，你可以把一些你的函数变量用 <code>@noinline</code> 标记:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inlined</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">,</span> <span class="n">@noinline</span> <span class="n">notInlined</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>Inlinable lambdas can only be called inside the inline functions or passed as inlinable arguments,
-but <code>@noinline</code> ones can be manipulated in any way we like: stored in fields, passed around etc.</p>
+<p>可以内联的lambdas只能在内联函数内部被调用或者被当作一个可内联的参数传递。但是通过 <code>@noinline</code>
+我们可以把它变化成任何的方式：储存在指定地点，传递它等等。</p>
 
-<p>Note that if an inline function has no inlinable function parameters and no
-<a href="#reified-type-parameters">reified type parameters</a>, the compiler will issue a warning, since inlining such functions is
- very unlikely to be beneficial (you can suppress the warning if you are sure the inlining is needed).</p>
+<p>需要注意的是，如果一个内联函数没有可以内联的函数变量并且没有<a href="#reified-type-parameters">泛型变量</a>, 编译器会产生一个警告。因为内联一个这样的函数很可能是无意义的(你可以无视这个警告如果你确定内联是必须的).</p>
 
-<h2 id="non-local-returns">Non-local returns<a href="#non-local-returns" class="anchor"></a></h2>
+<h2 id="section">非本地的返回<a href="#section" class="anchor"></a></h2>
 
-<p>In Kotlin, we can only use a normal, unqualified <code>return</code> to exit a named function or a function expression.
-This means that to exit a lambda, we have to use a <a href="returns.html#return-at-labels">label</a>, and a bare <code>return</code> is forbidden
-inside a lambda, because a lambda can not make the enclosing function return:</p>
+<p>在Kotlin中，我们只能使用一个普通的，无限制的<code>return</code>来退出一个命名的函数或者函数表达式。这个意味着为了退出一个lambda,我们不得不用一个 <a href="returns.html#return-at-labels">标签</a>,同时 在一个lambda中<code>return</code>单独出现时不允许的,因为一个lambda不可能让完整的函数返回:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">ordinaryFunction</span> <span class="p">{</span>
      <span class="k">return</span> <span class="c1">// ERROR: can not make `foo` return here</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
-
-<p>But if the function the lambda is passed to is inlined, the return can be inlined as well, so it is allowed:</p>
+<p>但是如果函数和lambda被传到一个内联函数中，return也可以被内联。于是下面就是允许的：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">inlineFunction</span> <span class="p">{</span>
@@ -1566,8 +1554,7 @@ inside a lambda, because a lambda can not make the enclosing function return:</p
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>Such returns (located in a lambda, but exiting the enclosing function) are called <em>non-local</em> returns. We are used to
-this sort of constructs in loops, which inline functions often enclose:</p>
+<p>这样的返回(在lambda中，但是退出闭包的函数)被称作<em>non-local</em>返回。我们把这种排序构造用在循环中。通常这些内联函数是闭合的：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">hasZeros</span><span class="p">(</span><span class="n">ints</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;):</span> <span class="n">Boolean</span> <span class="p">{</span>
   <span class="n">ints</span><span class="p">.</span><span class="n">forEach</span> <span class="p">{</span>
@@ -1576,10 +1563,7 @@ this sort of constructs in loops, which inline functions often enclose:</p>
   <span class="k">return</span> <span class="k">false</span>
 <span class="p">}</span></code></pre>
 
-<p>Note that some inline functions may call the lambdas passed to them as parameters not directly from the function body,
-but from another execution context, such as a local object or a nested function. In such cases, non-local control flow
-is also not allowed in the lambdas. To indicate that, the lambda parameter needs to be annotated with
-the <code>InlineOptions.ONLY_LOCAL_RETURN</code> annotation:</p>
+<p>注意有些内联函数可能会不直接从在函数体中调用被作为参数传递过来的lambdas，而从其他执行语句中调用，像一个本地对象或者一个嵌套函数。在这种情况下，非本地的控制流程也会被lambdas禁止。为了标识这种情况，lambda参数需要以<code>InlineOptions.ONLY_LOCAL_RETURN</code> 标注:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">f</span><span class="p">(</span><span class="n">inlineOptions</span><span class="p">(</span><span class="n">InlineOption</span><span class="p">.</span><span class="n">ONLY_LOCAL_RETURN</span><span class="p">)</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">f</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="n">Runnable</span> <span class="p">{</span>
@@ -1589,12 +1573,12 @@ the <code>InlineOptions.ONLY_LOCAL_RETURN</code> annotation:</p>
 <span class="p">}</span></code></pre>
 
 <blockquote>
-  <p><code>break</code> and <code>continue</code> are not yet available in inlined lambdas, but we are planning to support them too</p>
+  <p><code>break</code> 和 <code>continue</code> 在内联的lambdas还不能使用, 但是我们正在计划支持他们。</p>
 </blockquote>
 
-<h2 id="reified-type-parameters">Reified type parameters<a href="#reified-type-parameters" class="anchor"></a></h2>
+<h2 id="section-1">泛型变量<a href="#section-1" class="anchor"></a></h2>
 
-<p>Sometimes we need to access a type passed to us as a parameter:</p>
+<p>有时候我们需要访问一个作为参数传递过来的变量类型：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">TreeNode</span><span class="p">.</span><span class="n">findParentOfType</span><span class="p">(</span><span class="n">clazz</span><span class="p">:</span> <span class="n">Class</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;):</span> <span class="n">T</span><span class="p">?</span> <span class="p">{</span>
     <span class="k">var</span> <span class="py">p</span> <span class="p">=</span> <span class="n">parent</span>
@@ -1605,16 +1589,15 @@ the <code>InlineOptions.ONLY_LOCAL_RETURN</code> annotation:</p>
     <span class="k">return</span> <span class="n">p</span> <span class="k">as</span> <span class="n">T</span>
 <span class="p">}</span></code></pre>
 
-<p>Here, we walk up a tree and use reflection to check if a node has a certain type.
-It’s all fine, but the call site is not very pretty:</p>
+<p>在这里我们访问一个树并且检查每个节点是不是特定的类型。这都没有问题，但是访问点并不理想：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">myTree</span><span class="p">.</span><span class="n">findParentOfType</span><span class="p">(</span><span class="n">javaClass</span><span class="p">&lt;</span><span class="n">MyTreeNodeType</span><span class="p">&gt;())</span></code></pre>
 
-<p>What we actually want is simply pass a type to this function, i.e. call is like this:</p>
+<p>我们真正想要的只是简单的传递一个类型给函数，例如这样调用：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">myTree</span><span class="p">.</span><span class="n">findParentOfType</span><span class="p">&lt;</span><span class="n">MyTreeNodeType</span><span class="p">&gt;()</span></code></pre>
 
-<p>To enable this, inline functions support <em>reified type parameters</em>, so we can write something like this:</p>
+<p>为了实现这个，内联函数支持 <em>泛型变量</em>, 于是我们就可以这样写：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="err">&lt;</span><span class="nf">reified</span> <span class="n">T</span><span class="p">&gt;</span> <span class="n">TreeNode</span><span class="p">.</span><span class="n">findParentOfType</span><span class="p">():</span> <span class="n">T</span><span class="p">?</span> <span class="p">{</span>
     <span class="k">var</span> <span class="py">p</span> <span class="p">=</span> <span class="n">parent</span>
@@ -1624,11 +1607,10 @@ It’s all fine, but the call site is not very pretty:</p>
     <span class="k">return</span> <span class="n">p</span> <span class="k">as</span> <span class="n">T</span>
 <span class="p">}</span></code></pre>
 
-<p>We qualified the type parameter with the reified modifier, now it’s accessible inside the function,
-almost as if it were a normal class. Since the function is inlined, no reflection is needed, normal operators like <code>!is</code>
-and <code>as</code> are working now. Also, we can call it as mentioned above: <code>myTree.findParentOfType&lt;MyTreeNodeType&gt;()</code>.</p>
+<p>我们用泛型修饰符reified表示变量类型，于是现在它在函数内部就可以像正常函数一样的访问了。既然这个函数是内联的，没有必须的反射，一般的运算符 <code>!is</code>
+和 <code>as</code>就开始工作. 同时，我们也可以这样调用它: <code>myTree.findParentOfType&lt;MyTreeNodeType&gt;()</code>.</p>
 
-<p>Though reflection may not be needed in many cases, we can still use it with a reified type parameter: <code>javaClass()</code> gives us access to it:</p>
+<p>虽然反射在很多情况下不一定需要，我们还是可以在泛型参数里使用它： <code>javaClass()</code> 给我们权限去访问它:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">methodsOf</span><span class="p">&lt;</span><span class="k">reified</span> <span class="n">T</span><span class="p">&gt;()</span> <span class="p">=</span> <span class="n">javaClass</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;().</span><span class="n">getMethods</span><span class="p">()</span>
 
@@ -1636,11 +1618,14 @@ and <code>as</code> are working now. Also, we can call it as mentioned above: <c
   <span class="n">println</span><span class="p">(</span><span class="n">methodsOf</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;().</span><span class="n">joinToString</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">))</span>
 <span class="p">}</span></code></pre>
 
-<p>Normal functions (not marked as inline) can not have reified parameters.
-A type that does not have a run-time representation (e.g. a non-reified type parameter or a fictitious type like <code>Nothing</code>)
-can not be used as an argument for a reified type parameter.</p>
+<p>正常的函数 (没有被标记为内联) 不能够有泛型参数.
+一个没有一个运行时表示的类型 (例如一个非泛型参数或者一个虚构类型如 <code>Nothing</code>)不能被用做泛型参数的变量。</p>
 
-<p>For a low-level description, see the <a href="https://github.com/JetBrains/kotlin/blob/master/spec-docs/reified-type-parameters.md">spec document</a>.</p>
+<p>更详细解释参考 <a href="https://github.com/JetBrains/kotlin/blob/master/spec-docs/reified-type-parameters.md">spec document</a>.</p>
+
+<hr />
+
+<p>翻译By EasonZhou</p>
 
     </article>
 </div>

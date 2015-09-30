@@ -806,7 +806,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/extensions.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Extensions</span></a>
+                   ><span class="marker"></span><span class="text">扩展</span></a>
             
             </div>
         
@@ -840,7 +840,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/generics.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Generics</span></a>
+                   ><span class="marker"></span><span class="text">泛型</span></a>
             
             </div>
         
@@ -992,7 +992,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/inline-functions.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Inline Functions</span></a>
+                   ><span class="marker"></span><span class="text">内联函数</span></a>
             
             </div>
         
@@ -1025,7 +1025,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Multi-Declarations</span></a>
+                   ><span class="marker"></span><span class="text">多重声明</span></a>
             
             </div>
         
@@ -1161,7 +1161,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Annotations</div>
+                    <div class="text">注解</div>
                 </div>
             
             </div>
@@ -1494,14 +1494,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="annotations">Annotations<a href="#annotations" class="anchor"></a></h1>
+        <h1 id="section">注解<a href="#section" class="anchor"></a></h1>
 
-<h2 id="annotation-declaration">Annotation Declaration<a href="#annotation-declaration" class="anchor"></a></h2>
-<p>Annotations are means of attaching metadata to code. To declare an annotation, put the <em class="keyword">annotation</em> keyword in front of a class:</p>
+<h2 id="section-1">注解的声明<a href="#section-1" class="anchor"></a></h2>
+
+<p>注解是连接元数据以及代码的。为了声明注解，把<em class="keyword">annotation</em> 这个关键字放在类前面：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">annotation</span> <span class="k">class</span> <span class="nc">fancy</span></code></pre>
 
-<h3 id="usage">Usage<a href="#usage" class="anchor"></a></h3>
+<h3 id="section-2">用途<a href="#section-2" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">@fancy</span> <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
   <span class="n">@fancy</span> <span class="k">fun</span> <span class="nf">baz</span><span class="p">(</span><span class="n">@fancy</span> <span class="n">foo</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
@@ -1509,7 +1510,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>In most cases, the <code>@ </code>sign is optional. It is only required when annotating expressions or local declarations:</p>
+<p>在很多情况下，<code>@ </code>这个标志不是强制性使用的。它只是在当注解表达式或者本地声明时需要：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">fancy</span> <span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
   <span class="n">fancy</span> <span class="k">fun</span> <span class="nf">baz</span><span class="p">(</span><span class="n">fancy</span> <span class="n">foo</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
@@ -1518,23 +1519,22 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>If you need to annotate the primary constructor of a class, you need to add the <em class="keyword">constructor</em> keyword
-to the constructor declaration, and add the annotations before it:</p>
+<p>如果你需要注解类的主构造方法，你需要给构造方法的声明添加<em class="keyword">constructor</em>这个关键字，还有在前面添加注解：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="n">@inject</span> <span class="n">constructor</span><span class="p">(</span><span class="n">dependency</span><span class="p">:</span> <span class="n">MyDependency</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>You can also annotate property accessors:</p>
+<p>你也可以注解属性访问器：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
     <span class="k">var</span> <span class="py">x</span><span class="p">:</span> <span class="n">MyDependency</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
         <span class="n">@inject</span> <span class="k">set</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="constructors">Constructors<a href="#constructors" class="anchor"></a></h3>
+<h3 id="section-3">构造方法<a href="#section-3" class="anchor"></a></h3>
 
-<p>Annotations may have constructors that take parameters.</p>
+<p>注解可以有参数的构造方法。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">annotation</span> <span class="k">class</span> <span class="nc">special</span><span class="p">(</span><span class="k">val</span> <span class="py">why</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
 
@@ -1542,17 +1542,15 @@ to the constructor declaration, and add the annotations before it:</p>
 
 <h3 id="lambdas">Lambdas<a href="#lambdas" class="anchor"></a></h3>
 
-<p>Annotations can also be used on lambdas. They will be applied to the <code>invoke()</code> method into which the body
-of the lambda is generated. This is useful for frameworks like <a href="http://www.paralleluniverse.co/quasar/">Quasar</a>,
-which uses annotations for concurrency control.</p>
+<p>注解也可以用在lambda表达式中。这将会应用到 lambda 生成的<code>invoke()</code>方法。这对<a href="http://www.paralleluniverse.co/quasar/">Quasar</a>框架很有用，在这个框架中注解被用来并发控制</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">annotation</span> <span class="k">class</span> <span class="nc">Suspendable</span>
 
 <span class="k">val</span> <span class="py">f</span> <span class="p">=</span> <span class="n">@Suspendable</span> <span class="p">{</span> <span class="n">Fiber</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="m">10</span><span class="p">)</span> <span class="p">}</span></code></pre>
 
-<h2 id="java-annotations">Java Annotations<a href="#java-annotations" class="anchor"></a></h2>
+<h2 id="jave">Jave注解<a href="#jave" class="anchor"></a></h2>
 
-<p>Java annotations are 100% compatible with Kotlin:</p>
+<p>Java注解是百分百适用于Kotlin：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">org.junit.Test</span>
 <span class="k">import</span> <span class="nn">org.junit.Assert.*</span>
@@ -1563,7 +1561,7 @@ which uses annotations for concurrency control.</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>Java annotations can also be made to look like modifiers by renaming them on import:</p>
+<p>Java注解也可像用import修饰符重新命名：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">org.junit.Test</span> <span class="k">as</span> <span class="n">test</span>
 
@@ -1573,8 +1571,8 @@ which uses annotations for concurrency control.</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>Since the order of parameters for an annotation written in Java is not defined, you can’t use a regular function
-call syntax for passing the arguments. Instead, you need to use the named argument syntax.</p>
+<p>因为在Java里，注释的参数顺序不是明确的，你不能使用常规的方法
+调用语法传递的参数。相反的，你需要使用指定的参数语法。</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Ann</span> <span class="o">{</span>
@@ -1585,7 +1583,7 @@ call syntax for passing the arguments. Instead, you need to use the named argume
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Kotlin</span>
 <span class="n">Ann</span><span class="p">(</span><span class="n">intValue</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
 
-<p>Just like in Java, a special case is the <code>value</code> parameter; its value can be specified without an explicit name.</p>
+<p>就像在Jave里一样，需要一个特殊的参数是’ value`参数;它的值可以使用不明确的名称来指定。</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">AnnWithValue</span> <span class="o">{</span>
@@ -1595,7 +1593,7 @@ call syntax for passing the arguments. Instead, you need to use the named argume
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Kotlin</span>
 <span class="n">AnnWithValue</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
 
-<p>If the <code>value</code> argument in Java has an array type, it becomes a <code>vararg</code> parameter in Kotlin:</p>
+<p>如果在Java中<code>value</code>参数是array类型，在Kotlin中必须使用 <code>vararg</code>这个参数。</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">AnnWithArrayValue</span> <span class="o">{</span>
@@ -1605,10 +1603,7 @@ call syntax for passing the arguments. Instead, you need to use the named argume
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Kotlin</span>
 <span class="n">AnnWithArrayValue</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
 
-<p>If you need to specify a class as an argument of an annotation, use a Kotlin class
-(<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>). The Kotlin compiler will
-automatically convert it to a Java class, so that the Java code will be able to see the annotations and arguments
-normally.</p>
+<p>如果你需要像注解参数一样指定一个类，使用一个Kotlin的类吧(<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>)。Kotlin编译器会自动把它转换成Java类，使得Java代码能正常看到注解和参数。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.reflect.KClass</span>
 
@@ -1616,7 +1611,7 @@ normally.</p>
 
 <span class="n">Ann</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="k">class</span><span class="p">,</span> <span class="n">Int</span><span class="o">::</span><span class="k">class</span><span class="p">)</span> <span class="k">class</span> <span class="nc">MyClass</span></code></pre>
 
-<p>Values of an annotation instance are exposed as properties to Kotlin code.</p>
+<p>注解实例的值被视为Kotlin的属性。</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="kd">public</span> <span class="nd">@interface</span> <span class="n">Ann</span> <span class="o">{</span>
@@ -1627,6 +1622,10 @@ normally.</p>
 <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">ann</span><span class="p">:</span> <span class="n">Ann</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">i</span> <span class="p">=</span> <span class="n">ann</span><span class="p">.</span><span class="n">value</span>
 <span class="p">}</span></code></pre>
+
+<hr />
+
+<p>翻译By <a href="https://github.com/wahchi">Wahchi</a></p>
 
     </article>
 </div>

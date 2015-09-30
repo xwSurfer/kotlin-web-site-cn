@@ -806,7 +806,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/extensions.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Extensions</span></a>
+                   ><span class="marker"></span><span class="text">扩展</span></a>
             
             </div>
         
@@ -840,7 +840,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/generics.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Generics</span></a>
+                   ><span class="marker"></span><span class="text">泛型</span></a>
             
             </div>
         
@@ -992,7 +992,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/inline-functions.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Inline Functions</span></a>
+                   ><span class="marker"></span><span class="text">内联函数</span></a>
             
             </div>
         
@@ -1025,7 +1025,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Multi-Declarations</div>
+                    <div class="text">多重声明</div>
                 </div>
             
             </div>
@@ -1162,7 +1162,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/annotations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Annotations</span></a>
+                   ><span class="marker"></span><span class="text">注解</span></a>
             
             </div>
         
@@ -1494,38 +1494,37 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="multi-declarations">Multi-Declarations<a href="#multi-declarations" class="anchor"></a></h1>
+        <h1 id="section">多重申明<a href="#section" class="anchor"></a></h1>
 
-<p>Sometimes it is convenient to <em>decompose</em> an object into a number of variables, for example:</p>
+<p>有时把一个对象_分解_成很多变量很比较方便，比如:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="err">(</span><span class="py">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span> <span class="p">=</span> <span class="n">person</span></code></pre>
 
-<p>This syntax is called a <em>multi-declaration</em>. A multi-declaration creates multiple variables at once.
-We have declared two new variables: <code>name</code> and <code>age</code>, and can use them independently:</p>
+<p>这种语法叫做_多重申明_。一个多重申明同时创造多个变量。
+我们申明了两个新变量：<code>name</code> 和 <code>age</code>,并且可以独立使用他们。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 <span class="n">println</span><span class="p">(</span><span class="n">age</span><span class="p">)</span></code></pre>
 
-<p>A multi-declaration is compiled down to the following code:</p>
+<p>一个多重申明会被向下编译成下面的代码：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="n">person</span><span class="p">.</span><span class="n">component1</span><span class="p">()</span>
 <span class="k">val</span> <span class="py">age</span> <span class="p">=</span> <span class="n">person</span><span class="p">.</span><span class="n">component2</span><span class="p">()</span></code></pre>
 
-<p>The <code>component1()</code> and <code>component2()</code> functions are another example of the <em>principle of conventions</em> widely used in Kotlin 
-(see operators like <code>+</code> and <code>*</code>, <em class="keyword">for</em>-loops etc.). 
-Anything can be on the right-hand side of a multi-assignment, as long as the required number of component functions can be called on it. 
-And, of course, there can be <code>component3()</code> and <code>component4()</code> and so on.</p>
+<p><code>component1()</code> 和 <code>component2()</code> 函数是 <em>principle of conventions</em> widely 在Kotlin 中的另一个例子。 
+(参考运算符如 <code>+</code> ， <code>*</code>, <em class="keyword">for</em>-loops 等)
+任何可以被放在多重分配右边的和组件函数的需求数字都可以调用它。当然，这里可以有更多的如 <code>component3()</code> 和 <code>component4()</code>.</p>
 
-<p>Multi-declarations also work in <em class="keyword">for</em>-loops: when you say</p>
+<p>多重申明对 <em class="keyword">for</em>-loops有效：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">in</span> <span class="n">collection</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
 
-<p>Variables <code>a</code> and <code>b</code> get the values returned by <code>component1()</code> and <code>component2()</code> called on elements of the collection.</p>
+<p>变量 <code>a</code> 和 <code>b</code> 从调用从 <code>component1()</code> 和 <code>component2()</code> 返回的集合collection中的对象。</p>
 
-<h2 id="example-returning-two-values-from-a-function">Example: Returning Two Values from a Function<a href="#example-returning-two-values-from-a-function" class="anchor"></a></h2>
+<h2 id="section-1">例：从函数中返回两个变量<a href="#section-1" class="anchor"></a></h2>
 
-<p>Let’s say we need to return two things from a function. For example, a result object and a status of some sort.
-A compact way of doing this in Kotlin is to declare a <a href="data-classes.html"><em>data class</em></a> and return its instance:</p>
+<p>让我们从一个函数中返回两个变量。例如，一个结果对象和一些排序的状态。
+在Kotlin中一个简单的实现方式是申明一个<a href="data-classes.html"><em>data class</em></a>并且返回他的实例：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">Result</span><span class="p">(</span><span class="k">val</span> <span class="py">result</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="k">val</span> <span class="py">status</span><span class="p">:</span> <span class="n">Status</span><span class="p">)</span>
 <span class="k">fun</span> <span class="nf">function</span><span class="p">(...):</span> <span class="n">Result</span> <span class="p">{</span>
@@ -1537,33 +1536,37 @@ A compact way of doing this in Kotlin is to declare a <a href="data-classes.html
 <span class="c1">// Now, to use this function:</span>
 <span class="k">val</span> <span class="err">(</span><span class="py">result</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span> <span class="p">=</span> <span class="n">function</span><span class="p">(...)</span></code></pre>
 
-<p>Since data classes automatically declare <code>componentN()</code> functions, multi-declarations work here.</p>
+<p>既然数据类自动申明 <code>componentN()</code> 函数，多重申明在这里也有效。</p>
 
-<p><strong>NOTE</strong>: we could also use the standard class <code>Pair</code> and have <code>function()</code> return <code>Pair&lt;Int, Status&gt;</code>, 
-but it’s often better to have your data named properly.</p>
+<p><strong>NOTE</strong>: 我们也可用标准类 <code>Pair</code> 并且让 <code>function()</code> 返回 <code>Pair&lt;Int, Status&gt;</code>, 
+但是如果让数据合理命名通常还是更好。</p>
 
-<h2 id="example-multi-declarations-and-maps">Example: Multi-Declarations and Maps<a href="#example-multi-declarations-and-maps" class="anchor"></a></h2>
+<h2 id="section-2">例: 多重申明和图。<a href="#section-2" class="anchor"></a></h2>
 
-<p>Probably the nicest way to traverse a map is this:</p>
+<p>可能最好的遍历一个图的方式就是这样：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">map</span><span class="p">)</span> <span class="p">{</span>
    <span class="c1">// do something with the key and the value</span>
 <span class="p">}</span></code></pre>
 
-<p>To make this work, we should</p>
+<p>为了实现这个，我们需要</p>
 
 <ul>
-  <li>present the map as sequence of values by providing an <code>iterator()</code> function,</li>
-  <li>present each of the elements as a pair by providing functions <code>component1()</code> and <code>component2()</code>.</li>
+  <li>通过提供一个 <code>iterator()</code>迭代函数来表示一系列有序值来表示图。</li>
+  <li>把每个元素标识为一对函数 <code>component1()</code> 和 <code>component2()</code>.</li>
 </ul>
 
-<p>And indeed, the standard library provides such extensions:</p>
+<p>当然，标准库中提供了这一扩展:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;.</span><span class="n">iterator</span><span class="p">():</span> <span class="n">Iterator</span><span class="p">&lt;</span><span class="n">Map</span><span class="p">.</span><span class="n">Entry</span><span class="p">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;&gt;</span> <span class="p">=</span> <span class="n">entrySet</span><span class="p">().</span><span class="n">iterator</span><span class="p">()</span>
 <span class="k">fun</span> <span class="err">&lt;</span><span class="nf">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;</span> <span class="n">Map</span><span class="p">.</span><span class="n">Entry</span><span class="p">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;.</span><span class="n">component1</span><span class="p">()</span> <span class="p">=</span> <span class="n">getKey</span><span class="p">()</span>
 <span class="k">fun</span> <span class="err">&lt;</span><span class="nf">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;</span> <span class="n">Map</span><span class="p">.</span><span class="n">Entry</span><span class="p">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="p">&gt;.</span><span class="n">component2</span><span class="p">()</span> <span class="p">=</span> <span class="n">getValue</span><span class="p">()</span></code></pre>
 
-<p>So you can freely use multi-declarations in <em class="keyword">for</em>-loops with maps (as well as collections of data class instances etc).</p>
+<p>于是你可以自由的使用多重申明 <em class="keyword">for</em>-loops 来操作图(也可以用在数据类实例的集合等)。</p>
+
+<hr />
+
+<p>翻译By EasonZhou</p>
 
     </article>
 </div>
