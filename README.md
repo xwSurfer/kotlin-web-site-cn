@@ -9,8 +9,9 @@
 ## 翻译流程
 
 之前是在QQ群中认领，现在全部改为github流程。  
-请大家先到issue中提名认领未翻译文章，我会将文章更新为**已认领**，进行翻译后提出pull request（翻译请提交至Translation分支）。
+请大家先到issues中提名认领未翻译文章（issue标题请写“认领翻译XXX.md”），我会将文章更新为**已认领**，进行翻译后提出pull request（翻译请提交至Translation分支）。
 
+* issues认领请写“认领翻译XXX.md”
 * 为了避免重复认领，请你先到issues查找文件是否被认领，（主页的Readme可能不及时）
 * 你可以先fork项目 然后切换到**translation**分支，在docs/reference 里可以找到需要翻译的md文件
 * 翻译文件的末尾你可以添加分割线 再添加你的署名和链接
