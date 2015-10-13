@@ -45,7 +45,7 @@
 |this-expressions.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |equality.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |operator-overloading.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
-|null-safety.md|已翻译|[Drakeet](https://github.com/drakeet)|  
+|null-safety.md|已翻译|[drakeet](https://github.com/drakeet)|  
 |exceptions.md|**未翻译**||  
 |annotations.md|已翻译|[Wahchi](https://github.com/wahchi)|  
 |reflection.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
