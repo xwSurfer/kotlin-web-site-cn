@@ -11,8 +11,11 @@
 之前是在QQ群中认领，现在全部改为github流程。  
 请大家先到issue中提名认领未翻译文章，我会将文章更新为**已认领**，进行翻译后提出pull request（翻译请提交至Translation分支）。
 
+* 为了避免重复认领，请你先到issues查找文件是否被认领，（主页的Readme可能不及时）
 * 你可以先fork项目 然后切换到**translation**分支，在docs/reference 里可以找到需要翻译的md文件
+* 翻译文件的末尾你可以添加分割线 再添加你的署名和链接
 * 翻译好后提交Pull Request我会合并进来
+* 我合并了你的提交后你可以提PR更新主页的文件状态（给自己翻译的署名和链接，有时候我会帮你署名）
 
 ## 翻译进度
 
@@ -49,7 +52,7 @@
 |equality.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |operator-overloading.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |null-safety.md|已翻译|[drakeet](https://github.com/drakeet)|  
-|exceptions.md|**已认领**||  
+|exceptions.md|已翻译||  
 |annotations.md|已翻译|[Wahchi](https://github.com/wahchi)|  
 |reflection.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |type-safe-builders.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
@@ -59,7 +62,7 @@
 |using-maven.md|**未翻译**||  
 |using-ant.md|**未翻译**||  
 |using-griffon.md|**未翻译**||  
-|using-gradle.md|**未翻译**||  
+|using-gradle.md|**已认领**||  
 |faq.md|**未翻译**||  
 |comparison-to-java.md|**未翻译**||  
 |comparison-to-scala.md|**未翻译**||  
