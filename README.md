@@ -9,7 +9,10 @@
 ## 翻译流程
 
 之前是在QQ群中认领，现在全部改为github流程。  
-请大家先到issue中提名认领未翻译文章，我会将文章更新为待翻译，进行翻译后提出pull request（翻译请提交至Translation分支）。
+请大家先到issue中提名认领未翻译文章，我会将文章更新为**已认领**，进行翻译后提出pull request（翻译请提交至Translation分支）。
+
+* 你可以先fork项目 然后切换到**translation**分支，在docs/reference 里可以找到需要翻译的md文件
+* 翻译好后提交Pull Request我会合并进来
 
 ## 翻译进度
 
