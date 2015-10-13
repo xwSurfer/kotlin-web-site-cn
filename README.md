@@ -55,7 +55,7 @@
 |type-safe-builders.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |dynamic-type.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |java-interop.md|**未翻译**||  
-|kotlin-doc.md|**已认领**||  
+|kotlin-doc.md|已翻译|[化缘](http://frblog.sinaapp.com)|  
 |using-maven.md|**未翻译**||  
 |using-ant.md|**未翻译**||  
 |using-griffon.md|**未翻译**||  
