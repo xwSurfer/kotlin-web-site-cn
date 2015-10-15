@@ -54,7 +54,7 @@
 |equality.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |operator-overloading.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |null-safety.md|已翻译|[drakeet](https://github.com/drakeet)|  
-|exceptions.md|已翻译||  
+|exceptions.md|已翻译|[cx9527](https://github.com/cx9527)|  
 |annotations.md|已翻译|[Wahchi](https://github.com/wahchi)|  
 |reflection.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |type-safe-builders.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
