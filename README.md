@@ -64,7 +64,7 @@
 |using-maven.md|**未翻译**||  
 |using-ant.md|**未翻译**||  
 |using-griffon.md|**未翻译**||  
-|using-gradle.md|**已认领**||  
+|using-gradle.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
 |faq.md|**未翻译**||  
 |comparison-to-java.md|**未翻译**||  
 |comparison-to-scala.md|**未翻译**||  
