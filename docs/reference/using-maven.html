@@ -771,7 +771,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/interfaces.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Interfaces</span></a>
+                   ><span class="marker"></span><span class="text">接口</span></a>
             
             </div>
         
@@ -1344,7 +1344,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Using Maven</div>
+                    <div class="text">使用 Maven</div>
                 </div>
             
             </div>
@@ -1396,7 +1396,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-gradle.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Gradle</span></a>
+                   ><span class="marker"></span><span class="text">使用 Gradle</span></a>
             
             </div>
         
@@ -1493,28 +1493,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="using-maven">Using Maven<a href="#using-maven" class="anchor"></a></h1>
+        <h1 id="maven">使用 Maven<a href="#maven" class="anchor"></a></h1>
 
-<h2 id="plugin-and-versions">Plugin and Versions<a href="#plugin-and-versions" class="anchor"></a></h2>
+<h2 id="section">插件与版本<a href="#section" class="anchor"></a></h2>
 
-<p>The <em>kotlin-maven-plugin</em> compiles Kotlin sources and modules. Currently only Maven v3 is supported.</p>
+<p><em>kotlin-maven-plugin</em> 用于编译 Kotlin 源码与模块，当前只支持 Marven V3</p>
 
-<p>Define the version of Kotlin you want to use via <em>kotlin.version</em>. The possible values are:</p>
+<p>通过 <em>kotlin.version</em> 指定所要使用的 Kotlin 版本，有以下值可供选择：</p>
 
 <ul>
   <li>
-    <p>X.Y-SNAPSHOT: Correspond to snapshot version for X.Y releases, updated with every successful build on the CI server. These versions are not really stable and are
-only recommended for testing new compiler features. Currently all builds are published as 0.1-SNAPSHOT. To use a snapshot, you need to <a href="#configuring-snapshot-repositories">configure a snapshot repository
-in the pom file</a>.</p>
+    <p>X.Y-SNAPSHOP：指定 X.Y 的值使用对应的最新开发版，当前只有一个开发版版本号 0.1-SNAPSHOT。这是非稳定的版本的只适用于测试编译器的新特性。使用开发版需要在 pom 文件中<a href="#configuring-snapshot-repositories">设置相应的 repository</a>.</p>
   </li>
   <li>
-    <p>X.Y.Z: Correspond to release or milestone versions X.Y.Z, updated manually. These are stable builds. Release versions are published to Maven Central Repository. No extra configuration
-is needed in your pom file.</p>
+    <p>X.Y.Z：指定 X.Y.Z 值使用对应的稳定版本，这些版本发布在 Maven Central Repository 中，无需在 pom 文件中进行额外的设置。</p>
   </li>
 </ul>
 
-<p>The correspondence between milestones and versions is displayed below:</p>
-
+<p>以下是稳定版本对应的版本号 X.Y.Z 值：</p>
 <table>
 <thead>
 <tr>
@@ -1597,9 +1593,9 @@ is needed in your pom file.</p>
 </tbody>
 </table>
 
-<h2 id="configuring-snapshot-repositories">Configuring Snapshot Repositories<a href="#configuring-snapshot-repositories" class="anchor"></a></h2>
+<h2 id="repository">设置开发版的 repository<a href="#repository" class="anchor"></a></h2>
 
-<p>To use a snapshot version of Kotlin, include the following repository definitions to the pom</p>
+<p>使用 Kotlin 的开发版需要在 pom 文件中定义以下的 respository：</p>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;repositories&gt;</span>
   <span class="nt">&lt;repository&gt;</span>
@@ -1629,9 +1625,9 @@ is needed in your pom file.</p>
   <span class="nt">&lt;/pluginRepository&gt;</span>
 <span class="nt">&lt;/pluginRepositories&gt;</span></code></pre>
 
-<h2 id="dependencies">Dependencies<a href="#dependencies" class="anchor"></a></h2>
+<h2 id="section-1">依赖<a href="#section-1" class="anchor"></a></h2>
 
-<p>Kotlin has an extensive standard library that can be used in your applications. Configure the following dependency in the pom file</p>
+<p>Kotlin 提供了大量的标准库以供开发使用，需要在 pom 文件中设置以下依赖：</p>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;dependencies&gt;</span>
     <span class="nt">&lt;dependency&gt;</span>
@@ -1641,14 +1637,14 @@ is needed in your pom file.</p>
     <span class="nt">&lt;/dependency&gt;</span>
 <span class="nt">&lt;/dependencies&gt;</span></code></pre>
 
-<h2 id="compiling-kotlin-only-source-code">Compiling Kotlin only source code<a href="#compiling-kotlin-only-source-code" class="anchor"></a></h2>
+<h2 id="kotlin-">仅编译 Kotlin 源码<a href="#kotlin-" class="anchor"></a></h2>
 
-<p>To compile source code, specify the source directories in the <build> tag:</build></p>
+<p>在 &lt;build&gt; 标签中指定所要编译的 Kotlin 源码目录：</p>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;sourceDirectory&gt;</span>${project.basedir}/src/main/kotlin<span class="nt">&lt;/sourceDirectory&gt;</span>
 <span class="nt">&lt;testSourceDirectory&gt;</span>${project.basedir}/src/test/kotlin<span class="nt">&lt;/testSourceDirectory&gt;</span></code></pre>
 
-<p>The Kotlin Maven Plugin needs to be referenced to compile the sources:</p>
+<p>Maven 中需要引用 Kotlin 插件用于编码源码：</p>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;plugin&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>kotlin-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
@@ -1670,17 +1666,16 @@ is needed in your pom file.</p>
     <span class="nt">&lt;/executions&gt;</span>
 <span class="nt">&lt;/plugin&gt;</span></code></pre>
 
-<h2 id="compiling-kotlin-and-java-sources">Compiling Kotlin and Java sources<a href="#compiling-kotlin-and-java-sources" class="anchor"></a></h2>
+<h2 id="kotlin--java-">同时编译 Kotlin 与 Java 源码<a href="#kotlin--java-" class="anchor"></a></h2>
 
-<p>To compile mixed code applications Kotlin compiler should be invoked before Java compiler.
-In maven terms that means kotlin-maven-plugin should be run before maven-compiler-plugin.</p>
+<p>编译混合代码时 Kotlin 编译器应先于 Java 的编译器被调用。在 Maven 中这表示 kotlin-maven-plugin 先于 maven-compiler-plugin 运行。</p>
 
-<p>It could be done by moving Kotlin compilation to previous phase, process-sources (feel free to suggest a better solution if you have one):</p>
+<p>通过指定 pom 文件中 &lt;phase&gt; 标签的值为 process-sources 可实现以上目的。（如果有更好的方法欢迎提出）</p>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;plugin&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>kotlin-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.jetbrains.kotlin<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>${kotlin.version}<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 
     <span class="nt">&lt;executions&gt;</span>
         <span class="nt">&lt;execution&gt;</span>
@@ -1697,9 +1692,9 @@ In maven terms that means kotlin-maven-plugin should be run before maven-compile
     <span class="nt">&lt;/executions&gt;</span>
 <span class="nt">&lt;/plugin&gt;</span></code></pre>
 
-<h2 id="using-external-annotations">Using External Annotations<a href="#using-external-annotations" class="anchor"></a></h2>
+<h2 id="section-2">使用外部的注解<a href="#section-2" class="anchor"></a></h2>
 
-<p>Kotlin uses external annotation to have precise information about types in Java libraries. To specify these annotations, use annotationPaths in <configuration>:</configuration></p>
+<p>Kotlin 使用外部注解为 Java 库提供精准的类型信息，通过 &lt;configuration&gt; 标签中的 annotationPaths 指定这些注解。</p>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;plugin&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>kotlin-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
@@ -1708,15 +1703,18 @@ In maven terms that means kotlin-maven-plugin should be run before maven-compile
 
     <span class="nt">&lt;configuration&gt;</span>
         <span class="nt">&lt;annotationPaths&gt;</span>
-            <span class="nt">&lt;annotationPath&gt;</span>path to annotations root<span class="nt">&lt;/annotationPath&gt;</span>
+            <span class="c">&lt;!--指向注解文件的根目录--&gt;</span>
+            <span class="nt">&lt;annotationPath&gt;</span>${project.basedir}/src/main/resources/<span class="nt">&lt;/annotationPath&gt;</span>
         <span class="nt">&lt;/annotationPaths&gt;</span>
     <span class="nt">&lt;/configuration&gt;</span>
 
 ...</code></pre>
 
-<h2 id="examples">Examples<a href="#examples" class="anchor"></a></h2>
+<h2 id="section-3">例子<a href="#section-3" class="anchor"></a></h2>
 
-<p>An example Maven project can be <a href="https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip">downloaded directly from the GitHub repository</a></p>
+<p>Maven 工程的例子可从 <a href="https://github.com/JetBrains/kotlin-examples/archive/master/maven.zip">Github 直接下载</a></p>
+
+<p>翻译 by <a href="http://www.demojameson.com">DemoJameson</a></p>
 
     </article>
 </div>

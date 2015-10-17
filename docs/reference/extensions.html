@@ -771,7 +771,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/interfaces.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Interfaces</span></a>
+                   ><span class="marker"></span><span class="text">接口</span></a>
             
             </div>
         
@@ -1345,7 +1345,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-maven.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Maven</span></a>
+                   ><span class="marker"></span><span class="text">使用 Maven</span></a>
             
             </div>
         
@@ -1396,7 +1396,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-gradle.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Gradle</span></a>
+                   ><span class="marker"></span><span class="text">使用 Gradle</span></a>
             
             </div>
         
@@ -1503,10 +1503,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>声明一个扩展方法，我们需要用一个 <em>receiver type</em>,也就是扩展的类型来作为他的前缀。下面是为<code>MutableList&lt;Int&gt;</code>添加一个<code>swap</code>方法：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">MutableList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">index1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">MutableList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
 <span class="p">}</span></code></pre>
 
 <p>这个<em class="keyword">this</em>关键字在扩展方法内接受对应的对象（在点符号以前传过来的）</p>
@@ -1518,10 +1518,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>当然，这个方法像这样<code>MutableList&lt;T&gt;</code>，我们可以使用泛型：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">index1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
 <span class="p">}</span></code></pre>
 
 <p>在接收类型表达式中，我们要在方法名可用前声明泛型类型参数。参见<a href="generics.html">Generic functions</a>.</p>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Using Gradle</title>
+<title>使用 Gradle</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -771,7 +771,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/interfaces.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Interfaces</span></a>
+                   ><span class="marker"></span><span class="text">接口</span></a>
             
             </div>
         
@@ -1344,7 +1344,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-maven.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Maven</span></a>
+                   ><span class="marker"></span><span class="text">使用 Maven</span></a>
             
             </div>
         
@@ -1395,7 +1395,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Using Gradle</div>
+                    <div class="text">使用 Gradle</div>
                 </div>
             
             </div>
@@ -1493,33 +1493,30 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="using-gradle">Using Gradle<a href="#using-gradle" class="anchor"></a></h1>
+        <h1 id="gradle">使用 Gradle<a href="#gradle" class="anchor"></a></h1>
 
-<h2 id="plugin-and-versions">Plugin and Versions<a href="#plugin-and-versions" class="anchor"></a></h2>
+<h2 id="section">插件和版本<a href="#section" class="anchor"></a></h2>
 
-<p>The <em>kotlin-gradle-plugin</em> compiles Kotlin sources and modules.</p>
+<p>使用 <em>kotlin-gradle-plugin</em> 编译Kotlin的源代码和模块.</p>
 
-<p>Define the version of Kotlin we want to use via <em>kotlin.version</em>. The possible values are:</p>
+<p>我们希望通过 <em>kotlin.version</em>这样的形式来定义Kotlin的版本. 可能使用的形式是:</p>
 
 <ul>
   <li>
-    <p>X.Y-SNAPSHOT: Correspond to snapshot version for X.Y releases, updated with every successful build on the CI server. These versions are not really stable and are
-only recommended for testing new compiler features. Currently all builds are published as 0.1-SNAPSHOT. To use a snapshot, we need to <a href="#using-snapshot-versions">configure a snapshot repository
-in the build.gradle file</a>.</p>
+    <p>X.Y-SNAPSHOT: 对应于每一个X.Y形式的发布版本, 在服务器上都会更新为对应的成功编译的版本. 这种版本是不稳定的，并且推荐您仅用于测试编译器新功能. 现阶段所有的构建版本都以0.1-SNAPSHOT的形式发布. 通过使用快照方式, 我们需要 <a href="#using-snapshot-versions">在build.gradle文件中配置一个快照仓库</a>.</p>
   </li>
   <li>
-    <p>X.Y.Z: Correspond to release or milestone versions X.Y.Z, updated manually. These are stable builds. Release versions are published to Maven Central Repository. No extra configuration
-is needed in the build.gradle file.</p>
+    <p>X.Y.Z: 对应于发布版本和里程碑版本 X.Y.Z, 是通过手动升级的. 这是稳定的版本. 正式版会在 Maven Central Repository中发布. 并不需要在build.gradle文件中额外配置.</p>
   </li>
 </ul>
 
-<p>The correspondence between milestones and versions is displayed below:</p>
+<p>里程碑和版本之间的对应关系如下:</p>
 
 <table>
 <thead>
 <tr>
-  <th>Milestone</th>
-  <th>Version</th>
+  <th>里程碑</th>
+  <th>版本</th>
 </tr>
 </thead>
 <tbody>
@@ -1597,51 +1594,49 @@ is needed in the build.gradle file.</p>
 </tbody>
 </table>
 
-<h2 id="targeting-the-jvm">Targeting the JVM<a href="#targeting-the-jvm" class="anchor"></a></h2>
+<h2 id="jvm">应用于JVM<a href="#jvm" class="anchor"></a></h2>
 
-<p>To target the JVM, the Kotlin plugin needs to be applied</p>
+<p>为了在JVM中应用, Kotlin插件需要配置如下</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s2">&quot;kotlin&quot;</span></code></pre>
 
-<p>As of M11, Kotlin sources can be mixed with Java sources in the same folder, or in different folders. The default convention is using different folders:</p>
+<p>在M11版本, Kotlin源文件和Java源文件可以在同一个文件夹中存在, 也可以在不同文件夹中. 默认采用的是不同的文件夹:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">project</span>
-    <span class="o">-</span> <span class="n">src</span>
-        <span class="o">-</span> <span class="n">main</span> <span class="o">(</span><span class="n">root</span><span class="o">)</span>
-            <span class="o">-</span> <span class="n">kotlin</span>
-            <span class="o">-</span> <span class="n">java</span></code></pre>
+    <span class="o">-</span> <span class="n">main</span> <span class="o">(</span><span class="n">root</span><span class="o">)</span>
+        <span class="o">-</span> <span class="n">kotlin</span>
+        <span class="o">-</span> <span class="n">java</span></code></pre>
 
-<p>The corresponding <em>sourceSets</em> property should be updated if not using the default convention</p>
+<p>如果不想使用默认选项，你需要更新对应的 <em>sourceSets</em> 属性</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">sourceSets</span> <span class="o">{</span>
     <span class="n">main</span><span class="o">.</span><span class="na">kotlin</span><span class="o">.</span><span class="na">srcDirs</span> <span class="o">+=</span> <span class="s1">&#39;src/main/myKotlin&#39;</span>
     <span class="n">main</span><span class="o">.</span><span class="na">java</span><span class="o">.</span><span class="na">srcDirs</span> <span class="o">+=</span> <span class="s1">&#39;src/main/myJava&#39;</span>
 <span class="o">}</span></code></pre>
 
-<h2 id="targeting-javascript">Targeting JavaScript<a href="#targeting-javascript" class="anchor"></a></h2>
+<h2 id="javascript">应用于 JavaScript<a href="#javascript" class="anchor"></a></h2>
 
-<p>When targeting JavaScript, a different plugin should be applied:</p>
+<p>当应用于 JavaScript 的时候, 需要设置一个不同的插件:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s2">&quot;kotlin2js&quot;</span></code></pre>
 
-<p>This plugin only works for Kotlin files so it is recommended to keep Kotlin and Java files separate (if it’s the case that the same project contains Java files). As with
-targeting the JVM, if not using the default convention, we need to specify the source folder using <em>sourceSets</em></p>
+<p>该插件仅作用于Kotlin文件，因此推荐使用这个插件来区分Kotlin和Java文件 (这种情况仅仅是同一工程中包含Java源文件的时候). 如果不使用默认选项，又为了应用于 JVM，我们需要指定源文件夹使用 <em>sourceSets</em></p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">sourceSets</span> <span class="o">{</span>
     <span class="n">main</span><span class="o">.</span><span class="na">kotlin</span><span class="o">.</span><span class="na">srcDirs</span> <span class="o">+=</span> <span class="s1">&#39;src/main/myKotlin&#39;</span>
 <span class="o">}</span></code></pre>
 
-<p>If you want to create a re-usable library, use <code>kotlinOptions.metaInfo</code> to generate additional JS file with binary descriptors.
-This file should be distributed together with the result of translation.</p>
+<p>如果你想创建一个可重用的库, 使用 <code>kotlinOptions.metaInfo</code> 来生成额外的二进制形式的JS文件.
+这个文件应该和编译结果一起分发.</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">compileKotlin2Js</span> <span class="o">{</span>
 	<span class="n">kotlinOptions</span><span class="o">.</span><span class="na">metaInfo</span> <span class="o">=</span> <span class="kc">true</span>
 <span class="o">}</span></code></pre>
 
-<h2 id="targeting-android">Targeting Android<a href="#targeting-android" class="anchor"></a></h2>
+<h2 id="android">应用于 Android<a href="#android" class="anchor"></a></h2>
 
-<p>Android’s Gradle model is a little different from ordinary Gradle, so if we want to build an Android project written in Kotlin, we need
-<em>kotlin-android</em> plugin instead of <em>kotlin</em>:</p>
+<p>Android的 Gradle模型和传统的Gradle有些不同, 因此如果我们想要通过Kotlin来创建一个Android应用, 应该使用
+<em>kotlin-android</em> 插件来代替 <em>kotlin</em>:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">buildscript</span> <span class="o">{</span>
     <span class="o">...</span>
@@ -1651,7 +1646,7 @@ This file should be distributed together with the result of translation.</p>
 
 <h3 id="android-studio">Android Studio<a href="#android-studio" class="anchor"></a></h3>
 
-<p>If using Android Studio, the following needs to be added under android:</p>
+<p>如果你使用的是Android Studio, 下面的一些属性需要添加到文件中:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">android</span> <span class="o">{</span>
   <span class="o">...</span>
@@ -1661,11 +1656,11 @@ This file should be distributed together with the result of translation.</p>
   <span class="o">}</span>
 <span class="o">}</span></code></pre>
 
-<p>This lets Android Studio know that the kotlin directory is a source root, so when the project model is loaded into the IDE it will be properly recognized.</p>
+<p>上述属性可以使kotlin目录在Android Studio中作为源码根目录存在, 所以当项目模型加载到IDE可以被正确识别.</p>
 
-<h2 id="configuring-dependencies">Configuring Dependencies<a href="#configuring-dependencies" class="anchor"></a></h2>
+<h2 id="section-1">配置依赖<a href="#section-1" class="anchor"></a></h2>
 
-<p>We need to add dependencies on kotlin-gradle-plugin and the Kotlin standard library:</p>
+<p>我们需要添加kotlin-gradle-plugin和Kotlin标准库的依赖:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">buildscript</span> <span class="o">{</span>
   <span class="n">repositories</span> <span class="o">{</span>
@@ -1686,9 +1681,9 @@ This file should be distributed together with the result of translation.</p>
   <span class="n">compile</span> <span class="s1">&#39;org.jetbrains.kotlin:kotlin-stdlib:&lt;version&gt;&#39;</span>
 <span class="o">}</span></code></pre>
 
-<h2 id="using-snapshot-versions">Using Snapshot versions<a href="#using-snapshot-versions" class="anchor"></a></h2>
+<h2 id="section-2">使用快照版本<a href="#section-2" class="anchor"></a></h2>
 
-<p>If we want to use a snapshot version (nightly build), we need to add the snapshot repository and change the version to 0.1-SNAPSHOT:</p>
+<p>如果想要使用快照版本 (每日构建), 我们需要添加一个快照仓库并且将版本更改为0.1-SNAPSHOT:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">buildscript</span> <span class="o">{</span>
   <span class="n">repositories</span> <span class="o">{</span>
@@ -1715,15 +1710,15 @@ This file should be distributed together with the result of translation.</p>
   <span class="n">compile</span> <span class="s1">&#39;org.jetbrains.kotlin:kotlin-stdlib:0.1-SNAPSHOT&#39;</span>
 <span class="o">}</span></code></pre>
 
-<h2 id="using-external-annotations">Using External Annotations<a href="#using-external-annotations" class="anchor"></a></h2>
+<h2 id="section-3">使用外部注释<a href="#section-3" class="anchor"></a></h2>
 
-<p>External annotations for JDK and Android SDK will be configured automatically. If we want to add more annotations for some libraries, we need to add the following line to the Gradle script:</p>
+<p>JDK和Android SDK的外部注释将自动配置. 如果想要为一些库添加更多的注解，需要在Gradle脚本中添加下面这一行:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">kotlinOptions</span><span class="o">.</span><span class="na">annotations</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="s1">&#39;&lt;path to annotations&gt;&#39;</span><span class="o">)</span></code></pre>
 
-<h2 id="examples">Examples<a href="#examples" class="anchor"></a></h2>
+<h2 id="section-4">例子<a href="#section-4" class="anchor"></a></h2>
 
-<p>The <a href="https://github.com/jetbrains/kotlin">Kotlin Repository</a> contains examples:</p>
+<p><a href="https://github.com/jetbrains/kotlin">Kotlin Repository</a> 包含的例子:</p>
 
 <ul>
   <li><a href="https://github.com/JetBrains/kotlin-examples/tree/master/gradle/hello-world">Kotlin</a></li>
@@ -1731,6 +1726,8 @@ This file should be distributed together with the result of translation.</p>
   <li><a href="https://github.com/JetBrains/kotlin-examples/tree/master/gradle/android-mixed-java-kotlin-project">Android</a></li>
   <li><a href="https://github.com/JetBrains/kotlin/tree/master/libraries/tools/kotlin-gradle-plugin/src/test/resources/testProject/kotlin2JsProject">JavaScript</a></li>
 </ul>
+
+<p>翻译By <a href="https://github.com/chiahaolu">ChiahaoLu</a></p>
 
     </article>
 </div>
