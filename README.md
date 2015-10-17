@@ -34,7 +34,7 @@
 |Returns.md|已翻译|S_arige|  
 |Classes.md|已翻译|dingsx|  
 |Properties.md|已翻译|空白|  
-|Interfaces.md |**已认领**||  
+|Interfaces.md |已翻译|翻译By [LyndonChin](https://github.com/LyndonChin)|  
 |visibility-modifiers.md|已翻译|Jacky Xu|  
 |extensions.md|已翻译|S_arige|  
 |data-classes.md|已翻译|[Wahchi](https://github.com/wahchi)|  
@@ -59,14 +59,14 @@
 |reflection.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |type-safe-builders.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |dynamic-type.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
-|java-interop.md|**未翻译**||  
+|java-interop.md|**已认领**||  
 |kotlin-doc.md|已翻译|[化缘](http://frblog.sinaapp.com)|  
 |using-maven.md|已翻译|[DemoJameson](http://www.demojameson.com)|  
 |using-ant.md|**未翻译**||  
 |using-griffon.md|**未翻译**||  
 |using-gradle.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
 |faq.md|**未翻译**||  
-|comparison-to-java.md|**未翻译**||  
+|comparison-to-java.md|**已认领**||  
 |comparison-to-scala.md|**未翻译**||  
 
 
