@@ -771,7 +771,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Interfaces</div>
+                    <div class="text">接口</div>
                 </div>
             
             </div>
@@ -1345,7 +1345,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-maven.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Maven</span></a>
+                   ><span class="marker"></span><span class="text">使用 Maven</span></a>
             
             </div>
         
@@ -1396,7 +1396,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-gradle.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Gradle</span></a>
+                   ><span class="marker"></span><span class="text">使用 Gradle</span></a>
             
             </div>
         
@@ -1493,13 +1493,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="interfaces">Interfaces<a href="#interfaces" class="anchor"></a></h1>
+        <h1 id="section">接口<a href="#section" class="anchor"></a></h1>
 
-<p>Interfaces in Kotlin are very similar to Java 8. They can contain declarations of abstract methods, as well as method
-implementations. What makes them different from abstract classes is that interfaces cannot store state. They can have
-properties but these need to be abstract.</p>
+<p>Kotlin 的接口与 Java 8 类似，既包含抽象方法的声明，也包含实现。与抽象类不同的是，接口无法保存状态。它的的属性必须声明为 abstract。</p>
 
-<p>An interface is defined using the keyword <em class="keyword">interface</em></p>
+<p>使用关键字 <em class="keyword">interface</em> 来定义接口。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">MyInterface</span> <span class="p">{</span>
     <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span>
@@ -1508,9 +1506,9 @@ properties but these need to be abstract.</p>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="implementing-interfaces">Implementing Interfaces<a href="#implementing-interfaces" class="anchor"></a></h2>
+<h2 id="section-1">实现接口<a href="#section-1" class="anchor"></a></h2>
 
-<p>A class or object can implement one or more interfaces</p>
+<p>一个类或者对象可以实现一个或多个接口。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Child</span> <span class="p">:</span> <span class="n">MyInterface</span> <span class="p">{</span>
    <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
@@ -1518,9 +1516,9 @@ properties but these need to be abstract.</p>
    <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="properties-in-interfaces">Properties in Interfaces<a href="#properties-in-interfaces" class="anchor"></a></h2>
+<h2 id="section-2">接口属性<a href="#section-2" class="anchor"></a></h2>
 
-<p>Interfaces allow properties as long as these are stateless, that is because interfaces do not allow state.</p>
+<p>接口只能定义无状态（stateless）的属性。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">MyInterface</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">property</span><span class="p">:</span> <span class="n">Int</span> <span class="c1">// abstract</span>
@@ -1534,9 +1532,9 @@ properties but these need to be abstract.</p>
     <span class="k">override</span> <span class="k">val</span> <span class="py">property</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">29</span>
 <span class="p">}</span></code></pre>
 
-<h2 id="resolving-overriding-conflicts">Resolving overriding conflicts<a href="#resolving-overriding-conflicts" class="anchor"></a></h2>
+<h2 id="override">解决重写（Override）冲突<a href="#override" class="anchor"></a></h2>
 
-<p>When we declare many types in our supertype list, it may appear that we inherit more than one implementation of the same method. For example</p>
+<p>实现多个接口时，可能会遇到接口方法名同名的问题。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">A</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span> <span class="p">}</span>
@@ -1559,10 +1557,7 @@ properties but these need to be abstract.</p>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>Interfaces <em>A</em> and <em>B</em> both declare functions <em>foo()</em> and <em>bar()</em>. Both of them implement <em>foo()</em>, but only <em>B</em> implements <em>bar()</em> (<em>bar()</em> is not marked abstract in <em>A</em>,
-because this is the default for interfaces, if the function has no body). Now, if we derive a concrete class <em>C</em> from <em>A</em>, we, obviously, have to override <em>bar()</em> and provide
-an implementation. And if we derive <em>D</em> from <em>A</em> and <em>B</em>, we don’t have to override <em>bar()</em>, because we have inherited only one implementation of it.
-But we have inherited two implementations of <em>foo()</em>, so the compiler does not know which one to choose, and forces us to override <em>foo()</em> and say what we want explicitly.</p>
+<p>上例中，接口 <em>A</em> 和 <em>B</em> 都定义了方法 <em>foo()</em> 和 <em>bar()</em>。 两者都实现了 <em>foo()</em>, 但是只有 <em>B</em> 实现了 <em>bar()</em> (<em>bar()</em> 在 <em>A</em> 中没有标记为 abstract，因为没有方法体时默认为 abstract）。因为 <em>C</em> 是一个实现了 <em>A</em> 的具体类，所以必须要重写 <em>bar()</em> 并实现这个抽象方法。<em>D</em> 可以不用重写 <em>bar()</em>，因为它实现了 <em>A</em> 和 <em>B</em>，因而可以自动继承 <em>B</em> 中 <em>bar()</em> 的实现，但是两个接口都定义了方法 <em>foo()</em>，为了告诉编译器 <em>D</em> 会继承谁的方法，必须在 <em>D</em> 中重写 <em>foo()</em>。</p>
 
     </article>
 </div>

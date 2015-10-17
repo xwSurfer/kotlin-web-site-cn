@@ -772,7 +772,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/interfaces.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Interfaces</span></a>
+                   ><span class="marker"></span><span class="text">接口</span></a>
             
             </div>
         
@@ -1345,7 +1345,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-maven.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Maven</span></a>
+                   ><span class="marker"></span><span class="text">使用 Maven</span></a>
             
             </div>
         
@@ -1396,7 +1396,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-gradle.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Gradle</span></a>
+                   ><span class="marker"></span><span class="text">使用 Gradle</span></a>
             
             </div>
         
@@ -1493,46 +1493,42 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="section">习惯用法<a href="#section" class="anchor"></a></h1>
+        <h1 id="kotlin">Kotlin特点<a href="#kotlin" class="anchor"></a></h1>
 
-<p>一些在使用Kotlin时候的习惯用法.如果你有一个特别好的用法你可以发起一个pull request.</p>
+<p>一些在 Kotlin 中广泛使用的语法习惯，如果你有更喜欢的语法习惯或者风格，pull一个request贡献给我们吧！</p>
 
-<h3 id="dtos-pojospocos">创建 DTO’s (POJO’s/POCO’s)<a href="#dtos-pojospocos" class="anchor"></a></h3>
+<h3 id="dtos-pojospocos">创建方便任务间传递的数据 DTO’s (POJO’s/POCO’s)<a href="#dtos-pojospocos" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">val</span> <span class="py">email</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span></code></pre>
 
-<p>创建一个 <code>Customer</code> 类同时具有下面这些方法:</p>
+<p>会为 <code>Customer</code> 类提供以下功能：</p>
 
 <ul>
-  <li>getters (and setters 方法对于所有的 <em class="keyword">var</em>的属性)</li>
+  <li>getters (还有 setters )， 所有以 <em class="keyword">var</em>’s) 标记的类属性都会自动生成</li>
   <li><code>equals()</code></li>
   <li><code>hashCode()</code></li>
   <li><code>toString()</code></li>
   <li><code>copy()</code></li>
-  <li><code>component1()</code>, <code>component2()</code>, …, 对于所有属性 (查看 <a href="data-classes.html">Data classes</a>)</li>
+  <li><code>component1()</code>, <code>component2()</code>, …, 所有属性都会生成 (参阅 <a href="data-classes.html">Data classes</a>)</li>
 </ul>
 
-<h3 id="section-1">定义常量<a href="#section-1" class="anchor"></a></h3>
-
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span> <span class="p">=</span> <span class="n">foo</span><span class="p">()</span></code></pre>
-
-<h3 id="section-2">函数参数带有默认值<a href="#section-2" class="anchor"></a></h3>
+<h3 id="section">函数默认参数<a href="#section" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
 
-<h3 id="list">过滤一个list<a href="#list" class="anchor"></a></h3>
+<h3 id="section-1">过滤链表<a href="#section-1" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">positives</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">x</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">}</span></code></pre>
 
-<p>或者更短一些</p>
+<p>或者可以更短:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">positives</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="m">0</span> <span class="p">}</span></code></pre>
 
-<h3 id="section-3">字符串插入值<a href="#section-3" class="anchor"></a></h3>
+<h3 id="stringstring">String内插入String<a href="#stringstring" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="s">&quot;Name $name&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="section-4">检查实例<a href="#section-4" class="anchor"></a></h3>
+<h3 id="section-2">类型判断<a href="#section-2" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">is</span> <span class="n">Foo</span> <span class="p">-&gt;</span> <span class="p">...</span>
@@ -1540,76 +1536,78 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">else</span>   <span class="p">-&gt;</span> <span class="p">...</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="map">遍历map<a href="#map" class="anchor"></a></h3>
+<h3 id="maplist-">遍历 map/list 中的键值对<a href="#maplist-" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">in</span> <span class="n">map</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;$k -&gt; $v&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p><code>k</code>, <code>v</code> 可以是其他任何名称.</p>
+<p><code>k</code>, <code>v</code> 可以改成任意名字.</p>
 
-<h3 id="section-5">使用范围<a href="#section-5" class="anchor"></a></h3>
+<h3 id="ranges">使用区间 ranges<a href="#ranges" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">100</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 <span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">2.</span><span class="p">.</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
 
-<h3 id="list-1">只读list<a href="#list-1" class="anchor"></a></h3>
+<h3 id="section-3">只读链表<a href="#section-3" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">list</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="map-1">只读map<a href="#map-1" class="anchor"></a></h3>
+<h3 id="section-4">只读表<a href="#section-4" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">map</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span> <span class="n">to</span> <span class="m">1</span><span class="p">,</span> <span class="s">&quot;b&quot;</span> <span class="n">to</span> <span class="m">2</span><span class="p">,</span> <span class="s">&quot;c&quot;</span> <span class="n">to</span> <span class="m">3</span><span class="p">)</span></code></pre>
 
-<h3 id="map-2">访问map<a href="#map-2" class="anchor"></a></h3>
+<h3 id="section-5">表的访问与赋值<a href="#section-5" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">])</span>
 <span class="n">map</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="n">value</span></code></pre>
 
-<h3 id="lazy">Lazy属性<a href="#lazy" class="anchor"></a></h3>
+<h3 id="section-6">延迟属性<a href="#section-6" class="anchor"></a></h3>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">p</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">lazy</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">p</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">lazy</span> <span class="p">{</span>
     <span class="c1">// compute the string</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="section-6">拓展方法<a href="#section-6" class="anchor"></a></h3>
+<h3 id="section-7">扩展函数<a href="#section-7" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">String</span><span class="p">.</span><span class="n">spaceToCamelCase</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 
 <span class="s">&quot;Convert this to camelcase&quot;</span><span class="p">.</span><span class="n">spaceToCamelCase</span><span class="p">()</span></code></pre>
 
-<h3 id="section-7">创建一个单例<a href="#section-7" class="anchor"></a></h3>
+<h3 id="section-8">创建单例<a href="#section-8" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">Resource</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&quot;Name&quot;</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="if-not-null">If not null的快速写法<a href="#if-not-null" class="anchor"></a></h3>
+<h3 id="if-not-null-">If not null 缩写<a href="#if-not-null-" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">files</span> <span class="p">=</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">).</span><span class="n">listFiles</span><span class="p">()</span>
 
 <span class="n">println</span><span class="p">(</span><span class="n">files</span><span class="o">?.</span><span class="n">size</span><span class="p">)</span></code></pre>
 
-<h3 id="if-not-null-and-else-">If not null and else 的快速写法<a href="#if-not-null-and-else-" class="anchor"></a></h3>
+<p>files?.size 等价于 if (files != null) files.size else null</p>
+
+<h3 id="if-not-null-and-else-">If not null and else 缩写<a href="#if-not-null-and-else-" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">files</span> <span class="p">=</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">).</span><span class="n">listFiles</span><span class="p">()</span>
 
 <span class="n">println</span><span class="p">(</span><span class="n">files</span><span class="o">?.</span><span class="n">size</span> <span class="o">?:</span> <span class="s">&quot;empty&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="if-null">if null执行后面语句<a href="#if-null" class="anchor"></a></h3>
+<h3 id="if-null-">if null 缩写<a href="#if-null-" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="p">...</span>
 <span class="k">val</span> <span class="py">email</span> <span class="p">=</span> <span class="n">data</span><span class="p">[</span><span class="s">&quot;email&quot;</span><span class="p">]</span> <span class="o">?:</span> <span class="k">throw</span> <span class="n">IllegalStateException</span><span class="p">(</span><span class="s">&quot;Email is missing!&quot;</span><span class="p">)</span></code></pre>
 
-<h3 id="if-not-null-1">执行 if not null<a href="#if-not-null-1" class="anchor"></a></h3>
+<h3 id="if-not-null--1">if not null 缩写<a href="#if-not-null--1" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">data</span> <span class="p">=</span> <span class="p">...</span>
 
 <span class="n">data</span><span class="o">?.</span><span class="n">let</span> <span class="p">{</span>
-    <span class="p">...</span> <span class="c1">// execute this block if not null</span>
+    <span class="p">...</span> <span class="c1">// 代码会执行到此处, 假如data不为null</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="when">使用when声明返回<a href="#when" class="anchor"></a></h3>
+<h3 id="when">when表达式具有返回值<a href="#when" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">transform</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">when</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
@@ -1620,7 +1618,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="try-catch">使用try catch代码块返回<a href="#try-catch" class="anchor"></a></h3>
+<h3 id="trycatch-">‘try/catch’ 表达式也具有返回值<a href="#trycatch-" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="k">try</span> <span class="p">{</span>
@@ -1632,7 +1630,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="c1">// Working with result</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="if">if语句中返回<a href="#if" class="anchor"></a></h3>
+<h3 id="if-">‘if’ 表达式你猜<a href="#if-" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">result</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="p">==</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
@@ -1644,17 +1642,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="section-8">单表达式方法（单语句函数）<a href="#section-8" class="anchor"></a></h3>
+<h3 id="unit-builder">返回类型为 <code>Unit</code> 的方法，可以轻松实现类Builder模式的代码风格<a href="#unit-builder" class="anchor"></a></h3>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">arrayOfMinusOnes</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">IntArray</span><span class="p">(</span><span class="n">size</span><span class="p">).</span><span class="n">apply</span> <span class="p">{</span> <span class="n">fill</span><span class="p">(-</span><span class="m">1</span><span class="p">)</span> <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="section-9">单表达式函数<a href="#section-9" class="anchor"></a></h3>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">theAnswer</span><span class="p">()</span> <span class="p">=</span> <span class="m">42</span></code></pre>
 
-<p>这个等同于</p>
+<p>等价于</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">theAnswer</span><span class="p">():</span> <span class="n">Int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="m">42</span>
 <span class="p">}</span></code></pre>
 
-<p>这些用法可以相互组合产生更短的代码.看下面这个例子:</p>
+<p>单表达式函数与其它kotlin风格一起使用的时候，能简化代码，比如和 <em class="keyword">when</em> 表达式一起使用：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">transform</span><span class="p">(</span><span class="n">color</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">when</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
     <span class="s">&quot;Red&quot;</span> <span class="p">-&gt;</span> <span class="m">0</span>

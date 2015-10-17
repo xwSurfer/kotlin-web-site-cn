@@ -772,7 +772,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/interfaces.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Interfaces</span></a>
+                   ><span class="marker"></span><span class="text">接口</span></a>
             
             </div>
         
@@ -1345,7 +1345,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-maven.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Maven</span></a>
+                   ><span class="marker"></span><span class="text">使用 Maven</span></a>
             
             </div>
         
@@ -1396,7 +1396,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-gradle.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Gradle</span></a>
+                   ><span class="marker"></span><span class="text">使用 Gradle</span></a>
             
             </div>
         
@@ -1493,11 +1493,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="section">基础语法<a href="#section" class="anchor"></a></h1>
+        <h1 id="section">基本语法<a href="#section" class="anchor"></a></h1>
 
 <h2 id="section-1">定义包<a href="#section-1" class="anchor"></a></h2>
 
-<p>应该在源文件的最顶端定义包:</p>
+<p>包的声明应处于文件顶部：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">package</span> <span class="nn">my.demo</span>
 
@@ -1505,57 +1505,53 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <span class="c1">// ...</span></code></pre>
 
-<p>没必要去匹配目录和包: 在文件系统中源文件可以任意放置。</p>
+<p>包的结构并不需要与文件夹路径完全匹配：源代码可以在文件系统的任意位置</p>
 
-<p>查看 <a href="packages.html">包</a>.</p>
+<p>参阅 <a href="packages.html">Packages</a>.</p>
 
-<h2 id="section-2">定义方法<a href="#section-2" class="anchor"></a></h2>
+<h2 id="section-2">定义函数<a href="#section-2" class="anchor"></a></h2>
 
-<p>这个方法有两个 <code>Int</code> 参数 ，和<code>Int</code>类型的返回值:</p>
+<p>带有两个 <code>Int</code> 参数， 返回 <code>Int</code> 的函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
   <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span>
 <span class="p">}</span></code></pre>
 
-<p>这个方法使用的是表达式的方法体和推断类型的返回值:</p>
+<p>将表达式作为函数体，返回值自动推断的函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span></code></pre>
 
-<p>一个方法如果是public的，应该有明确的返回值:</p>
-
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">fun</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span></code></pre>
-
-<p>这个方法是返回无意义的值（其实就是空吧）:</p>
+<p>不确定返回值 <code>Unit</code> 的函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">printSum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Unit</span> <span class="p">{</span>
   <span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p><code>Unit</code>返回值可以被省略:</p>
+<p><code>Unit</code> 类型的返回，在函数定义中可以省略:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">fun</span> <span class="nf">printSum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>查看 <a href="functions.html">方法</a>.</p>
+<p>参阅 <a href="functions.html">Functions</a>.</p>
 
 <h2 id="section-3">定义局部变量<a href="#section-3" class="anchor"></a></h2>
 
-<p>不可变(只读)变量:</p>
+<p>常量（使用 <code>val</code> 关键字声明）:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
-<span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// `Int` type is inferred</span>
-<span class="k">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Int</span> <span class="c1">// Type required when no initializer is provided</span>
-<span class="n">c</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// definite assignment</span></code></pre>
+<span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="m">1</span>  <span class="c1">// `Int` 类型自动推断</span>
+<span class="k">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Int</span> <span class="c1">// 如果没有初始值，声明常量时，常量的类型不能省略</span>
+<span class="n">c</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// 明确赋值</span></code></pre>
 
-<p>可变变量:</p>
+<p>变量（使用 <code>var</code> 关键字声明）:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">5</span> <span class="c1">// `Int` type is inferred</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">5</span> <span class="c1">// `Int` 类型自动推断（ 5 默认是 `Int` ）</span>
 <span class="n">x</span> <span class="p">+=</span> <span class="m">1</span></code></pre>
 
-<p>查看 <a href="properties.html">Properties And Fields</a>.</p>
+<p>参阅 <a href="properties.html">Properties And Fields</a>.</p>
 
-<h2 id="string">使用String模板<a href="#string" class="anchor"></a></h2>
+<h2 id="section-4">使用字符串模板<a href="#section-4" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span>
@@ -1563,9 +1559,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;First argument: ${args[0]}&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>查看 <a href="basic-types.html#string-templates">String模板</a>.</p>
+<p>参阅 <a href="basic-types.html#string-templates">String templates</a>.</p>
 
-<h2 id="section-4">使用条件表达式<a href="#section-4" class="anchor"></a></h2>
+<h2 id="section-5">使用条件判断<a href="#section-5" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&gt;</span> <span class="n">b</span><span class="p">)</span>
@@ -1574,23 +1570,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">return</span> <span class="n">b</span>
 <span class="p">}</span></code></pre>
 
-<p>使用 <em class="keyword">if</em> 作表达式:</p>
+<p>使用 <em class="keyword">if</em> 作为表达式:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span></code></pre>
 
-<p>查看 <a href="control-flow.html#if-expression"><em class="keyword">if</em>-表达式</a>.</p>
+<p>参阅 <a href="control-flow.html#if-expression"><em class="keyword">if</em>-expressions</a>.</p>
 
-<h2 id="nullable-null-keyword-">使用可空类型（nullable）变量来判断 <em class="keyword">null</em><a href="#nullable-null-keyword-" class="anchor"></a></h2>
+<h2 id="using-nullable-values-and-checking-for-null-keyword-">Using nullable values and checking for <em class="keyword">null</em><a href="#using-nullable-values-and-checking-for-null-keyword-" class="anchor"></a></h2>
 
-<p>一个引用必须被显示标记为nullable，当它可能为空的时候。</p>
+<p>当某个变量的值可以为 <em class="keyword">null</em> 的时候，必须在声明处的类型后添加 ? 来标识该引用可为空
+A reference must be explicitly marked as nullable when <em class="keyword">null</em> value is possible.</p>
 
-<p>返回 <em class="keyword">null</em> 如果 <code>str</code> 不是整数的话。</p>
+<p>返回 <em class="keyword">null</em> 假如 <code>str</code> 的内容不是数字:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">parseInt</span><span class="p">(</span><span class="n">str</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Int</span><span class="p">?</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>下面是返回可空值的方法:</p>
+<p>返回值可以是 <em class="keyword">null</em> 的函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
@@ -1601,9 +1598,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="k">val</span> <span class="py">x</span> <span class="p">=</span> <span class="n">parseInt</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="m">0</span><span class="p">])</span>
   <span class="k">val</span> <span class="py">y</span> <span class="p">=</span> <span class="n">parseInt</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="m">1</span><span class="p">])</span>
 
-  <span class="c1">// Using `x * y` yields error because they may hold nulls.</span>
+  <span class="c1">// 直接使用 `x * y` 可能会报错，因为他们可能为 null</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">y</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// x and y are automatically cast to non-nullable after null check</span>
+    <span class="c1">// 在空指针判断后，x 和 y 会自动变成非空(non-nullable)值</span>
     <span class="n">print</span><span class="p">(</span><span class="n">x</span> <span class="p">*</span> <span class="n">y</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -1620,23 +1617,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">return</span>
   <span class="p">}</span>
 
-  <span class="c1">// x and y are automatically cast to non-nullable after null check</span>
+  <span class="c1">// 在空指针判断后，x 和 y 会自动变成非空值</span>
   <span class="n">print</span><span class="p">(</span><span class="n">x</span> <span class="p">*</span> <span class="n">y</span><span class="p">)</span></code></pre>
 
-<p>查看 <a href="null-safety.html">Null-safety</a>.</p>
+<p>参阅 <a href="null-safety.html">Null-safety</a>.</p>
 
-<h2 id="section-5">使用类型检查和自动转换<a href="#section-5" class="anchor"></a></h2>
+<h2 id="using-type-checks-and-automatic-casts">Using type checks and automatic casts<a href="#using-type-checks-and-automatic-casts" class="anchor"></a></h2>
 
-<p><em class="keyword">is</em> 操作符会检查一个表达式是否是该类型。
-如果检查到一个局部变量或属性是这个类型，那么就会进行自动转换:</p>
+<p><em class="keyword">is</em> 运算符用于类型判断: 检查某个实例是否是某类型
+如果一个局部常量或者不可变的类成员变量已经判断出为某类型，那么判断后的分支中可以直接当作该类型使用，无需强制转换</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">getStringLength</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span> <span class="n">Int</span><span class="p">?</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// `obj` is automatically cast to `String` in this branch</span>
+    <span class="c1">// `obj` 在该条件判断分支内自动转换成 `String`</span>
     <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">length</span>
   <span class="p">}</span>
 
-  <span class="c1">// `obj` is still of type `Any` outside of the type-checked branch</span>
+  <span class="c1">// 在离开类型判断分支后， `obj` 仍然是 `Any` 类型</span>
   <span class="k">return</span> <span class="k">null</span>
 <span class="p">}</span></code></pre>
 
@@ -1646,21 +1643,21 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="p">!</span><span class="k">is</span> <span class="n">String</span><span class="p">)</span>
     <span class="k">return</span> <span class="k">null</span>
 
-  <span class="c1">// `obj` is automatically cast to `String` in this branch</span>
+  <span class="c1">// `obj` 在一下类型判断分支自动转换为 `String`</span>
   <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">length</span>
 <span class="p">}</span></code></pre>
 
-<p>更甚</p>
+<p>甚至</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">getStringLength</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span> <span class="n">Int</span><span class="p">?</span> <span class="p">{</span>
-  <span class="c1">// `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`</span>
+  <span class="c1">// `obj` 在 `&amp;&amp;` 右边自动转换成 `String` 类型</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">String</span> <span class="p">&amp;&amp;</span> <span class="n">obj</span><span class="p">.</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">length</span>
 
   <span class="k">return</span> <span class="k">null</span>
 <span class="p">}</span></code></pre>
 
-<p>查看 <a href="classes.html">Classes</a> 和 <a href="typecasts.html">Type casts</a>.</p>
+<p>参阅 <a href="classes.html">Classes</a> and <a href="typecasts.html">Type casts</a>.</p>
 
 <h2 id="for-">使用 <code>for</code> 循环<a href="#for-" class="anchor"></a></h2>
 
@@ -1674,9 +1671,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">args</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></code></pre>
 
-<p>查看 <a href="control-flow.html#for-loops">for loop</a>.</p>
+<p>参阅 <a href="control-flow.html#for-loops">for循环</a>.</p>
 
-<h2 id="while-">使用  <code>while</code> 循环<a href="#while-" class="anchor"></a></h2>
+<h2 id="using-a-while-loop">Using a <code>while</code> loop<a href="#using-a-while-loop" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">i</span> <span class="p">=</span> <span class="m">0</span>
@@ -1684,7 +1681,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="n">print</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">++])</span>
 <span class="p">}</span></code></pre>
 
-<p>查看 <a href="control-flow.html#while-loops">while loop</a>.</p>
+<p>See <a href="control-flow.html#while-loops">while 循环</a>.</p>
 
 <h2 id="when-">使用 <code>when</code> 表达式<a href="#when-" class="anchor"></a></h2>
 
@@ -1698,45 +1695,44 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>查看 <a href="control-flow.html#when-expression">when expression</a>.</p>
+<p>参阅 <a href="control-flow.html#when-expression">when表达式</a>.</p>
 
-<h2 id="section-6">使用范围表达式<a href="#section-6" class="anchor"></a></h2>
+<h2 id="ranges">使用区间（ranges）<a href="#ranges" class="anchor"></a></h2>
 
-<p>查看一个数字是否在某个范围里使用 <em class="keyword">in</em> 操作符:</p>
+<p>使用 <em class="keyword">in</em> 运算符来检查某个数字是否在指定区间内：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="n">y</span><span class="p">-</span><span class="m">1</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">)</span></code></pre>
 
-<p>检查一个数字是否不在某范围:</p>
+<p>检查某个数字是否在指定区间外:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="p">!</span><span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="n">array</span><span class="p">.</span><span class="n">lastIndex</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;Out&quot;</span><span class="p">)</span></code></pre>
 
-<p>在一个范围内迭代:</p>
+<p>区间内迭代:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1.</span><span class="p">.</span><span class="m">5</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></pre>
 
-<p>查看 <a href="ranges.html">Ranges</a>.</p>
+<p>参阅 <a href="ranges.html">区间 Ranges</a>.</p>
 
-<h2 id="section-7">使用集合<a href="#section-7" class="anchor"></a></h2>
+<h2 id="section-6">使用集合<a href="#section-6" class="anchor"></a></h2>
 
-<p>在一个集合里迭代:</p>
+<p>对集合进行迭代:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">name</span> <span class="k">in</span> <span class="n">names</span><span class="p">)</span>
   <span class="n">println</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code></pre>
 
-<p>查看一个集合里是否有某个对象使用 <em class="keyword">in</em> 操作符:</p>
+<p>使用 <em class="keyword">in</em> 运算符来判断集合内是否包含(.contains)某实例 <em class="keyword">in</em> ：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">text</span> <span class="k">in</span> <span class="n">names</span><span class="p">)</span> <span class="c1">// names.contains(text) is called</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">text</span> <span class="k">in</span> <span class="n">names</span><span class="p">)</span> <span class="c1">// 自动调用 names.contains(text)</span>
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">)</span></code></pre>
 
-<p>使用函数来过滤和控制集合:</p>
+<p>使用字面量函数(方便的 Higher-order 函数)来过滤(filter)和变换(map)集合：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">names</span> <span class="n">filter</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span> <span class="p">}</span> <span class="n">sortBy</span> <span class="p">{</span> <span class="n">it</span> <span class="p">}</span> <span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">toUpperCase</span><span class="p">()</span> <span class="p">}</span> <span class="n">forEach</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">names</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span> <span class="p">}.</span><span class="n">sortBy</span> <span class="p">{</span> <span class="n">it</span> <span class="p">}.</span><span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">toUpperCase</span><span class="p">()</span> <span class="p">}.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span></code></pre>
 
-<p>查看 <a href="lambdas.html">Higher-order functions and Lambdas</a>.</p>
-
+<p>参阅 <a href="lambdas.html">Higher-order函数及Lambda表达式</a>.</p>
 
     </article>
 </div>
