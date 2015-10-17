@@ -34,7 +34,7 @@
 |Returns.md|已翻译|S_arige|  
 |Classes.md|已翻译|dingsx|  
 |Properties.md|已翻译|空白|  
-|Interfaces.md |已翻译|翻译By [LyndonChin](https://github.com/LyndonChin)|  
+|Interfaces.md |已翻译|[LyndonChin](https://github.com/LyndonChin)|  
 |visibility-modifiers.md|已翻译|Jacky Xu|  
 |extensions.md|已翻译|S_arige|  
 |data-classes.md|已翻译|[Wahchi](https://github.com/wahchi)|  
