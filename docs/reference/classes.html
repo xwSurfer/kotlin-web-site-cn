@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1739,6 +1763,12 @@ the modifiers go before it:
 <p>在Kotlin中，不像Java或C＃，类没有静态方法。在大多数情况下，它建议简单地使用包级函数。</p>
 
 <p>如果你需要写一个可以调用的函数，而不依赖一个类的实例，但需要访问的内部一个类（例如，一个工厂方法），你可以写为[对象声明]（object_declarations.html）中的一员里面的那个类。</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">sealed</span> <span class="k">class</span> <span class="nc">Expr</span> <span class="p">{</span>
+    <span class="k">class</span> <span class="nc">Const</span><span class="p">(</span><span class="k">val</span> <span class="py">number</span><span class="p">:</span> <span class="n">Double</span><span class="p">)</span> <span class="p">:</span> <span class="n">Expr</span><span class="p">()</span>
+    <span class="k">class</span> <span class="nc">Sum</span><span class="p">(</span><span class="k">val</span> <span class="py">e1</span><span class="p">:</span> <span class="n">Expr</span><span class="p">,</span> <span class="k">val</span> <span class="py">e2</span><span class="p">:</span> <span class="n">Expr</span><span class="p">)</span> <span class="p">:</span> <span class="n">Expr</span><span class="p">()</span>
+    <span class="k">object</span> <span class="nc">NotANumber</span> <span class="p">:</span> <span class="n">Expr</span><span class="p">()</span>
+<span class="p">}</span></code></pre>
 
 <p>更具体地讲，如果你声明一个<a href="object-declarations.html#companion-objects">同伴对象</a>在你的的类中，
 你就可以在Java/ C＃中调用与它的成员方法相同的语法的静态方法，只使用类名作为一个修饰语。</p>

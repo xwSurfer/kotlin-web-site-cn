@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1942,6 +1966,12 @@ method match the parameter types of the Kotlin function.</p>
 <span class="c1">// Java signature: void execute(Runnable command)</span>
 <span class="n">executor</span><span class="p">.</span><span class="n">execute</span> <span class="p">{</span> <span class="n">println</span><span class="p">(</span><span class="s">&quot;This runs in a thread pool&quot;</span><span class="p">)</span> <span class="p">}</span></code></pre>
 
+<p>If the Java class has multiple methods taking functional interfaces, you can choose the one you need to call by
+using an adapter function that converts a lambda to a specific SAM type. Those adapter functions are also generated
+by the compiler when needed.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">executor</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Runnable</span> <span class="p">{</span> <span class="n">println</span><span class="p">(</span><span class="s">&quot;This runs in a thread pool&quot;</span><span class="p">)</span> <span class="p">})</span></code></pre>
+
 <p>Note that SAM conversions only work for interfaces, not for abstract classes, even if those also have just a single
 abstract method.</p>
 
@@ -2000,15 +2030,21 @@ for functions defined in named objects or companion objects of classes and annot
 <span class="n">Obj</span><span class="o">.</span><span class="na">INSTANCE$</span><span class="o">.</span><span class="na">bar</span><span class="o">();</span> <span class="c1">// works, a call through the singleton instance</span>
 <span class="n">Obj</span><span class="o">.</span><span class="na">INSTANCE$</span><span class="o">.</span><span class="na">foo</span><span class="o">();</span> <span class="c1">// works too</span></code></pre>
 
-<p>Also, public properties defined in objects and companion objects are turned into static fields in Java:</p>
+<p>Also, public properties defined in objects and companion objects, as well as top-level properties annotated with <code>const</code>,
+are turned into static fields in Java:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">Obj</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// file example.kt</span>
+
+<span class="k">object</span> <span class="nc">Obj</span> <span class="p">{</span>
   <span class="k">val</span> <span class="py">CONST</span> <span class="p">=</span> <span class="m">1</span>
-<span class="p">}</span></code></pre>
+<span class="p">}</span>
+
+<span class="n">const</span> <span class="k">val</span> <span class="py">MAX</span> <span class="p">=</span> <span class="m">239</span></code></pre>
 
 <p>In Java:</p>
 
-<pre><code class="code-block _highlighted lang_java"><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Obj</span><span class="o">.</span><span class="na">CONST</span><span class="o">;</span></code></pre>
+<pre><code class="code-block _highlighted lang_java"><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">Obj</span><span class="o">.</span><span class="na">CONST</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">ExampleKt</span><span class="o">.</span><span class="na">MAX</span><span class="o">;</span></code></pre>
 
 <h3 id="handling-signature-clashes-with-platformname">Handling signature clashes with @platformName<a href="#handling-signature-clashes-with-platformname" class="anchor"></a></h3>
 

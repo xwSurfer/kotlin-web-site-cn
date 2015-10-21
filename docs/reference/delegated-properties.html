@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1515,12 +1539,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 例如:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Delegate</span> <span class="p">{</span>
-  <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">prop</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">&quot;$thisRef, thank you for delegating &#39;${prop.name}&#39; to me!&quot;</span>
+
+  <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s">&quot;$thisRef, thank you for delegating &#39;${property.name}&#39; to me!&quot;</span>
   <span class="p">}</span>
  
-  <span class="k">fun</span> <span class="nf">set</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">prop</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">println</span><span class="p">(</span><span class="s">&quot;$value has been assigned to &#39;${prop.name} in $thisRef.&#39;&quot;</span><span class="p">)</span>
+  <span class="k">fun</span> <span class="nf">set</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;$value has been assigned to &#39;${property.name} in $thisRef.&#39;&quot;</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
@@ -1587,6 +1612,12 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="n">println</span><span class="p">(</span><span class="n">lazy</span><span class="p">)</span>
     <span class="n">println</span><span class="p">(</span><span class="n">lazy</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
+
+<p>By default, the evaluation of lazy properties is <strong>synchronized</strong>: the value is computed only in one thread, and all threads
+will see the same value. If the synchronization of initialization delegate is not required, so that multiple threads
+can execute it simultaneously, pass <code>LazyThreadSafetyMode.PUBLICATION</code> as a parameter to the <code>lazy()</code> function. 
+And if you’re sure that the initialization will always happen on a single thread, you can use <code>LazyThreadSafetyMode.NONE</code> mode, 
+which doesn’t incur any thread-safety guaratees and the related overhead.</p>
 
 <p>如果你需要 <strong>线程安全</strong>, 使用 <code>blockingLazy()</code>: 它会进行同样的操作，但是能够保证数值将会只在一个线程中计算，同时所有线程会看到同样的数值。</p>
 

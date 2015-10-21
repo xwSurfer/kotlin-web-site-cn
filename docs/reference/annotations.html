@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1580,7 +1604,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="o">}</span></code></pre>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Kotlin</span>
-<span class="n">Ann</span><span class="p">(</span><span class="n">intValue</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
+<span class="n">@Ann</span><span class="p">(</span><span class="n">intValue</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">stringValue</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
 
 <p>就像在Jave里一样，需要一个特殊的参数是’ value`参数;它的值可以使用不明确的名称来指定。</p>
 
@@ -1590,7 +1614,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="o">}</span></code></pre>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Kotlin</span>
-<span class="n">AnnWithValue</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
+<span class="n">@AnnWithValue</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
 
 <p>如果在Java中<code>value</code>参数是array类型，在Kotlin中必须使用 <code>vararg</code>这个参数。</p>
 
@@ -1600,7 +1624,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="o">}</span></code></pre>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Kotlin</span>
-<span class="n">AnnWithArrayValue</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
+<span class="n">@AnnWithArrayValue</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;bar&quot;</span><span class="p">)</span> <span class="k">class</span> <span class="nc">C</span></code></pre>
 
 <p>如果你需要像注解参数一样指定一个类，使用一个Kotlin的类吧(<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>)。Kotlin编译器会自动把它转换成Java类，使得Java代码能正常看到注解和参数。</p>
 
@@ -1608,7 +1632,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <span class="k">annotation</span> <span class="k">class</span> <span class="nc">Ann</span><span class="p">(</span><span class="k">val</span> <span class="py">arg1</span><span class="p">:</span> <span class="n">KClass</span><span class="p">&lt;*&gt;,</span> <span class="k">val</span> <span class="py">arg2</span><span class="p">:</span> <span class="n">KClass</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">Any</span><span class="p">?&gt;)</span>
 
-<span class="n">Ann</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="k">class</span><span class="p">,</span> <span class="n">Int</span><span class="o">::</span><span class="k">class</span><span class="p">)</span> <span class="k">class</span> <span class="nc">MyClass</span></code></pre>
+<span class="n">@Ann</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="k">class</span><span class="p">,</span> <span class="n">Int</span><span class="o">::</span><span class="k">class</span><span class="p">)</span> <span class="k">class</span> <span class="nc">MyClass</span></code></pre>
 
 <p>注解实例的值被视为Kotlin的属性。</p>
 

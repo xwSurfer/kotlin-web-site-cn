@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1495,7 +1519,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">运算符重载<a href="#section" class="anchor"></a></h1>
 
-<p>Kotlin允许我们实现一些我们自定义类型的运算符实现。这些运算符有固定的表示(像 <code>+</code> 或者 <code>*</code>) ，和固定的<a href="grammar.html#precedence">优先级</a>。为实现这样的运算符，我们提供了固定名字的<a href="functions.html#member-functions">成员函数</a>和<a href="extensions.html">扩展函数</a>，比如二元运算符的左值和一元运算符的参数类型。</p>
+<p>Kotlin允许我们实现一些我们自定义类型的运算符实现。这些运算符有固定的表示(像 <code>+</code> 或者 <code>*</code>) ，和固定的<a href="grammar.html#precedence">优先级</a>。为实现这样的运算符，我们提供了固定名字的<a href="functions.html#member-functions">成员函数</a>和<a href="extensions.html">扩展函数</a>，比如二元运算符的左值和一元运算符的参数类型。 
+Functions that overload operators need to be marked with the <code>operator</code> modifier.</p>
 
 <h2 id="section-1">转换<a href="#section-1" class="anchor"></a></h2>
 
@@ -1530,7 +1555,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <ul>
   <li>决定<code>a</code>的类型, 假设为<code>T</code>。</li>
-  <li>寻找接收者是<code>T</code>的无参函数<code>plus()</code>,例如一个成员方法或者扩展方法。</li>
+  <li>寻找接收者是<code>T</code>带有<code>operator</code>修饰的无参函数<code>plus()</code>,例如一个成员方法或者扩展方法。</li>
   <li>如果找不到或者不明确就返回一个错误。</li>
   <li>如果函数是当前函数或返回类型是<code>R</code>则表达式<code>+a</code>是<code>R</code>类型。</li>
 </ul>
@@ -1567,7 +1592,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <ul>
   <li>决定<code>a</code>的类型, 假设为<code>T</code>。</li>
-  <li>查找接收类型为<code>T</code>无参数函数`inc()。</li>
+  <li>查找接收类型为<code>T</code>带有<code>operator</code>修饰的无参数函数`inc()。</li>
   <li>如果返回类型为<code>R</code>,那么<code>R</code>为<code>T</code>子类型.</li>
 </ul>
 
@@ -1766,11 +1791,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <tbody>
     <tr>
       <td><code>a == b</code></td>
-      <td><code>a?.equals(b) ?: b.identityEquals(null)</code></td>
+      <td><code>a?.equals(b) ?: b === null</code></td>
     </tr>
     <tr>
       <td><code>a != b</code></td>
-      <td><code>!(a?.equals(b) ?: b.identityEquals(null))</code></td>
+      <td><code>!(a?.equals(b) ?: b === null)</code></td>
     </tr>
   </tbody>
 </table>

@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1670,7 +1694,7 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 
 <p>不仅仅是类具有类型参数，方法也具有。通常，我们将类型参数放置在方法名的后面，并用尖括号引起：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">singletonList</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">singletonList</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
@@ -1692,7 +1716,7 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 
 <p>约束最常见的类型是<strong>上界</strong>相比较于Java中的<em>extends</em>关键字：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">sort</span><span class="p">&lt;</span><span class="n">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;)</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;</span> <span class="n">sort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 <p>在冒号之后被声明的是<strong>上界</strong>：代替<code>T</code>的仅可为 <code>Comparable&lt;T&gt;</code>的子类型。例如：</p>
@@ -1703,9 +1727,10 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <p>默认的上界（如果没有声明）是<code>Any?</code>。只能有一个上界可以在尖括号中被声明。
 如果相同的类型参数需要多个上界，我们需要分割符 <strong>where</strong>-子句，如:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">cloneWhenGreater</span><span class="p">&lt;</span><span class="n">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;,</span> <span class="n">threshold</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
-    <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Cloneable</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">list</span> <span class="k">when</span> <span class="p">{</span><span class="n">it</span> <span class="p">&gt;</span> <span class="n">threshold</span><span class="p">}</span> <span class="n">map</span> <span class="p">{</span><span class="n">it</span><span class="p">.</span><span class="n">clone</span><span class="p">()}</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">cloneWhenGreater</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;,</span> <span class="n">threshold</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
+    <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">,</span>
+          <span class="n">T</span> <span class="p">:</span> <span class="n">Cloneable</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span><span class="p">{</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="n">threshold</span> <span class="p">}.</span><span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">clone</span><span class="p">()</span> <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <hr />

@@ -168,8 +168,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                         <li class="kotlin-feature _concise js-popup-open-button"
                             data-popup-id="kotlin-feature_concise">
                             <div class="feature-image"><div class="feature-icon _concise"></div></div>
-                            <h3 class="feature-title">Concise</h3>
-                            <p class="feature-description">Drastically reduce the amount of boilerplate code you need to write.</p>
+                            <h3 class="feature-title">简洁</h3>
+                            <p class="feature-description">大幅度减少你需要写的重复代码</p>
                             <span class="feature-example-link">See example</span>
                         </li>
                     
@@ -179,8 +179,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                         <li class="kotlin-feature _safe js-popup-open-button"
                             data-popup-id="kotlin-feature_safe">
                             <div class="feature-image"><div class="feature-icon _safe"></div></div>
-                            <h3 class="feature-title">Safe</h3>
-                            <p class="feature-description">Avoid entire classes of errors such as null pointer exceptions.</p>
+                            <h3 class="feature-title">安全</h3>
+                            <p class="feature-description">避免整个类中类似空指针异常这样的错误</p>
                             <span class="feature-example-link">See example</span>
                         </li>
                     
@@ -190,8 +190,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                         <li class="kotlin-feature _versatile js-popup-open-button"
                             data-popup-id="kotlin-feature_versatile">
                             <div class="feature-image"><div class="feature-icon _versatile"></div></div>
-                            <h3 class="feature-title">Versatile</h3>
-                            <p class="feature-description">Build server-side applications, Android apps or frontend code running in the browser.</p>
+                            <h3 class="feature-title">通用</h3>
+                            <p class="feature-description">构建服务器端程序，Android程序或者运行在浏览器里的前端程序</p>
                             <span class="feature-example-link">See example</span>
                         </li>
                     
@@ -201,8 +201,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                         <li class="kotlin-feature _interoperable js-popup-open-button"
                             data-popup-id="kotlin-feature_interoperable">
                             <div class="feature-image"><div class="feature-icon _interoperable"></div></div>
-                            <h3 class="feature-title">Interoperable</h3>
-                            <p class="feature-description">Leverage existing frameworks and libraries of the JVM with 100% Java Interoperability.</p>
+                            <h3 class="feature-title">互操作</h3>
+                            <p class="feature-description">重用已有的JVM平台框架或库，与Java无缝兼容</p>
                             <span class="feature-example-link">See example</span>
                         </li>
                     
@@ -212,8 +212,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                         <li class="kotlin-feature _tooling js-popup-open-button"
                             data-popup-id="kotlin-feature_tooling">
                             <div class="feature-image"><div class="feature-icon _tooling"></div></div>
-                            <h3 class="feature-title">Tooling</h3>
-                            <p class="feature-description">Command Line Compiler or First Class IDE Support. Freedom to choose.</p>
+                            <h3 class="feature-title">工具</h3>
+                            <p class="feature-description">命令行编译器还是一流的IDE支持，随意选</p>
                             <span class="feature-example-link">See example</span>
                         </li>
                     
@@ -235,15 +235,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 
                     <h3 id="section">简洁<a href="#section" class="anchor"></a></h3>
 
-<p>用一行代码创建一个 POJO 同时具有 getters, setters, <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> 和 <code>copy()</code> 方法:</p>
+<p>使用一行代码创建一个包含getters, setters, <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> and <code>copy()</code> 的POJO</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">val</span> <span class="py">email</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">val</span> <span class="py">company</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span></code></pre>
 
-<p>或者使用lambda表达式过滤一个list:</p>
+<p>或者使用lambda表达式来过滤链表：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">positiveNumbers</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span><span class="n">it</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">}</span></code></pre>
 
-<p>想要一个单例? 创建一个 object 吧:</p>
+<p>想要单例？创建object就可以了：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">ThisIsASingleton</span> <span class="p">{</span>
   <span class="k">val</span> <span class="py">companyName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;JetBrains&quot;</span>
@@ -266,17 +266,18 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 
                     <h3 id="section">安全<a href="#section" class="anchor"></a></h3>
 
-<p>避免那些令人讨厌的空指针异常，你知道的，这可能酿成数十亿美元的损失</p>
+<p>彻底告别那些烦人的 NullPointerExceptions, <a href="http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare">毕竟价值万亿</a></p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">output</span> <span class="p">:</span> <span class="n">String</span>
 <span class="n">output</span> <span class="p">=</span> <span class="k">null</span></code></pre>
 
-<p>当然Kotlin让你避免那些错误通过使用nullable类型，
-也包括Java的</p>
+<p>And of course, Kotlin protects you from mistakenly operating on nullable types,
+including those from Java
+Kotlin会预防你对可能为null的对象进行操作, 哪怕是Java中传递过来的</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">length</span><span class="p">())</span></code></pre>
 
-<p>在你进行类型检查的时候，如果类型匹配，那么编译器会帮你进行自动转换</p>
+<p>如果你进行了类型检测, 那么编译器会在检测后的代码分支内自动帮你转换类型</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">calculateTotal</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">Invoice</span><span class="p">)</span> <span class="p">{</span>
@@ -299,49 +300,50 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
              id="kotlin-feature_versatile">
             <div class="popup-content">
                 
-                    <h3>Versatile</h3>
+                    <h3>通用性</h3>
 
-<p>Multi-purpose language allowing you to build any type of application</p>
+<p>多用途的语言可用于构建各式各样的程序</p>
 
 <div class="logos-list">
     <p class="logos-list-item">
         <span class="logo _android" title="Android"></span>
         <span class="description">
-            Android Development.<br>
-            No performance impact.<br>
-            Very small runtime.
+            Android开发<br>
+            不影响性能<br>
+            超小的运行时依赖
         </span>
     </p>
 
     <p class="logos-list-item">
         <span class="logo _tomcat" title="Tomcat"></span>
         <span class="description">
-            Application Server.<br>
-            The technology doesn't matter. 100% compatible with all JVM frameworks.
+            服务器端程序<br>
+            与JVM框架百分百兼容, 用什么服务器请随意
         </span>
     </p>
 
     <p class="logos-list-item">
         <span class="logo _js" title="JavaScript"></span>
         <span class="description">
-            JavaScript. Write code in Kotlin and target JavaScript to run on Node.js or in browser
+            JavaScript. 用Kotlin写的代码可以生成JavaScript运行于Node.js或者浏览器中
         </span>
     </p>
 
     <p class="logos-list-item">
         <span class="logo _javaee" title="JavaEE"></span>
         <span class="description">
-            Enterprise. Use Kotlin for any type of Enterprise Java EE development.
+            企业版. 使用Kotlin进行任何类型的企业级应用程序Java EE开发.
         </span>
     </p>
 
     <p class="logos-list-item">
         <span class="logo _html5" title="HTML5"></span>
         <span class="description">
-            Web. Whether you want strongly typed HTML, CSS builders or just plain web development.
+            Web. 无论是强类型的HTML与CSS开发亦或纯web开发
         </span>
     </p>
 </div>
+
                 
             </div>
 
@@ -357,9 +359,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
              id="kotlin-feature_interoperable">
             <div class="popup-content">
                 
-                    <h3 id="interoperable">Interoperable<a href="#interoperable" class="anchor"></a></h3>
+                    <h3 id="java">与Java无缝交互<a href="#java" class="anchor"></a></h3>
 
-<p>Create and consume Java code at will</p>
+<p>随意使用Java代码</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">io.netty.channel.ChannelInboundMessageHandlerAdapter</span>
 <span class="k">import</span> <span class="nn">io.netty.channel.ChannelHandlerContext</span>
@@ -370,9 +372,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>Or use any existing library on the JVM, as there’s 100% compatibility, including SAM support.</p>
+<p>或者在JVM上使用已有Java库, 百分百兼容, 包括SAM支持</p>
 
-<p>Target either the JVM or JavaScript. Write code in Kotlin and decide where you want to deploy to</p>
+<p>无论是JVM还是JavaScript, 用Kotlin写代码, 然后部署到你想要的地方.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">js.dom.html.*</span>
 
@@ -395,9 +397,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
              id="kotlin-feature_tooling">
             <div class="popup-content">
                 
-                    <h3 id="tooling">Tooling<a href="#tooling" class="anchor"></a></h3>
+                    <h3 id="section">工具化<a href="#section" class="anchor"></a></h3>
 
-<p>A language needs tooling and at JetBrains, it’s what we do best!</p>
+<p>一门语言需要工具化, 而在JetBrains, 这正是我们做得最好的地方!</p>
 
 <p class="image-block"><img src="assets/images/index/features/tooling/tooling1.png" alt="Tooling" /></p>
 
@@ -417,15 +419,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <section class="kotlin-overview-section _code-examples">
     <div class="kotlin-overview-code-example-tabs">
         <div class="g-layout">
-            <div class="tab is_active js-tab" data-tab-id="kotlin-code-example-simplest"><div class="text">Simplest Version</div></div>
-            <div class="tab js-tab" data-tab-id="kotlin-code-example-name-reading"><div class="tab-text">Name Reading</div></div>
-            <div class="tab js-tab" data-tab-id="kotlin-code-example-object-oriented"><div class="tab-text">An “Object-oriented” Hello</div></div>
+            <div class="tab is_active js-tab" data-tab-id="kotlin-code-example-simplest"><div class="text">最简版</div></div>
+            <div class="tab js-tab" data-tab-id="kotlin-code-example-name-reading"><div class="tab-text">读名字</div></div>
+            <div class="tab js-tab" data-tab-id="kotlin-code-example-object-oriented"><div class="tab-text">">"面向对象"式Hello</div></div>
         </div>
 
     </div>
 
-    <h2 class="section-header">What does it look like?</h2>
-    <p class="section-description">Concise, simple and very easy to read (and write)</p>
+    <h2 class="section-header">Kotlin看起来是什么样的？</h2>
+    <p class="section-description">简洁，简单，并且非常容易阅读（以及写）</p>
     <div class="section-content">
 
         <!-- code example -->
@@ -438,7 +440,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <div class="code-legend align_right">
                     <div class="code-legend-line"></div>
                     <div class="code-legend-text">
-                        Optional package header
+                        非必须的包头
                     </div>
                 </div>
             </div>
@@ -449,8 +451,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <div class="code-legend align_right">
                     <div class="code-legend-line"></div>
                     <div class="code-legend-text">
-                        Package-level function, which returns Unit and takes an Array
-                        of strings as a parameter
+                        包级别可见的函数，返回Unit，接收一个String数组作为参数
                     </div>
                 </div>
 
@@ -474,7 +475,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                     "></div>
 
                     <div class="code-legend-text" style="top: 100px;">
-                        Have you noticed?<br> Semicolons are optional
+                        注意到没?<br> 分号可以不写
                     </div>
                 </div>
 
@@ -497,7 +498,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <div class="code-legend align_right">
                     <div class="code-legend-line"></div>
                     <div class="code-legend-text">
-                        String Interpolation to cut down ceremony.
+                        String内嵌，以缩减String处理流程
                     </div>
                 </div>
 
@@ -516,7 +517,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <div class="code-legend align_left">
                     <div class="code-legend-line"></div>
                     <div class="code-legend-text">
-                        Class with a primary constructor and a member function
+                        包含一个私有构造与一个成员函数的类
                     </div>
                 </div>
             </div>
@@ -548,8 +549,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                         "></div>
                     </div>
                     <div class="code-legend-text">
-                        Note that there's no new keyword
-                        used to create an object
+                        创建一个实例的时候，无需new关键字
                     </div>
                 </div>
             </div>
@@ -563,7 +563,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <!--/ code example -->
 
         <div class="more-link-wrap">
-            <a href="/kotlin-web-site-cn/docs/reference/" class="more-link">More examples in the full language documentation</a>
+            <a href="/kotlin-web-site-cn/docs/reference/" class="more-link">更多示例请参考语言文档</a>
         </div>
 
     </div>
@@ -576,7 +576,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
             <a href="http://www.youtube.com/watch?v=viiDaLpPfN4" class="video-thumb-link js-video-thumb-link">
                 <span class="video-description">
-                    <span class="title">See Kotlin in action</span>
+                    <span class="title">观看Kotlin实际使用</span>
                     <span class="description"></span>
                 </span>
 
@@ -598,40 +598,40 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </section>
 
 <section class="kotlin-overview-section _get-kotlin" id="get-kotlin">
-    <h2 class="section-header">Try Kotlin</h2>
+    <h2 class="section-header">试用Kotlin</h2>
 
-    <p class="kotlin-version">0.13.1514</p>
+    <p class="kotlin-version">0.14.449</p>
 
     <div class="section-content">
         <div class="get-kotlin-options-list">
             <div class="option-item _standalone-compiler">
                 <div class="option-image _standalone-compiler"></div>
-                <div class="option-title-pre-text">Standalone</div>
-                <h3 class="option-title">Compiler</h3>
+                <div class="option-title-pre-text">独立</div>
+                <h3 class="option-title">编译器</h3>
 
                 <p class="option-description">
-                    Compile your code from the command line or use build tools such as Ant, Gradle and Maven.
+                    使用命令行或者Ant，Gradle，Maven这样的编译工具来编译代码
                 </p>
 
                 <div class="option-link-wrap">
                     <a href="/kotlin-web-site-cn/docs/tutorials/command-line.html"
-                       class="option-link">Download Compiler</a>
+                       class="option-link">下载编译器</a>
                 </div>
             </div>
 
             <div class="option-item _intellij-idea">
                 <div class="option-image _intellij-idea"></div>
-                <div class="option-title-pre-text">Use</div>
+                <div class="option-title-pre-text">使用</div>
                 <h3 class="option-title">IntelliJ IDEA</h3>
 
                 <p class="option-description">
-                    Kotlin works with the free Community Edition, IntelliJ IDEA Ultimate or Android Studio.
+                    Kotlin可以在免费社区版，旗舰版或者Android Studio中使用.
                 </p>
 
                 <div class="option-link-wrap">
                     <a href="/kotlin-web-site-cn/docs/tutorials/getting-started.html"
                        class="option-link">
-                      Setup Plugin
+                      设置插件
                     </a>
                 </div>
 
@@ -643,13 +643,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <h3 class="option-title">Eclipse</h3>
 
                 <p class="option-description">
-                    Get a preview version of the Kotlin plugin for Eclipse Luna.
+                    获取Eclipse Luna的Kotlin插件预览版
                 </p>
 
                 <div class="option-link-wrap">
                     <a href="/kotlin-web-site-cn/docs/tutorials/getting-started-eclipse.html"
                        class="option-link">
-                      Setup Plugin
+                      设置插件
                     </a>
                 </div>
             </div>
@@ -660,14 +660,14 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <h3 class="option-title">Try Online</h3>
 
                 <p class="option-description">
-                    Explore Kotlin code samples and solve problems directly in your browser.
+                     探索Kotlin示例代码，在浏览器中直接解决问题
                 </p>
 
 
                 <div class="option-link-wrap">
                     <a href="http://try.kotlinlang.org"
                        class="option-link">
-                        Try Online
+                        在线试用
                     </a>
                 </div>
             </div>
@@ -714,7 +714,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </section>
 
 <section class="kotlin-overview-section _testimonials">
-    <div class="section-header">Who's using Kotlin</div>
+    <div class="section-header">谁在使用Kotlin</div>
     <div class="section-content">
 
         <div class="g-layout2 testimonials-carousel-wrap" id="testimonials-carousel-wrap">

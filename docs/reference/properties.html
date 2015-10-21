@@ -120,7 +120,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <div class="extra-nav download-button">
             <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
                 Get Kotlin
-                <span class="version">(0.13.1514)</span>
+                <span class="version">(0.14.449)</span>
             </a>
         </div>
     
@@ -498,6 +498,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+    
+
+        
+            
+        
+
+        
     
 
         
@@ -1400,6 +1407,23 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
             </div>
         
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+            
+            </div>
+        
 
     </div>
 
@@ -1570,15 +1594,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <h3 id="section-2">实际字段<a href="#section-2" class="anchor"></a></h3>
 
 <p>在Kotlin不能有字段。然而,有时有必要有使用一个字段在使用定制的访问器的时候。对于这些目的,Kotlin提供
-自动支持,在属性名后面使用* $ *符号。</p>
+自动支持,在属性名后面使用 <code>field</code>符号。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">counter</span> <span class="p">=</span> <span class="m">0</span> <span class="c1">// the initializer value is written directly to the backing field</span>
   <span class="k">set</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="p">&gt;=</span> <span class="m">0</span><span class="p">)</span>
-      <span class="err">$</span><span class="n">counter</span> <span class="p">=</span> <span class="n">value</span>
+      <span class="n">field</span> <span class="p">=</span> <span class="n">value</span>
   <span class="p">}</span></code></pre>
 
-<p>上面的<code>$counter</code>字段就可以在counter属性的访问器实现里读和写。并且只能在构造函数里赋值。在其他地方，都不能使用或访问<code>$counter</code></p>
+<p>上面的<code>field</code>字段只能用在访问属性</p>
 
 <p>编译器会查看访问器的内部， 如果他们使用了实际字段（或者访问器使用默认实现），那么将会生成一个实际字段，否则不会生成。</p>
 
@@ -1598,7 +1622,49 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
       <span class="n">_table</span> <span class="p">=</span> <span class="n">HashMap</span><span class="p">()</span> <span class="c1">// Type parameters are inferred</span>
     <span class="k">return</span> <span class="n">_table</span> <span class="o">?:</span> <span class="k">throw</span> <span class="n">AssertionError</span><span class="p">(</span><span class="s">&quot;Set to null by another thread&quot;</span><span class="p">)</span>
   <span class="p">}</span></code></pre>
-<p>从各种角度看，这和在Java中定义Bean属性的方式一样。因为访问私有的属性的getter和setter函数，会被编译器优化成直接反问其实际字段。</p>
+<p>从各种角度看，这和在Java中定义Bean属性的方式一样。因为访问私有的属性的getter和setter函数，无寒函数调用开销。</p>
+
+<h2 id="compile-time-constants">Compile-Time Constants<a href="#compile-time-constants" class="anchor"></a></h2>
+
+<p>Properties the value of which is known at compile time can be marked as <em>compile time constants</em> using the <code>const</code> modifier.
+Such properties need to fulfil the following requirements:</p>
+
+<ul>
+  <li>Top-level or member of an <code>object</code></li>
+  <li>Initialized with a value of type <code>String</code> or a primitive type</li>
+  <li>No custom getter</li>
+</ul>
+
+<p>Such properties can be used in annotations:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">const</span> <span class="k">val</span> <span class="py">SUBSYSTEM_DEPRECATED</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;This subsystem is deprecated&quot;</span>
+
+<span class="n">@Deprecated</span><span class="p">(</span><span class="n">SUBSYSTEM_DEPRECATED</span><span class="p">)</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
+
+<h2 id="late-initialized-properties">Late-Initialized Properties<a href="#late-initialized-properties" class="anchor"></a></h2>
+
+<p>Normally, properties declared as having a non-null type must be initialized in the constructor.
+However, fairly often this is not convenient. For example, properties can be initialized through dependency injection,
+or in the setup method of a unit test. In this case, you cannot supply a non-null initializer in the constructor,
+but you still want to avoid null checks when referencing the property inside the body of a class.</p>
+
+<p>To handle this case, you can mark the property with the <code>lateinit</code> modifier:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">class</span> <span class="nc">MyTest</span> <span class="p">{</span>
+    <span class="n">lateinit</span> <span class="k">var</span> <span class="py">subject</span><span class="p">:</span> <span class="n">TestSubject</span>
+
+    <span class="n">@SetUp</span> <span class="k">fun</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">subject</span> <span class="p">=</span> <span class="n">TestSubject</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="n">@Test</span> <span class="k">fun</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">subject</span><span class="p">.</span><span class="n">method</span><span class="p">()</span>  <span class="c1">// dereference directly</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<p>The modifier can only be used on <code>var</code> properties declared inside the body of a class (not in the primary constructor), and only
+when the property does not have a custom getter or setter. The type of the property must be non-null, and it must not be
+a primitive type.</p>
 
 <h2 id="section-4">重写属性<a href="#section-4" class="anchor"></a></h2>
 
