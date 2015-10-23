@@ -1,6 +1,6 @@
 # Kotlin中文站
 
-网址：[http://tanfujun.cc/kotlin-web-site-cn/](http://tanfujun.cc/kotlin-web-site-cn/)  
+网址：[http://tanfujun.com/kotlin-web-site-cn/](http://tanfujun.cc/kotlin-web-site-cn/)  
 
 中文站：[http://kotlinlang.cn](http://kotlinlang.cn)  
 
