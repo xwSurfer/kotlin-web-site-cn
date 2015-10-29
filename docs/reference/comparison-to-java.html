@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Comparison to Java</title>
+<title>对比Java</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -1517,48 +1517,48 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="comparison-to-java">Comparison to Java<a href="#comparison-to-java" class="anchor"></a></h1>
+        <h1 id="java">对比Java<a href="#java" class="anchor"></a></h1>
 
-<h2 id="some-java-issues-addressed-in-kotlin">Some Java issues addressed in Kotlin<a href="#some-java-issues-addressed-in-kotlin" class="anchor"></a></h2>
+<h2 id="kotlinjava">Kotlin解决了一些Java中难搞的问题<a href="#kotlinjava" class="anchor"></a></h2>
 
-<p>Kotlin fixes a series of issues that Java suffers from</p>
+<p>Kotlin 修复了Java中一系列长期困扰我们的问题</p>
 
 <ul>
-  <li>Null references are <a href="null-safety.html">controlled by the type system</a>.</li>
-  <li><a href="java-interop.html">No raw types</a></li>
-  <li>Arrays in Kotlin are <a href="basic-types.html#Arrays">invariant</a></li>
-  <li>Kotlin has proper <a href="lambdas.html#function-types">function types</a>, as opposed to Java’s SAM-conversions</li>
-  <li><a href="generics.html#use-site-variance">Use-site variance</a> without wildcards</li>
-  <li>Kotlin does not have checked <a href="exceptions.html">exceptions</a></li>
+  <li><a href="null-safety.html">类型系统</a>控制了空引用的发生.</li>
+  <li><a href="java-interop.html">没有原始类型</a></li>
+  <li>Kotlin中数组是<a href="basic-types.html#Arrays">不变的</a></li>
+  <li>相对于Java的SAM-conversions，Kotlin有更加合适的<a href="lambdas.html#function-types">函数类型</a></li>
+  <li>使用没有通配符的<a href="generics.html#use-site-variance">site variance</a></li>
+  <li>Kotlin 没有检查<a href="exceptions.html">异常</a></li>
 </ul>
 
-<h2 id="what-java-has-that-kotlin-does-not">What Java has that Kotlin does not<a href="#what-java-has-that-kotlin-does-not" class="anchor"></a></h2>
+<h2 id="javakotlin">Java有但是Kotlin没有的东东<a href="#javakotlin" class="anchor"></a></h2>
 
 <ul>
-  <li><a href="exceptions.html">Checked exceptions</a></li>
-  <li><a href="basic-types.html">Primitive types</a> that are not classes</li>
-  <li><a href="classes.html">Static members</a></li>
-  <li><a href="properties.html">Non-private fields</a></li>
-  <li><a href="generics.html">Wildcard-types</a></li>
+  <li><a href="exceptions.html">检查异常</a></li>
+  <li><a href="basic-types.html">原始类型</a> ，不是类</li>
+  <li><a href="classes.html">静态成员</a></li>
+  <li><a href="properties.html">未私有化字段</a></li>
+  <li><a href="generics.html">通配符类型</a></li>
 </ul>
 
-<h2 id="what-kotlin-has-that-java-does-not">What Kotlin has that Java does not<a href="#what-kotlin-has-that-java-does-not" class="anchor"></a></h2>
+<h2 id="kotlinjava-1">Kotlin有但是Java没有的东东<a href="#kotlinjava-1" class="anchor"></a></h2>
 
 <ul>
-  <li><a href="lambdas.html">Function literals</a> + <a href="inline-functions.html">Inline functions</a> = performant custom control structures</li>
-  <li><a href="extensions.html">Extension functions</a></li>
-  <li><a href="null-safety.html">Null-safety</a></li>
-  <li><a href="typecasts.html">Smart casts</a></li>
-  <li><a href="basic-types.html#strings">String templates</a></li>
-  <li><a href="properties.html">Properties</a></li>
-  <li><a href="classes.html">Primary constructors</a></li>
-  <li><a href="delegation.html">First-class delegation</a></li>
-  <li><a href="basic-types.html">Type inference for variable and property types</a></li>
-  <li><a href="object-declarations.html">Singletons</a></li>
-  <li><a href="generics.html">Declaration-site variance &amp; Type projections</a></li>
-  <li><a href="ranges.html">Range expressions</a></li>
-  <li><a href="operator-overloading.html">Operator overloading</a></li>
-  <li><a href="classes.html#companion-objects">Companion objects</a></li>
+  <li><a href="lambdas.html">高阶函数</a> + <a href="inline-functions.html">内联函数</a> = 高性能自定义结构</li>
+  <li><a href="extensions.html">扩展函数</a></li>
+  <li><a href="null-safety.html">Null 安全性</a></li>
+  <li><a href="typecasts.html">智能类型转换</a></li>
+  <li><a href="basic-types.html#strings">字符串类型模板</a></li>
+  <li><a href="properties.html">属性</a></li>
+  <li><a href="classes.html">主构造方法</a></li>
+  <li><a href="delegation.html">一级委托</a></li>
+  <li><a href="basic-types.html">变量和属性类型的类型接口</a></li>
+  <li><a href="object-declarations.html">单例</a></li>
+  <li><a href="generics.html">声明点变化 &amp; 类型预测</a></li>
+  <li><a href="ranges.html">范围表达式</a></li>
+  <li><a href="operator-overloading.html">运算符重载</a></li>
+  <li><a href="classes.html#companion-objects">同伴对象</a></li>
 </ul>
 
     </article>
