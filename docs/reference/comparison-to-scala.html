@@ -1368,7 +1368,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Ant</span></a>
+                   ><span class="marker"></span><span class="text">使用 Ant</span></a>
             
             </div>
         
@@ -1385,7 +1385,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Using Griffon</span></a>
+                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1419,7 +1419,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/kotlin-osgi.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Kotlin and OSGi</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 和 OSGi</span></a>
             
             </div>
         
@@ -1469,7 +1469,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/comparison-to-java.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Comparison to Java</span></a>
+                   ><span class="marker"></span><span class="text">与Java比较</span></a>
             
             </div>
         
@@ -1486,7 +1486,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <div class="tree-item-title tree-leaf-title js-item-title js-leaf-title is_active">
                     <div class="marker"></div>
-                    <div class="text">Comparison to Scala</div>
+                    <div class="text">与Scala比较</div>
                 </div>
             
             </div>
@@ -1517,72 +1517,72 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="comparison-to-scala">Comparison to Scala<a href="#comparison-to-scala" class="anchor"></a></h1>
+        <h1 id="scala">对比Scala<a href="#scala" class="anchor"></a></h1>
 
-<p>The two main design goals for Kotlin are:</p>
+<p>设计Kotlin语言的两大目的:</p>
 
 <ul>
-  <li>Make compilation at least as fast as Java</li>
-  <li>Keep useful level of expressiveness while maintaining the language simple as possible</li>
+  <li>编译至少和Java一样快</li>
+  <li>保证表达到位的同时，语言足够简洁</li>
 </ul>
 
-<p>Taking this into account, if you are happy with Scala, you probably do not need Kotlin</p>
+<p>稍作考虑, 如果你对Scala已相当得心应手,你或许不需要再学习Kotlin</p>
 
-<h2 id="what-scala-has-that-kotlin-does-not">What Scala has that Kotlin does not<a href="#what-scala-has-that-kotlin-does-not" class="anchor"></a></h2>
+<h2 id="scalakotlin">Scala有什么Kotlin没有的<a href="#scalakotlin" class="anchor"></a></h2>
 
 <ul>
-  <li>Implicit conversions, parameters, etc
+  <li>隐式转换, 限定性因素, 等等
     <ul>
-      <li>In Scala, sometimes it’s very hard to tell what’s happening in your code without using a debugger, because too many implicits get into the picture</li>
-      <li>To enrich your types with functions in Kotlin use <a href="extensions.html">Extension functions</a>.</li>
+      <li>在Scala中, 由于画面中有太多的隐式转换，有时不使用debugger,会很难弄清code中具体发生了什么</li>
+      <li>为了做到功能多样性，Kotlin会使用<a href="extensions.html">扩展函数</a>.</li>
     </ul>
   </li>
-  <li>Overridable type members</li>
-  <li>Path-dependent types</li>
-  <li>Macros</li>
-  <li>Existential types
+  <li>重写类型成员</li>
+  <li>路径依赖性类型</li>
+  <li>宏</li>
+  <li>存在类型
     <ul>
-      <li><a href="generics.html#type-projections">Type projections</a> are a very special case</li>
+      <li><a href="generics.html#type-projections">类型预测</a> 是一种非常特殊的情况</li>
     </ul>
   </li>
-  <li>Complicated logic for initialization of traits
+  <li>特性初始化的复杂逻辑
     <ul>
-      <li>See <a href="classes.html">Classes and Inheritance</a></li>
+      <li>参照 <a href="classes.html">类和接口</a></li>
     </ul>
   </li>
-  <li>Custom symbolic operations
+  <li>自定义符号运算
     <ul>
-      <li>See <a href="operator-overloading.html">Operator overloading</a></li>
+      <li>参照 <a href="operator-overloading.html">运算符重载</a></li>
     </ul>
   </li>
-  <li>Built-in XML
+  <li>嵌入式 XML
     <ul>
-      <li>See <a href="type-safe-builders.html">Type-safe Groovy-style builders</a></li>
+      <li>参照 <a href="type-safe-builders.html">类型安全 Groovy风格 builders</a></li>
     </ul>
   </li>
 </ul>
 
-<p>Things that may be added to Kotlin later:</p>
+<p>未来Kotlin或许要增加的内容:</p>
 
 <ul>
-  <li>Structural types</li>
-  <li>Value types</li>
+  <li>结构类型</li>
+  <li>值类型</li>
   <li>Yield operator</li>
   <li>Actors</li>
-  <li>Parallel collections</li>
+  <li>并行集合</li>
 </ul>
 
-<h2 id="what-kotlin-has-that-scala-does-not">What Kotlin has that Scala does not<a href="#what-kotlin-has-that-scala-does-not" class="anchor"></a></h2>
+<h2 id="kotlinscala">Kotlin有什么Scala没有的<a href="#kotlinscala" class="anchor"></a></h2>
 
 <ul>
-  <li><a href="null-safety.html">Zero-overhead null-safety</a>
+  <li><a href="null-safety.html">零开销 空安全</a>
     <ul>
-      <li>Scala has Option, which is a syntactic and run-time wrapper</li>
+      <li>Scala的“语法和运行时包装”选项</li>
     </ul>
   </li>
-  <li><a href="typecasts.html">Smart casts</a></li>
-  <li><a href="inline-functions.html#inline-functions">Kotlin’s Inline functions facilitate Nonlocal jumps</a></li>
-  <li><a href="delegation.html">First-class delegation</a>. Also implemented via 3rd party plugin: Autoproxy</li>
+  <li><a href="typecasts.html">智能转换</a></li>
+  <li><a href="inline-functions.html#inline-functions">Kotlin的内联函数助力非局部跳跃</a></li>
+  <li><a href="delegation.html">第一类 授权</a>. Also implemented via 3rd party plugin: Autoproxy</li>
 </ul>
 
     </article>
