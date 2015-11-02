@@ -73,7 +73,7 @@
 |kotlin-osgi.md|**未翻译**||  
 |faq.md|**未翻译**||  
 |comparison-to-java.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
-|comparison-to-scala.md|**未翻译**||  
+|comparison-to-scala.md|已翻译||  
 
 
 ## 说明
