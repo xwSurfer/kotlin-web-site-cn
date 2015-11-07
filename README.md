@@ -64,14 +64,14 @@
 |reflection.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |type-safe-builders.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |dynamic-type.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
-|java-interop.md|**已认领**||  
+|java-interop.md|**未翻译**||  
 |kotlin-doc.md|已翻译|[化缘](http://frblog.sinaapp.com)|  
 |using-maven.md|已翻译|[DemoJameson](http://www.demojameson.com)|  
 |using-ant.md|**未翻译**||  
 |using-griffon.md|**未翻译**||  
 |using-gradle.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
 |kotlin-osgi.md|**未翻译**||  
-|faq.md|**未翻译**||  
+|faq.md|**已认领**||  
 |comparison-to-java.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
 |comparison-to-scala.md|已翻译||  
 
