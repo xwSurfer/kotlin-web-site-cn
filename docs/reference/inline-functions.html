@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Inline Functions</title>
+
+    <title>Inline Functions - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Inline Functions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/inline-functions.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Inline Functions">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1520,55 +1576,66 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <h1 id="inline">内联函数 inline<a href="#inline" class="anchor"></a></h1>
 
 <p>使用<a href="lambdas.html">高阶函数</a>会带来一些运行时间效率的损失：每一个函数都是一个对象，并且都会捕获一个闭包。
-例如：一些在函数体内会被访问的变量。
-内存分配(对于函数对象和类)和虚拟调用引入运行时间开销。
-但是在许多情况下通过内联化匿名函数可以降低这类的开销。
+即一些在函数体内会被访问的变量。
+内存分配(对于函数对象和类)和虚拟调用引入运行时间开销。</p>
+
+<p>但是在许多情况下通过内联化 lambda 表达式可以降低这类的开销。
 我们通过下面的示例函数来分析上面这些内容。如，<code>lock()</code> 函数可以被很容易的在申明调用时被内联化。</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">lock</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span><span class="n">foo</span><span class="p">()}</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">lock</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span> <span class="n">foo</span><span class="p">()</span> <span class="p">}</span></code></pre>
+
 <p>编译器没有为参数创建一个函数对象和产生一个调用点。取而代之，编译器产生了下面的代码：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">lock</span><span class="p">.</span><span class="n">lock</span><span class="p">()</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">l</span><span class="p">.</span><span class="n">lock</span><span class="p">()</span>
 <span class="k">try</span> <span class="p">{</span>
   <span class="n">foo</span><span class="p">()</span>
 <span class="p">}</span>
 <span class="k">finally</span> <span class="p">{</span>
-  <span class="n">lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">()</span>
+  <span class="n">l</span><span class="p">.</span><span class="n">unlock</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>这个不是我们在一开始时候想要的么？
-为了让编译器做这个，我们需要在<code>lock()</code>函数前面加上<code>inline</code>:</p>
+<p>这个不是我们在一开始时候想要的么？</p>
+
+<p>为了让编译器做这个，我们需要在<code>lock()</code>函数前面加上<code>inline</code>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">lock</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">lock</span><span class="p">:</span> <span class="n">Lock</span><span class="p">,</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">T</span><span class="p">):</span> <span class="n">T</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p><code>inline</code>关键字注释会影响函数体本身以及传递过来的lambdas: 这些所都会被内联到调用点。</p>
+<p><code>inline</code>关键字注释会影响函数体本身以及传递过来的lambdas: 这些所都会被内联到
+调用点。</p>
 
-<p>内联本身有时会引起生成的代码数量增加，但是如果我们使用得当(不要内联大的函数)。它将在性能上有所提升，尤其是在极其巨大的调用循环中。</p>
+<p>内联本身有时会引起生成的代码数量增加，但是如果我们使用得当(不要内联大的函数)。它将在
+性能上有所提升，尤其是在极其巨大的调用循环中。</p>
 
-<h2 id="noinline">禁止内联@noinline<a href="#noinline" class="anchor"></a></h2>
+<h2 id="noinline">禁止内联（noinline）<a href="#noinline" class="anchor"></a></h2>
 
-<p>为了预防有时候你只希望一部分的lambdas传递到一个内联函数后背内联，你可以把一些你的函数变量用 <code>@noinline</code> 标记:</p>
+<p>为了预防有时候你只希望一部分的lambdas传递到一个内联函数后背内联，你可以把一些你的函数
+参数用 <code>noinline</code> 修饰:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inlined</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">,</span> <span class="n">@noinline</span> <span class="n">notInlined</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">inlined</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">,</span> <span class="n">noinline</span> <span class="n">notInlined</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>可以内联的lambdas只能在内联函数内部被调用或者被当作一个可内联的参数传递。但是通过 <code>@noinline</code>
-我们可以把它变化成任何的方式：储存在指定地点，传递它等等。</p>
+<p>可以内联的lambdas只能在内联函数内部被调用或者被当作一个可内联的参数传递。
+但是通过 <code>noinline</code> 我们可以把它变化成任何的方式：储存在指定地点，传递它等等。</p>
 
-<p>需要注意的是，如果一个内联函数没有可以内联的函数变量并且没有<a href="#reified-type-parameters">泛型变量</a>, 编译器会产生一个警告。因为内联一个这样的函数很可能是无意义的(你可以无视这个警告如果你确定内联是必须的).</p>
+<p>需要注意的是，如果一个内联函数没有可以内联的函数变量并且没有
+<a href="#reified-type-parameters">泛型变量</a>, 编译器会产生一个警告。因为内联一个这样的函数
+很可能是无意义的(你可以无视这个警告如果你确定内联是必须的).</p>
 
 <h2 id="section">非本地的返回<a href="#section" class="anchor"></a></h2>
 
-<p>在Kotlin中，我们只能使用一个普通的，无限制的<code>return</code>来退出一个命名的函数或者函数表达式。这个意味着为了退出一个lambda,我们不得不用一个 <a href="returns.html#return-at-labels">标签</a>,同时 在一个lambda中<code>return</code>单独出现时不允许的,因为一个lambda不可能让完整的函数返回:</p>
+<p>在Kotlin中，我们只能使用一个普通的，无限制的<code>return</code>来退出一个命名的函数或者匿名函数。
+这个意味着为了退出一个lambda,我们不得不用一个 <a href="returns.html#return-at-labels">标签</a>,同时 在一个
+lambda中<code>return</code>单独出现时不允许的，因为一个lambda不可能让完整的函数返回:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
   <span class="n">ordinaryFunction</span> <span class="p">{</span>
      <span class="k">return</span> <span class="c1">// ERROR: can not make `foo` return here</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
 <p>但是如果函数和lambda被传到一个内联函数中，return也可以被内联。于是下面就是允许的：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
@@ -1577,7 +1644,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>这样的返回(在lambda中，但是退出闭包的函数)被称作<em>non-local</em>返回。我们把这种排序构造用在循环中。通常这些内联函数是闭合的：</p>
+<p>这样的返回(在lambda中，但是退出闭包的函数)被称作<em>non-local</em>返回。我们把
+这种排序构造用在循环中。通常这些内联函数是闭合的：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">hasZeros</span><span class="p">(</span><span class="n">ints</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;):</span> <span class="n">Boolean</span> <span class="p">{</span>
   <span class="n">ints</span><span class="p">.</span><span class="n">forEach</span> <span class="p">{</span>
@@ -1586,9 +1654,12 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="k">return</span> <span class="k">false</span>
 <span class="p">}</span></code></pre>
 
-<p>注意有些内联函数可能会不直接从在函数体中调用被作为参数传递过来的lambdas，而从其他执行语句中调用，像一个本地对象或者一个嵌套函数。在这种情况下，非本地的控制流程也会被lambdas禁止。为了标识这种情况，lambda参数需要以<code>InlineOptions.ONLY_LOCAL_RETURN</code> 标注:</p>
+<p>注意有些内联函数可能会不直接从在函数体中调用被作为参数传递过来的lambdas，
+而从其他执行语句中调用，像一个本地对象或者一个嵌套函数。在这种情况下，非本地的控制流程
+也会被lambdas禁止。为了标识这种情况，lambda参数需要
+以<code>crossinline</code> 修饰:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">f</span><span class="p">(</span><span class="n">inlineOptions</span><span class="p">(</span><span class="n">InlineOption</span><span class="p">.</span><span class="n">ONLY_LOCAL_RETURN</span><span class="p">)</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">f</span><span class="p">(</span><span class="n">crossinline</span> <span class="n">body</span><span class="p">:</span> <span class="p">()</span> <span class="p">-&gt;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">f</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="n">Runnable</span> <span class="p">{</span>
         <span class="k">override</span> <span class="k">fun</span> <span class="nf">run</span><span class="p">()</span> <span class="p">=</span> <span class="n">body</span><span class="p">()</span>
     <span class="p">}</span>
@@ -1608,13 +1679,14 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">while</span> <span class="p">(</span><span class="n">p</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="n">clazz</span><span class="p">.</span><span class="n">isInstance</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="p">{</span>
         <span class="n">p</span> <span class="p">=</span> <span class="n">p</span><span class="o">?.</span><span class="n">parent</span>
     <span class="p">}</span>
-    <span class="n">@suppress</span><span class="p">(</span><span class="s">&quot;UNCHECKED_CAST&quot;</span><span class="p">)</span>
+    <span class="n">@Suppress</span><span class="p">(</span><span class="s">&quot;UNCHECKED_CAST&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">p</span> <span class="k">as</span> <span class="n">T</span>
 <span class="p">}</span></code></pre>
 
-<p>在这里我们访问一个树并且检查每个节点是不是特定的类型。这都没有问题，但是访问点并不理想：</p>
+<p>在这里我们访问一个树并且检查每个节点是不是特定的类型。
+这都没有问题，但是访问点并不理想：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">myTree</span><span class="p">.</span><span class="n">findParentOfType</span><span class="p">(</span><span class="n">javaClass</span><span class="p">&lt;</span><span class="n">MyTreeNodeType</span><span class="p">&gt;())</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">myTree</span><span class="p">.</span><span class="n">findParentOfType</span><span class="p">(</span><span class="n">MyTreeNodeType</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">)</span></code></pre>
 
 <p>我们真正想要的只是简单的传递一个类型给函数，例如这样调用：</p>
 
@@ -1630,19 +1702,21 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">return</span> <span class="n">p</span> <span class="k">as</span> <span class="n">T</span>
 <span class="p">}</span></code></pre>
 
-<p>我们用泛型修饰符reified表示变量类型，于是现在它在函数内部就可以像正常函数一样的访问了。既然这个函数是内联的，没有必须的反射，一般的运算符 <code>!is</code>
+<p>我们用泛型修饰符<code>reified</code>表示变量类型，于是现在它在函数内部
+就可以像正常函数一样的访问了。既然这个函数是内联的，没有必须的反射，一般的运算符 <code>!is</code>
 和 <code>as</code>就开始工作. 同时，我们也可以这样调用它: <code>myTree.findParentOfType&lt;MyTreeNodeType&gt;()</code>.</p>
 
-<p>虽然反射在很多情况下不一定需要，我们还是可以在泛型参数里使用它： <code>javaClass()</code> 给我们权限去访问它:</p>
+<p>虽然反射在很多情况下不一定需要，我们还是可以在泛型参数里使用它：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="nf">methodsOf</span><span class="p">&lt;</span><span class="k">reified</span> <span class="n">T</span><span class="p">&gt;()</span> <span class="p">=</span> <span class="n">javaClass</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;().</span><span class="n">getMethods</span><span class="p">()</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="err">&lt;</span><span class="nf">reified</span> <span class="n">T</span><span class="p">&gt;</span> <span class="n">membersOf</span><span class="p">()</span> <span class="p">=</span> <span class="n">T</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">members</span>
 
 <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-  <span class="n">println</span><span class="p">(</span><span class="n">methodsOf</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;().</span><span class="n">joinToString</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">))</span>
+  <span class="n">println</span><span class="p">(</span><span class="n">membersOf</span><span class="p">&lt;</span><span class="n">StringBuilder</span><span class="p">&gt;().</span><span class="n">joinToString</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">))</span>
 <span class="p">}</span></code></pre>
 
 <p>正常的函数 (没有被标记为内联) 不能够有泛型参数.
-一个没有一个运行时表示的类型 (例如一个非泛型参数或者一个虚构类型如 <code>Nothing</code>)不能被用做泛型参数的变量。</p>
+一个没有一个运行时表示的类型 (例如一个非泛型参数或者一个虚构类型如 <code>Nothing</code>)
+不能被用做泛型参数的变量。</p>
 
 <p>更详细解释参考 <a href="https://github.com/JetBrains/kotlin/blob/master/spec-docs/reified-type-parameters.md">spec document</a>.</p>
 
@@ -1668,7 +1742,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1678,5 +1752,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

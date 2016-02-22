@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Creating a RESTful Web Service with Spring Boot</title>
+
+    <title>Creating a RESTful Web Service with Spring Boot - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Creating a RESTful Web Service with Spring Boot" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/tutorials/spring-boot-restful.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="This tutorial walks us through the process of creating a simple REST controller with Spring Boot">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Creating a RESTful Web Service with Spring Boot">
+
+<meta name="twitter:description" content="This tutorial walks us through the process of creating a simple REST controller with Spring Boot">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -686,7 +718,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                     <strong>Last Updated</strong>
                 </td>
                 <td>
-                    28 January 2015
+                    31 October 2015
                 </td>
             </tr>
             
@@ -713,21 +745,22 @@ and the project layout structure, as well as the initialization code.</p>
 <p>In this tutorial we’ll walk through the steps required. For a more thorough explanation of Spring Boot and RESTful services, please see
 <a href="https://spring.io/guides/gs/rest-service/">Building a RESTful Web Service</a>.</p>
 
+<p>Note that all classes in this tutorial are in the <code>kotlin.demo</code> package.</p>
+
 <h3 id="defining-the-project-and-dependencies">Defining the project and dependencies<a href="#defining-the-project-and-dependencies" class="anchor"></a></h3>
 <p>In this tutorial we’re going to be using Gradle but the same can be accomplished using either IntelliJ IDEA project structure or Maven. For details on setting up Gradle to work with Kotlin, see <a href="/docs/reference/using-gradle.html">Using Gradle</a>.</p>
 
 <p>The Gradle file is pretty much standard for Spring Boot. The only difference is the structure layout for source folders for Kotlin, and the required Kotlin dependencies</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">buildscript</span> <span class="o">{</span>
-    <span class="n">ext</span><span class="o">.</span><span class="na">kotlin_version</span> <span class="o">=</span> <span class="s1">&#39;0.10.195&#39;</span>  <span class="c1">// New</span>
+    <span class="n">ext</span><span class="o">.</span><span class="na">kotlin_version</span> <span class="o">=</span> <span class="s1">&#39;1.0.0-beta-1038&#39;</span>  <span class="c1">// New</span>
+	<span class="n">ext</span><span class="o">.</span><span class="na">spring_boot_version</span> <span class="o">=</span> <span class="s1">&#39;1.2.7.RELEASE&#39;</span>
     <span class="n">repositories</span> <span class="o">{</span>
-        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">&quot;https://repo.spring.io/libs-release&quot;</span> <span class="o">}</span>
-        <span class="n">mavenLocal</span><span class="o">()</span>
-        <span class="n">mavenCentral</span><span class="o">()</span>
+        <span class="n">jcenter</span><span class="o">()</span>
     <span class="o">}</span>
     <span class="n">dependencies</span> <span class="o">{</span>
         <span class="n">classpath</span> <span class="s2">&quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span>  <span class="c1">// New</span>
-        <span class="n">classpath</span><span class="o">(</span><span class="s2">&quot;org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE&quot;</span><span class="o">)</span>
+        <span class="n">classpath</span> <span class="s2">&quot;org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version&quot;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
@@ -743,9 +776,7 @@ and the project layout structure, as well as the initialization code.</p>
 <span class="o">}</span>
 
 <span class="n">repositories</span> <span class="o">{</span>
-    <span class="n">mavenLocal</span><span class="o">()</span>
-    <span class="n">mavenCentral</span><span class="o">()</span>
-    <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">&quot;https://repo.spring.io/libs-release&quot;</span> <span class="o">}</span>
+	<span class="n">jcenter</span><span class="o">()</span>
 <span class="o">}</span>
 
 <span class="c1">// New entire sourceSets</span>
@@ -775,18 +806,18 @@ and the project layout structure, as well as the initialization code.</p>
 <h3 id="creating-a-greeting-data-class-and-controller">Creating a Greeting Data Class and Controller<a href="#creating-a-greeting-data-class-and-controller" class="anchor"></a></h3>
 <p>The next step is to create Greeting Data class that has two properties: <em>id</em> and a <em>content</em></p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">public</span> <span class="k">class</span> <span class="nc">Greeting</span><span class="p">(</span><span class="k">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span><span class="p">,</span> <span class="k">val</span> <span class="py">content</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">Greeting</span><span class="p">(</span><span class="k">val</span> <span class="py">id</span><span class="p">:</span> <span class="n">Long</span><span class="p">,</span> <span class="k">val</span> <span class="py">content</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span></code></pre>
 
 <p>We now define the <em>GreetingController</em> which serves requests of the form <em>/greeting?name={value}</em> and returns a JSON object
 representing an instance of <em>Greeting</em></p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">RestController</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">GreetingController</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">@RestController</span>
+<span class="k">class</span> <span class="nc">GreetingController</span> <span class="p">{</span>
 
     <span class="k">val</span> <span class="py">counter</span> <span class="p">=</span> <span class="n">AtomicLong</span><span class="p">()</span>
 
-    <span class="n">RequestMapping</span><span class="p">(</span><span class="s">&quot;/greeting&quot;</span><span class="p">)</span>
-    <span class="k">public</span> <span class="k">fun</span> <span class="nf">greeting</span><span class="p">(</span><span class="n">RequestParam</span><span class="p">(</span><span class="n">value</span> <span class="p">=</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">defaultValue</span> <span class="p">=</span> <span class="s">&quot;World&quot;</span><span class="p">)</span> <span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Greeting</span> <span class="p">{</span>
+    <span class="n">@RequestMapping</span><span class="p">(</span><span class="s">&quot;/greeting&quot;</span><span class="p">)</span>
+    <span class="k">fun</span> <span class="nf">greeting</span><span class="p">(</span><span class="n">@RequestParam</span><span class="p">(</span><span class="n">value</span> <span class="p">=</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">defaultValue</span> <span class="p">=</span> <span class="s">&quot;World&quot;</span><span class="p">)</span> <span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Greeting</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">Greeting</span><span class="p">(</span><span class="n">counter</span><span class="p">.</span><span class="n">incrementAndGet</span><span class="p">(),</span> <span class="s">&quot;Hello, $name&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -795,17 +826,18 @@ representing an instance of <em>Greeting</em></p>
 
 <h3 id="creating-the-application-class">Creating the Application class<a href="#creating-the-application-class" class="anchor"></a></h3>
 <p>Finally we need to define an Application class. As Spring Boot looks for a public static main method, we need to define this in Kotlin
-using the <em>platformStatic</em> attribute. For this, we create a standard <em>Application</em> class and define a companion object inside where we can then create
-a function decorated with <em>platformStatic</em></p>
+using the <em>@JvmStatic</em> annotation. For this, we create a standard <em>Application</em> class and define a companion object inside where we can then create
+a function annotated with <em>@JvmStatic</em></p>
 
-<p>Note: platformStatic is an annotation in Kotlin which is used for interoperability with Java, so that the resulting method is defined as static when called from Java.</p>
+<p>Note: JvmStatic is an annotation in Kotlin which is used for interoperability with Java, so that the resulting method is defined as static when called from Java.</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">ComponentScan</span>
-<span class="n">EnableAutoConfiguration</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">Application</span> <span class="p">{</span>
+<p>The other change needed for Spring Boot is to mark the class as open. Spring boot <em>@Configuration</em> classes cannot be final. Classes in Kotlin are final by default without the <em>open</em> modifier.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">@SpringBootApplication</span>
+<span class="k">open</span> <span class="k">class</span> <span class="nc">Application</span> <span class="p">{</span>
     <span class="n">companion</span> <span class="k">object</span> <span class="err">{</span>
-        <span class="n">platformStatic</span> <span class="k">public</span> <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-            <span class="n">SpringApplication</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">javaClass</span><span class="p">&lt;</span><span class="n">Application</span><span class="p">&gt;(),</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">@JvmStatic</span> <span class="k">public</span> <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+            <span class="n">SpringApplication</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">Application</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -815,12 +847,11 @@ a function decorated with <em>platformStatic</em></p>
 <p>In Java, the <code>main()</code> method of a Spring Boot application is conventionally defined within the annotated application class. This is because Java <em>does not</em> support top-level methods.
 In Kotlin, however, we <em>do</em> have <a href="/kotlin-web-site-cn/docs/reference/functions.html">top-level functions</a>. Thus, we can make the Spring main entry point much simpler:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">ComponentScan</span>
-<span class="n">EnableAutoConfiguration</span>
-<span class="k">public</span> <span class="k">class</span> <span class="nc">Application</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">@SpringBootApplication</span>
+<span class="k">open</span> <span class="k">class</span> <span class="nc">Application</span>
 
-<span class="k">public</span> <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-	<span class="n">SpringApplication</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">javaClass</span><span class="p">&lt;</span><span class="n">Application</span><span class="p">&gt;(),</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+	<span class="n">SpringApplication</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">Application</span><span class="o">::</span><span class="k">class</span><span class="p">.</span><span class="n">java</span><span class="p">,</span> <span class="p">*</span><span class="n">args</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
 <p>The only requirement for this variant to work is to declare in your <code>build.gradle</code> file to look for <em>this</em> main function. This is done through the <code>mainClass</code> property of the <code>springBoot</code> section:</p>
@@ -829,10 +860,10 @@ In Kotlin, however, we <em>do</em> have <a href="/kotlin-web-site-cn/docs/refere
     <span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;my.package.YourMainClass&#39;</span>
 <span class="o">}</span></code></pre>
 
-<p>In Kotlin, top-level functions are compiled into static members of an automatically-generated class. The name of this class is derived from the name of the package. For instance, a top-level function in the <code>com.example</code> package would be defined in a class named <code>com.example.ExamplePackage</code>. In our case, because we did not declare a package explicitly, the function is defined in the so-called <em>default</em> package; thus, the special  class <code>_DefaultPackage</code>  is defined. You may add the following lines to your <code>build.gradle</code>:</p>
+<p>In Kotlin, top-level functions are compiled into static members of an automatically-generated class. The name of this class is derived from the name of the source file. For instance, a top-level function in the <code>Application.kt</code> file would be defined in a class named <code>ApplicationKt</code>. You may add the following lines to your <code>build.gradle</code>:</p>
 
 <pre><code class="code-block _highlighted lang_groovy"><span class="n">springBoot</span> <span class="o">{</span>
-    <span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;_DefaultPackage&#39;</span>
+    <span class="n">mainClass</span> <span class="o">=</span> <span class="s1">&#39;kotlin.demo.ApplicationKt&#39;</span>
 <span class="o">}</span></code></pre>
 
 <h3 id="running-the-application">Running the application<a href="#running-the-application" class="anchor"></a></h3>
@@ -862,7 +893,7 @@ In Kotlin, however, we <em>do</em> have <a href="/kotlin-web-site-cn/docs/refere
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -872,5 +903,6 @@ In Kotlin, however, we <em>do</em> have <a href="/kotlin-web-site-cn/docs/refere
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

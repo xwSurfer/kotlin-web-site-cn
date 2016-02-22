@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Reflection</title>
+
+    <title>Reflection - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Reflection" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/reflection.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Reflection">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -455,6 +487,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
             
         
     
@@ -498,13 +537,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
         
             
         
 
         
+    
+
     
 
         
@@ -1031,7 +1070,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1519,20 +1575,25 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">反射<a href="#section" class="anchor"></a></h1>
 
-<p>反射是一系列语言和库的特性，允许在运行时获取你代码结构。把函数和属性作为语言的一等公民，反射它们（如获名称或者属性类型或者方法）和使用函数式编程或反应是编程风格很像。</p>
+<p>反射是一系列语言和库的特性，允许在运行时获取你代码结构。
+把函数和属性作为语言的一等公民，反射它们（如获名称或者属性类型或者
+方法）和使用函数式编程或反应是编程风格很像。</p>
 
 <blockquote class="note">
-  <p>在Java平台，使用反射特性所需的运行时组件作为一个单独的Jar文件(<code>kotlin-reflect.jar</code>).这样做减小了不使用反射的应用程序库的大小.如果你确实要使用反射,请确保该文件被添加到了项目路径.</p>
+  <p>在Java平台，使用反射特性所需的运行时组件作为一个单独的
+Jar 文件(<code>kotlin-reflect.jar</code>).这样做减小了不使用反射的应用程序库的大小.
+如果你确实要使用反射,请确保该文件被添加到了项目路径.</p>
 </blockquote>
 
 <h2 id="section-1">类引用<a href="#section-1" class="anchor"></a></h2>
 
-<p>最基本的反射特性就是得到运行时的类引用。要获取引用并使之成为静态类可以使用字面类语法:</p>
+<p>最基本的反射特性就是得到运行时的类引用。要获取引
+用并使之成为静态类可以使用字面类语法:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">c</span> <span class="p">=</span> <span class="n">MyClass</span><span class="o">::</span><span class="k">class</span></code></pre>
 
-<p>引用是<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>类型.你可以使用<code>KClass.properties</code>
-和<code>KClass.extensionProperties</code>来获得类和父类所有<a href="#property-references">属性引用</a>的列表。</p>
+<p>引用是<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html">KClass</a>类型.~~你可以使用<code>KClass.properties</code>
+和<code>KClass.extensionProperties</code>来获得类和父类所有<a href="#property-references">属性引用</a>的列表。~~</p>
 
 <p>注意Kotlin类引用不完全与Java类引用一致.查看<a href="java-interop.html#object-methods">Java interop section</a>
 详细信息。</p>
@@ -1551,24 +1612,25 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>这里 <code>::isOdd</code>是一个函数类型的值 <code>(Int) -&gt; Boolean</code>.</p>
 
-<p>注意现在<code>::</code>不能被使用来重载函数. 将来, 我们计划提供一个语法明确参数类型这样就可以使用明确的重载函数了。</p>
+<p>注意现在<code>::</code>不能被使用来重载函数. 将来, 我们计划
+提供一个语法明确参数类型这样就可以使用明确的重载函数了。</p>
 
 <p>如果我们需要使用类成员或者一个扩展方法，它必须是有权访问的, 
-它的返回类型是“extension function”,
 例如<code>String::toCharArray</code>带着一个<code>String</code>: <code>String.() -&gt; CharArray</code>类型扩展函数.</p>
 
 <h3 id="section-3">例子: 函数组合<a href="#section-3" class="anchor"></a></h3>
 
 <p>考量以下方法：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">compose</span><span class="p">&lt;</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">&gt;(</span><span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">C</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">B</span><span class="p">):</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">C</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span><span class="n">x</span> <span class="p">-&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">))}</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">&gt;</span> <span class="n">compose</span><span class="p">(</span><span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">C</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">B</span><span class="p">):</span> <span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="n">C</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="n">x</span> <span class="p">-&gt;</span> <span class="n">f</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>它返回一个由俩个传递进去的函数的组合。现在你可以把它用在可调用的引用上了：</p>
+<p>它返回一个由俩个传递进去的函数的组合。
+现在你可以把它用在可调用的引用上了：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">length</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span>
- 
+
 <span class="k">val</span> <span class="py">oddLength</span> <span class="p">=</span> <span class="n">compose</span><span class="p">(</span><span class="o">::</span><span class="n">isOdd</span><span class="p">,</span> <span class="o">::</span><span class="n">length</span><span class="p">)</span>
 <span class="k">val</span> <span class="py">strings</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;ab&quot;</span><span class="p">,</span> <span class="s">&quot;abc&quot;</span><span class="p">)</span>
 
@@ -1579,22 +1641,29 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <p>我们同样可以用<code>::</code>操作符来访问Kotlin中的顶级类的属性：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">1</span>
- 
+
 <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="o">::</span><span class="n">x</span><span class="p">.</span><span class="k">get</span><span class="p">())</span> <span class="c1">// prints &quot;1&quot;</span>
     <span class="o">::</span><span class="n">x</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
     <span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>         <span class="c1">// prints &quot;2&quot;</span>
 <span class="p">}</span></code></pre>
 
-<p>表达式<code>::x</code>推断为<code>KProperty&lt;Int&gt;</code>类型的属性对象,它允许我们使用<code>get()</code>函数来读它的值或者使用<code>name</code>属性来得到它的值。更多请查看<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-property.html">docs on the <code>KProperty</code> class</a>.</p>
+<p>表达式<code>::x</code>推断为<code>KProperty&lt;Int&gt;</code>类型的属性对象,它允许我们
+使用<code>get()</code>函数来读它的值或者使用<code>name</code>属性来得到它的值。更多请
+查看<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html">docs on the <code>KProperty</code> class</a>.</p>
 
-<p>对于可变属性,例如<code>var y = 1</code>, <code>::y</code>返回值类型是<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property.html"><code>KMutableProperty&lt;Int&gt;</code></a>,
+<p>对于可变属性,例如<code>var y = 1</code>, <code>::y</code>返回值类型是<a href="/api/latest/jvm/stdlib/kotlin.reflect/-k-mutable-property/index.html"><code>KMutableProperty&lt;Int&gt;</code></a>,
 它有一个<code>set()</code>方法.</p>
 
-<p>访问一个类的属性成员，我们这样修饰：</p>
+<p>A property reference can be used where a function with no parameters is expected:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">strs</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;bc&quot;</span><span class="p">,</span> <span class="s">&quot;def&quot;</span><span class="p">)</span>
+<span class="n">println</span><span class="p">(</span><span class="n">strs</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="n">length</span><span class="p">))</span> <span class="c1">// prints [1, 2, 3]</span></code></pre>
+
+<p>To access a property that is a member of a class, we qualify it:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="k">val</span> <span class="py">p</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span>
- 
+
 <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">prop</span> <span class="p">=</span> <span class="n">A</span><span class="o">::</span><span class="n">p</span>
     <span class="n">println</span><span class="p">(</span><span class="n">prop</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="m">1</span><span class="p">)))</span> <span class="c1">// prints &quot;1&quot;</span>
@@ -1604,14 +1673,16 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">String</span><span class="p">.</span><span class="n">lastChar</span><span class="p">:</span> <span class="n">Char</span>
   <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">size</span> <span class="p">-</span> <span class="m">1</span><span class="p">]</span>
- 
+
 <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="n">println</span><span class="p">(</span><span class="n">String</span><span class="o">::</span><span class="n">lastChar</span><span class="p">.</span><span class="k">get</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">))</span> <span class="c1">// prints &quot;c&quot;</span>
 <span class="p">}</span></code></pre>
 
 <h3 id="java">与Java反射调用<a href="#java" class="anchor"></a></h3>
 
-<p>在 java 平台上，标准库包括反射类的扩展，提供了到 java 反射对象的映射(参看 <code>kotlin.reflect.jvm</code>包)。比如，想找到一个备用字段或者 java getter 方法，你可以这样写：</p>
+<p>在 java 平台上，标准库包括反射类的扩展，提供了到 java 反射
+对象的映射(参看 <code>kotlin.reflect.jvm</code>包)。
+比如，想找到一个备用字段或者 java getter 方法，你可以这样写：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.reflect.jvm.*</span>
  
@@ -1622,10 +1693,16 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="n">println</span><span class="p">(</span><span class="n">A</span><span class="o">::</span><span class="n">p</span><span class="p">.</span><span class="n">javaField</span><span class="p">)</span>  <span class="c1">// prints &quot;private final int A.p&quot;</span>
 <span class="p">}</span></code></pre>
 
+<p>To get the Kotlin class corresponding to a Java class, use the <code>.kotlin</code> extension property:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">getKClass</span><span class="p">(</span><span class="n">o</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span> <span class="n">KClass</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">o</span><span class="p">.</span><span class="n">javaClass</span><span class="p">.</span><span class="n">kotlin</span></code></pre>
+
 <h2 id="section-5">构造函数引用<a href="#section-5" class="anchor"></a></h2>
 
-<p>构造函数可以像属性和方法那样引用. 它们可以使用在任何一个函数类型的对象的地方，期望得到相同参数的构造函数，并返回一个适当类型的对象. 
-构造函数使用<code>::</code>操作符加类名引用.考虑如下函数，需要一个无参数函数返回类型是<code>Foo</code>:</p>
+<p>构造函数可以像属性和方法那样引用. 它们可以使用在任何一个函数类型的对象的地方，
+期望得到相同参数的构造函数，并返回一个适当类型的对象. 
+构造函数使用<code>::</code>操作符加类名引用.考虑如下函数，
+需要一个无参数函数返回类型是<code>Foo</code>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span>
 
@@ -1633,7 +1710,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="k">val</span> <span class="py">x</span> <span class="p">:</span> <span class="n">Foo</span> <span class="p">=</span> <span class="n">factory</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>我们可以简单的这样使用:</p>
+<p>Using <code>::Foo</code>, the zero-argument constructor of the class Foo, 我们可以简单的这样使用:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">function</span><span class="p">(</span><span class="o">::</span><span class="n">Foo</span><span class="p">)</span></code></pre>
 
@@ -1655,7 +1732,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1665,5 +1742,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

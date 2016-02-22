@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Control Flow</title>
+
+    <title>Control Flow - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Control Flow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/control-flow.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Control Flow">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1550,7 +1606,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="n">b</span> 
   <span class="p">}</span></code></pre>
 
-<p>当<em class="keyword">if</em>仅仅有一个分支, 或者其中一个分支的返回结果<code>Unit</code>, 它的类型<code>Unit</code>.</p>
+<p>If you’re using <em class="keyword">if</em> as an expression rather than a statement (for example, returning its value or
+assigning it to a variable), the expression is required to have an <code>else</code> branch.</p>
 
 <p>See the <a href="grammar.html#if">grammar for <em class="keyword">if</em></a>.</p>
 
@@ -1567,10 +1624,14 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="p">}</span></code></pre>
 
 <p><em class="keyword">when</em> 将它的参数和所有的分支条件进行比较，直到某个分支满足条件。
-<em class="keyword">when</em>既可以被当做表达式使用也可以被当做语句使用。 如果它被当做表达式, 符合条件的分支的值就是整个表达式的值，如果当做语句使用，则忽略单个分支的值。(就像<em class="keyword">if</em>,每一个分支可以是一个代码块,它的值是最后的表达式的值.)</p>
+<em class="keyword">when</em>既可以被当做表达式使用也可以被当做语句使用。如果它被当做表达式，
+符合条件的分支的值就是整个表达式的值，如果当做语句使用，
+则忽略单个分支的值。（就像<em class="keyword">if</em>,每一个分支可以是一个代码块,它的值
+是最后的表达式的值。）</p>
 
 <p><em class="keyword">else</em> 分支将被执行如果其他分支都不满足条件。
-如果 <em class="keyword">when</em> 作为一个表达式被使用,<em class="keyword">else</em> 分支是必须的，除非编译器能够检测出所有的可能情况都已经覆盖了。</p>
+如果 <em class="keyword">when</em> 作为一个表达式被使用,<em class="keyword">else</em> 分支是必须的，
+除非编译器能够检测出所有的可能情况都已经覆盖了。</p>
 
 <p>如果很多分支需要用相同的方式处理，则可以把多个分支条件放在一起, 用<code>,</code>逗号分隔:</p>
 
@@ -1578,6 +1639,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="m">0</span><span class="p">,</span> <span class="m">1</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;x == 0 or x == 1&quot;</span><span class="p">)</span>
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;otherwise&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
+
 <p>我们可以在判断分支条件的地方使用任何表达式，而不仅仅是常量(和switch不同)：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">when</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
@@ -1594,7 +1656,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="k">else</span> <span class="p">-&gt;</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;none of the above&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>另一种用法是可以检查一个值<em class="keyword">is</em>或者<em class="keyword">!is</em>某种特定类型.注意,由于<a href="typecasts.html#smart-casts">smart casts</a>, 你可以访问该类型的方法和属性而不用额外的检查。</p>
+<p>另一种用法是可以检查一个值<em class="keyword">is</em>或者<em class="keyword">!is</em>某种特定类型.注意：
+由于<a href="typecasts.html#smart-casts">smart casts</a>, 你可以访问该类型的方法和属性而不用
+额外的检查。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">hasPrefix</span> <span class="p">=</span> <span class="k">when</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">is</span> <span class="n">String</span> <span class="p">-&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;prefix&quot;</span><span class="p">)</span>
@@ -1636,11 +1700,20 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   </li>
 </ul>
 
+<p>All of these three functions need to be marked as <code>operator</code>.</p>
+
 <p>如果你想要遍历一个数组或者一个list，你可以这么做:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">array</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></code></pre>
+
 <p>注意这种“遍历一个范围”的函数会被编译器优化，不会产生额外的对象。</p>
+
+<p>Alternatively, you can use the <code>withIndex</code> library function:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">((</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="k">in</span> <span class="n">array</span><span class="p">.</span><span class="n">withIndex</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">&quot;the element at $index is $value&quot;</span><span class="p">)</span>
+<span class="p">}</span></code></pre>
 
 <p>See the <a href="grammar.html#for">grammar for <em class="keyword">for</em></a>.</p>
 
@@ -1681,7 +1754,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1691,5 +1764,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

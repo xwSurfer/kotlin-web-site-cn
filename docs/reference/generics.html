@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Generics</title>
+
+    <title>Generics - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Generics" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/generics.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Generics">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1529,27 +1585,27 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">box</span><span class="p">:</span> <span class="n">Box</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">Box</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;(</span><span class="m">1</span><span class="p">)</span></code></pre>
 
-<p>但当参数类型可以从构造函数参数等途径推测时，在创建的过程中可以忽略类型参数：
-<code>kotlin
-val box = Box(1) // 1 has type Int, so the compiler figures out that we are talking about Box&lt;Int&gt;
-</code></p>
+<p>但当参数类型可以从构造函数参数等途径推测时，在创建的过程中可以忽略类型参数：</p>
 
-<h2 id="variance">差异Variance<a href="#variance" class="anchor"></a></h2>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">box</span> <span class="p">=</span> <span class="n">Box</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1">// 1 has type Int, so the compiler figures out that we are talking about Box&lt;Int&gt;</span></code></pre>
+
+<h2 id="variance">型变Variance<a href="#variance" class="anchor"></a></h2>
 
 <p>Java的变量类型中，最为精妙的是通配符（wildcards）类型(详见 <a href="http://www.angelikalanger.com/GenericsFAQ/JavaGenericsFAQ.html">Java Generics FAQ</a>)。
 但是Kotlin中并不具备该类型，替而代之的是：声明设置差异（declaration-site variance）与类型推测。</p>
 
-<p>首先，我们考虑一下Java中的通配符（wildcards）的意义。该问题在文档 <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java</a>, Item 28: <em>Use bounded wildcards to increase API flexibility</em>中给出了详细的解释。</p>
-
-<p>首先，Java中的泛型类型是不变的，即<code>List&lt;String&gt;</code>并不是<code>List&lt;Object&gt;</code>的子类型。
-原因在于，如果List是可变的，并不会优于Java数组。因为如下代码在编译后会产生运行时异常：</p>
+<p>首先，我们考虑一下Java中的通配符（wildcards）的意义。该问题在文档 <a href="http://www.oracle.com/technetwork/java/effectivejava-136174.html">Effective Java</a>, Item 28: <em>Use bounded wildcards to increase API flexibility</em>中给出了详细的解释。
+首先，Java中的泛型类型是不变的，即<code>List&lt;String&gt;</code>并不是<code>List&lt;Object&gt;</code>的子类型。
+原因在于，如果List是可变的，并不会
+优于Java数组。因为如下代码在编译后会产生运行时异常：</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">strs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
 <span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">strs</span><span class="o">;</span> <span class="c1">// !!! The cause of the upcoming problem sits here. Java prohibits this!</span>
 <span class="n">objs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// Here we put an Integer into a list of Strings</span>
 <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">strs</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// !!! ClassCastException: Cannot cast Integer to String</span></code></pre>
-<p>因此，Java规定泛型类型不可变来保证运行时的安全。但这样规定也具有一些影响。如， <code>Collection</code>接口中的<code>addAll()</code>方法，该方法的签名应该是什么？直观地，我们这样定义：</p>
+<p>因此，Java规定泛型类型不可变来保证运行时的安全。但这样规定也具有一些影响。如， <code>Collection</code>接口中的<code>addAll()</code>
+方法，该方法的签名应该是什么？直观地，我们这样定义：</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="kd">interface</span> <span class="nc">Collection</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="o">...</span> <span class="o">{</span>
@@ -1573,22 +1629,29 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
   <span class="kt">void</span> <span class="nf">addAll</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">E</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">);</span>
 <span class="o">}</span></code></pre>
 
-<p><strong>通配符类型（wildcard</strong>）的声明 <code>? extends T</code>表明了该方法允许一类对象是 <code>T</code>的子类型，而非必须得是 <code>T</code>背身。
-这意味着我们可以安全地从元素（ T的子类集合中的元素）<strong>读取</strong> <code>T</code>，同时由于我们并不知道 <code>T</code>的子类型，所以<strong>不能写</strong>元素。
+<p><strong>通配符类型（wildcard</strong>）的声明 <code>? extends T</code>表明了该方法允许一类对象是 <code>T</code>的<em>子类型</em>，而非必须得是 <code>T</code>本身。
+这意味着我们可以安全地从元素（ T的子类集合中的元素）<strong>读取</strong> <code>T</code>，同时由于
+我们并不知道 <code>T</code>的子类型，所以<strong>不能写</strong>元素。
 反过来，该限制可以让<code>Collection&lt;String&gt;</code>表示为<code>Collection&lt;? extends Object&gt;</code>的子类型。
-简而言之，带上界的通配符类型（wildcard）是的类型更加多样性。</p>
+简而言之，带<strong>extends</strong>限定（上限）的通配符类型（wildcard）使得类型是<strong>协变的（covariant）</strong>。</p>
 
-<p>理解为什么这样做可以使得类型的表达更加简单的关键点在于：如果只能从集合中获取元素，那么就可以使用 <code>String</code>s集合，从中读取<code>Object</code>s 。反过来，如果只能向集合中放入元素，就可以获取<code>Object</code>s并向其中放入<code>String</code>s：在Java中有<code>List&lt;? super String&gt;</code>是<code>List&lt;Object&gt;</code>的超类。</p>
+<p>理解为什么这样做可以使得类型的表达更加简单的关键点在于：如果只能从集合中获取元素，那么就可以使用 <code>String</code>集合，
+从中读取<code>Object</code>也没问题 。反过来，如果只能向集合中_放入_元素，就可以用
+<code>Object</code>集合并向其中放入<code>String</code>：在Java中有<code>List&lt;? super String&gt;</code>是<code>List&lt;Object&gt;</code>的<strong>超类</strong>。</p>
 
-<p>后面的情况被称为“抗变性”（contravariance），这种性质是的只可以调用方法时利用String为<code>List&lt;? super String&gt;</code> 的参数。（例如，可以调用<code>add(String)</code>或者<code>set(int, String)</code>),或者当调用函数返回<code>List&lt;T&gt;</code>中的<code>T</code>，你获取的并非一个<code>String</code>而是一个 <code>Object</code>。</p>
+<p>后面的情况被称为<strong>“抗变性”（contravariance）</strong>，这种性质是的只可以调用方法时利用String为<code>List&lt;? super String&gt;</code> 的参数。
+（例如，可以调用<code>add(String)</code>或者<code>set(int, String)</code>),或者
+当调用函数返回<code>List&lt;T&gt;</code>中的<code>T</code>，你获取的并非一个<code>String</code>而是一个 <code>Object</code>。</p>
 
 <p>Joshua Bloch成这类为只可以从<strong>Producers(生产者)</strong>处 <strong>读取</strong>的对象，以及只可向<strong>Consumers（消费者）</strong>处<strong>写</strong>的对象。他表示：“<em>为了最大化地保证灵活性，在输入参数时使用通配符类型来代表生产者或者消费者</em>”，同时他也提出了以下术语：</p>
 
-<p><em>PECS 代表生产者扩展，消费者超类。</em></p>
+<p><em>PECS 代表生产者扩展，消费者超类（roducer-Extends, Consumer-Super）。</em></p>
 
-<p><em>注记</em>：当使用一个生产者对象时，如<code>List&lt;? extends Foo&gt;</code>，在该对象上不可调用 <code>add()</code> 或 <code>set()</code>方法。但这不代表该对象是<strong>不变</strong>的。例如，可以调用 <code>clear()</code>方法移除列表里的所有元素，因为 <code>clear()</code>方法不含任何参数。通配符类型唯一保证的仅仅是<strong>类型安全</strong>，与可变性并不冲突。</p>
+<p><em>注记</em>：当使用一个生产者对象时，如<code>List&lt;? extends Foo&gt;</code>，在该对象上不可调用 <code>add()</code> 或 <code>set()</code>方法。但这不代表
+该对象是<strong>不变的</strong>。例如，可以调用 <code>clear()</code>方法移除列表里的所有元素，因为 <code>clear()</code>方法
+不含任何参数。通配符类型唯一保证的仅仅是<strong>类型安全</strong>。不可变性完全是另一个话题了。</p>
 
-<h3 id="section-1">声明位置变量<a href="#section-1" class="anchor"></a></h3>
+<h3 id="section-1">声明处型变<a href="#section-1" class="anchor"></a></h3>
 
 <p>假设有一个泛型接口<code>Source&lt;T&gt;</code> ，该接口中不存在将 <code>T</code> 作为参数的方法，只有返回值为 <code>T</code> 的方法：</p>
 
@@ -1596,6 +1659,7 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <span class="kd">interface</span> <span class="nc">Source</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
   <span class="n">T</span> <span class="nf">nextT</span><span class="o">();</span>
 <span class="o">}</span></code></pre>
+
 <p>那么，利用<code>Source&lt;Object&gt;</code>类型的对象向 <code>Source&lt;String&gt;</code> 实例中存入引用是极为安全的，因为不存在任何可以调用的消费者方法。但是Java并不知道这点，依旧禁止这样操作：</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
@@ -1603,12 +1667,14 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
   <span class="n">Source</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="n">strs</span><span class="o">;</span> <span class="c1">// !!! Not allowed in Java</span>
   <span class="c1">// ...</span>
 <span class="o">}</span></code></pre>
+
 <p>为了修正这一点，我们需要声明对象的类型为<code>Source&lt;? extends Object&gt;</code>，有一点无意义，因为我们可以像以前一下在该对象上调用所有相同的方法，所以复杂类型没有增加值。但是编译器并不可以理解。</p>
 
-<p>在Kotlin中，我们有一种途径向编译器解释该表达，称之为：<strong>声明变量位置</strong>：我们可以标注源的<strong>变量类型</strong>为<code>T</code> 来确保它仅从<code>Source&lt;T&gt;</code>成员中<strong>返回</strong>（生产），并从不被消费。为此，我们提供<strong>输出</strong>修改：</p>
+<p>在Kotlin中，我们有一种途径向编译器解释该表达，称之为：<strong>声明处型变</strong>：我们可以标注源的<strong>变量类型</strong>为<code>T</code> 来确保它仅从<code>Source&lt;T&gt;</code>成员中<strong>返回</strong>（生产），并从不被消费。
+为此，我们提供<strong>输出</strong>修改：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Source</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
-  <span class="k">fun</span> <span class="nf">nextT</span><span class="p">():</span> <span class="n">T</span>
+  <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">nextT</span><span class="p">():</span> <span class="n">T</span>
 <span class="p">}</span>
 
 <span class="k">fun</span> <span class="nf">demo</span><span class="p">(</span><span class="n">strs</span><span class="p">:</span> <span class="n">Source</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
@@ -1616,18 +1682,20 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>常规是：当一个类<code>C</code>中类型为<code>T</code>的变量被声明为<strong>输出</strong>，它将仅出现于类<code>C</code>的成员<strong>输出</strong>-位置，反之使得<code>C&lt;Base&gt;</code>可以安全地成为<code>C&lt;Derived&gt;</code>的超类。</p>
+<p>常规是：当一个类<code>C</code>中类型为<code>T</code>的变量被声明为<strong>输出</strong>，它将仅出现于类<code>C</code>的成员<strong>输出</strong>-位置，反之使得<code>C&lt;Base&gt;</code>可以安全地成为
+<code>C&lt;Derived&gt;</code>的超类。</p>
 
-<p>简而言之，称类<code>C</code>是参数<code>T</code>中的<strong>可变</strong>，或<code>T</code>是一个<strong>可变</strong>的参数类型。
+<p>简而言之，称类<code>C</code>是参数<code>T</code>中的<strong>协变的</strong>，或<code>T</code>是一个<strong>协变</strong>的参数类型。
 我们可以认为<code>C</code>是<code>T</code>的一个生产者，同时不是<code>T</code>的消费者。</p>
 
-<p><strong>输出</strong>改变被成为<strong>输出注释</strong>，同时由于它在参数类型位置被提供，所以我们讨论<strong>声明变量位置</strong>。
-与Java的<strong>使用变量位置</strong>，通配符是的类型可变的用法相反。</p>
+<p><strong>out</strong>修饰符叫做<strong>型变注解</strong>，同时由于它在参数类型位置被提供，所以我们讨论<strong>声明处型变</strong>。
+与Java的<strong>使用处型变</strong>相反，类型使用通配符使得类型协变。</p>
 
-<p>另外针对<strong>输出</strong>，Kotlin又补充了一项变量注释：<strong>输入</strong>。它是的变量类型<strong>反变</strong>：只可以被消费而不可以被生产。例如一个反变类 <code>Comparable</code>：</p>
+<p>另外除了<strong>out</strong>，Kotlin又补充了一项型变注释：<strong>in</strong>。它是的变量类型<strong>反变</strong>：只可以被消费而不可以
+被生产。反变类的一个很好的例子是 <code>Comparable</code>：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">Comparable</span><span class="p">&lt;</span><span class="k">in</span> <span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
-  <span class="k">fun</span> <span class="nf">compareTo</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Int</span>
+  <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">compareTo</span><span class="p">(</span><span class="n">other</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Int</span>
 <span class="p">}</span>
 
 <span class="k">fun</span> <span class="nf">demo</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">Number</span><span class="p">&gt;)</span> <span class="p">{</span>
@@ -1636,17 +1704,19 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
   <span class="k">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">Double</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">x</span> <span class="c1">// OK!</span>
 <span class="p">}</span></code></pre>
 
-<p>我们认为<strong>输入</strong>和<strong>输出</strong>是自解释（他们可以成功地被应用于C#中），所以上文的解释并非必须的，并且读者可以从
-<strong><a href="http://en.wikipedia.org/wiki/Existentialism">The Existential</a> Transformation: Consumer in, Producer out!</strong>中获取更加深入的理解。</p>
+<p>我们认为<strong>in</strong>和<strong>out</strong>是自解释（他们早已成功地被应用于C#中），
+所以上文的解释并非必须的，并且读者可以从</p>
+
+<p><strong><a href="http://en.wikipedia.org/wiki/Existentialism">The Existential</a> Transformation: Consumer in, Producer out!</strong> 中获取更加深入的理解:)。</p>
 
 <h2 id="section-2">类型预测<a href="#section-2" class="anchor"></a></h2>
 
-<h3 id="section-3">使用变量位置声明的类型预测<a href="#section-3" class="anchor"></a></h3>
+<h3 id="section-3">使用处型变：类型预测<a href="#section-3" class="anchor"></a></h3>
 
-<p>声明变量类型T为<em>out</em>是极为方便的，并且在运用子类型的过程中也没有问题。是的，当该类<strong>可以</strong>被仅限于返回<code>T</code>,但是如果<strong>不可以</strong>呢？
-例如：</p>
+<p>声明变量类型T为<em>out</em>是极为方便的，并且在运用子类型的过程中也没有问题。是的，当该类<strong>可以</strong>被仅限于返回<code>T</code>，但是如果<strong>不可以</strong>呢？
+一个很好的例子是 Array：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">val</span> <span class="py">length</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">val</span> <span class="py">size</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">T</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
   <span class="k">fun</span> <span class="nf">set</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
 <span class="p">}</span></code></pre>
@@ -1654,7 +1724,7 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <p>该类中的<code>T</code>不仅不可以被co- 也不能被逆变。这造成了极大的不灵活性。考虑该方法：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">copy</span><span class="p">(</span><span class="n">from</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">&gt;,</span> <span class="n">to</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">&gt;)</span> <span class="p">{</span>
-  <span class="n">assert</span><span class="p">(</span><span class="n">from</span><span class="p">.</span><span class="n">length</span> <span class="p">==</span> <span class="n">to</span><span class="p">.</span><span class="n">length</span><span class="p">)</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">from</span><span class="p">.</span><span class="n">size</span> <span class="p">==</span> <span class="n">to</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
   <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">from</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span>
     <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">from</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1665,7 +1735,9 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <span class="k">val</span> <span class="py">any</span> <span class="p">=</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">Any</span><span class="p">&gt;(</span><span class="m">3</span><span class="p">)</span>
 <span class="n">copy</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">any</span><span class="p">)</span> <span class="c1">// Error: expects (Array&lt;Any&gt;, Array&lt;Any&gt;)</span></code></pre>
 
-<p>这里，我们陷入了一个类似的问题：<code>Array&lt;T&gt;</code>中的<code>T</code>是<strong>不变</strong>的，所以不论是<code>Array&lt;Int&gt;</code>或<code>Array&lt;Any&gt;</code> 都不是另一个的子类型。为什么？因为copy操作<strong>可能</strong>是不安全的行为，例如，它可能尝试向来源<strong>写</strong>一个String。如果我们真的将其转换为<code>Int</code>数组，随后 <code>ClassCastException</code>异常可能会被抛出。</p>
+<p>这里，我们陷入了一个类似的问题：<code>Array&lt;T&gt;</code>中的<code>T</code>是<strong>不变</strong>的，所以不论是<code>Array&lt;Int&gt;</code>或<code>Array&lt;Any&gt;</code> 
+都不是另一个的子类型。为什么？因为copy操作<strong>可能</strong>是不安全的行为，例如，它可能尝试向来源<strong>写</strong>一个String，
+如果我们真的将其转换为<code>Int</code>数组，随后 <code>ClassCastException</code>异常可能会被抛出。</p>
 
 <p>那么，我们唯一需要确保的是<code>copy()</code>不会执行任何不安全的操作。我们试图阻止它向来源<strong>写</strong>，我们可以：</p>
 
@@ -1673,7 +1745,9 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
  <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>我们称该做法为<strong>类型预测</strong>：<code>源</code>并不仅是一个数组，并且可以要是可预测的。我们仅可调用返回类型为<code>T</code>的方法，如上，我们只能调用<code>get()</code>方法。这就是我们使用<strong>使用位置可变性</strong>而非Java中的<code>Array&lt;? extends Object&gt;</code>的更加明确简单的方法</p>
+<p>我们称该做法为<strong>类型预测</strong>：<code>源</code>并不仅是一个数组，并且可以要是可预测的。我们仅可调用返回类型为
+<code>T</code>的方法，如上，我们只能调用<code>get()</code>方法。这就是我们使用<strong>使用位置可变性</strong>而非Java中的<code>Array&lt;? extends Object&gt;</code>的
+更加明确简单的方法</p>
 
 <p>同时，你也可以利用<strong>in</strong>预测输入类型：</p>
 
@@ -1686,25 +1760,26 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <h3 id="star-projections">星-预测 Star-Projections<a href="#star-projections" class="anchor"></a></h3>
 
 <p>有时，你试图说你并不知道任何类型声明的方法，但是仍旧想安全地使用他。
-这里的安全方法指我们需要对<em>输出</em>-预测（对象并没有使用任何未知类型），预测具有相对参数的上界，例如大多数情况下的 <code>out Any?</code> 。Kotlin提供了一种简单的方法，称为<strong>星预测</strong>：<code>Foo&lt;*&gt;</code>代表<code>Foo&lt;out Bar&gt;</code>，<code>Bar</code>是<code>Foo</code>参数类型的上界。</p>
+这里的安全方法指我们需要对<em>out</em>-预测
+（对象并没有使用任何未知类型），预测具有相对参数的上界，例如大多数情况下的 <code>out Any?</code> 。
+Kotlin提供了一种简单的方法，称为<strong>星预测</strong>：<code>Foo&lt;*&gt;</code>代表<code>Foo&lt;out Bar&gt;</code>，<code>Bar</code>是
+<code>Foo</code>参数类型的上界。</p>
 
 <p><em>注记</em>：星预测很像Java中的raw类型，但是比raw类型更加安全。</p>
 
-<h1 id="section-4">泛型方法<a href="#section-4" class="anchor"></a></h1>
+<h1 id="section-4">泛型函数<a href="#section-4" class="anchor"></a></h1>
 
-<p>不仅仅是类具有类型参数，方法也具有。通常，我们将类型参数放置在方法名的后面，并用尖括号引起：</p>
+<p>不仅仅是类可以类型参数，函数也可以有。类型参数放置在函数名前：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">singletonList</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="c1">// ...</span>
+<span class="p">}</span>
+
+<span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">T</span><span class="p">.</span><span class="n">basicToString</span><span class="p">()</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span>  <span class="c1">// extension function</span>
+  <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>但是，对于 <a href="extensions.html">Extension functions</a> 可能并不需要在确定接收到参数类型之前声明他的类型变量。所以，Kotlin允许以下表达方法：</p>
-
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">T</span><span class="p">.</span><span class="n">basicToString</span><span class="p">()</span> <span class="p">:</span> <span class="n">String</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">typeinfo</span><span class="p">.</span><span class="n">typeinfo</span><span class="p">(</span><span class="k">this</span><span class="p">)</span> <span class="p">+</span> <span class="s">&quot;@&quot;</span> <span class="p">+</span> <span class="n">System</span><span class="p">.</span><span class="n">identityHashCode</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-<span class="p">}</span></code></pre>
-
-<p>如果参数类型是从调用方传递而来，那么它仅仅只能在方法名之后被声明：</p>
+<p>如果参数类型是从调用方显式传递而来，那么它要在函数名之后被声明：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">singletonList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;(</span><span class="m">1</span><span class="p">)</span></code></pre>
 
@@ -1719,10 +1794,11 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;&gt;</span> <span class="n">sort</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
+
 <p>在冒号之后被声明的是<strong>上界</strong>：代替<code>T</code>的仅可为 <code>Comparable&lt;T&gt;</code>的子类型。例如：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">sort</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span> <span class="c1">// OK. Int is a subtype of Comparable&lt;Int&gt;</span>
-<span class="n">sort</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">HashMap</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">String</span><span class="p">&gt;()))</span> <span class="c1">// Error: HashMap&lt;Int, String&gt; is not a subtype of Comparable&lt;HashMap&lt;Int, String&gt;&gt;</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">sort</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span> <span class="c1">// OK. Int is a subtype of Comparable&lt;Int&gt;</span>
+<span class="n">sort</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">HashMap</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">,</span> <span class="n">String</span><span class="p">&gt;()))</span> <span class="c1">// Error: HashMap&lt;Int, String&gt; is not a subtype of Comparable&lt;HashMap&lt;Int, String&gt;&gt;</span></code></pre>
 
 <p>默认的上界（如果没有声明）是<code>Any?</code>。只能有一个上界可以在尖括号中被声明。
 如果相同的类型参数需要多个上界，我们需要分割符 <strong>where</strong>-子句，如:</p>
@@ -1730,7 +1806,7 @@ val box = Box(1) // 1 has type Int, so the compiler figures out that we are talk
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">cloneWhenGreater</span><span class="p">(</span><span class="n">list</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;,</span> <span class="n">threshold</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span>
     <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Comparable</span><span class="p">,</span>
           <span class="n">T</span> <span class="p">:</span> <span class="n">Cloneable</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span><span class="p">{</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="n">threshold</span> <span class="p">}.</span><span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">clone</span><span class="p">()</span> <span class="p">}</span>
+  <span class="k">return</span> <span class="n">list</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="n">threshold</span> <span class="p">}.</span><span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">clone</span><span class="p">()</span> <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <hr />
@@ -1755,7 +1831,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1765,5 +1841,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

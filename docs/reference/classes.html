@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Classes and Inheritance</title>
+
+    <title>Classes and Inheritance - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Classes and Inheritance" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/classes.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Classes and Inheritance">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1526,24 +1582,28 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Invoice</span> <span class="p">{</span>
 <span class="p">}</span></code></pre>
 
-<p>这个类声明被花括号包围，包括类名、类头(指定其类型参数,主构造函数等)和这个类的主干。类头和主干都是可选的；
+<p>这个类声明被花括号包围，包括类名、类头(指定其类型参数,主构造
+函数等)和这个类的主干。类头和主干都是可选的；
 如果这个类没有主干，花括号可以被省略。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Empty</span></code></pre>
 
 <h3 id="section-2">构造<a href="#section-2" class="anchor"></a></h3>
 
-<p>在Kotlin中的类可以有<strong>主构造函数</strong>和一个或多个<strong>二级构造函数</strong>。主构造函数是类头的一部分:它跟在这个类名后面（和可选的类型参数）</p>
+<p>在Kotlin中的类可以有<strong>主构造函数</strong>和一个或多个<strong>二级构造函数</strong>。主构造
+函数是类头的一部分:它跟在这个类名后面（和可选的类型参数）</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Person</span> <span class="n">constructor</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span></code></pre>
 
-<p>如果这个主构造函数没有任何注解或者可见的修饰符，这个<em class="keyword">constructor</em>关键字可以被省略</p>
+<p>如果这个主构造函数没有任何注解或者可见的修饰符，这个<em class="keyword">constructor</em>
+关键字可以被省略</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">firstName</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
 <span class="p">}</span></code></pre>
 
-<p>这个主构造函数不能包含任何的代码。初始化的代码可以被放置在<strong>initializer blocks</strong>（初始的模块），以<em>init</em>为前缀作为关键字{:.keyword}</p>
+<p>这个主构造函数不能包含任何的代码。初始化的代码可以被放置
+在<strong>initializer blocks</strong>（初始的模块），以<em class="keyword">init</em>为关键字作为前缀：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">init</span> <span class="p">{</span>
@@ -1551,7 +1611,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>请注意，主构造的参数可以在初始化模块中使用。它们也可以在类体内声明初始化的属性：</p>
+<p>请注意，主构造的参数可以在初始化模块中使用。它们也可以在
+类体内声明初始化的属性：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">customerKey</span> <span class="p">=</span> <span class="n">name</span><span class="p">.</span><span class="n">toUpperCase</span><span class="p">()</span>
@@ -1563,19 +1624,19 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>与普通属性一样,主构造函数中声明的属性可以是可变的或者是只读的</p>
+<p>与普通属性一样,主构造函数中声明的属性可以是
+可变的（<em class="keyword">var</em>）或者是只读的（<em class="keyword">val</em>）。</p>
 
-<p>If the constructor has annotations or visibility modifiers, the <em class="keyword">constructor</em> keyword is required, and
-the modifiers go before it:
-如果构造函数有注解或可见性修饰符，这个<em class="keyword">constructor</em>需要被关键字修饰。</p>
+<p>如果构造函数有注解或可见性修饰符，这个<em class="keyword">constructor</em>关键字是必需的，and
+the modifiers go before it:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Customer</span> <span class="k">public</span> <span class="n">inject</span> <span class="n">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Customer</span> <span class="k">public</span> <span class="n">@Inject</span> <span class="n">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span></code></pre>
 
 <p>更多请查看<a href="visibility-modifiers.html#constructors">Visibility Modifiers</a></p>
 
 <h4 id="section-3">扩展构造函数</h4>
 
-<p>类也可以拥有被称为”二级构造函数”(为了实现Kotlin向Java一样拥有多个构造函数)，通常被加上前缀”constructor”</p>
+<p>类也可以拥有被称为”二级构造函数”(为了实现Kotlin向Java一样拥有多个构造函数)，通常被加上前缀<em class="keyword">constructor</em>：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Person</span> <span class="p">{</span>
     <span class="n">constructor</span><span class="p">(</span><span class="n">parent</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="p">{</span>
@@ -1583,8 +1644,9 @@ the modifiers go before it:
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>如果类有一个主构造函数,每个二级构造函数需要委托给主构造函数,直接或间接地通过另一个二级函数。
-委托到另一个使用同一个类的构造函数用<em class="keyword">this</em>关键字</p>
+<p>如果类有一个主构造函数,每个二级构造函数需要委托给主构造函数,
+直接或间接地通过另一个二级函数。委托到另一个使用同一个类的构造函数
+用<em class="keyword">this</em>关键字</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">constructor</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="n">Person</span><span class="p">)</span> <span class="p">:</span> <span class="k">this</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
@@ -1592,14 +1654,17 @@ the modifiers go before it:
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>如果一个非抽象类没有声明任何构造函数（原发性或继发性），这将有一个生成的主构造函数不带参数。构造函数的可见性是public。如果你不希望你的类有一个公共构造函数，你需要声明与非缺省可见一个空的主构造函数：</p>
+<p>如果一个非抽象类没有声明任何构造函数（原发性或继发性），这将有一个生成的主
+构造函数不带参数。构造函数的可见性是public。如果你不希望你的类
+有一个公共构造函数，你需要声明与非缺省可见一个空的主构造函数：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">DontCreateMe</span> <span class="k">private</span> <span class="n">constructor</span> <span class="p">()</span> <span class="p">{</span>
 <span class="p">}</span></code></pre>
 
 <blockquote class="info">
-  <p><strong>注意</strong>在JVM上，如果所有的主构造函数的参数有默认值，编译器会产生一个额外的参数的构造函数，将使用默认值。
-这使得更易于使用kotlin与通过参数构造函数创建类的实例，如使用Jackson或JPA库的时候。</p>
+  <p><strong>注意</strong>在JVM上，如果所有的主构造函数的参数有默认值，编译器会产生一个
+额外的无参构造函数，将使用默认值。 这使得更易于使用
+Kotlin与通过参数构造函数创建类的实例，如使用Jackson或JPA库的时候。</p>
 
   <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Customer</span><span class="p">(</span><span class="k">val</span> <span class="py">customerName</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">)</span></code></pre>
 </blockquote>
@@ -1612,7 +1677,7 @@ the modifiers go before it:
 
 <span class="k">val</span> <span class="py">customer</span> <span class="p">=</span> <span class="n">Customer</span><span class="p">(</span><span class="s">&quot;Joe Smith&quot;</span><span class="p">)</span></code></pre>
 
-<p>注意Kotlin不能有“new”关键字</p>
+<p>注意 Kotlin 并没有 <em class="keyword">new</em> 关键字</p>
 
 <h3 id="section-5">类成员<a href="#section-5" class="anchor"></a></h3>
 
@@ -1632,9 +1697,8 @@ the modifiers go before it:
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Example</span> <span class="c1">// Implicitly inherits from Any</span></code></pre>
 
-<p><code>Any</code>不属于<code>java.lang.Object</code>;特别是，它并没有任何其他任何成员，甚至连<code>equals()</code>，<code>hashCode()</code>和<code>toString()</code>都没有。</p>
-
-<p>请参阅<a href="java-interop.html#object-methods">Java的互操作性</a>更多的细节部分。</p>
+<p><code>Any</code>不属于<code>java.lang.Object</code>;特别是，它并没有任何其他任何成员，甚至连<code>equals()</code>，<code>hashCode()</code>和<code>toString()</code>都没有。 <br />
+请参阅<a href="java-interop.html#object-methods">Java的互操作性</a>更多的细节部分。</p>
 
 <p>要声明一个明确的父类，我们把类型放到类头冒号之后：</p>
 
@@ -1642,7 +1706,8 @@ the modifiers go before it:
 
 <span class="k">class</span> <span class="nc">Derived</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Base</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></code></pre>
 
-<p>如上所见，父类可以（并且必须）在声明继承的地方，用原始构造函数初始化。</p>
+<p>如上所见，父类可以（并且必须）在声明继承的地方，
+用原始构造函数初始化。</p>
 
 <p>如果类没有主构造，那么每个次级构造函数初始化基本类型
 使用<em>super</em>{：.keyword}关键字，或委托给另一个构造函数做到这一点。
@@ -1698,8 +1763,7 @@ the modifiers go before it:
 
 <h3 id="section-8">重写的规则<a href="#section-8" class="anchor"></a></h3>
 
-<p>在Kotlin中，实现继承的调用通过以下规则：
-如果一个类继承父类成员的多种实现方法，可以直接在子类中引用，
+<p>在Kotlin中，实现继承的调用通过以下规则：如果一个类继承父类成员的多种实现方法，可以直接在子类中引用，
 它必须重写这个成员，并提供其自己的实现（当然也可以使用父类的）。
 为了表示从中继承的实现而采取的父类型，我们使用<em>super</em>{：.keyword}在尖括号，如规范的父名<code>super&lt;Base&gt;</code>：</p>
 
@@ -1722,29 +1786,28 @@ the modifiers go before it:
 <span class="p">}</span></code></pre>
 
 <p>类C同时继承A和B是可以的，而且我们在调用a()和b()函数时没有任何问题，因为他们在C的基类中只有一个实现。
-但是f()函数则在A,B中都有实现，所以我们<em>必须</em>在C中覆盖f()，并且提供我们的实现以消除歧义。</p>
+但是f()函数则在A,B中都有实现，所以我们<em>必须</em>在C中覆盖f()，
+并且提供我们的实现以消除歧义。</p>
 
 <h2 id="section-9">抽象类<a href="#section-9" class="anchor"></a></h2>
 
 <p>类和其中的某些实现可以声明为<em>abstract</em>{：.keyword}。
 抽象成员在本类中可以不用实现。。
-因此，当一些子类继承一个抽象的成员，它并不算是一个实现：</p>
-
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">abstract</span> <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
-  <span class="k">abstract</span> <span class="k">fun</span> <span class="nf">f</span><span class="p">()</span>
-<span class="p">}</span>
-
-<span class="n">interface</span> <span class="n">B</span> <span class="p">{</span>
-  <span class="k">open</span> <span class="k">fun</span> <span class="nf">f</span><span class="p">()</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="s">&quot;B&quot;</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="k">class</span> <span class="nc">C</span><span class="p">()</span> <span class="p">:</span> <span class="n">A</span><span class="p">(),</span> <span class="n">B</span> <span class="p">{</span>
-  <span class="c1">// We are not required to override f()</span>
-<span class="p">}</span></code></pre>
-
-<p>Note that we do not need to annotate an abstract class or function with open – it goes without saying.</p>
-
-<p>We can override a non-abstract open member with an abstract one</p>
+&gt; ~~ 因此，当一些子类继承一个抽象的成员，它并不算是一个实现：~~
+&gt; 
+&gt; <code>kotlin
+&gt; abstract class A {
+&gt;   abstract fun f()
+&gt; }
+&gt; 
+&gt; interface B {
+&gt;   open fun f() { print("B") }
+&gt; }
+&gt; 
+&gt; class C() : A(), B {
+&gt;   // We are not required to override f()
+&gt; }
+&gt;</code></p>
 
 <p>需要注意的是，我们并不需要标注一个抽象类或者函数为<em>open</em> - 因为这不言而喻。</p>
 
@@ -1760,9 +1823,26 @@ the modifiers go before it:
 
 <h2 id="section-10">同伴对象<a href="#section-10" class="anchor"></a></h2>
 
-<p>在Kotlin中，不像Java或C＃，类没有静态方法。在大多数情况下，它建议简单地使用包级函数。</p>
+<p>在Kotlin中，不像Java或C＃，类没有静态方法。在大多数情况下，它建议简单地使用
+包级函数。</p>
 
-<p>如果你需要写一个可以调用的函数，而不依赖一个类的实例，但需要访问的内部一个类（例如，一个工厂方法），你可以写为[对象声明]（object_declarations.html）中的一员里面的那个类。</p>
+<p>如果你需要写一个可以调用的函数，而不依赖一个类的实例，但需要访问的内部
+一个类（例如，一个工厂方法），你可以写为[对象声明]（object_declarations.html）中的一员
+里面的那个类。</p>
+
+<p>更具体地讲，如果你声明一个<a href="object-declarations.html#companion-objects">同伴对象</a>在你的的类中，
+你就可以在Java/ C＃中调用与它的成员方法相同的语法的静态方法，只使用类名作为一个
+修饰语。</p>
+
+<h2 id="sealed-classes">Sealed Classes<a href="#sealed-classes" class="anchor"></a></h2>
+
+<p>Sealed classes are used for representing restricted class hierarchies, when a value can have one of the types from a
+limited set, but cannot have any other type. They are, in a sense, an extension of enum classes: the set of values
+for an enum type is also restricted, but each enum constant exists only as a single instance, whereas a subclass
+of a sealed class can have multiple instances which can contain state.</p>
+
+<p>To declare a sealed class, you put the <code>sealed</code> modifier before the name of the class. A sealed class can have
+subclasses, but all of them must be nested inside the declaration of the sealed class itself.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">sealed</span> <span class="k">class</span> <span class="nc">Expr</span> <span class="p">{</span>
     <span class="k">class</span> <span class="nc">Const</span><span class="p">(</span><span class="k">val</span> <span class="py">number</span><span class="p">:</span> <span class="n">Double</span><span class="p">)</span> <span class="p">:</span> <span class="n">Expr</span><span class="p">()</span>
@@ -1770,8 +1850,18 @@ the modifiers go before it:
     <span class="k">object</span> <span class="nc">NotANumber</span> <span class="p">:</span> <span class="n">Expr</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>更具体地讲，如果你声明一个<a href="object-declarations.html#companion-objects">同伴对象</a>在你的的类中，
-你就可以在Java/ C＃中调用与它的成员方法相同的语法的静态方法，只使用类名作为一个修饰语。</p>
+<p>Note that classes which extend subclasses of a sealed class (indirect inheritors) can be placed anywhere, not necessarily inside
+the declaration of the sealed class.</p>
+
+<p>The key benefit of using sealed classes comes into play when you use them in a <a href="control-flow.html#when-expression"><code>when</code> expression</a>. If it’s possible
+to verify that the statement covers all cases, you don’t need to add an <code>else</code> clause to the statement.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">:</span> <span class="n">Expr</span><span class="p">):</span> <span class="n">Double</span> <span class="p">=</span> <span class="k">when</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">is</span> <span class="n">Const</span> <span class="p">-&gt;</span> <span class="n">expr</span><span class="p">.</span><span class="n">number</span>
+    <span class="k">is</span> <span class="n">Sum</span> <span class="p">-&gt;</span> <span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">.</span><span class="n">e1</span><span class="p">)</span> <span class="p">+</span> <span class="n">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">.</span><span class="n">e2</span><span class="p">)</span>
+    <span class="n">NotANumber</span> <span class="p">-&gt;</span> <span class="n">Double</span><span class="p">.</span><span class="n">NaN</span>
+    <span class="c1">// the `else` clause is not required because we&#39;ve covered all the cases</span>
+<span class="p">}</span></code></pre>
 
 <hr />
 
@@ -1795,7 +1885,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1805,5 +1895,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

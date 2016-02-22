@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Interfaces</title>
+
+    <title>Interfaces - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Interfaces" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/interfaces.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Interfaces">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1519,7 +1575,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">接口<a href="#section" class="anchor"></a></h1>
 
-<p>Kotlin 的接口与 Java 8 类似，既包含抽象方法的声明，也包含实现。与抽象类不同的是，接口无法保存状态。它的的属性必须声明为 abstract。</p>
+<p>Kotlin 的接口与 Java 8 类似，既包含抽象方法的声明，也包含
+实现。与抽象类不同的是，接口无法保存状态。它可以有
+属性但必须声明为 abstract或提供访问器实现。</p>
 
 <p>使用关键字 <em class="keyword">interface</em> 来定义接口。</p>
 
@@ -1535,17 +1593,22 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <p>一个类或者对象可以实现一个或多个接口。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Child</span> <span class="p">:</span> <span class="n">MyInterface</span> <span class="p">{</span>
-   <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
+   <span class="k">override</span> <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span>
       <span class="c1">// body</span>
    <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
 <h2 id="section-2">接口属性<a href="#section-2" class="anchor"></a></h2>
 
-<p>接口只能定义无状态（stateless）的属性。</p>
+<p>You can declare properties in interfaces. A property declared in an interface can either be abstract, or it can provide
+implementations for accessors. Properties declared in interfaces can’t have backing fields, and therefore accessors
+declared in interfaces can’t reference them.</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">MyInterface</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">property</span><span class="p">:</span> <span class="n">Int</span> <span class="c1">// abstract</span>
+
+    <span class="k">val</span> <span class="py">propertyWithImplementation</span><span class="p">:</span> <span class="n">String</span>
+        <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="s">&quot;foo&quot;</span>
 
     <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">print</span><span class="p">(</span><span class="n">property</span><span class="p">)</span>
@@ -1581,7 +1644,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>上例中，接口 <em>A</em> 和 <em>B</em> 都定义了方法 <em>foo()</em> 和 <em>bar()</em>。 两者都实现了 <em>foo()</em>, 但是只有 <em>B</em> 实现了 <em>bar()</em> (<em>bar()</em> 在 <em>A</em> 中没有标记为 abstract，因为没有方法体时默认为 abstract）。因为 <em>C</em> 是一个实现了 <em>A</em> 的具体类，所以必须要重写 <em>bar()</em> 并实现这个抽象方法。<em>D</em> 可以不用重写 <em>bar()</em>，因为它实现了 <em>A</em> 和 <em>B</em>，因而可以自动继承 <em>B</em> 中 <em>bar()</em> 的实现，但是两个接口都定义了方法 <em>foo()</em>，为了告诉编译器 <em>D</em> 会继承谁的方法，必须在 <em>D</em> 中重写 <em>foo()</em>。</p>
+<p>上例中，接口 <em>A</em> 和 <em>B</em> 都定义了方法 <em>foo()</em> 和 <em>bar()</em>。 两者都实现了 <em>foo()</em>, 但是只有 <em>B</em> 实现了 <em>bar()</em> (<em>bar()</em> 在 <em>A</em> 中没有标记为 abstract，
+因为没有方法体时默认为 abstract）。因为 <em>C</em> 是一个实现了 <em>A</em> 的具体类，所以必须要重写 <em>bar()</em> 并
+实现这个抽象方法。<em>D</em> 可以不用重写 <em>bar()</em>，因为它实现了 <em>A</em> 和 <em>B</em>，因而可以自动继承 <em>B</em> 中 <em>bar()</em> 的实现，
+但是两个接口都定义了方法 <em>foo()</em>，为了告诉编译器 <em>D</em> 会继承谁的方法，必须在 <em>D</em> 中重写 <em>foo()</em>。</p>
 
     </article>
 </div>
@@ -1601,7 +1667,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1611,5 +1677,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

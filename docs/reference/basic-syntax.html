@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Basic Syntax</title>
+
+    <title>Basic Syntax - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Basic Syntax" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/basic-syntax.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Basic Syntax">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1531,7 +1587,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>包的结构并不需要与文件夹路径完全匹配：源代码可以在文件系统的任意位置</p>
 
-<p>参阅 <a href="packages.html">Packages</a>.</p>
+<p>参阅 <a href="packages.html">包</a>.</p>
 
 <h2 id="section-2">定义函数<a href="#section-2" class="anchor"></a></h2>
 
@@ -1553,11 +1609,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p><code>Unit</code> 类型的返回，在函数定义中可以省略:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">public</span> <span class="k">fun</span> <span class="nf">printSum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">printSum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>参阅 <a href="functions.html">Functions</a>.</p>
+<p>参阅 <a href="functions.html">函数</a>.</p>
 
 <h2 id="section-3">定义局部变量<a href="#section-3" class="anchor"></a></h2>
 
@@ -1566,24 +1622,37 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>
 <span class="k">val</span> <span class="py">b</span> <span class="p">=</span> <span class="m">1</span>  <span class="c1">// `Int` 类型自动推断</span>
 <span class="k">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Int</span> <span class="c1">// 如果没有初始值，声明常量时，常量的类型不能省略</span>
-<span class="n">c</span> <span class="p">=</span> <span class="m">1</span> <span class="c1">// 明确赋值</span></code></pre>
+<span class="n">c</span> <span class="p">=</span> <span class="m">1</span>      <span class="c1">// 明确赋值</span></code></pre>
 
 <p>变量（使用 <code>var</code> 关键字声明）:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">5</span> <span class="c1">// `Int` 类型自动推断（ 5 默认是 `Int` ）</span>
 <span class="n">x</span> <span class="p">+=</span> <span class="m">1</span></code></pre>
 
-<p>参阅 <a href="properties.html">Properties And Fields</a>.</p>
+<p>参阅 <a href="properties.html">属性和字段</a>.</p>
+
+<h2 id="comments">Comments<a href="#comments" class="anchor"></a></h2>
+
+<p>Just like Java and JavaScript, Kotlin supports end-of-line and block comments.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// This is an end-of-line comment</span>
+
+<span class="cm">/* This is a block comment</span>
+<span class="cm">   on multiple lines. */</span></code></pre>
+
+<p>Unlike Java, block comments in Kotlin can be nested.</p>
+
+<p>See <a href="kotlin-doc.html">Documenting Kotlin Code</a> for information on the documentation comment syntax.</p>
 
 <h2 id="section-4">使用字符串模板<a href="#section-4" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span>
 
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;First argument: ${args[0]}&quot;</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>参阅 <a href="basic-types.html#string-templates">String templates</a>.</p>
+<p>参阅 <a href="basic-types.html#字符串模板">字符串模板</a>.</p>
 
 <h2 id="section-5">使用条件判断<a href="#section-5" class="anchor"></a></h2>
 
@@ -1598,9 +1667,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">max</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="p">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="n">a</span> <span class="k">else</span> <span class="n">b</span></code></pre>
 
-<p>参阅 <a href="control-flow.html#if-expression"><em class="keyword">if</em>-expressions</a>.</p>
+<p>参阅 <a href="control-flow.html#if表达式"><em class="keyword">if</em> 表达式</a>.</p>
 
-<h2 id="using-nullable-values-and-checking-for-null-keyword-">Using nullable values and checking for <em class="keyword">null</em><a href="#using-nullable-values-and-checking-for-null-keyword-" class="anchor"></a></h2>
+<h2 id="null-keyword--">使用可空值及 <em class="keyword">null</em> 检查<a href="#null-keyword--" class="anchor"></a></h2>
 
 <p>当某个变量的值可以为 <em class="keyword">null</em> 的时候，必须在声明处的类型后添加 ? 来标识该引用可为空
 A reference must be explicitly marked as nullable when <em class="keyword">null</em> value is possible.</p>
@@ -1614,7 +1683,7 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
 <p>返回值可以是 <em class="keyword">null</em> 的函数:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">print</span><span class="p">(</span><span class="s">&quot;Two integers expected&quot;</span><span class="p">)</span>
     <span class="k">return</span>
   <span class="p">}</span>
@@ -1644,9 +1713,9 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
   <span class="c1">// 在空指针判断后，x 和 y 会自动变成非空值</span>
   <span class="n">print</span><span class="p">(</span><span class="n">x</span> <span class="p">*</span> <span class="n">y</span><span class="p">)</span></code></pre>
 
-<p>参阅 <a href="null-safety.html">Null-safety</a>.</p>
+<p>参阅 <a href="null-safety.html">Null 安全性</a>.</p>
 
-<h2 id="using-type-checks-and-automatic-casts">Using type checks and automatic casts<a href="#using-type-checks-and-automatic-casts" class="anchor"></a></h2>
+<h2 id="section-6">使用类型检查及自动类型转换<a href="#section-6" class="anchor"></a></h2>
 
 <p><em class="keyword">is</em> 运算符用于类型判断: 检查某个实例是否是某类型
 如果一个局部常量或者不可变的类成员变量已经判断出为某类型，那么判断后的分支中可以直接当作该类型使用，无需强制转换</p>
@@ -1681,7 +1750,7 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
   <span class="k">return</span> <span class="k">null</span>
 <span class="p">}</span></code></pre>
 
-<p>参阅 <a href="classes.html">Classes</a> and <a href="typecasts.html">Type casts</a>.</p>
+<p>参阅 <a href="classes.html">类</a> and <a href="typecasts.html">类型转换</a>.</p>
 
 <h2 id="for-">使用 <code>for</code> 循环<a href="#for-" class="anchor"></a></h2>
 
@@ -1695,17 +1764,17 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">args</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></code></pre>
 
-<p>参阅 <a href="control-flow.html#for-loops">for循环</a>.</p>
+<p>参阅 <a href="control-flow.html#for循环">for循环</a>.</p>
 
 <h2 id="using-a-while-loop">Using a <code>while</code> loop<a href="#using-a-while-loop" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">i</span> <span class="p">=</span> <span class="m">0</span>
-  <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="p">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="p">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
     <span class="n">print</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">++])</span>
 <span class="p">}</span></code></pre>
 
-<p>See <a href="control-flow.html#while-loops">while 循环</a>.</p>
+<p>See <a href="control-flow.html#while循环">while 循环</a>.</p>
 
 <h2 id="when-">使用 <code>when</code> 表达式<a href="#when-" class="anchor"></a></h2>
 
@@ -1719,7 +1788,7 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>参阅 <a href="control-flow.html#when-expression">when表达式</a>.</p>
+<p>参阅 <a href="control-flow.html#when表达式">when表达式</a>.</p>
 
 <h2 id="ranges">使用区间（ranges）<a href="#ranges" class="anchor"></a></h2>
 
@@ -1740,7 +1809,7 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
 
 <p>参阅 <a href="ranges.html">区间 Ranges</a>.</p>
 
-<h2 id="section-6">使用集合<a href="#section-6" class="anchor"></a></h2>
+<h2 id="section-7">使用集合<a href="#section-7" class="anchor"></a></h2>
 
 <p>对集合进行迭代:</p>
 
@@ -1752,11 +1821,15 @@ A reference must be explicitly marked as nullable when <em class="keyword">null<
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">text</span> <span class="k">in</span> <span class="n">names</span><span class="p">)</span> <span class="c1">// 自动调用 names.contains(text)</span>
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">)</span></code></pre>
 
-<p>使用字面量函数(方便的 Higher-order 函数)来过滤(filter)和变换(map)集合：</p>
+<p>使用 lambda 表达式来过滤(filter)和变换(map)集合：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">names</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span> <span class="p">}.</span><span class="n">sortBy</span> <span class="p">{</span> <span class="n">it</span> <span class="p">}.</span><span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">toUpperCase</span><span class="p">()</span> <span class="p">}.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">names</span>
+    <span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">startsWith</span><span class="p">(</span><span class="s">&quot;A&quot;</span><span class="p">)</span> <span class="p">}</span>
+    <span class="p">.</span><span class="n">sortedBy</span> <span class="p">{</span> <span class="n">it</span> <span class="p">}</span>
+    <span class="p">.</span><span class="n">map</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">toUpperCase</span><span class="p">()</span> <span class="p">}</span>
+    <span class="p">.</span><span class="n">forEach</span> <span class="p">{</span> <span class="n">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span></code></pre>
 
-<p>参阅 <a href="lambdas.html">Higher-order函数及Lambda表达式</a>.</p>
+<p>参阅 <a href="lambdas.html">高阶函数及Lambda表达式</a>.</p>
 
     </article>
 </div>
@@ -1776,7 +1849,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1786,5 +1859,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

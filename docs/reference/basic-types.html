@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Basic Types</title>
+
+    <title>Basic Types - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Basic Types" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/basic-types.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Basic Types">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1531,7 +1587,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <thead>
     <tr>
       <th>Type</th>
-      <th>Bitwidth</th>
+      <th>Bit width</th>
     </tr>
   </thead>
   <tbody>
@@ -1589,15 +1645,17 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <h3 id="section-2">存储方式<a href="#section-2" class="anchor"></a></h3>
 
-<p>在Java平台数字是物理存储为JVM的原始类型,除非我们需要一个可空的引用（例如int？）或泛型. 后者情况下数字被装箱（指的是赋值的时候把实例复制了一下，不是相同实例）。</p>
+<p>在Java平台数字是物理存储为JVM的原始类型,除非我们需要一个可空的引用（例如int？）或泛型. 后者情况下数字被装箱（指的是赋值的时候把实例复制了一下，不是相同实例）。
+装箱数字不会保存它的实例:</p>
 
-<p>装箱数字不会保存它的实例:</p>
+<p>Note that boxing of numbers does not preserve identity:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">10000</span>
-<span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="n">identityEquals</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span>
+<span class="n">print</span><span class="p">(</span><span class="n">a</span> <span class="p">===</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Prints &#39;true&#39;</span>
 <span class="k">val</span> <span class="py">boxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
 <span class="k">val</span> <span class="py">anotherBoxedA</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span>
-<span class="n">print</span><span class="p">(</span><span class="n">boxedA</span> <span class="n">identityEquals</span> <span class="n">anotherBoxedA</span><span class="p">)</span> <span class="c1">// !!!Prints &#39;false&#39;!!!</span></code></pre>
+<span class="n">print</span><span class="p">(</span><span class="n">boxedA</span> <span class="p">===</span> <span class="n">anotherBoxedA</span><span class="p">)</span> <span class="c1">// !!!Prints &#39;false&#39;!!!</span></code></pre>
+
 <p>另一方面它们值相等:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">10000</span>
@@ -1640,10 +1698,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <li><code>toChar(): Char</code></li>
 </ul>
 
-<p>失去隐式类型转换，其实并没有带来多少困扰，因为使用字面量的时候是没有代价的，因为字面量的类型是推导出来的；
-另一方面，算数运算操作都针对不同类型的参数做好了重载，比如：</p>
+<p>失去隐式类型转换，其实并没有带来多少困扰，因为使用字面量的时候是没有代价的，因为字面量的类型是推导出来的；另一方面，算数运算操作都针对不同类型的参数做好了重载，比如：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="m">1.</span><span class="n">toLong</span><span class="p">()</span> <span class="p">+</span> <span class="m">3</span> <span class="c1">// Long + Int =&gt; Long</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="m">1L</span> <span class="p">+</span> <span class="m">3</span> <span class="c1">// Long + Int =&gt; Long</span></code></pre>
 
 <h3 id="section-4">运算符<a href="#section-4" class="anchor"></a></h3>
 
@@ -1676,8 +1733,12 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>用单引号表示一个Character，例如: <code>'1'</code>, <code>'\n'</code>, <code>'\uFF00'</code>.
-我们可以调用显示转换把Character转换为<code>Int</code></p>
+<p>Character literals go in single quotes: <code>'1'</code>.
+Special characters can be escaped using a backslash.
+The following escape sequences are supported: <code>\t</code>, <code>\b</code>, <code>\n</code>, <code>\r</code>, <code>\'</code>, <code>\"</code>, <code>\\</code> and <code>\$</code>.
+To encode any other character, use the Unicode escape sequence syntax: <code>'\uFF00'</code>.</p>
+
+<p>我们可以显式把Character转换为<code>Int</code></p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">decimalDigitValue</span><span class="p">(</span><span class="n">c</span><span class="p">:</span> <span class="n">Char</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="p">!</span><span class="k">in</span> <span class="sc">&#39;0&#39;</span><span class="p">..</span><span class="sc">&#39;9&#39;</span><span class="p">)</span>
@@ -1698,14 +1759,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <ul>
   <li><code>||</code> – 短路或</li>
   <li><code>&amp;&amp;</code> – 短路与</li>
+  <li><code>!</code> - negation</li>
 </ul>
 
 <h2 id="section-5">数组<a href="#section-5" class="anchor"></a></h2>
 
-<p>数组在Kotlin中使用 <code>Array</code>类来表示, <code>Array</code>类定义了set和get函数(使用时可以用<code>[]</code>，通过符号重载的约定转换), 和<code>size</code>等等一些有用的成员函数:</p>
+<p>数组在Kotlin中使用 <code>Array</code>类来表示, <code>Array</code>类定义了set和get函数（使用时可以用<code>[]</code>，通过符号重载的约定转换）和<code>size</code>属性，连同一些其他有用的成员函数：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">private</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">fun</span> <span class="nf">size</span><span class="p">():</span> <span class="n">Int</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Array</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">private</span> <span class="n">constructor</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">val</span> <span class="py">size</span><span class="p">:</span> <span class="n">Int</span>
   <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">T</span>
   <span class="k">fun</span> <span class="nf">set</span><span class="p">(</span><span class="n">index</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Unit</span>
 
@@ -1713,21 +1775,26 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>我们可以使用库函数<code>array()</code>来创建一个包含数值的数组, <code>array(1, 2, 3)</code> 创建了 array [1, 2, 3].
-或者, <code>arrayOfNulls()</code>可以创建一个指定大小，元素都为空的数组。<br />
-或者使用函数来创建一个数组:</p>
+<p>我们可以使用库函数<code>arrayOf()</code>来创建一个包含数值的数组, <code>arrayOf(1, 2, 3)</code> 创建了 array [1, 2, 3].
+或者, <code>arrayOfNulls()</code>可以创建一个指定大小，元素都为空的数组。</p>
+
+<p>Another option is to use a factory function that takes the array size and the function that can return the initial value
+of each array element given its index:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Creates an Array&lt;String&gt; with values [&quot;0&quot;, &quot;1&quot;, &quot;4&quot;, &quot;9&quot;, &quot;16&quot;]</span>
-<span class="k">val</span> <span class="py">asc</span> <span class="p">=</span> <span class="n">Array</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="p">{</span><span class="n">i</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">i</span> <span class="p">*</span> <span class="n">i</span><span class="p">).</span><span class="n">toString</span><span class="p">()})</span></code></pre>
+<span class="k">val</span> <span class="py">asc</span> <span class="p">=</span> <span class="n">Array</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="p">{</span> <span class="n">i</span> <span class="p">-&gt;</span> <span class="p">(</span><span class="n">i</span> <span class="p">*</span> <span class="n">i</span><span class="p">).</span><span class="n">toString</span><span class="p">()</span> <span class="p">})</span></code></pre>
 
 <p>综上, <code>[]</code>操作符代表了成员函数<code>get()</code>和<code>set()</code>.</p>
 
-<p>注意: 与Java不同的是, Kotlin中数组不可变. 这意味着我们不能声明 <code>Array&lt;String&gt;</code>到<code>Array&lt;Any&gt;</code>, 否则可能会产生一个运行时错误(但是你可以使用 <code>Array&lt;out Any&gt;</code>, 查看 <a href="generics.html#type-projections">Type Projections</a>).</p>
+<p>注意: 与Java不同的是, Kotlin中数组不可变. 这意味着我们不能声明 <code>Array&lt;String&gt;</code>
+到<code>Array&lt;Any&gt;</code>, 否则可能会产生一个运行时错误(但是你可以使用 <code>Array&lt;out Any&gt;</code>, 
+查看 <a href="generics.html#type-projections">Type Projections</a>).</p>
 
-<p>Kotlin有专门的类来表示原始类型的数组，避免了装箱开销: ByteArray,
-ShortArray, IntArray 等等. 这些类和<code>Array</code>并没有继承关系,但是它们有同样的方法属性集. 它们也都有相应的工厂方法:</p>
+<p>Kotlin有专门的类来表示原始类型的数组，避免了装箱开销: <code>ByteArray</code>,
+<code>ShortArray</code>, <code>IntArray</code> 等等. 这些类和<code>Array</code>并没有继承关系,但是
+它们有同样的方法属性集. 它们也都有相应的工厂方法:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">IntArray</span> <span class="p">=</span> <span class="n">intArray</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">x</span><span class="p">:</span> <span class="n">IntArray</span> <span class="p">=</span> <span class="n">intArrayOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="n">x</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="p">+</span> <span class="n">x</span><span class="p">[</span><span class="m">2</span><span class="p">]</span></code></pre>
 
 <h2 id="section-6">字符串<a href="#section-6" class="anchor"></a></h2>
@@ -1741,22 +1808,24 @@ ShortArray, IntArray 等等. 这些类和<code>Array</code>并没有继承关系
 <span class="p">}</span></code></pre>
 
 <h3 id="section-7">字符串字面量<a href="#section-7" class="anchor"></a></h3>
-<p>Kotlin有两种类型的字符串: 转义字符串可能由转义字符、原生字符串、换行和任意文本.转义字符串很像java的String:</p>
+
+<p>Kotlin有两种类型的字符串: 转义字符串可能由转义字符、原生字符串、换行和任意文本.转义字符串很像 Java 字符串:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">s</span> <span class="p">=</span> <span class="s">&quot;Hello, world!\n&quot;</span></code></pre>
 
-<p>转义方式采用传统的反斜杠.</p>
+<p>转义方式采用传统的反斜杠. See <a href="#characters">Characters</a> above for the list of supported escape sequences.</p>
 
-<p><em>原生字符串</em>使用三个引号(“”“)包括，内部没有转义，可以包含换行和任何其他文本:</p>
+<p><em>原生字符串</em>使用三个引号(<code>"""</code>)包括，内部没有转义，可以包含换行和任何其他文本:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">text</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
   <span class="k">for</span> <span class="p">(</span><span class="n">c</span> <span class="k">in</span> <span class="s">&quot;foo&quot;</span><span class="p">)</span>
     <span class="n">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="s">&quot;&quot;&quot;</span></code></pre>
 
-<h3 id="section-8">模板<a href="#section-8" class="anchor"></a></h3>
+<h3 id="section-8">字符串模板<a href="#section-8" class="anchor"></a></h3>
 
-<p>字符串可以包含<em>模板表达式</em>，即一些小段代码，会求值并把结果合并到字符串中。模板表达式以<code>$</code>符号开始，包含一个简单的名称:</p>
+<p>字符串可以包含<em>模板表达式</em>，即一些小段代码，会求值并把结果合并到字符串中。
+模板表达式以<code>$</code>符号开始，包含一个简单的名称:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">i</span> <span class="p">=</span> <span class="m">10</span>
 <span class="k">val</span> <span class="py">s</span> <span class="p">=</span> <span class="s">&quot;i = $i&quot;</span> <span class="c1">// evaluates to &quot;i = 10&quot;</span></code></pre>
@@ -1765,6 +1834,13 @@ ShortArray, IntArray 等等. 这些类和<code>Array</code>并没有继承关系
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">s</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span>
 <span class="k">val</span> <span class="py">str</span> <span class="p">=</span> <span class="s">&quot;$s.length is ${s.length}&quot;</span> <span class="c1">// evaluates to &quot;abc.length is 3&quot;</span></code></pre>
+
+<p>Templates are supported both inside raw strings and inside escaped strings.
+If you need to represent a literal <code>$</code> character in a raw string (which doesn’t support backslash escaping), you can use the following syntax:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">price</span> <span class="p">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="err">$</span><span class="p">{</span><span class="sc">&#39;$&#39;</span><span class="p">}</span><span class="m">9.99</span>
+<span class="s">&quot;&quot;&quot;</span></code></pre>
 
 <hr />
 
@@ -1789,7 +1865,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1799,5 +1875,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

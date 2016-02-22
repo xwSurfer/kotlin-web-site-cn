@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Object Expressions and Declarations</title>
+
+    <title>Object Expressions and Declarations - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Object Expressions and Declarations" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/object-declarations.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Object Expressions and Declarations">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1519,9 +1575,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">对象表达式和对象声明<a href="#section" class="anchor"></a></h1>
 
-<p>有些时候我们需要创造一个对象对某些类做稍微改变，而不用为了它明确定义一个新的子类。</p>
-
-<p>Java把这处理为<em>匿名内部类</em>。在Kotlin稍微归纳为<em>对象表达式</em>和<em>对象声明</em>。</p>
+<p>有些时候我们需要创造一个对象对某些类做稍微改变，而不用为了它明确定义一个新的子类。
+Java把这处理为<em>匿名内部类</em>。
+在Kotlin稍微归纳为<em>对象表达式</em>和<em>对象声明</em>。</p>
 
 <h2 id="section-1">对象表达式<a href="#section-1" class="anchor"></a></h2>
 
@@ -1537,7 +1593,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">})</span></code></pre>
 
-<p>如果父类型有一个构造函数，合适的构造函数参数必须被传递下去。多个父类型用逗号隔开，跟在冒号后面：</p>
+<p>如果父类型有一个构造函数，合适的构造函数参数必须被传递下去。
+多个父类型用逗号隔开，跟在冒号后面：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">open</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">public</span> <span class="k">open</span> <span class="k">val</span> <span class="py">y</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="n">x</span>
@@ -1557,7 +1614,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="p">}</span>
 <span class="n">print</span><span class="p">(</span><span class="n">adHoc</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="n">adHoc</span><span class="p">.</span><span class="n">y</span><span class="p">)</span></code></pre>
 
-<p>就像Jave的匿名内部类，在对象表达里代码可以使变量与作用域联系起来（与Java不同的是，这不是受final变量限制的。）</p>
+<p>就像Jave的匿名内部类，在对象表达里代码可以使变量与作用域联系起来
+（与Java不同的是，这不是受final变量限制的。）</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">countClicks</span><span class="p">(</span><span class="n">window</span><span class="p">:</span> <span class="n">JComponent</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">clickCount</span> <span class="p">=</span> <span class="m">0</span>
@@ -1584,11 +1642,12 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <span class="c1">// ...</span>
   <span class="p">}</span>
 
-  <span class="k">val</span> <span class="py">allDataProviders</span> <span class="p">:</span> <span class="n">Collection</span><span class="p">&lt;</span><span class="n">DataProvider</span><span class="p">&gt;</span>
+  <span class="k">val</span> <span class="py">allDataProviders</span><span class="p">:</span> <span class="n">Collection</span><span class="p">&lt;</span><span class="n">DataProvider</span><span class="p">&gt;</span>
     <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>这被称为<em>对象声明</em>。如果有一个<em class="keyword">object</em>关键字在名字前面，这不能再被称为_表达_。我们不能把它归于变量，但我们可以通过它的名字来指定它。这些对象可以有父类型：</p>
+<p>这被称为<em>对象声明</em>。如果有一个<em class="keyword">object</em>关键字在名字前面，这不能再被称为_表达式_。
+我们不能把它归于变量，但我们可以通过它的名字来指定它。这些对象可以有父类型：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">DefaultListener</span> <span class="p">:</span> <span class="n">MouseAdapter</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">mouseClicked</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">MouseEvent</span><span class="p">)</span> <span class="p">{</span>
@@ -1600,7 +1659,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p><strong>NOTE</strong>: 对象声明不能是本地的（例如：直接嵌套在函数里面），但它们可以被嵌套进另外的对象声明或者非内部类里。</p>
+<p><strong>NOTE</strong>: 对象声明不能是本地的（即直接嵌套在函数里面），但它们可以被嵌套进另外的对象声明或者非内部类里。</p>
 
 <h3 id="section-3">伴生对象<a href="#section-3" class="anchor"></a></h3>
 
@@ -1616,8 +1675,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">instance</span> <span class="p">=</span> <span class="n">MyClass</span><span class="p">.</span><span class="n">create</span><span class="p">()</span></code></pre>
 
-<p>The name of the companion object can be omitted, in which case the name <code>Companion</code> will be used:</p>
-
 <p>使用<code>companion</code>关键字时候，伴生对象的名称可以省略：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
@@ -1627,7 +1684,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <span class="k">val</span> <span class="py">x</span> <span class="p">=</span> <span class="n">MyClass</span><span class="p">.</span><span class="n">Companion</span></code></pre>
 
-<p>记住，虽然伴生对象的成员在其他语言中看起来像静态成员，但在日常使用中它们仍然是实体的实例成员，而且比如说能继承接口：</p>
+<p>记住，虽然伴生对象的成员在其他语言中看起来像静态成员，但在运行时它们
+仍然是实体的实例成员，而且比如说能实现接口：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Factory</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">create</span><span class="p">():</span> <span class="n">T</span>
@@ -1640,7 +1698,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>然而，在JVM中你可以有些产生自真正的静态方法和域的伴生对象的成员，如果你使用<code>@platformStatic</code>注解。可以从<a href="java-interop.html#static-methods-and-fields">Java interoperability</a> 这里查看详情。</p>
+<p>然而，在JVM中你可以有些产生自真正的静态方法和域的伴生对象的成员，如果你使
+用<code>@JvmStatic</code>注解。可以从<a href="java-interop.html#static-methods-and-fields">Java interoperability</a> 这里
+查看详情。</p>
 
 <h3 id="section-4">对象表达式与对象声明区别<a href="#section-4" class="anchor"></a></h3>
 
@@ -1674,7 +1734,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1684,5 +1744,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

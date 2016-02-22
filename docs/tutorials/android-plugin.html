@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Kotlin Android Extensions</title>
+
+    <title>Kotlin Android Extensions - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Kotlin Android Extensions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/tutorials/android-plugin.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="This tutorial describes how to use Kotlin Android Extensions to improve support for Android development">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Kotlin Android Extensions">
+
+<meta name="twitter:description" content="This tutorial describes how to use Kotlin Android Extensions to improve support for Android development">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -708,18 +740,18 @@ While there are several libraries available that provide solutions to this probl
 
 <p>In essence, this would allow for the following code:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Using R.layout.main</span>
-<span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.*</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="c1">// Using R.layout.activity_main from the main source set</span>
+<span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
 
 <span class="k">public</span> <span class="k">class</span> <span class="nc">MyActivity</span> <span class="p">:</span> <span class="n">Activity</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
         <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">main</span><span class="p">)</span>
+        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
         <span class="n">textView</span><span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span> <span class="c1">// Instead of findView(R.id.textView) as TextView</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p><code>textView</code> is an extension property for <code>Activity</code>, and it has the same type as declared in <code>main.xml</code>.</p>
+<p><code>textView</code> is an extension property for <code>Activity</code>, and it has the same type as declared in <code>activity_main.xml</code>.</p>
 
 <h3 id="using-kotlin-android-extensions">Using Kotlin Android Extensions<a href="#using-kotlin-android-extensions" class="anchor"></a></h3>
 
@@ -727,27 +759,21 @@ While there are several libraries available that provide solutions to this probl
 
 <p>In this tutorial we’re going to be using Gradle but the same can be accomplished using either IntelliJ IDEA project structure or Maven. For details on setting up Gradle to work with Kotlin, see <a href="/docs/reference/using-gradle.html">Using Gradle</a>.</p>
 
-<p>The IDE <a href="https://plugins.jetbrains.com/plugin?pluginId=7717">plugin</a> is available for both IntelliJ IDEA (Ultimate and Community Editions) as well as Android Studio.</p>
+<p>Android Extensions is a part of the Kotlin IDEA plugin. You do not need to install additional plugins.</p>
 
-<p>Also, we need to add a buildscript dependency called <code>kotlin-android-extensions</code> to the application build file (usually <code>app/build.gradle</code>):</p>
+<p>All you need is to enable the Android Extensions Gradle plugin in your project-local <code>build.gradle</code> file:</p>
 
-<pre><code class="code-block _highlighted lang_groovy"><span class="n">buildscript</span> <span class="o">{</span>
-    <span class="n">dependencies</span> <span class="o">{</span>
-        <span class="n">classpath</span> <span class="s1">&#39;org.jetbrains.kotlin:kotlin-android-extensions:&lt;version&gt;&#39;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre>
-
-<p>A plugin for Gradle is available on Maven Central.</p>
+<pre><code class="code-block _highlighted lang_groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">&#39;kotlin-android-extensions&#39;</span></code></pre>
 
 <h4 id="importing-synthetic-properties">Importing synthetic properties</h4>
 
 <p>It is convenient to import all widget properties for a specific layout in one go:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.&lt;layout&gt;.*</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.&lt;layout&gt;.*</span></code></pre>
 
-<p>Thus if the layout filename is <code>main.xml</code>, we’d import <code>kotlinx.android.synthetic.main.*</code>.</p>
+<p>Thus if the layout filename is <code>activity_main.xml</code>, we’d import <code>kotlinx.android.synthetic.main.activity_main.*</code>.</p>
 
-<p>If we want to call the synthetic properties on <code>View</code> (useful in adapter classes), we should also import <code>kotlinx.android.synthetic.main.view.*</code>.</p>
+<p>If we want to call the synthetic properties on <code>View</code> (useful in adapter classes), we should also import <code>kotlinx.android.synthetic.main.activity_main.view.*</code>.</p>
 
 <p>Once we do that, we can then invoke the corresponding extensions, which are properties named after the views in the XML file. 
 For example, for this view:</p>
@@ -762,6 +788,23 @@ For example, for this view:</p>
 <p>There will be property named <code>hello</code>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">activity</span><span class="p">.</span><span class="n">hello</span><span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">&quot;Hi!&quot;</span><span class="p">)</span></code></pre>
+
+<h3 id="android-flavors">Android Flavors<a href="#android-flavors" class="anchor"></a></h3>
+
+<p>Android Extensions plugin supports Android flavors. Suppose you have a flavor named <code>free</code> in your <code>build.gradle</code> file:</p>
+
+<pre>android {
+    productFlavors {
+        free {
+            versionName "1.0-free"
+        }
+    }
+}
+</pre>
+
+<p>So you can import all synthetic properties for the <code>free/res/layout/activity_free.xml</code> layout by adding this import:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.free.activity_free.*</span></code></pre>
 
 <h3 id="under-the-hood">Under the hood<a href="#under-the-hood" class="anchor"></a></h3>
 
@@ -807,7 +850,7 @@ if MyActivity instance from the previous example is the receiver.</p>
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -817,5 +860,6 @@ if MyActivity instance from the previous example is the receiver.</p>
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

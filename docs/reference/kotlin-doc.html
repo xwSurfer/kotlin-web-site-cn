@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Documenting Kotlin Code</title>
+
+    <title>Documenting Kotlin Code - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Documenting Kotlin Code" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/kotlin-doc.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Documenting Kotlin Code">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -471,6 +503,29 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
+    
+
+        
+            
+        
+
+        
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -494,23 +549,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
-    
-
-    
-
-        
             
-        
-
-        
-            
-        
-    
-
-        
-            
-        
-
         
     
 
@@ -1031,7 +1070,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1301,7 +1357,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1519,15 +1575,27 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="kotlin">生成kotlin代码文档<a href="#kotlin" class="anchor"></a></h1>
 
-<p><strong>KDoc</strong>用来编写Kotlin代码文档（类似于java的 JavaDoc工具）。本质上来说，KDoc结合了JavaDoc的标签块的句法和Markdown的语法来标记（来扩展Kotlin的特殊标记）。</p>
+<p><strong>KDoc</strong>用来编写Kotlin代码文档（类似于java的 JavaDoc工具）。本质上来说，KDoc
+结合了JavaDoc的标签块的句法和Markdown的语法来标记（来扩展Kotlin的特殊标记）。</p>
 
-<p>像JavaDoc一样，KDoc注释也<code>/**</code>开头和也<code>*/</code>结束,每一行注释可能都是也星号开头的，但是并不作为注释内容的一部分。</p>
+<h2 id="generating-the-documentation">Generating the Documentation<a href="#generating-the-documentation" class="anchor"></a></h2>
 
-<p>按惯例来说，文档的第一段（到第一行空白行结束）是该文档元素的总体描述，接下来的注释是详细描述</p>
+<p>Kotlin’s documentation generation tool is called <a href="https://github.com/Kotlin/dokka">Dokka</a>. See the
+<a href="https://github.com/Kotlin/dokka/blob/master/README.md">Dokka README</a> for usage instructions.</p>
+
+<p>Dokka has plugins for Gradle, Maven and Ant, so you can integrate documentation generation into your build process.</p>
+
+<h2 id="kdoc-">KDoc 语法<a href="#kdoc-" class="anchor"></a></h2>
+
+<p>像JavaDoc一样，KDoc注释也<code>/**</code>开头和也<code>*/</code>结束,每一行注释可能都是也星号开头的，
+但是并不作为注释内容的一部分。</p>
+
+<p>按惯例来说，文档的第一段（到第一行空白行结束）是该文档元素的
+总体描述，接下来的注释是详细描述</p>
 
 <p>每一个块标记也新一行开始并且也<code>@</code>字符开头</p>
 
-<p>这是用KDoc标记的一个例子：</p>
+<p>这是用 KDoc 写类文档的一个例子：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="cm">/**</span>
 <span class="cm"> * A group of *members*.</span>
@@ -1537,7 +1605,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="cm"> * @param T the type of a member in this group.</span>
 <span class="cm"> * @property name the name of this group.</span>
 <span class="cm"> * @constructor Creates an empty group.</span>
-<span class="cm"> */</span> 
+<span class="cm"> */</span>
 <span class="k">class</span> <span class="nc">Group</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
     <span class="cm">/**</span>
 <span class="cm">     * Adds a [member] to this group.</span>
@@ -1545,13 +1613,16 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="cm">     */</span>
     <span class="k">fun</span> <span class="nf">add</span><span class="p">(</span><span class="n">member</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
 <span class="p">}</span></code></pre>
-<p>## 块标签
-KDoc现在支持如下的块标签：</p>
+
+<h2 id="section">块标签<a href="#section" class="anchor"></a></h2>
+
+<p>KDoc现在支持如下的块标签：</p>
 
 <h4 id="param-name"><code>@param &lt;name&gt;</code></h4>
 
 <p>代表一个函数的参数值或者一个类的参数。
-为了更好的区分描述中的参数值，如果你喜欢，你可以在括号中附上参数的值，下面是两个符合条件的句法：</p>
+为了更好的区分描述中的参数值，如果你喜欢，你可以在参数名
+括在方括号中，下面是两个符合条件的句法：</p>
 
 <pre>@param name description.
 @param[name] description.
@@ -1567,15 +1638,20 @@ KDoc现在支持如下的块标签：</p>
 
 <h4 id="property-name"><code>@property &lt;name&gt;</code></h4>
 
-<p>用来标记一个类的特殊值，这个标记可以用来标记主构造函数，</p>
+<p>Documents the property of a class which has the specified name. This tag can be used for documenting properties
+declared in the primary constructor, where putting a doc comment directly before the property definition would be
+awkward.</p>
 
 <h4 id="throws-class-exception-class"><code>@throws &lt;class&gt;</code>, <code>@exception &lt;class&gt;</code></h4>
 
-<p>用来标记一个方法抛出的异常。自从Kotlin没有异常检查，因此没有方法会抛出异常，但是我们仍然可以使用这个标记来提示给这个类使用这一个很好的信息。</p>
+<p>用来标记一个方法抛出的异常。鉴于Kotlin没有异常检查，
+因此不能期待所有可能异常都写出来，但是我们仍然可以使用这个标记来提示给这个类使用这一个
+很好的信息。</p>
 
 <h4 id="sample-identifier"><code>@sample &lt;identifier&gt;</code></h4>
 
-<p>给当前的元素嵌入一个包含特殊名字的方法，为了能够包含例子来展示这个元素是如何使用的。</p>
+<p>给当前的元素嵌入一个包含特殊名字的方法，为了能够包含例子
+来展示这个元素是如何使用的。</p>
 
 <h4 id="see-identifier"><code>@see &lt;identifier&gt;</code></h4>
 
@@ -1595,18 +1671,24 @@ KDoc现在支持如下的块标签：</p>
 模块的应用接口，但仍必须对外部可见。</p>
 
 <blockquote class="note">
-  <p>KDoc 不支持 <code>@deprecated</code> 这个标记. 请使用<code> @deprecated</code>注释</p>
+  <p>KDoc 不支持 <code>@deprecated</code> 这个标记. 请使用<code> @Deprecated</code>注释</p>
 </blockquote>
 
 <h2 id="markup">内置Markup语法<a href="#markup" class="anchor"></a></h2>
 
-<p>内置Markup语法，KDoc使用了标准的<a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> 语法,来扩展了它支持在代码中链接到其他元素的速记语法。</p>
+<p>内置Markup语法，KDoc使用了标准的<a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> 语法,来扩展了
+它支持在代码中链接到其他元素的速记语法。</p>
 
-<h3 id="section">链接到元素<a href="#section" class="anchor"></a></h3>
+<h3 id="section-1">链接到元素<a href="#section-1" class="anchor"></a></h3>
 
 <p>为了链接到其它元素（类，方法，属性和参数），把它的元素放在中括号中：</p>
 
 <pre>Use the method [foo] for this purpose.
+</pre>
+
+<p>If you want to specify a custom label for the link, use the Markdown reference-style syntax:</p>
+
+<pre>Use [this method][foo] for this purpose.
 </pre>
 
 <p>您还可以在链接中使用限定名。需要注意的是，不同于javadoc，合格的名字总是使用点字符
@@ -1641,7 +1723,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1651,5 +1733,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

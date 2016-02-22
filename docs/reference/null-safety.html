@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Null Safety</title>
+
+    <title>Null Safety - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Null Safety" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/null-safety.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Null Safety">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -434,6 +466,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
             
         
     
@@ -498,13 +537,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
         
             
         
 
         
+    
+
     
 
         
@@ -1031,7 +1070,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1521,9 +1577,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <h2 id="nullablenon-null-">可空（Nullable）和不可空（Non-Null） 类型<a href="#nullablenon-null-" class="anchor"></a></h2>
 
-<p>Kotlin 的类型系统致力于消除空引用异常，又称<a href="http://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions">《上亿美元的错误》</a>。</p>
+<p>Kotlin 的类型系统致力于消除空引用异常的危险，又称<a href="http://en.wikipedia.org/wiki/Tony_Hoare#Apologies_and_retractions">《上亿美元的错误》</a>。</p>
 
-<p>许多编程语言，包括 Java 中最常见的错误就是访问空引用的成员变量，导致空引用异常。在 Java 中，叫作 <code>NullPointerException</code> 或简称 <code>NPE</code> 。</p>
+<p>许多编程语言，包括 Java 中最常见的错误就是访问空引用的成员变量，导致空引用异常。在 Java 中，
+将等同于 <code>NullPointerException</code> 或简称 <code>NPE</code> 。</p>
 
 <p>Kotlin 类型系统的目的就是从我们的代码中消除 <code>NullPointerException</code> 。 <code>NPE</code> 的原因可能是</p>
 
@@ -1544,38 +1601,40 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">var</span> <span class="py">b</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">&quot;abc&quot;</span>
 <span class="n">b</span> <span class="p">=</span> <span class="k">null</span> <span class="c1">// ok</span></code></pre>
 
-<p>现在，如果你调用 <code>a</code> （译者注：<code>a</code> 是一个不可空类型）的一个方法，它保证不会造成 <code>NPE</code>，这样你就可以放心地使用：</p>
+<p>现在，如果你调用/访问一个 <code>a</code> 方法/属性（译者注：<code>a</code> 是一个不可空类型）的一个方法，它保证不会造成 <code>NPE</code>，这样你就可以放心地使用：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">a</span><span class="p">.</span><span class="n">length</span><span class="p">()</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">a</span><span class="p">.</span><span class="n">length</span></code></pre>
 
-<p>但是如果你想调用 <code>b</code> 的一些方法，这将是不安全的，同时编译器会报错：</p>
+<p>但是如果你想访问 <code>b</code> 的相同属性，这将是不安全的，同时编译器会报错：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="c1">// 错误：变量 b 可能为 null</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="c1">// 错误：变量 b 可能为 null</span></code></pre>
 
-<p>可是我仍然需要调用这些方法，对吧？这里有一些方式可以这么做：</p>
+<p>可是我仍然需要访问这些属性，对吧？这里有一些方式可以这么做：</p>
 
 <h2 id="null-keyword-">使用条件语句检测是否为 <em class="keyword">null</em><a href="#null-keyword-" class="anchor"></a></h2>
 
 <p>首先，你可以明确地检查 <code>b</code> 是否为 <em class="keyword">null</em>，并分别处理两种选择：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span></code></pre>
 
-<p>编译器会跟踪所执行的检查信息，然后允许你在 <em class="keyword">if</em> 中调用 <code>length()</code><br />
+<p>编译器会跟踪所执行的检查信息，然后允许你在 <em class="keyword">if</em> 中调用 <code>length</code><br />
 同时，也支持更复杂（更智能）的条件：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
-  <span class="n">print</span><span class="p">(</span><span class="s">&quot;String of length ${b.length()}&quot;</span><span class="p">)</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+  <span class="n">print</span><span class="p">(</span><span class="s">&quot;String of length ${b.length}&quot;</span><span class="p">)</span>
 <span class="k">else</span>
   <span class="n">print</span><span class="p">(</span><span class="s">&quot;Empty string&quot;</span><span class="p">)</span></code></pre>
 
-<p>需要注意的是其中 <code>b</code> 是不可变的，这仅适用（例如，不可变的局部变量，<em class="keyword">val</em> 成员，并且是不可重写的），否则在检查之后它可能它为空导致异常。</p>
+<p>需要注意的是这仅适用其中 <code>b</code> 是不可变的（i.e. a local variable which is not modified between the check and the
+usage or a member <em class="keyword">val</em> which has a backing field and is not overridable）情况，否则在
+检查之后它可能它为空导致异常。</p>
 
 <h2 id="section">安全的调用<a href="#section" class="anchor"></a></h2>
 
 <p>你的第二个选择是安全的操作符，写作 <code>?.</code> ：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">b</span><span class="o">?.</span><span class="n">length</span><span class="p">()</span></code></pre>
-<p>如果 <code>b</code> 是非空的，就会返回 <code>b.length()</code> ，否则返回 <em class="keyword">null</em>，这个表达式的类型就是 <code>Int?</code>.</p>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">b</span><span class="o">?.</span><span class="n">length</span></code></pre>
+<p>如果 <code>b</code> 是非空的，就会返回 <code>b.length</code> ，否则返回 <em class="keyword">null</em>，这个表达式的类型就是 <code>Int?</code>.</p>
 
 <p>安全调用在链式调用的时候十分有用。例如，如果Bob，一个雇员，可被分配给一个部门（或不），这反过来又可以获得 Bob 的部门负责人的名字（如果有的话），我们这么写：</p>
 
@@ -1587,11 +1646,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>当我们有一个可以为空的变量 <code>r</code>，我们可以说 「如果 <code>r</code> 非空，我们使用它；否则使用某个非空的值：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span><span class="p">()</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span></code></pre>
 
 <p>对于完整的 <em class="keyword">if</em>-表达式, 可以换成 Elvis 操作符来表达, 写作 <code>?:</code>:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">?.</span><span class="n">length</span><span class="p">()</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span></code></pre>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span></code></pre>
 
 <p>如果  <code>?:</code> 的左边表达式是非空的， elvis 操作符就会返回左边的结果, 否则返回右边的内容。<br />
 请注意，仅在左侧为空的时候，右侧表达式才会进行计算。</p>
@@ -1611,14 +1670,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">!!</span><span class="p">.</span><span class="n">length</span><span class="p">()</span></code></pre>
 
 <p>因此，如果你想要一个 <code>NPE</code>，你可以使用它。but you have to ask for it explicitly, and it does not appear out of the blue.</p>
-
-<p>另外， <code>!!</code> 是为了简明，和扩展模拟以前的标准库功能，定义如下：</p>
-
-<pre><code class="code-block _highlighted lang_kotlin"><span class="n">inline</span> <span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span> <span class="p">:</span> <span class="n">Any</span><span class="p">&gt;</span> <span class="n">T</span><span class="o">?.</span><span class="n">sure</span><span class="p">():</span> <span class="n">T</span> <span class="p">=</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
-    <span class="k">throw</span> <span class="n">NullPointerException</span><span class="p">()</span>
-  <span class="k">else</span>
-    <span class="k">this</span></code></pre>
 
 <h2 id="section-2">安全转型<a href="#section-2" class="anchor"></a></h2>
 
@@ -1649,7 +1700,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1659,5 +1710,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

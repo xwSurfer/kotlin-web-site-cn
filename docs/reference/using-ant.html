@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Using Ant</title>
+
+    <title>Using Ant - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Using Ant" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/using-ant.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="This tutorial walks you through different scenarios when using Ant for building applications that contain Kotlin code">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Using Ant">
+
+<meta name="twitter:description" content="This tutorial walks you through different scenarios when using Ant for building applications that contain Kotlin code">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -471,6 +503,29 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
+    
+
+        
+            
+        
+
+        
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -496,8 +551,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
         
             
         
@@ -510,21 +563,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
-    
-
-        
             
-        
-
-        
-            
-        
-    
-
-        
-            
-        
-
         
     
 
@@ -1031,7 +1070,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1301,7 +1357,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                     <div class="marker"></div>
                     <div class="text">使用 Ant</div>
                 </div>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1529,7 +1585,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <li>withKotlin: Task to compile Kotlin files when using the standard <em>javac</em> Ant task</li>
 </ul>
 
-<p>These tasks are defined in the <em>kotlin-ant.jar</em> library which is located in the <em>lib</em> folder for the <a href="https://github.com/JetBrains/kotlin/releases/tag/build-0.14.449">Kotlin Compiler</a></p>
+<p>These tasks are defined in the <em>kotlin-ant.jar</em> library which is located in the <em>lib</em> folder for the <a href="https://github.com/JetBrains/kotlin/releases/tag/build-1.0.0">Kotlin Compiler</a></p>
 
 <h2 id="targeting-jvm-with-kotlin-only-source">Targeting JVM with Kotlin-only source<a href="#targeting-jvm-with-kotlin-only-source" class="anchor"></a></h2>
 
@@ -1580,6 +1636,14 @@ recommended to use <em>withKotlin</em> task</p>
     <span class="nt">&lt;/target&gt;</span>
 <span class="nt">&lt;/project&gt;</span></code></pre>
 
+<p>To specify additional command line arguments for <code>&lt;withKotlin&gt;</code>, you can use a nested <code>&lt;compilerArg&gt;</code> parameter.
+The full list of arguments that can be used is shown when you run <code>kotlinc -help</code>.
+You can also specify the name of the module being compiled as the <code>moduleName</code> attribute:</p>
+
+<pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;withKotlin</span> <span class="na">moduleName=</span><span class="s">&quot;myModule&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;compilerarg</span> <span class="na">value=</span><span class="s">&quot;-no-stdlib&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/withKotlin&gt;</span></code></pre>
+
 <h2 id="targeting-javascript-with-single-source-folder">Targeting JavaScript with single source folder<a href="#targeting-javascript-with-single-source-folder" class="anchor"></a></h2>
 
 <pre><code class="code-block _highlighted lang_xml"><span class="nt">&lt;project</span> <span class="na">name=</span><span class="s">&quot;Ant Task Test&quot;</span> <span class="na">default=</span><span class="s">&quot;build&quot;</span><span class="nt">&gt;</span>
@@ -1620,7 +1684,7 @@ result of translation.</p>
 
 <p>Complete list of elements and attributes are listed below</p>
 
-<h3 id="kotlinc-attributes">kotlinc Attributes<a href="#kotlinc-attributes" class="anchor"></a></h3>
+<h3 id="attributes-common-for-kotlinc-and-kotlin2js">Attributes common for kotlinc and kotlin2js<a href="#attributes-common-for-kotlinc-and-kotlin2js" class="anchor"></a></h3>
 
 <table>
   <thead>
@@ -1638,6 +1702,39 @@ result of translation.</p>
       <td>Yes</td>
       <td> </td>
     </tr>
+    <tr>
+      <td><code>nowarn</code></td>
+      <td>Suppresses all compilation warnings</td>
+      <td>No</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td><code>noStdlib</code></td>
+      <td>Does not include the Kotlin standard library into the classpath</td>
+      <td>No</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td><code>failOnError</code></td>
+      <td>Fails the build if errors are detected during the compilation</td>
+      <td>No</td>
+      <td>true</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="kotlinc-attributes">kotlinc Attributes<a href="#kotlinc-attributes" class="anchor"></a></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Default Value</th>
+    </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>output</code></td>
       <td>Destination directory or .jar file name</td>
@@ -1657,37 +1754,16 @@ result of translation.</p>
       <td> </td>
     </tr>
     <tr>
-      <td><code>stdlib</code></td>
-      <td>Path to “kotlin-runtime.jar”</td>
-      <td>No</td>
-      <td>””</td>
-    </tr>
-    <tr>
       <td><code>includeRuntime</code></td>
       <td>If <code>output</code> is a .jar file, whether Kotlin runtime library is included in the jar</td>
       <td>No</td>
       <td>true</td>
     </tr>
-  </tbody>
-</table>
-
-<h3 id="withkotlin-attributes">withKotlin attributes<a href="#withkotlin-attributes" class="anchor"></a></h3>
-
-<table>
-  <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Required</th>
-      <th>Default Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>externalannotations</code></td>
-      <td>Path to external annotations</td>
+      <td><code>moduleName</code></td>
+      <td>Name of the module being compiled</td>
       <td>No</td>
-      <td> </td>
+      <td>The name of the target (if specified) or the project</td>
     </tr>
   </tbody>
 </table>
@@ -1703,11 +1779,6 @@ result of translation.</p>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><code>src</code></td>
-      <td>Kotlin source file or directory to compile</td>
-      <td>Yes</td>
-    </tr>
     <tr>
       <td><code>output</code></td>
       <td>Destination file</td>
@@ -1765,7 +1836,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1775,5 +1846,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

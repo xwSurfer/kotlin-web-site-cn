@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Extensions</title>
+
+    <title>Extensions - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Extensions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/extensions.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Extensions">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1519,42 +1575,66 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">扩展<a href="#section" class="anchor"></a></h1>
 
-<p>Kotlin和c#、Gosu一样，能够扩展一个类的新功能,而无需继承类或使用任何类型的设计模式,如装饰者。</p>
+<p>Kotlin和c#、Gosu一样，能够扩展一个类的新功能，而无需继承类或使用任何类型的设计模式，如装饰者。
+这通过特殊的声明叫做_extensions_。Kotlin支持_extension functions_ 和 <em>extension properties</em>.</p>
 
-<p>这通过特殊的声明调用_extensions_.现在，Kotlin支持_extension functions_ 和 <em>extension properties</em>.</p>
+<h2 id="section-1">扩展函数<a href="#section-1" class="anchor"></a></h2>
 
-<h2 id="section-1">扩展方法<a href="#section-1" class="anchor"></a></h2>
+<p>声明一个扩展函数，我们需要用一个 <em>接收者类型</em> 也就是被扩展的类型来作为他的前缀。
+下面是为<code>MutableList&lt;Int&gt;</code>添加一个<code>swap</code>方法：</p>
 
-<p>声明一个扩展方法，我们需要用一个 <em>receiver type</em>,也就是扩展的类型来作为他的前缀。下面是为<code>MutableList&lt;Int&gt;</code>添加一个<code>swap</code>方法：</p>
-
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">MutableList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">MutableList</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">index1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
 <span class="p">}</span></code></pre>
 
-<p>这个<em class="keyword">this</em>关键字在扩展方法内接受对应的对象（在点符号以前传过来的）</p>
-
-<p>现在，我们可以像一个其他方法一样调用<code>MutableList&lt;Int&gt;</code>:</p>
+<p>这个<em class="keyword">this</em>关键字在扩展方法内接受对应的对象（在点符号以前传过来的）
+现在，我们可以像一个其他方法一样调用<code>MutableList&lt;Int&gt;</code>:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">mutableListOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
 <span class="n">l</span><span class="p">.</span><span class="n">swap</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span> <span class="c1">// &#39;this&#39; inside &#39;swap()&#39; will hold the value of &#39;l&#39;</span></code></pre>
 
 <p>当然，这个方法像这样<code>MutableList&lt;T&gt;</code>，我们可以使用泛型：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span>
-  <span class="k">this</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="err">&lt;</span><span class="nf">T</span><span class="p">&gt;</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;.</span><span class="n">swap</span><span class="p">(</span><span class="n">index1</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">index2</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">val</span> <span class="py">tmp</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="c1">// &#39;this&#39; corresponds to the list</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span> <span class="p">=</span> <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span>
+  <span class="k">this</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="p">=</span> <span class="n">tmp</span>
 <span class="p">}</span></code></pre>
 
-<p>在接收类型表达式中，我们要在方法名可用前声明泛型类型参数。参见<a href="generics.html">Generic functions</a>.</p>
+<p>在接收类型表达式中，我们要在方法名可用前声明泛型类型参数。
+参见<a href="generics.html">Generic functions</a>.</p>
 
 <h2 id="section-2">扩展的静态解析<a href="#section-2" class="anchor"></a></h2>
 
-<p>扩展不能真正的修改他们继承的类。通过定义一个扩展，你不能在类内插入新成员，仅仅是通过该类的实例去调用这个新方法。</p>
+<p>扩展不能真正的修改他们继承的类。通过定义一个扩展，你不能在类内插入新成员，
+仅仅是通过该类的实例用点表达式去调用这个新函数。</p>
 
-<p>我们想强调下扩展方法是被静态分发的，即他们不是接收类型的虚方法。如果有一个成员方法和相同类型的扩展方法都适用于给定的参数，<strong>成员方法总是赢</strong>.例如：</p>
+<p>我们想强调下扩展方法是被静态分发的，即他们不是接收类型的虚方法。
+This means that the extension function being called is determined by the type of the expression on which the function is invoked,
+not by the type of the result of evaluating that expression at runtime. For example:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">open</span> <span class="k">class</span> <span class="nc">C</span>
+
+<span class="k">class</span> <span class="nc">D</span><span class="p">:</span> <span class="n">C</span><span class="p">()</span>
+
+<span class="k">fun</span> <span class="nf">C</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">=</span> <span class="s">&quot;c&quot;</span>
+
+<span class="k">fun</span> <span class="nf">D</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">=</span> <span class="s">&quot;d&quot;</span>
+
+<span class="k">fun</span> <span class="nf">printFoo</span><span class="p">(</span><span class="n">c</span><span class="p">:</span> <span class="n">C</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">foo</span><span class="p">())</span>
+<span class="p">}</span>
+
+<span class="n">printFoo</span><span class="p">(</span><span class="n">D</span><span class="p">())</span></code></pre>
+
+<p>This example will print “c”, because the extension function being called depends only on the declared type of the
+parameter <code>c</code>, which is the <code>C</code> class.</p>
+
+<p>If a class has a member function, and an extension function is defined which has the same receiver type, the same name
+and is applicable to given arguments, the <strong>member always wins</strong>.
+For example:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
     <span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span> <span class="n">println</span><span class="p">(</span><span class="s">&quot;member&quot;</span><span class="p">)</span> <span class="p">}</span>
@@ -1564,9 +1644,11 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>如果我们调用<code>C</code>类型的<code>c</code>的<code>c.foo()</code>，它将打印”member”，而不是”extension”.</p>
 
-<h2 id="nullable">Nullable接受者<a href="#nullable" class="anchor"></a></h2>
+<h2 id="nullable">Nullable接收者<a href="#nullable" class="anchor"></a></h2>
 
-<p>注意扩展可被定义为null的接受类型。这样的扩展被称为对象变量。即使他的值是null，你可以在方法体内检查<code>this == null</code>，这也允许你调用Kotlin中的toString()在没有检查null的时候：检查发生在扩展方法的内部的时候</p>
+<p>注意扩展可被定义为可空的接收类型。这样的扩展可以被对象变量调用，
+即使他的值是null，你可以在方法体内检查<code>this == null</code>，这也允许你
+在没有检查null的时候调用Kotlin中的toString()：检查发生在扩展方法的内部的时候</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">Any</span><span class="o">?.</span><span class="n">toString</span><span class="p">():</span> <span class="n">String</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span> <span class="s">&quot;null&quot;</span>
@@ -1583,7 +1665,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">size</span> <span class="p">-</span> <span class="m">1</span></code></pre>
 
 <p>注意：由于扩展没有实际的将成员插入类中，因此对扩展来说是无效的
-属性是有<a href="properties.html#backing-fields">backing field</a>.这就是为什么<strong>初始化其不允许有扩展属性</strong>。他们的行为只能显式的使用 getters/setters.</p>
+属性是有<a href="properties.html#backing-fields">backing field</a>.这就是为什么<strong>初始化其不允许有
+扩展属性</strong>。他们的行为只能显式的使用 getters/setters.</p>
 
 <p>例子:</p>
 
@@ -1591,7 +1674,8 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <h2 id="section-4">伴生对象的扩展<a href="#section-4" class="anchor"></a></h2>
 
-<p>如果一个类定义有一个<a href="object-declarations.html#companion-objects">伴生对象</a> ，你也可以为伴生对象定义扩张方法和属性</p>
+<p>如果一个类定义有一个<a href="object-declarations.html#companion-objects">伴生对象</a> ，你也可以为伴生对象定义
+扩展函数和属性</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">MyClass</span> <span class="p">{</span>
   <span class="n">companion</span> <span class="k">object</span> <span class="err">{ }  // </span><span class="nc">will</span> <span class="n">be</span> <span class="n">called</span> <span class="s">&quot;Companion&quot;</span>
@@ -1601,10 +1685,9 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
   <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>就像伴生对象的其他普通成员，只用用类名作为限定符去调用他们
-<code>kotlin
-MyClass.foo()
-</code></p>
+<p>就像伴生对象的其他普通成员，只用用类名作为限定符去调用他们</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">MyClass</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span></code></pre>
 
 <h2 id="section-5">扩展范围<a href="#section-5" class="anchor"></a></h2>
 
@@ -1625,11 +1708,13 @@ MyClass.foo()
 <span class="k">fun</span> <span class="nf">usage</span><span class="p">(</span><span class="n">baz</span><span class="p">:</span> <span class="n">Baz</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">baz</span><span class="p">.</span><span class="n">goo</span><span class="p">()</span>
 <span class="p">)</span></code></pre>
+
 <p>更多信息参见<a href="packages.html#imports">Imports</a></p>
 
 <h2 id="section-6">动机<a href="#section-6" class="anchor"></a></h2>
 
-<p>在Java中，我们将类命名为”*Utils”: <code>FileUtils</code>, <code>StringUtils</code>等，著名的<code>java.util.Collections</code>也属于同一种命名方式。关于这些Utils-classes的不愉快的部分是这样写代码的：</p>
+<p>在Java中，我们将类命名为”*Utils”: <code>FileUtils</code>, <code>StringUtils</code>等，著名的<code>java.util.Collections</code>也属于同一种命名方式。
+关于这些Utils-classes的不愉快的部分是这样写代码的：</p>
 
 <pre><code class="code-block _highlighted lang_java"><span class="c1">// Java</span>
 <span class="n">Collections</span><span class="o">.</span><span class="na">swap</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">Collections</span><span class="o">.</span><span class="na">binarySearch</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">Collections</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">otherList</span><span class="o">)),</span> <span class="n">Collections</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">list</span><span class="o">))</span></code></pre>
@@ -1668,7 +1753,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1678,5 +1763,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

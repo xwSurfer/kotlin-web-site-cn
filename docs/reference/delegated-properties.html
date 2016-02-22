@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Delegated Properties</title>
+
+    <title>Delegated Properties - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Delegated Properties" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/reference/delegated-properties.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Delegated Properties">
+
+<meta name="twitter:description" content="Kotlin is a statically typed programming language for the JVM, Android and the browser, 100% interoperable with Java">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -473,15 +505,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
-    
-
-        
-            
-        
-
-        
-    
-
         
             
         
@@ -498,6 +521,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
     
 
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -505,6 +535,15 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
 
         
+    
+
+        
+            
+        
+
+        
+    
+
     
 
         
@@ -1032,7 +1071,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/multi-declarations.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">多重声明</span></a>
+                   ><span class="marker"></span><span class="text">解构声明</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/collections.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">集合</span></a>
             
             </div>
         
@@ -1302,7 +1358,24 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             
                 <a href="/kotlin-web-site-cn/docs/reference/java-interop.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">Java互操作</span></a>
+                   ><span class="marker"></span><span class="text">Kotlin 调用 Java</span></a>
+            
+            </div>
+        
+            
+            
+                
+                
+            
+
+            
+            
+
+            <div class="tree-item tree-leaf js-item js-leaf">
+            
+                <a href="/kotlin-web-site-cn/docs/reference/java-to-kotlin-interop.html"
+                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
+                   ><span class="marker"></span><span class="text">Java 调用 Kotlin</span></a>
             
             </div>
         
@@ -1370,23 +1443,6 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
                 <a href="/kotlin-web-site-cn/docs/reference/using-ant.html"
                    class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
                    ><span class="marker"></span><span class="text">使用 Ant</span></a>
-            
-            </div>
-        
-            
-            
-                
-                
-            
-
-            
-            
-
-            <div class="tree-item tree-leaf js-item js-leaf">
-            
-                <a href="/kotlin-web-site-cn/docs/reference/using-griffon.html"
-                   class="tree-item-title tree-leaf-title js-item-title js-leaf-title "
-                   ><span class="marker"></span><span class="text">使用 Griffon</span></a>
             
             </div>
         
@@ -1519,12 +1575,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
         <h1 id="section">委托属性<a href="#section" class="anchor"></a></h1>
 
-<p>有一些种类的属性，虽然我们可以在每次需要的时候手动实现它们，但是如果能够把他们之实现一次并放入一个库同时又能够一直使用它们那会更好。例如：</p>
+<p>有一些种类的属性，虽然我们可以在每次需要的时候手动实现它们，但是如果能够把他们之实现一次
+并放入一个库同时又能够一直使用它们那会更好。例如：</p>
 
 <ul>
   <li>延迟属性（lazy properties）: 数值只在第一次被访问的时候计算。</li>
   <li>可控性（observable properties）: 监听器得到关于这个特性变化的通知，</li>
-  <li>把所有特性储存在一个图型结构中，而不是分开每一条。</li>
+  <li>把所有特性储存在一个映射结构中，而不是分开每一条。</li>
 </ul>
 
 <p>为了支持这些(或者其他)例子，Kotlin 采用 <em>委托属性</em>:</p>
@@ -1534,22 +1591,21 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <span class="p">}</span></code></pre>
 
 <p>语法是: <code>val/var &lt;property name&gt;: &lt;Type&gt; by &lt;expression&gt;</code>.在<em class="keyword">by</em>后面的表达式是 <em>委托</em>, 
-因为 <code>get()</code> (和 <code>set()</code>) 协同的属性会被委托给它。
-特性委托不必实现任何的接口，但是需要提供一个 <code>get()</code>方法(和 <code>set()</code> — 对于 <em class="keyword">var</em>’s). 
+因为 <code>get()</code> (和 <code>set()</code>) 协同的属性会被委托给它的 <code>getValue()</code> 和 <code>setValue()</code> 方法。
+特性委托不必实现任何的接口，但是需要提供一个 <code>getValue()</code>函数（和 <code>setValue()</code> — 对于 <em class="keyword">var</em>’s）。
 例如:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Delegate</span> <span class="p">{</span>
-
-  <span class="k">fun</span> <span class="nf">get</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">):</span> <span class="n">String</span> <span class="p">{</span>
+  <span class="n">operator</span> <span class="k">fun</span> <span class="nf">getValue</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="n">KProperty</span><span class="p">&lt;*&gt;):</span> <span class="n">String</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s">&quot;$thisRef, thank you for delegating &#39;${property.name}&#39; to me!&quot;</span>
   <span class="p">}</span>
  
-  <span class="k">fun</span> <span class="nf">set</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="n">PropertyMetadata</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">operator</span> <span class="k">fun</span> <span class="nf">setValue</span><span class="p">(</span><span class="n">thisRef</span><span class="p">:</span> <span class="n">Any</span><span class="p">?,</span> <span class="n">property</span><span class="p">:</span> <span class="n">KProperty</span><span class="p">&lt;*&gt;,</span> <span class="n">value</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;$value has been assigned to &#39;${property.name} in $thisRef.&#39;&quot;</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>当我们读取一个<code>Delegate</code>的委托实例 <code>p</code> , <code>Delegate</code>中的<code>get()</code>就被调用, 
+<p>当我们读取一个<code>Delegate</code>的委托实例 <code>p</code> , <code>Delegate</code>中的<code>getValue()</code>就被调用, 
 所以它第一变量就是我们从 <code>p</code> 读取的实例,第二个变量代表 <code>p</code> 自身的描述。 
 (例如你可以用它的名字). 下面是例子:</p>
 
@@ -1561,7 +1617,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 <pre>Example@33a17727, thank you for delegating ‘p’ to me!
 </pre>
 
-<p>相同的，当我们给 <code>p</code> 赋值, <code>set()</code> 方法就被调用. 前两个参数是一样的，第三个参数代表被赋予的值:</p>
+<p>相同的，当我们给 <code>p</code> 赋值, <code>setValue()</code> 函数就被调用. 前两个参数是一样的，第三个参数代表被赋予的值:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">e</span><span class="p">.</span><span class="n">p</span> <span class="p">=</span> <span class="s">&quot;NEW&quot;</span></code></pre>
 
@@ -1574,61 +1630,64 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 <p>下面见到介绍委托对象的要求。</p>
 
-<p>对于一个 <strong>只读</strong> 属性 (如 <em class="keyword">val</em>), 一个委托一定会提供一个 <code>get</code>函数来处理下面的参数:</p>
+<p>对于一个 <strong>只读</strong> 属性 (如 <em class="keyword">val</em>), 一个委托一定会提供一个 <code>getValue</code>函数来处理下面的参数:</p>
 
 <ul>
   <li>接收者 — 必须与_属性所有者_类型相同或者是其父类(对于扩展属性，类型范围允许扩大),</li>
-  <li>包含数据 — 一定要是 <code>属性包含数据</code> 的类型或它的父类型,</li>
+  <li>包含数据 — 一定要是 <code>KProperty&lt;*&gt;</code> 的类型或它的父类型,</li>
 </ul>
 
 <p>这个函数必须返回同样的类型作为属性（或者子类型）</p>
 
-<p>对于一个 <strong>可变</strong> 属性 (如 <em class="keyword">var</em>), 一个委托需要提供_额外_的函数 <code>set</code> 来获取下面的参数:</p>
+<p>对于一个 <strong>可变</strong> 属性 (如 <em class="keyword">var</em>), 一个委托需要提供_额外_的函数 <code>setValue</code> 来获取下面的参数:</p>
 
 <ul>
-  <li>接收者 — 同 <code>get()</code>,</li>
-  <li>包含数据 — 同 <code>get()</code>,</li>
-  <li>新的值 — 必须和属性同类型或者是他的子类型。</li>
+  <li>接收者 — 同 <code>getValue()</code>,</li>
+  <li>包含数据 — 同 <code>getValue()</code>,</li>
+  <li>新的值 — 必须和属性同类型或者是他的超类型。</li>
 </ul>
+
+<p><code>getValue()</code> and/or <code>setValue()</code> functions may be provided either as member functions of the delegate class or extension functions.
+The latter is handy when you need to delegate property to an object which doesn’t originally provide these functions.
+Both of the functions need to be marked with the <code>operator</code> keyword.</p>
 
 <h2 id="section-2">标准委托<a href="#section-2" class="anchor"></a></h2>
 
-<p>标准库中<code>kotlin.properties.Delegates</code> 对象对于一些有用的委托提供了工厂（factory）方法。</p>
+<p>标准库中对于一些有用的委托提供了工厂（factory）方法。</p>
 
 <h3 id="lazy">延迟属性 Lazy<a href="#lazy" class="anchor"></a></h3>
 
-<p>函数 <code>Delegates.lazy()</code> 会在接受一个变量而后返回一个执行延迟属性的委托: 
+<p>函数 <code>lazy()</code> 接受一个 lambda 然后返回一个可以作为委托 <code>Lazy&lt;T&gt;</code> 实例来实现延迟属性: 
 第一个调用 <code>get()</code> 执行变量传递到 <code>lazy()</code> 并记录结果, 
 后来的 <code>get()</code> 调用只会返回记录的结果。</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.properties.Delegates</span>
- 
-<span class="k">val</span> <span class="py">lazy</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">lazy</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">lazyValue</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">lazy</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;computed!&quot;</span><span class="p">)</span>
     <span class="s">&quot;Hello&quot;</span>
 <span class="p">}</span>
 
 <span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
-    <span class="n">println</span><span class="p">(</span><span class="n">lazy</span><span class="p">)</span>
-    <span class="n">println</span><span class="p">(</span><span class="n">lazy</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">lazyValue</span><span class="p">)</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">lazyValue</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
 <p>By default, the evaluation of lazy properties is <strong>synchronized</strong>: the value is computed only in one thread, and all threads
 will see the same value. If the synchronization of initialization delegate is not required, so that multiple threads
 can execute it simultaneously, pass <code>LazyThreadSafetyMode.PUBLICATION</code> as a parameter to the <code>lazy()</code> function. 
 And if you’re sure that the initialization will always happen on a single thread, you can use <code>LazyThreadSafetyMode.NONE</code> mode, 
-which doesn’t incur any thread-safety guaratees and the related overhead.</p>
-
-<p>如果你需要 <strong>线程安全</strong>, 使用 <code>blockingLazy()</code>: 它会进行同样的操作，但是能够保证数值将会只在一个线程中计算，同时所有线程会看到同样的数值。</p>
+which doesn’t incur any thread-safety guarantees and the related overhead.</p>
 
 <h3 id="observable">观察者 Observable<a href="#observable" class="anchor"></a></h3>
 
 <p><code>Delegates.observable()</code> 需要两个参数：初始值和修改后的处理(handler)。
-这个 handler 会在每次赋值的时候被属性调用 (在工作完成前). 它有三个变量:一个被赋值的属性，旧的值和新的值：</p>
+这个 handler 会在每次赋值的时候被属性调用 (在工作完成前). 它有三个
+参数:一个被赋值的属性，旧的值和新的值：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.properties.Delegates</span>
+
+<span class="k">class</span> <span class="nc">User</span> <span class="p">{</span>
     <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">observable</span><span class="p">(</span><span class="s">&quot;&lt;no name&gt;&quot;</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">d</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span> <span class="p">-&gt;</span>
+        <span class="n">prop</span><span class="p">,</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span> <span class="p">-&gt;</span>
         <span class="n">println</span><span class="p">(</span><span class="s">&quot;$old -&gt; $new&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1644,37 +1703,40 @@ which doesn’t incur any thread-safety guaratees and the related overhead.</p>
 <pre>&lt;no name&gt; -&gt; first
 first -&gt; second
 </pre>
-<p>如果你想截取它的分配并取消它，就使用 <code>vetoable()</code> 取代 <code>observable()</code>.</p>
+<p>如果你想截取它的分配并取消它，就使用 <code>vetoable()</code> 取代 <code>observable()</code>.
+The handler passed to the <code>vetoable</code> is called <em>before</em> the assignment of a new property value has been performed.</p>
 
-<h3 id="not-null">非空 Not-Null<a href="#not-null" class="anchor"></a></h3>
+<blockquote>
+  <p>~~### 非空 Not-Null~~</p>
 
-<p>有时候我们有一个非空的值<em class="keyword">var</em>, 但是我们却没有合适的值去给构造器去初始化。
+  <p>有时候我们有一个非空的值<em class="keyword">var</em>, 但是我们却没有合适的值去给构造器去初始化。
 例如，它必须被之后初始化。问题是在Kotlin中你不能有一个没有被初始化的非抽象属性：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+  <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Bar</span> <span class="c1">// ERROR: must be initialized</span>
 <span class="p">}</span></code></pre>
 
-<p>我们可以用<em class="keyword">null</em>去初始化它,但是我们不得不在每次使用前检查一下。</p>
+  <p>我们可以用<em class="keyword">null</em>去初始化它,但是我们不得不在每次使用前检查一下。</p>
 
-<p><code>Delegates.notNull()</code> 可以解决这个问题:</p>
+  <p><code>Delegates.notNull()</code> 可以解决这个问题:</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
+  <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">Foo</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">bar</span><span class="p">:</span> <span class="n">Bar</span> <span class="k">by</span> <span class="n">Delegates</span><span class="p">.</span><span class="n">notNull</span><span class="p">()</span>
 <span class="p">}</span></code></pre>
 
-<p>如果这个属性在首次写入前进行读取，它就会抛出一个异常，写入后就正常了。</p>
+  <p>如果这个属性在首次写入前进行读取，它就会抛出一个异常，写入后就正常了。</p>
+</blockquote>
 
 <h3 id="map">把属性储存在map中<a href="#map" class="anchor"></a></h3>
 
-<p><code>Delegates.mapVal()</code> 用到一个map的实例，同时返回一个从map中以把属性名作为关键字读取属性的委托。
-这有很多在程序中应用的例子，例如解析JASON数据或者做其他动态的事情：
-<code>kotlin
-class User(val map: Map&lt;String, Any?&gt;) {
-    val name: String by Delegates.mapVal(map)
-    val age: Int     by Delegates.mapVal(map)
-}
-</code></p>
+<p>One common use case is storing the values of properties in a map.
+This comes up often in applications like parsing JSON or doing other “dynamic” things.
+In this case, you can use the map instance itself as the delegate for a delegated property.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="k">val</span> <span class="py">map</span><span class="p">:</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Any</span><span class="p">?&gt;)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">map</span>
+    <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span>     <span class="k">by</span> <span class="n">map</span>
+<span class="p">}</span></code></pre>
 
 <p>在这个例子中，构造函数持有一个map：</p>
 
@@ -1688,7 +1750,13 @@ class User(val map: Map&lt;String, Any?&gt;) {
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="c1">// Prints &quot;John Doe&quot;</span>
 <span class="n">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>  <span class="c1">// Prints 25</span></code></pre>
 
-<p>对于 <em>var</em>’s 我们可以使用 <code>mapVar()</code> (注意这里需要一个 <code>MutableMap</code> 而不是只读的 <code>Map</code>).</p>
+<p>This works also for <em class="keyword">var</em>’s properties if you use a <code>MutableMap</code> instead of read-only <code>Map</code>:
+对于 <em>var</em>’s 我们可以使用 <code>mapVar()</code> (注意这里需要一个 <code>MutableMap</code> 而不是只读的 <code>Map</code>).</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">MutableUser</span><span class="p">(</span><span class="k">val</span> <span class="py">map</span><span class="p">:</span> <span class="n">MutableMap</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Any</span><span class="p">?&gt;)</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">map</span>
+    <span class="k">var</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span>     <span class="k">by</span> <span class="n">map</span>
+<span class="p">}</span></code></pre>
 
 <hr />
 
@@ -1712,7 +1780,7 @@ require(['page/reference'], function(page) {
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -1722,5 +1790,6 @@ require(['page/reference'], function(page) {
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>

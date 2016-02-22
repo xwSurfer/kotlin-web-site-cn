@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Creating Kotlin/JavaScript library with IntelliJ IDEA</title>
+
+    <title>Creating Kotlin/JavaScript library with IntelliJ IDEA - Kotlin Programming Language</title>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="Shortcut Icon" href="/kotlin-web-site-cn/assets/images/favicon.ico" type="image/x-icon"/>
 <link rel="apple-touch-icon" href="/kotlin-web-site-cn/assets/images/apple-touch-icon.png" />
@@ -14,6 +16,29 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-114x114.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/kotlin-web-site-cn/assets/images/apple-touch-icon-144x144.png" />
 <link rel="stylesheet" href="/kotlin-web-site-cn/css/styles.css">
+
+
+<!-- Social Media tag Starts -->
+<!-- Place this data between the <head> tags of your website -->
+<!-- Open Graph data -->
+<meta property="og:title" content="Creating Kotlin/JavaScript library with IntelliJ IDEA" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kotlinlang.org/docs/tutorials/create-library-js.html" />
+<meta property="og:image" content="https://kotlinlang.org/assets/images/open-graph/kotlin_250x250.png" />
+
+<meta property="og:description" content="This tutorials walks us through creating a simple Kotlin/JavaScript library using IntelliJ IDEA.">
+
+<meta property="og:site_name" content="Kotlin" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kotlin">
+<meta name="twitter:title" content="Creating Kotlin/JavaScript library with IntelliJ IDEA">
+
+<meta name="twitter:description" content="This tutorials walks us through creating a simple Kotlin/JavaScript library using IntelliJ IDEA.">
+
+<meta name="twitter:image:src" content="https://kotlinlang.org/assets/images/twitter-card/kotlin_800x320.png ">
+<!-- Social Media tag Ends -->
 <script src="/kotlin-web-site-cn/js/vendor/requirejs/require.js"></script>
 <script src="/kotlin-web-site-cn/js/config/bootstrap.js"></script>
 </head>
@@ -46,89 +71,96 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
             <a class="global-header-logo" href="/kotlin-web-site-cn/">Kotlin</a>
 
             
-                
+            
             
 
             <nav role="navigation" class="global-nav">
     
 
-    
-        
-        
-        
-        
-
-        
-
+    <div class="nav-links">
         
             
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/docs/reference/"
-           class="nav-item is_active"
-        >
-            学习
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
-
-        <a href="/kotlin-web-site-cn/contribute.html"
-           class="nav-item "
-        >
-            贡献
-        </a>
-    
-        
-        
-        
-        
-
-        
-
-        
-
-        
             
-        
-
-        <a href="http://try.kotlinlang.org"
-           class="nav-item "
-        >
-            在线尝试
-        </a>
-    
-        
-        
-        
-        
-
-        
+            
             
 
-    
-        <div class="extra-nav download-button">
-            <a href="/kotlin-web-site-cn/#get-kotlin" class="get-kotlin-button">
-                Get Kotlin
-                <span class="version">(0.14.449)</span>
+            
+
+            
+                
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/docs/reference/"
+               class="nav-item is_active"
+            >
+                学习
             </a>
-        </div>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+
+            <a href="/kotlin-web-site-cn/contribute.html"
+               class="nav-item "
+            >
+                贡献
+            </a>
+        
+            
+            
+            
+            
+
+            
+
+            
+
+            
+                
+            
+
+            <a href="http://try.kotlinlang.org"
+               class="nav-item "
+            >
+                在线尝试
+            </a>
+        
+            
+            
+            
+            
+
+            
+                
+    </div>
+
     
+
+    <div id="global-search" class=" global-search" title="Search">
+    <div class="search-button">
+        <div class="icon"></div>
+    </div>
+    <div class="search-box">
+        <div class="gcse-searchbox-only"
+             data-resultsUrl="/search.html"
+             data-newWindow="false"
+        ></div>
+    </div>
+</div>
 </nav>
 
         </div>
     </div>
-    
+
     <div class="g-layout">
         
     </div>
@@ -688,27 +720,27 @@ which includes the JavaScript debugger and other JavaScript support features.</p
   <li>
     <p>Create a New Kotlin/JavaScript Project.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/create_new_project.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/create_new_project.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>Specify the project name (e.g. sample-library), and click the <em>Create</em> for Kotlin JS library.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/name_for_project.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/name_for_project.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>Select “Use library from plugin”. Of cource, you can choose copy library to some directory in your project, if you prefer.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/creating_project_library.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/creating_project_library.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>Click the <em>Finish</em>.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/finish_creating_project.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/finish_creating_project.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>We should now have the new project created and the following folder structure</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/folder_structure.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/folder_structure.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>Let’s create a new Kotlin file under the source folder. It can be named anything. In our case we will call it <em>library</em>:</p>
@@ -720,25 +752,25 @@ which includes the JavaScript debugger and other JavaScript support features.</p
   <li>
     <p>Using <em>File &gt; Settings</em>, check compiler settings for Kotlin compiler. Disable “Copy library runtime files”.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/compiler_settings.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/compiler_settings.png" alt="Kotlin New Project" /></p>
 
     <p>Click the <em>Build &gt; Make Project</em>, and check that out/production directory contains two new files.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/two_files.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/two_files.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>Open Project Structure Dialog (<em>File &gt; Project Structure</em>), select <em>Artifacts</em> and add new empty artifact.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/create_artifact.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/create_artifact.png" alt="Kotlin New Project" /></p>
 
     <p>Choose name for artifact and add module compilation output to the content of newly created artifact.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/tune_artifact.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/tune_artifact.png" alt="Kotlin New Project" /></p>
   </li>
   <li>
     <p>Click the <em>Build &gt; Build Artifacts</em>, and the resulting artifact is our library, which can be distributed.</p>
 
-    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials//create-library-js/created_artifact.png" alt="Kotlin New Project" /></p>
+    <p><img src="/kotlin-web-site-cn/kotlin-web-site-cn/assets/images/tutorials/create-library-js/created_artifact.png" alt="Kotlin New Project" /></p>
 
   </li>
 </ol>
@@ -759,7 +791,7 @@ which includes the JavaScript debugger and other JavaScript support features.</p
         <div class="g-layout">
 
             <div class="terms-copyright">
-                &copy; 2000&ndash;2015 JetBrains. All rights reserved
+                &copy; 2000&ndash;2016 JetBrains. All rights reserved
             </div>
 
             <div class="terms-sponsor">
@@ -769,5 +801,6 @@ which includes the JavaScript debugger and other JavaScript support features.</p
     </div>
 
 </footer>
+<script>require(['com/search', 'com/cookie-banner']);</script>
 </body>
 </html>
