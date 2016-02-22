@@ -53,6 +53,7 @@
 |lambdas.md|已翻译|Airoyee|  
 |inline-functions.md|已翻译|EasonZhou|  
 |multi-declarations.md|已翻译|EasonZhou|  
+|collections.md|***已认领*|[灰蓝天际](https://github.com/hltj)|  
 |ranges.md|已翻译|空白|  
 |typecasts.md|已翻译|[Wahchi](https://github.com/wahchi)|  
 |this-expressions.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
@@ -65,10 +66,10 @@
 |type-safe-builders.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |dynamic-type.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
 |java-interop.md|**未翻译**||  
+|java-to-kotlin-interop.md|**未翻译**||  
 |kotlin-doc.md|已翻译|[化缘](http://frblog.sinaapp.com)|  
 |using-maven.md|已翻译|[DemoJameson](http://www.demojameson.com)|  
 |using-ant.md|**未翻译**||  
-|using-griffon.md|**未翻译**||  
 |using-gradle.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
 |kotlin-osgi.md|**未翻译**||  
 |faq.md|**已认领**||  
