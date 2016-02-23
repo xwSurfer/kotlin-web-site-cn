@@ -53,7 +53,7 @@
 |lambdas.md|已翻译|Airoyee|  
 |inline-functions.md|已翻译|EasonZhou|  
 |multi-declarations.md|已翻译|EasonZhou|  
-|collections.md|***已认领*|[灰蓝天际](https://github.com/hltj)|  
+|collections.md|已翻译|[灰蓝天际](https://github.com/hltj)|  
 |ranges.md|已翻译|空白|  
 |typecasts.md|已翻译|[Wahchi](https://github.com/wahchi)|  
 |this-expressions.md|已翻译|[晓_晨Dev](http://tanfujun.cc)|  
