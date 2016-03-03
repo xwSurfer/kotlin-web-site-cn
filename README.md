@@ -75,6 +75,25 @@
 |comparison-to-java.md|已翻译|[chiahaolu](https://github.com/chiahaolu)|  
 |comparison-to-scala.md|已翻译||  
 
+## 生成网站
+
+安装好Jekylly后切换到master分支 执行
+
+```
+rake build 
+```
+在_site文件夹下内容是生成的网站
+
+## 生成pdf
+
+安装好 wkhtmltopdf 在master分支执行
+```
+rake build_pdf 
+```
+会在根目录生成pdf 
+在网站上你也可以找到pdf的下载链接！
+
+
 
 ## 说明
 
