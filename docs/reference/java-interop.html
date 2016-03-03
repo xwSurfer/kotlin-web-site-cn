@@ -966,11 +966,11 @@
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="函数和Lambad表达式">
+         data-id="函数和Lambdas表达式">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">函数和Lambad表达式</div>
+            <div class="text">函数和Lambdas表达式</div>
         </div>
 
         
@@ -2057,6 +2057,14 @@ Calling Java methods using the infix call syntax is not allowed.</p>
 
 <p>还要注意这个特性只针对和 Java 的互操作；因为 Kotlin 有合适的函数类型，把函数自动转换成
 Kotlin 接口的实现是没有必要的，也就没有支持了。</p>
+
+<h2 id="using-jni-with-kotlin">Using JNI with Kotlin<a href="#using-jni-with-kotlin" class="anchor"></a></h2>
+
+<p>To declare a function that is implemented in native (C or C++) code, you need to mark it with the <code>external</code> modifier:</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="n">external</span> <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Double</span></code></pre>
+
+<p>The rest of the procedure works in exactly the same way as in Java.</p>
 
     </article>
 </div>

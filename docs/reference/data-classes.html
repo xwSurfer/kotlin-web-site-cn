@@ -967,11 +967,11 @@
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="函数和Lambad表达式">
+         data-id="函数和Lambdas表达式">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">函数和Lambad表达式</div>
+            <div class="text">函数和Lambdas表达式</div>
         </div>
 
         
@@ -1559,12 +1559,12 @@
 
         <h1 id="section">数据类<a href="#section" class="anchor"></a></h1>
 
-<p>我们经常创建一些只是处理数据的类。在这些类里的功能经常是
-衍生自他们所持有的数据。在Kotlin中，这样的类可以被标记为<code>data</code>：</p>
+<p>我们经常创建一些只是处理数据的类。在这些类里的标准功能经常是
+衍生自数据。在Kotlin中，这叫做 <em>数据类</em> 并标记为<code>data</code>：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">data</span> <span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span></code></pre>
 
-<p>这被叫做一个 <em>数据类</em>。编译器自动从在主构造函数定义的全部特性中得到以下成员：</p>
+<p>编译器自动从在主构造函数定义的全部特性中得到以下成员：</p>
 
 <ul>
   <li><code>equals()</code>/<code>hashCode()</code> 对，</li>

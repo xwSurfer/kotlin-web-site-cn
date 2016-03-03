@@ -967,11 +967,11 @@
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="函数和Lambad表达式">
+         data-id="函数和Lambdas表达式">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">函数和Lambad表达式</div>
+            <div class="text">函数和Lambdas表达式</div>
         </div>
 
         
@@ -1694,6 +1694,77 @@ For example:</p>
 <span class="p">)</span></code></pre>
 
 <p>更多信息参见<a href="packages.html#imports">Imports</a></p>
+
+<h2 id="declaring-extensions-as-members">Declaring Extensions as Members<a href="#declaring-extensions-as-members" class="anchor"></a></h2>
+
+<p>Inside a class, you can declare extensions for another class. Inside such an extension, there are multiple <em>implicit receivers</em> -
+objects members of which can be accessed without a qualifier. The instance of the class in which the extension is declared is called
+<em>dispatch receiver</em>, and the instance of the receiver type of the extension method is called <em>extension receiver</em>.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">D</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">bar</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">baz</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+
+    <span class="k">fun</span> <span class="nf">D</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">bar</span><span class="p">()</span>   <span class="c1">// calls D.bar</span>
+        <span class="n">baz</span><span class="p">()</span>   <span class="c1">// calls C.baz</span>
+    <span class="p">}</span>
+
+    <span class="k">fun</span> <span class="nf">caller</span><span class="p">(</span><span class="n">d</span><span class="p">:</span> <span class="n">D</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">d</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span>   <span class="c1">// call the extension function</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<p>In case of a name conflict between the members of the dispatch receiver and the extension receiver, the extension receiver takes
+precedence. To refer to the member of the dispatch receiver you can use the <a href="this-expressions.html#qualified">qualified <code>this</code> syntax</a>.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">D</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">toString</span><span class="p">()</span>         <span class="c1">// calls D.toString()</span>
+        <span class="k">this</span><span class="n">@C</span><span class="p">.</span><span class="n">toString</span><span class="p">()</span>  <span class="c1">// calls C.toString()</span>
+    <span class="p">}</span></code></pre>
+
+<p>Extensions declared as members can be declared as <code>open</code> and overridden in subclasses. This means that the dispatch of such
+functions is virtual with regard to the dispatch receiver type, but static with regard to the extension receiver type.</p>
+
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">open</span> <span class="k">class</span> <span class="nc">D</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">D1</span> <span class="p">:</span> <span class="n">D</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">}</span>
+
+<span class="k">open</span> <span class="k">class</span> <span class="nc">C</span> <span class="p">{</span>
+    <span class="k">open</span> <span class="k">fun</span> <span class="nf">D</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;D.foo in C&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">open</span> <span class="k">fun</span> <span class="nf">D1</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;D1.foo in C&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">fun</span> <span class="nf">caller</span><span class="p">(</span><span class="n">d</span><span class="p">:</span> <span class="n">D</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">d</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span>   <span class="c1">// call the extension function</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">C1</span> <span class="p">:</span> <span class="n">C</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">D</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;D.foo in C1&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">D1</span><span class="p">.</span><span class="n">foo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">&quot;D1.foo in C1&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">C</span><span class="p">().</span><span class="n">caller</span><span class="p">(</span><span class="n">D</span><span class="p">())</span>   <span class="c1">// prints &quot;D.foo in C&quot;</span>
+<span class="n">C1</span><span class="p">().</span><span class="n">caller</span><span class="p">(</span><span class="n">D</span><span class="p">())</span>  <span class="c1">// prints &quot;D.foo in C1&quot; - dispatch receiver is resolved virtually</span>
+<span class="n">C</span><span class="p">().</span><span class="n">caller</span><span class="p">(</span><span class="n">D1</span><span class="p">())</span>  <span class="c1">// prints &quot;D.foo in C&quot; - extension receiver is resolved statically</span></code></pre>
+
+<h2 id="motivation">Motivation<a href="#motivation" class="anchor"></a></h2>
 
 <h2 id="section-6">动机<a href="#section-6" class="anchor"></a></h2>
 

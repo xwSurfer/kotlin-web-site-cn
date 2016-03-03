@@ -967,11 +967,11 @@
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="函数和Lambad表达式">
+         data-id="函数和Lambdas表达式">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">函数和Lambad表达式</div>
+            <div class="text">函数和Lambdas表达式</div>
         </div>
 
         
@@ -1686,7 +1686,9 @@ assigning it to a variable), the expression is required to have an <code>else</c
 
 <p>All of these three functions need to be marked as <code>operator</code>.</p>
 
-<p>如果你想要遍历一个数组或者一个list，你可以这么做:</p>
+<p>A <code>for</code> loop over an array is compiled to an index-based loop that does not create an iterator object.</p>
+
+<p>如果你想要通过索引遍历一个数组或者一个list，你可以这么做:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="n">array</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span>
   <span class="n">print</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">])</span></code></pre>

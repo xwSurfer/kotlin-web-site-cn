@@ -967,11 +967,11 @@
     
 
     <div class="tree-item tree-branch js-item js-branch _closed"
-         data-id="函数和Lambad表达式">
+         data-id="函数和Lambdas表达式">
 
         <div class="tree-item-title tree-branch-title js-item-title js-branch-title">
             <div class="marker"></div>
-            <div class="text">函数和Lambad表达式</div>
+            <div class="text">函数和Lambdas表达式</div>
         </div>
 
         
@@ -1557,24 +1557,24 @@
         <span class="text">Edit Page</span>
 </a>
 
-        <h1 id="section">编码约定<a href="#section" class="anchor"></a></h1>
+        <h1 id="section">编码规范<a href="#section" class="anchor"></a></h1>
 
-<p>此页面包含当前 Kotlin 语言的代码风格</p>
+<p>此页面包含当前 Kotlin 语言的编码风格</p>
 
 <h2 id="section-1">命名风格<a href="#section-1" class="anchor"></a></h2>
-<p>如果拿不准的时候，默认使用Java的代码风格，比如：</p>
+<p>如果拿不准的时候，默认使用Java的编码规范，比如：</p>
 
 <ul>
-  <li>使用驼峰法命名 (避免命名含有下划线)</li>
-  <li>类、接口、枚举等类型名字以大写字母打头</li>
-  <li>方法和属性使用小写字母打头</li>
-  <li>使用4个空格作为缩进</li>
-  <li>public 函数应撰写函数文档，这样这些文档才会出现在 Kotlin Doc 中</li>
+  <li>使用驼峰法命名（并避免命名含有下划线）</li>
+  <li>类型名以大写字母开头</li>
+  <li>方法和属性以小写字母开头</li>
+  <li>使用 4 个空格缩进</li>
+  <li>公有函数应撰写函数文档，这样这些文档才会出现在 Kotlin Doc 中</li>
 </ul>
 
 <h2 id="section-2">冒号<a href="#section-2" class="anchor"></a></h2>
 
-<p>类和超类、接口等以大写字母开头的类型与冒号之间应留有空格，实例这种以小写字母开头的与冒号之间不留空格：</p>
+<p>类型和超类型之间的冒号前要有一个空格，而实例和类型之间的冒号前不要有空格：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Foo</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">T</span> <span class="p">:</span> <span class="n">Any</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">Bar</span> <span class="p">{</span>
     <span class="k">fun</span> <span class="nf">foo</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">T</span>
@@ -1582,19 +1582,19 @@
 
 <h2 id="lambda">Lambda表达式<a href="#lambda" class="anchor"></a></h2>
 
-<p>在lambda表达式中, 大括号旁要加空格，箭头 -&gt; 旁也要加空格以区分参数与代码体
-lambda表达应尽可能不要写在括号中</p>
+<p>在lambda表达式中, 大括号左右要加空格，分隔参数与代码体的箭头左右也要加空格
+。lambda表达应尽可能不要写在圆括号中</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">list</span><span class="p">.</span><span class="n">filter</span> <span class="p">{</span> <span class="n">it</span> <span class="p">&gt;</span> <span class="m">10</span> <span class="p">}.</span><span class="n">map</span> <span class="p">{</span> <span class="n">element</span> <span class="p">-&gt;</span> <span class="n">element</span> <span class="p">*</span> <span class="m">2</span> <span class="p">}</span></code></pre>
 
-<p>在非嵌套的短lambda表达式中，最好使用约定俗成的默认参数 <code>it</code> 来替代自定义的明确的参数名
-在嵌套的lambda表达式中，参数应明确声明</p>
+<p>在非嵌套的短lambda表达式中，最好使用约定俗成的默认参数 <code>it</code> 来替代显式声明参数名
+。在嵌套的有参数的lambda表达式中，参数应该总是显式声明。</p>
 
 <h2 id="unit">Unit<a href="#unit" class="anchor"></a></h2>
 
-<p>如果函数返回 Unit 类型，那么返回的类型忽略掉，不必明确写出：</p>
+<p>如果函数返回 Unit 类型，该返回类型应该省略：</p>
 
-<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// &quot;: Unit&quot; 忽略了</span>
+<pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// 省略了 &quot;: Unit&quot;</span>
 
 <span class="p">}</span></code></pre>
 
