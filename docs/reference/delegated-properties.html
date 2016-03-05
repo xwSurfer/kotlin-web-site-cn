@@ -1559,13 +1559,13 @@
 
         <h1 id="section">委托属性<a href="#section" class="anchor"></a></h1>
 
-<p>有一些种类的属性，虽然我们可以在每次需要的时候手动实现它们，但是如果能够把他们之实现一次
+<p>有一些种类的属性，虽然我们可以在每次需要的时候手动实现它们，但是如果能够把他们只实现一次
 并放入一个库同时又能够一直使用它们那会更好。例如：</p>
 
 <ul>
   <li>延迟属性（lazy properties）: 数值只在第一次被访问的时候计算。</li>
-  <li>可控性（observable properties）: 监听器得到关于这个特性变化的通知，</li>
-  <li>把所有特性储存在一个映射结构中，而不是分开每一条。</li>
+  <li>可观察属性（observable properties）: 监听器得到关于这个特性变化的通知，</li>
+  <li>把所有属性储存在一个map中，而不是每个在单独的字段里。</li>
 </ul>
 
 <p>为了支持这些(或者其他)例子，Kotlin 采用 <em>委托属性</em>:</p>
@@ -1575,7 +1575,7 @@
 <span class="p">}</span></code></pre>
 
 <p>语法是: <code>val/var &lt;property name&gt;: &lt;Type&gt; by &lt;expression&gt;</code>.在<em class="keyword">by</em>后面的表达式是 <em>委托</em>, 
-因为 <code>get()</code> (和 <code>set()</code>) 协同的属性会被委托给它的 <code>getValue()</code> 和 <code>setValue()</code> 方法。
+因为 <code>get()</code> (和 <code>set()</code>) 相当于属性会被委托给它的 <code>getValue()</code> 和 <code>setValue()</code> 方法。
 特性委托不必实现任何的接口，但是需要提供一个 <code>getValue()</code>函数（和 <code>setValue()</code> — 对于 <em class="keyword">var</em>’s）。
 例如:</p>
 
@@ -1601,7 +1601,7 @@
 <pre>Example@33a17727, thank you for delegating ‘p’ to me!
 </pre>
 
-<p>相同的，当我们给 <code>p</code> 赋值, <code>setValue()</code> 函数就被调用. 前两个参数是一样的，第三个参数代表被赋予的值:</p>
+<p>类似的，当我们给 <code>p</code> 赋值, <code>setValue()</code> 函数就被调用. 前两个参数是一样的，第三个参数保存着将要被赋予的值:</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">e</span><span class="p">.</span><span class="n">p</span> <span class="p">=</span> <span class="s">&quot;NEW&quot;</span></code></pre>
 
@@ -1612,9 +1612,9 @@
 
 <h2 id="section-1">属性委托要求<a href="#section-1" class="anchor"></a></h2>
 
-<p>下面见到介绍委托对象的要求。</p>
+<p>这里我们总结委托对象的要求。</p>
 
-<p>对于一个 <strong>只读</strong> 属性 (如 <em class="keyword">val</em>), 一个委托一定会提供一个 <code>getValue</code>函数来处理下面的参数:</p>
+<p>对于一个 <strong>只读</strong> 属性 (如 <em class="keyword">val</em>), 一个委托一定会提供一个 <code>getValue</code>函数来获取下面的参数:</p>
 
 <ul>
   <li>接收者 — 必须与_属性所有者_类型相同或者是其父类(对于扩展属性，类型范围允许扩大),</li>
@@ -1623,17 +1623,17 @@
 
 <p>这个函数必须返回同样的类型作为属性（或者子类型）</p>
 
-<p>对于一个 <strong>可变</strong> 属性 (如 <em class="keyword">var</em>), 一个委托需要提供_额外_的函数 <code>setValue</code> 来获取下面的参数:</p>
+<p>对于一个 <strong>可变</strong> 属性 (如 <em class="keyword">var</em>), 一个委托需要额外地提供一个函数 <code>setValue</code> 来获取下面的参数:</p>
 
 <ul>
   <li>接收者 — 同 <code>getValue()</code>,</li>
   <li>包含数据 — 同 <code>getValue()</code>,</li>
-  <li>新的值 — 必须和属性同类型或者是他的超类型。</li>
+  <li>新的值 — 必须和属性同类型或者是他的父类型。</li>
 </ul>
 
-<p><code>getValue()</code> and/or <code>setValue()</code> functions may be provided either as member functions of the delegate class or extension functions.
-The latter is handy when you need to delegate property to an object which doesn’t originally provide these functions.
-Both of the functions need to be marked with the <code>operator</code> keyword.</p>
+<p><code>getValue()</code> 或/和 <code>setValue()</code> 函数可能会作为代理类的成员函数或者扩展函数来提供。
+当你需要代理一个属性给一个不是原来就提供这些函数的对象的时候，后者更为方便。
+两种函数都需要用<code>operator</code>关键字来进行标记</p>
 
 <h2 id="section-2">标准委托<a href="#section-2" class="anchor"></a></h2>
 
@@ -1641,9 +1641,9 @@ Both of the functions need to be marked with the <code>operator</code> keyword.<
 
 <h3 id="lazy">延迟属性 Lazy<a href="#lazy" class="anchor"></a></h3>
 
-<p>函数 <code>lazy()</code> 接受一个 lambda 然后返回一个可以作为委托 <code>Lazy&lt;T&gt;</code> 实例来实现延迟属性: 
-第一个调用 <code>get()</code> 执行变量传递到 <code>lazy()</code> 并记录结果, 
-后来的 <code>get()</code> 调用只会返回记录的结果。</p>
+<p>函数 <code>lazy()</code> 接受一个 lambda 然后返回一个可以作为实现延迟属性的委托 <code>Lazy&lt;T&gt;</code> 实例来: 
+第一次对于 <code>get()</code>的调用会执行（之前）传递到 <code>lazy()</code>的lamda表达式并记录结果, 
+后面的 <code>get()</code> 调用会直接返回记录的结果。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">lazyValue</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">lazy</span> <span class="p">{</span>
     <span class="n">println</span><span class="p">(</span><span class="s">&quot;computed!&quot;</span><span class="p">)</span>
@@ -1655,17 +1655,13 @@ Both of the functions need to be marked with the <code>operator</code> keyword.<
     <span class="n">println</span><span class="p">(</span><span class="n">lazyValue</span><span class="p">)</span>
 <span class="p">}</span></code></pre>
 
-<p>By default, the evaluation of lazy properties is <strong>synchronized</strong>: the value is computed only in one thread, and all threads
-will see the same value. If the synchronization of initialization delegate is not required, so that multiple threads
-can execute it simultaneously, pass <code>LazyThreadSafetyMode.PUBLICATION</code> as a parameter to the <code>lazy()</code> function. 
-And if you’re sure that the initialization will always happen on a single thread, you can use <code>LazyThreadSafetyMode.NONE</code> mode, 
-which doesn’t incur any thread-safety guarantees and the related overhead.</p>
+<p>默认地，对于lazy属性的计算是<strong>同步锁（synchronized）</strong> 的: 这个值只在一个线程被计算，并且所有的线程会看到相同的值。如果初始化代理的同步锁不是必须的，以至于多个线程可以同步地执行，那么将<code>LazyThreadSafetyMode.PUBLICATION</code>作为一个变量传递给<code>lazy()</code>函数。而且如果你确定初始化将总是发生在单个线程，那么你可以使用 <code>LazyThreadSafetyMode.NONE</code> 模式, 它不会有任何线程安全的保证和相关的开销</p>
 
-<h3 id="observable">观察者 Observable<a href="#observable" class="anchor"></a></h3>
+<h3 id="observable">可观察属性 Observable<a href="#observable" class="anchor"></a></h3>
 
-<p><code>Delegates.observable()</code> 需要两个参数：初始值和修改后的处理(handler)。
-这个 handler 会在每次赋值的时候被属性调用 (在工作完成前). 它有三个
-参数:一个被赋值的属性，旧的值和新的值：</p>
+<p><code>Delegates.observable()</code> 需要两个参数：初始值和handler。
+这个 handler 会在每次我们给赋值的时候被调用 (在工作完成前). 
+它有三个参数:一个被赋值的属性，旧的值和新的值：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">import</span> <span class="nn">kotlin.properties.Delegates</span>
 
@@ -1682,13 +1678,13 @@ which doesn’t incur any thread-safety guarantees and the related overhead.</p>
     <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="s">&quot;second&quot;</span>
 <span class="p">}</span></code></pre>
 
-<p>结果：</p>
+<p>这个例子输出：</p>
 
 <pre>&lt;no name&gt; -&gt; first
 first -&gt; second
 </pre>
-<p>如果你想截取它的分配并取消它，就使用 <code>vetoable()</code> 取代 <code>observable()</code>.
-The handler passed to the <code>vetoable</code> is called <em>before</em> the assignment of a new property value has been performed.</p>
+<p>如果你想有能力来截取和“否决”它分派的事件，就使用 <code>vetoable()</code> 取代 <code>observable()</code>.
+被传递给 <code>vetoable</code> 的handler会在属性被赋新的值_之前_执行</p>
 
 <blockquote>
   <p>~~### 非空 Not-Null~~</p>
@@ -1712,30 +1708,28 @@ The handler passed to the <code>vetoable</code> is called <em>before</em> the as
 </blockquote>
 
 <h3 id="map">把属性储存在map中<a href="#map" class="anchor"></a></h3>
-
-<p>One common use case is storing the values of properties in a map.
-This comes up often in applications like parsing JSON or doing other “dynamic” things.
-In this case, you can use the map instance itself as the delegate for a delegated property.</p>
+<p>一个参加的用例是在一个map里存储属性的值。
+这经常出现在解析JSON或者做其他的“动态”的事情应用里头。
+在这样的情况下，你需要使用map的实例本身作为代理用于代理属性</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="k">val</span> <span class="py">map</span><span class="p">:</span> <span class="n">Map</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Any</span><span class="p">?&gt;)</span> <span class="p">{</span>
     <span class="k">val</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">map</span>
     <span class="k">val</span> <span class="py">age</span><span class="p">:</span> <span class="n">Int</span>     <span class="k">by</span> <span class="n">map</span>
 <span class="p">}</span></code></pre>
 
-<p>在这个例子中，构造函数持有一个map：</p>
+<p>在这个例子中，构造函数会接收一个map参数：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">user</span> <span class="p">=</span> <span class="n">User</span><span class="p">(</span><span class="n">mapOf</span><span class="p">(</span>
     <span class="s">&quot;name&quot;</span> <span class="n">to</span> <span class="s">&quot;John Doe&quot;</span><span class="p">,</span>
     <span class="s">&quot;age&quot;</span>  <span class="n">to</span> <span class="m">25</span>
 <span class="p">))</span></code></pre>
 
-<p>委托会从这个图中取值 (通过属性的名字，也就是string关键字):</p>
+<p>委托会从这个map中取值 (通过string类型的key，就是属性的名字):</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">)</span> <span class="c1">// Prints &quot;John Doe&quot;</span>
 <span class="n">println</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>  <span class="c1">// Prints 25</span></code></pre>
 
-<p>This works also for <em class="keyword">var</em>’s properties if you use a <code>MutableMap</code> instead of read-only <code>Map</code>:
-对于 <em>var</em>’s 我们可以使用 <code>mapVar()</code> (注意这里需要一个 <code>MutableMap</code> 而不是只读的 <code>Map</code>).</p>
+<p>对于 <em>var</em>的变量，我们可以把只读的<code>Map</code>换成 <code>MutableMap</code>就可以了</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">class</span> <span class="nc">MutableUser</span><span class="p">(</span><span class="k">val</span> <span class="py">map</span><span class="p">:</span> <span class="n">MutableMap</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Any</span><span class="p">?&gt;)</span> <span class="p">{</span>
     <span class="k">var</span> <span class="py">name</span><span class="p">:</span> <span class="n">String</span> <span class="k">by</span> <span class="n">map</span>
