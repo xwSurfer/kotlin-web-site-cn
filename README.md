@@ -47,9 +47,9 @@
 |enum-classes.md|已翻译|EasonZhou|  
 |object-declarations.md|已翻译|[Wahchi](https://github.com/wahchi)|  
 |delegation.md|已翻译|EasonZhou|  
-|delegated-properties.md|已翻译|EasonZhou|  
+|delegated-properties.md|已翻译|EasonZhou,[pecpwee](https://github.com/pecpwee)|  
 |functions.md|已翻译|Jacky Xu|  
-|lambdas.md|已翻译|Airoyee|  
+|lambdas.md|已翻译|Airoyee,[pecpwee](https://github.com/pecpwee)|  
 |inline-functions.md|已翻译|EasonZhou|  
 |multi-declarations.md|已翻译|EasonZhou|  
 |collections.md|已翻译|[灰蓝天际](https://github.com/hltj)|  
