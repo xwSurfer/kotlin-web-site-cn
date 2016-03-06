@@ -1559,13 +1559,13 @@
 
         <h1 id="section">对象表达式和对象声明<a href="#section" class="anchor"></a></h1>
 
-<p>有些时候我们需要创造一个对象对某些类做稍微改变，而不用为了它明确定义一个新的子类。
-Java把这处理为<em>匿名内部类</em>。
-在Kotlin稍微归纳为<em>对象表达式</em>和<em>对象声明</em>。</p>
+<p>有些时候我们需要创建一个对某些类做了轻微改变的一个对象，而不用为了它显式地定义一个新的子类。
+Java把这种情况处理为<em>匿名内部类</em>。
+在Kotlin稍微推广了这个概念，称它们为<em>对象表达式</em>和<em>对象声明</em>。</p>
 
 <h2 id="section-1">对象表达式<a href="#section-1" class="anchor"></a></h2>
 
-<p>创建一个继承自一些类型的内部类的对象，我们可以这么写：</p>
+<p>创建一个继承自某些类型的匿名类的对象，我们会这么写：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">window</span><span class="p">.</span><span class="n">addMouseListener</span><span class="p">(</span><span class="k">object</span> <span class="err">: </span><span class="nc">MouseAdapter</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">mouseClicked</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">MouseEvent</span><span class="p">)</span> <span class="p">{</span>
@@ -1577,7 +1577,7 @@ Java把这处理为<em>匿名内部类</em>。
   <span class="p">}</span>
 <span class="p">})</span></code></pre>
 
-<p>如果父类型有一个构造函数，合适的构造函数参数必须被传递下去。
+<p>如果父类型有一个构造函数，合适的构造函数参数必须传递给它。
 多个父类型用逗号隔开，跟在冒号后面：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">open</span> <span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
@@ -1590,7 +1590,7 @@ Java把这处理为<em>匿名内部类</em>。
   <span class="k">override</span> <span class="k">val</span> <span class="py">y</span> <span class="p">=</span> <span class="m">15</span>
 <span class="p">}</span></code></pre>
 
-<p>或许如果我们需要“仅仅是一个对象”,没有父类的，我们可以简单这么写：</p>
+<p>或许，我们需要的仅是无父类的一个对象，那么我们可以简单地写为：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">adHoc</span> <span class="p">=</span> <span class="k">object</span> <span class="err">{</span>
   <span class="k">var</span> <span class="py">x</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">0</span>
@@ -1598,8 +1598,8 @@ Java把这处理为<em>匿名内部类</em>。
 <span class="p">}</span>
 <span class="n">print</span><span class="p">(</span><span class="n">adHoc</span><span class="p">.</span><span class="n">x</span> <span class="p">+</span> <span class="n">adHoc</span><span class="p">.</span><span class="n">y</span><span class="p">)</span></code></pre>
 
-<p>就像Java的匿名内部类，在对象表达里代码可以使变量与作用域联系起来
-（与Java不同的是，这不是受final变量限制的。）</p>
+<p>就像Java的匿名内部类，在对象表达式里代码可以访问封闭的作用域
+（但与Java不同的是，它能访问非final修饰的变量）</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">fun</span> <span class="nf">countClicks</span><span class="p">(</span><span class="n">window</span><span class="p">:</span> <span class="n">JComponent</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">var</span> <span class="py">clickCount</span> <span class="p">=</span> <span class="m">0</span>
@@ -1619,7 +1619,7 @@ Java把这处理为<em>匿名内部类</em>。
 
 <h2 id="section-2">对象声明<a href="#section-2" class="anchor"></a></h2>
 
-<p><a href="http://en.wikipedia.org/wiki/Singleton_pattern">单例模式</a>是一种非常有用的模式，而在Kotilin（在Scala之后）中使得单例模式很容易声明。</p>
+<p><a href="http://en.wikipedia.org/wiki/Singleton_pattern">单例模式</a>是一种非常有用的模式，而在Kotilin（在Scala之后）中很容易就能声明一个单例。</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">DataProviderManager</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">registerDataProvider</span><span class="p">(</span><span class="n">provider</span><span class="p">:</span> <span class="n">DataProvider</span><span class="p">)</span> <span class="p">{</span>
@@ -1630,8 +1630,8 @@ Java把这处理为<em>匿名内部类</em>。
     <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="c1">// ...</span>
 <span class="p">}</span></code></pre>
 
-<p>这被称为<em>对象声明</em>。如果有一个<em class="keyword">object</em>关键字在名字前面，这不能再被称为_表达式_。
-我们不能把它归于变量，但我们可以通过它的名字来指定它。这些对象可以有父类型：</p>
+<p>这被称为<em>对象声明</em>。如果有一个<em class="keyword">object</em>关键字在名字前面，这不能再被称为一个_表达式_。
+我们不能把这样的东西赋值给变量，但我们可以通过它的名字来引用它。这样的对象可以有父类型：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">object</span> <span class="nc">DefaultListener</span> <span class="p">:</span> <span class="n">MouseAdapter</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">override</span> <span class="k">fun</span> <span class="nf">mouseClicked</span><span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">MouseEvent</span><span class="p">)</span> <span class="p">{</span>
@@ -1655,7 +1655,7 @@ Java把这处理为<em>匿名内部类</em>。
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>伴生对象的成员可以被称为使用类名称作为限定符：</p>
+<p>伴生对象的成员可以使用类名称作为限定符来调用：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="k">val</span> <span class="py">instance</span> <span class="p">=</span> <span class="n">MyClass</span><span class="p">.</span><span class="n">create</span><span class="p">()</span></code></pre>
 
@@ -1668,8 +1668,8 @@ Java把这处理为<em>匿名内部类</em>。
 
 <span class="k">val</span> <span class="py">x</span> <span class="p">=</span> <span class="n">MyClass</span><span class="p">.</span><span class="n">Companion</span></code></pre>
 
-<p>记住，虽然伴生对象的成员在其他语言中看起来像静态成员，但在运行时它们
-仍然是实体的实例成员，而且比如说能实现接口：</p>
+<p>注意，虽然伴生对象的成员在其他语言中看起来像静态成员，但在运行时它们
+仍然是实体的实例成员，举例来说，我们能用它实现接口：</p>
 
 <pre><code class="code-block _highlighted lang_kotlin"><span class="n">interface</span> <span class="n">Factory</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="k">fun</span> <span class="nf">create</span><span class="p">():</span> <span class="n">T</span>
@@ -1682,22 +1682,22 @@ Java把这处理为<em>匿名内部类</em>。
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
 
-<p>然而，在JVM中你可以有些产生自真正的静态方法和域的伴生对象的成员，如果你使
-用<code>@JvmStatic</code>注解。可以从<a href="java-interop.html#static-methods-and-fields">Java interoperability</a> 这里
+<p>然而，在JVM中，如果你使用<code>@JvmStatic</code>注解，你可以让伴生对象的成员生成为实际存在的静态方法和域。
+可以从<a href="java-interop.html#static-methods-and-fields">Java interoperability</a> 这里
 查看详情。</p>
 
-<h3 id="section-4">对象表达式与对象声明区别<a href="#section-4" class="anchor"></a></h3>
+<h3 id="section-4">对象表达式与对象声明语义上的不同<a href="#section-4" class="anchor"></a></h3>
 
-<p>这是一个重要的的不同在对象表达式与对象声明上</p>
+<p>这是一个在对象表达式与对象声明上重要的不同之处：</p>
 
 <ul>
-  <li>对象声明被<strong>lazily</strong>初始化，当被第一次访问的时候</li>
-  <li>对对象表达被<strong>立即</strong>执行（被初始化），当它被用到的时候</li>
+  <li>当对象声明被第一次访问的时候,它会被<strong>延迟（lazily）</strong>初始化</li>
+  <li>当对象表达式被用到的时候，它会被<strong>立即</strong>执行（并且初始化）</li>
 </ul>
 
 <hr />
 
-<p>翻译By Wahchi</p>
+<p>翻译By Wahchi,<a href="https://github.com/pecpwee">pecpwee</a></p>
 
 
     </article>
